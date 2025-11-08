@@ -429,27 +429,25 @@
         }
 
         .xrpl-crypto-context,
-        .xrpl-canada-connection,
-        .xrpl-mission {
+        .xrpl-canada-connection {
             background: rgba(10, 10, 15, 0.4);
-            padding: 36px 32px;
+            padding: 48px 40px;
             border-radius: 16px;
             border: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         .xrpl-crypto-context h3,
-        .xrpl-canada-connection h3,
-        .xrpl-mission h3 {
+        .xrpl-canada-connection h3 {
             font-size: 26px;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 32px;
             color: var(--text-primary);
             letter-spacing: -0.5px;
+            text-align: center;
         }
 
         .xrpl-crypto-context p,
-        .xrpl-canada-connection p,
-        .xrpl-mission p {
+        .xrpl-canada-connection p {
             font-size: 18px;
             line-height: 1.85;
             color: var(--text-secondary);
@@ -457,14 +455,12 @@
         }
 
         .xrpl-crypto-context p:last-child,
-        .xrpl-canada-connection p:last-of-type,
-        .xrpl-mission p:last-child {
+        .xrpl-canada-connection p:last-of-type {
             margin-bottom: 0;
         }
 
         .xrpl-crypto-context strong,
-        .xrpl-canada-connection strong,
-        .xrpl-mission strong {
+        .xrpl-canada-connection strong {
             color: var(--primary-red);
             font-weight: 700;
         }
@@ -494,6 +490,352 @@
             font-size: 20px;
         }
 
+        /* Timeline Styles */
+        .timeline-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 40px 0;
+            gap: 20px;
+        }
+
+        .timeline-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .timeline-year {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-tertiary);
+            letter-spacing: 1px;
+        }
+
+        .timeline-content {
+            background: rgba(26, 26, 36, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 24px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .timeline-item:hover .timeline-content {
+            transform: translateY(-4px);
+            border-color: rgba(255, 23, 68, 0.2);
+        }
+
+        .timeline-highlight .timeline-content {
+            background: rgba(255, 23, 68, 0.08);
+            border-color: rgba(255, 23, 68, 0.3);
+        }
+
+        .timeline-icon {
+            font-size: 32px;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .timeline-logo {
+            width: 40px;
+            height: 40px;
+        }
+
+        .timeline-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: invert(1) brightness(1.1);
+        }
+
+        .timeline-text {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        .timeline-connector {
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(255, 23, 68, 0.3), rgba(255, 23, 68, 0.1));
+            flex-shrink: 0;
+        }
+
+        /* Ripple Section */
+        .ripple-section {
+            display: grid;
+            grid-template-columns: 1fr 200px;
+            gap: 40px;
+            align-items: center;
+            margin: 40px 0;
+        }
+
+        .ripple-text p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .ripple-visual {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ripple-circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 23, 68, 0.2);
+            animation: ripple-pulse 3s ease-out infinite;
+        }
+
+        .ripple-circle-1 {
+            width: 100px;
+            height: 100px;
+        }
+
+        .ripple-circle-2 {
+            width: 140px;
+            height: 140px;
+            animation-delay: 1s;
+        }
+
+        .ripple-circle-3 {
+            width: 180px;
+            height: 180px;
+            animation-delay: 2s;
+        }
+
+        .ripple-icon {
+            font-size: 48px;
+            z-index: 1;
+        }
+
+        @keyframes ripple-pulse {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        /* Today Banner */
+        .today-banner {
+            background: linear-gradient(135deg, rgba(255, 23, 68, 0.08) 0%, rgba(0, 184, 212, 0.05) 100%);
+            border-radius: 12px;
+            padding: 32px;
+            margin-top: 40px;
+        }
+
+        .today-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .stat-icon {
+            font-size: 36px;
+            flex-shrink: 0;
+        }
+
+        .stat-text {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+
+        /* Canada Strengths */
+        .canada-strengths {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 40px;
+            align-items: center;
+            margin: 40px 0;
+        }
+
+        .canada-map {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .map-icon {
+            font-size: 120px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .map-pulse {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 23, 68, 0.2) 0%, transparent 70%);
+            animation: map-pulse 2s ease-out infinite;
+        }
+
+        @keyframes map-pulse {
+            0% {
+                transform: scale(0.8);
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: scale(1.3);
+                opacity: 0;
+            }
+        }
+
+        .canada-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .canada-card {
+            background: rgba(26, 26, 36, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            transition: all 0.3s ease;
+        }
+
+        .canada-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 23, 68, 0.2);
+            background: rgba(26, 26, 36, 0.7);
+        }
+
+        .canada-card-icon {
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+
+        .canada-card-content h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+
+        .canada-card-content p {
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--text-secondary);
+        }
+
+        /* Mission Banner */
+        .mission-banner {
+            background: linear-gradient(135deg, rgba(255, 23, 68, 0.1) 0%, rgba(0, 184, 212, 0.08) 100%);
+            border-radius: 12px;
+            padding: 32px;
+            margin: 40px 0 24px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .mission-problem {
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        .mission-arrow {
+            font-size: 32px;
+            color: var(--primary-red);
+        }
+
+        .mission-solution {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-primary);
+        }
+
+        .starting-point {
+            text-align: center;
+            font-size: 19px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            padding: 24px;
+            background: rgba(255, 23, 68, 0.05);
+            border-radius: 12px;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .timeline-container {
+                flex-direction: column;
+            }
+
+            .timeline-connector {
+                width: 2px;
+                height: 30px;
+                background: linear-gradient(180deg, rgba(255, 23, 68, 0.3), rgba(255, 23, 68, 0.1));
+            }
+
+            .ripple-section {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .ripple-visual {
+                margin: 0 auto;
+            }
+
+            .today-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .canada-strengths {
+                grid-template-columns: 1fr;
+            }
+
+            .canada-map {
+                margin: 0 auto;
+            }
+
+            .canada-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
         .xrpl-cta {
             text-align: center;
             margin-top: 16px;
@@ -520,25 +862,52 @@
             }
 
             .xrpl-crypto-context,
-            .xrpl-canada-connection,
-            .xrpl-mission {
+            .xrpl-canada-connection {
                 padding: 28px 24px;
             }
 
             .xrpl-crypto-context h3,
-            .xrpl-canada-connection h3,
-            .xrpl-mission h3 {
+            .xrpl-canada-connection h3 {
                 font-size: 22px;
             }
 
-            .xrpl-crypto-context p,
-            .xrpl-canada-connection p,
-            .xrpl-mission p {
+            .timeline-item {
+                width: 100%;
+            }
+
+            .ripple-section {
+                grid-template-columns: 1fr;
+            }
+
+            .today-stats {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .stat-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 12px;
+            }
+
+            .canada-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .mission-banner {
+                padding: 24px 20px;
+            }
+
+            .mission-problem,
+            .mission-solution {
                 font-size: 16px;
             }
 
-            .xrpl-canada-list li {
-                font-size: 16px;
+            .starting-point {
+                font-size: 17px;
+                padding: 20px;
             }
         }
 
@@ -1753,6 +2122,163 @@
                 font-size: 15px;
             }
         }
+
+        /* Blog Preview Section */
+        #blog-preview {
+            background: rgba(10, 10, 15, 0.4);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: var(--text-tertiary);
+            margin: -16px auto 48px;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        .blog-preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+
+        .blog-preview-card {
+            background: rgba(26, 26, 36, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-preview-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--gradient-primary);
+            transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .blog-preview-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 23, 68, 0.3);
+            background: rgba(26, 26, 36, 0.8);
+            box-shadow: var(--shadow-lg), 0 0 30px rgba(255, 23, 68, 0.15);
+        }
+
+        .blog-preview-card:hover::before {
+            height: 100%;
+        }
+
+        .blog-preview-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .blog-preview-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            font-weight: 500;
+        }
+
+        .blog-preview-category {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--primary-red);
+            background: rgba(255, 23, 68, 0.1);
+            padding: 4px 12px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 23, 68, 0.2);
+        }
+
+        .blog-preview-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            line-height: 1.3;
+            letter-spacing: -0.5px;
+        }
+
+        .blog-preview-excerpt {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        .blog-preview-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-red);
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            letter-spacing: 0.3px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .blog-preview-link i {
+            font-size: 18px;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .blog-preview-link:hover {
+            color: var(--primary-red-light);
+            gap: 12px;
+        }
+
+        .blog-preview-link:hover i {
+            transform: translateX(4px);
+        }
+
+        .blog-preview-cta {
+            text-align: center;
+            margin-top: 24px;
+        }
+
+        .cta-button-secondary {
+            display: inline-block;
+            padding: 16px 40px;
+            background: rgba(26, 26, 36, 0.8);
+            border: 2px solid rgba(255, 23, 68, 0.3);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            letter-spacing: 0.4px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow-md);
+        }
+
+        .cta-button-secondary:hover {
+            background: var(--gradient-primary);
+            border-color: var(--primary-red);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: var(--shadow-xl), 0 0 30px rgba(255, 23, 68, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .blog-preview-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1803,6 +2329,10 @@
         <a href="resources.html">
             <span class="lang-en">Resources</span>
             <span class="lang-fr hidden">Ressources</span>
+        </a>
+        <a href="blog.html">
+            <span class="lang-en">Blog</span>
+            <span class="lang-fr hidden">Blog</span>
         </a>
         <a href="#contact">
             <span class="lang-en">Contact</span>
@@ -1924,7 +2454,7 @@
                         <p class="lang-fr hidden">
                             Le <strong>XRP Ledger (XRPL)</strong> est une blockchain publique décentralisée opérationnelle depuis 2012. XRPL est l'un des premiers réseaux blockchain publics—éprouvé depuis plus d'une décennie avec des milliards de dollars de valeur transférée.
                         </p>
-                </div>
+                    </div>
 
                     <div class="xrpl-features">
                         <div class="xrpl-feature">
@@ -1939,12 +2469,12 @@
                             <p class="lang-fr hidden">
                                 Règlement en 3 à 5 secondes avec une capacité de 1 500+ TPS—conçu pour les paiements réels, pas la spéculation.
                             </p>
-                                </div>
+                </div>
 
                         <div class="xrpl-feature">
                             <div class="xrpl-feature-icon">
                                 <i class="ri-plant-line"></i>
-                                </div>
+                            </div>
                             <h3 class="lang-en">Sustainable</h3>
                             <h3 class="lang-fr hidden">Durable</h3>
                             <p class="lang-en">
@@ -1953,12 +2483,12 @@
                             <p class="lang-fr hidden">
                                 Aucun minage requis. Utilise une fraction de l'énergie de Bitcoin, ce qui en fait l'une des blockchains les plus économes en carbone.
                             </p>
-                            </div>
+                                </div>
 
                         <div class="xrpl-feature">
                             <div class="xrpl-feature-icon">
                                 <i class="ri-money-dollar-circle-line"></i>
-                        </div>
+                                </div>
                             <h3 class="lang-en">Low Cost</h3>
                             <h3 class="lang-fr hidden">Faible coût</h3>
                             <p class="lang-en">
@@ -1972,7 +2502,7 @@
                         <div class="xrpl-feature">
                             <div class="xrpl-feature-icon">
                                 <i class="ri-global-line"></i>
-                            </div>
+                        </div>
                             <h3 class="lang-en">Built for Finance</h3>
                             <h3 class="lang-fr hidden">Conçu pour la finance</h3>
                             <p class="lang-en">
@@ -1982,19 +2512,59 @@
                                 Prend en charge nativement les transactions multidevises, le trading DEX, les séquestres et les canaux de paiement—pas des ajouts après coup.
                             </p>
                             </div>
-                        </div>
+                            </div>
 
                     <div class="xrpl-crypto-context">
                         <h3>
                             <span class="lang-en">Understanding XRPL in the Crypto Landscape</span>
                             <span class="lang-fr hidden">Comprendre XRPL dans le paysage crypto</span>
                         </h3>
-                        <p class="lang-en">
-                            Bitcoin (2009) proved digital scarcity. Ethereum (2015) introduced smart contracts. Between these networks, the <strong>XRP Ledger (2012)</strong> launched as a purpose-built payments ledger—fast, efficient, and low-cost.
-                        </p>
-                        <p class="lang-fr hidden">
-                            Bitcoin (2009) a prouvé la rareté numérique. Ethereum (2015) a introduit les contrats intelligents. Entre ces réseaux, le <strong>XRP Ledger (2012)</strong> a été lancé comme un registre de paiements dédié—rapide, efficace et à faible coût.
-                        </p>
+                        
+                        <div class="timeline-container">
+                            <div class="timeline-item">
+                                <div class="timeline-year">2009</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-icon timeline-logo">
+                                        <img src="public/bitcoin.png" alt="Bitcoin" />
+                            </div>
+                                    <div class="timeline-text">
+                                        <span class="lang-en"><strong>Bitcoin</strong> proved digital scarcity</span>
+                                        <span class="lang-fr hidden"><strong>Bitcoin</strong> a prouvé la rareté numérique</span>
+                        </div>
+                        </div>
+                    </div>
+
+                            <div class="timeline-connector"></div>
+                            
+                            <div class="timeline-item timeline-highlight">
+                                <div class="timeline-year">2012</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-icon timeline-logo">
+                                        <img src="public/xrp.png" alt="XRP Ledger" />
+                            </div>
+                                    <div class="timeline-text">
+                                        <span class="lang-en"><strong>XRP Ledger</strong> built for payments</span>
+                                        <span class="lang-fr hidden"><strong>XRP Ledger</strong> conçu pour les paiements</span>
+                                </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-connector"></div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-year">2015</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-icon timeline-logo">
+                                        <img src="public/ether.png" alt="Ethereum" />
+                        </div>
+                                    <div class="timeline-text">
+                                        <span class="lang-en"><strong>Ethereum</strong> introduced smart contracts</span>
+                                        <span class="lang-fr hidden"><strong>Ethereum</strong> a introduit les contrats intelligents</span>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+
                         <p class="lang-en">
                             Ripple grew from that engineering effort, making XRPL usable for real financial institutions. The ledger remains <strong>open-source and decentralized</strong>, governed by independent validators worldwide, while Ripple builds partnerships, software, and liquidity solutions for institutional adoption.
                         </p>
@@ -2058,21 +2628,77 @@
                         <p class="lang-fr hidden">
                             <strong>XRPL Canada existe pour connecter les points.</strong> Nous construisons le hub—ressources, communautés, connexions, événements—pour réaliser l'Internet de la valeur où l'argent se déplace aussi librement que l'information.
                         </p>
-                        <p class="lang-en">
-                            Whether you're a student, a startup, or a developer—<strong>this is your starting point.</strong>
-                        </p>
-                        <p class="lang-fr hidden">
-                            Que vous soyez étudiant, startup ou développeur—<strong>c'est votre point de départ.</strong>
-                        </p>
+                        <div class="starting-point">
+                            <span class="lang-en">Whether you're a student, a startup, or a developer—<strong>this is your starting point.</strong></span>
+                            <span class="lang-fr hidden">Que vous soyez étudiant, startup ou développeur—<strong>c'est votre point de départ.</strong></span>
+                        </div>
                     </div>
 
                     <div class="xrpl-cta">
                         <a href="resources.html" class="cta-button">
                             <span class="lang-en">Explore XRPL Resources</span>
                             <span class="lang-fr hidden">Explorer les ressources XRPL</span>
-                        </a>
+                            </a>
                             </div>
+                                </div>
+                                </div>
+        </section>
+
+        <section id="blog-preview">
+            <h2>
+                <span class="lang-en">Latest Updates</span>
+                <span class="lang-fr hidden">Dernières mises à jour</span>
+            </h2>
+            <p class="section-subtitle">
+                <span class="lang-en">Real-world XRPL adoption, ecosystem news, and stories from the field</span>
+                <span class="lang-fr hidden">Adoption XRPL réelle, nouvelles de l'écosystème et histoires du terrain</span>
+            </p>
+            <div class="blog-preview-grid">
+                <article class="blog-preview-card">
+                    <div class="blog-preview-meta">
+                        <span class="blog-preview-date">January 15, 2025</span>
+                        <span class="blog-preview-category">Case Study</span>
                             </div>
+                    <h3 class="blog-preview-title">
+                        <span class="lang-en">How MoneyGram Moved $2.4B Using XRPL</span>
+                        <span class="lang-fr hidden">Comment MoneyGram a transféré 2,4 milliards $ avec XRPL</span>
+                    </h3>
+                    <p class="blog-preview-excerpt">
+                        <span class="lang-en">Ripple's partnership with MoneyGram demonstrates real-world cross-border payment flows at scale—settlement in seconds, not days.</span>
+                        <span class="lang-fr hidden">Le partenariat de Ripple avec MoneyGram démontre des flux de paiement transfrontaliers réels à grande échelle—règlement en secondes, pas en jours.</span>
+                    </p>
+                    <a href="blog/moneygram-xrpl-case-study.html" class="blog-preview-link">
+                        <span class="lang-en">Read More</span>
+                        <span class="lang-fr hidden">Lire plus</span>
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </article>
+
+                <article class="blog-preview-card">
+                    <div class="blog-preview-meta">
+                        <span class="blog-preview-date">January 8, 2025</span>
+                        <span class="blog-preview-category">Ecosystem</span>
+                        </div>
+                    <h3 class="blog-preview-title">
+                        <span class="lang-en">XRPL Foundation Announces $6M in Grants for 2025</span>
+                        <span class="lang-fr hidden">La Fondation XRPL annonce 6 M$ en subventions pour 2025</span>
+                        </h3>
+                    <p class="blog-preview-excerpt">
+                        <span class="lang-en">The XRPL Foundation is funding projects focused on payments, tokenization, and developer tools. Canadian builders should apply.</span>
+                        <span class="lang-fr hidden">La Fondation XRPL finance des projets axés sur les paiements, la tokenisation et les outils développeurs. Les bâtisseurs canadiens devraient postuler.</span>
+                    </p>
+                    <a href="blog/xrpl-grants-2025.html" class="blog-preview-link">
+                        <span class="lang-en">Read More</span>
+                        <span class="lang-fr hidden">Lire plus</span>
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </article>
+                            </div>
+            <div class="blog-preview-cta">
+                <a href="blog.html" class="cta-button-secondary">
+                    <span class="lang-en">View All Updates</span>
+                    <span class="lang-fr hidden">Voir toutes les mises à jour</span>
+                            </a>
                         </div>
         </section>
 

@@ -312,14 +312,7 @@
         }
 
         .resource-item::before {
-            content: '';
-            display: block;
-            width: 36px;
-            height: 2px;
-            background: var(--gradient-primary);
-            opacity: 0.8;
-            border-radius: 1px;
-            margin-bottom: 8px;
+            display: none;
         }
 
         .resource-item:hover {
@@ -336,7 +329,7 @@
 
         .resource-title {
             font-size: 17px;
-            font-weight: 700;
+            font-weight: 600;
             color: var(--text-primary);
             margin: 0 0 6px;
             letter-spacing: -0.2px;
@@ -354,27 +347,31 @@
             display: inline-flex;
             align-items: center;
             gap: 5px;
-            color: var(--primary-red);
+            color: var(--text-primary);
             text-decoration: none;
-            font-weight: 600;
-            font-size: 12px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            transition: color 0.3s ease;
+            font-weight: 500;
+            font-size: 13px;
+            letter-spacing: 0.3px;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 2px;
         }
 
         .resource-link::after {
-            content: '↗';
-            font-size: 11px;
+            content: '→';
+            font-size: 14px;
             transition: transform 0.3s ease;
+            opacity: 0.7;
         }
 
         .resource-link:hover {
-            color: var(--primary-red-light);
+            color: var(--text-primary);
+            border-bottom-color: rgba(255, 255, 255, 0.3);
         }
 
         .resource-link:hover::after {
             transform: translateX(3px);
+            opacity: 1;
         }
 
         footer {
@@ -502,7 +499,7 @@
         </div>
 
         <!-- Official Documentation -->
-        <details class="resource-category">
+        <details class="resource-category" open>
             <summary class="category-summary">
             <h2 class="category-title">
                 <i class="ri-book-open-line"></i>
@@ -600,7 +597,7 @@
                             <span class="lang-fr hidden">Explorer la bibliothèque</span>
                         </a>
             </div>
-                </div>
+        </div>
 
                 <div class="resource-item">
                     <div class="resource-content">
@@ -622,6 +619,90 @@
             </div>
         </details>
 
+        <!-- Blockchain Education -->
+        <details class="resource-category">
+            <summary class="category-summary">
+            <h2 class="category-title">
+                    <i class="ri-graduation-cap-line"></i>
+                    <span class="lang-en">Blockchain Education</span>
+                    <span class="lang-fr hidden">Éducation blockchain</span>
+            </h2>
+            </summary>
+            <div class="category-content">
+            <p class="category-description">
+                    <span class="lang-en">Broader education platforms to complement your XRPL knowledge.</span>
+                    <span class="lang-fr hidden">Plateformes éducatives générales pour compléter vos connaissances XRPL.</span>
+            </p>
+            <div class="resource-list">
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">EasyA</span>
+                            <span class="lang-fr hidden">EasyA</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Web3 education platform delivering hackathons, bootcamps, and credentialed coursework.</span>
+                            <span class="lang-fr hidden">Plateforme d'éducation web3 proposant hackathons, bootcamps et cours certifiants.</span>
+                        </p>
+                        <a href="https://www.easya.io/" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Explore Programs</span>
+                            <span class="lang-fr hidden">Explorer les programmes</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Ethereum.org Learn</span>
+                            <span class="lang-fr hidden">Ethereum.org – Apprendre</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Fundamentals of blockchain, smart contracts, and security best practices for builders.</span>
+                            <span class="lang-fr hidden">Fondamentaux de la blockchain, des contrats intelligents et des meilleures pratiques de sécurité pour les bâtisseurs.</span>
+                        </p>
+                        <a href="https://ethereum.org/en/learn/" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Start Learning</span>
+                            <span class="lang-fr hidden">Commencer</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">CryptoZombies</span>
+                            <span class="lang-fr hidden">CryptoZombies</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Gamified Solidity tutorials that teach smart contract basics through hands-on projects.</span>
+                            <span class="lang-fr hidden">Tutoriels Solidity ludiques qui enseignent les bases des contrats intelligents via des projets pratiques.</span>
+                        </p>
+                        <a href="https://cryptozombies.io" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Launch Course</span>
+                            <span class="lang-fr hidden">Lancer le cours</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">LearnWeb3</span>
+                            <span class="lang-fr hidden">LearnWeb3</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Free multi-track curriculum covering wallets, DeFi, NFTs, and smart contract security.</span>
+                            <span class="lang-fr hidden">Programme gratuit multi-parcours couvrant portefeuilles, DeFi, NFT et sécurité des contrats intelligents.</span>
+                        </p>
+                        <a href="https://learnweb3.io" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">View Curriculum</span>
+                            <span class="lang-fr hidden">Voir le curriculum</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </details>
         <!-- XRPL Wallets -->
         <details class="resource-category">
             <summary class="category-summary">
@@ -690,34 +771,48 @@
             </div>
         </details>
 
-        <!-- General Blockchain Learning -->
-        <details class="resource-category">
+
+
+        <div class="section-divider">
+            <h2 class="section-heading">
+                <span class="lang-en">Build & Explore</span>
+                <span class="lang-fr hidden">Construire et explorer</span>
+            </h2>
+            <p class="section-subtitle">
+                <span class="lang-en">Developer tools, blockchain explorers, and advanced features for builders</span>
+                <span class="lang-fr hidden">Outils pour développeurs, explorateurs blockchain et fonctionnalités avancées pour les bâtisseurs</span>
+            </p>
+        </div>
+
+
+        <!-- XRPL Explorers & Analytics -->
+        <details class="resource-category" open>
             <summary class="category-summary">
                 <h2 class="category-title">
-                    <i class="ri-graduation-cap-line"></i>
-                    <span class="lang-en">General Blockchain Learning</span>
-                    <span class="lang-fr hidden">Apprentissage général blockchain</span>
+                    <i class="ri-search-line"></i>
+                    <span class="lang-en">XRPL Explorers & Analytics</span>
+                    <span class="lang-fr hidden">Explorateurs et analytiques XRPL</span>
                 </h2>
             </summary>
             <div class="category-content">
                 <p class="category-description">
-                    <span class="lang-en">Broader education platforms to complement your XRPL knowledge.</span>
-                    <span class="lang-fr hidden">Plateformes éducatives générales pour compléter vos connaissances XRPL.</span>
+                    <span class="lang-en">Blockchain explorers and analytics tools for XRPL data.</span>
+                    <span class="lang-fr hidden">Explorateurs blockchain et outils d'analytique pour les données XRPL.</span>
                 </p>
                 <div class="resource-list">
                 <div class="resource-item">
                     <div class="resource-content">
                         <h3 class="resource-title">
-                            <span class="lang-en">Easya</span>
-                            <span class="lang-fr hidden">Easya</span>
+                            <span class="lang-en">XRPScan</span>
+                            <span class="lang-fr hidden">XRPScan</span>
                         </h3>
                         <p class="resource-description">
-                            <span class="lang-en">Web3 education platform delivering hackathons, bootcamps, and credentialed coursework.</span>
-                            <span class="lang-fr hidden">Plateforme d'éducation web3 proposant hackathons, bootcamps et cours certifiants.</span>
+                            <span class="lang-en">Comprehensive blockchain explorer with APIs for developers and detailed transaction tracking.</span>
+                            <span class="lang-fr hidden">Explorateur blockchain complet avec APIs pour développeurs et suivi détaillé des transactions.</span>
                         </p>
-                        <a href="https://www.easya.io/" class="resource-link" target="_blank" rel="noopener noreferrer">
-                            <span class="lang-en">Explore Programs</span>
-                            <span class="lang-fr hidden">Explorer les programmes</span>
+                        <a href="https://xrpscan.com" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Explore</span>
+                            <span class="lang-fr hidden">Explorer</span>
                         </a>
                     </div>
                 </div>
@@ -725,16 +820,16 @@
                 <div class="resource-item">
                     <div class="resource-content">
                         <h3 class="resource-title">
-                            <span class="lang-en">Ethereum.org Learn</span>
-                            <span class="lang-fr hidden">Ethereum.org – Apprendre</span>
+                            <span class="lang-en">Bithomp</span>
+                            <span class="lang-fr hidden">Bithomp</span>
                         </h3>
                         <p class="resource-description">
-                            <span class="lang-en">Fundamentals of blockchain, smart contracts, and security best practices for builders.</span>
-                            <span class="lang-fr hidden">Fondamentaux de la blockchain, des contrats intelligents et des meilleures pratiques de sécurité pour les bâtisseurs.</span>
+                            <span class="lang-en">User-friendly blockchain explorer with hardware wallet integration and advanced search.</span>
+                            <span class="lang-fr hidden">Explorateur blockchain convivial avec intégration de portefeuilles matériels et recherche avancée.</span>
                         </p>
-                        <a href="https://ethereum.org/en/learn/" class="resource-link" target="_blank" rel="noopener noreferrer">
-                            <span class="lang-en">Start Learning</span>
-                            <span class="lang-fr hidden">Commencer</span>
+                        <a href="https://bithomp.com" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Explore</span>
+                            <span class="lang-fr hidden">Explorer</span>
                         </a>
                     </div>
                 </div>
@@ -742,16 +837,16 @@
                 <div class="resource-item">
                     <div class="resource-content">
                         <h3 class="resource-title">
-                            <span class="lang-en">CryptoZombies</span>
-                            <span class="lang-fr hidden">CryptoZombies</span>
+                            <span class="lang-en">XRPlorer</span>
+                            <span class="lang-fr hidden">XRPlorer</span>
                         </h3>
                         <p class="resource-description">
-                            <span class="lang-en">Gamified Solidity tutorials that teach smart contract basics through hands-on projects.</span>
-                            <span class="lang-fr hidden">Tutoriels Solidity ludiques qui enseignent les bases des contrats intelligents via des projets pratiques.</span>
+                            <span class="lang-en">Forensics-focused blockchain explorer for detailed transaction analysis and investigation.</span>
+                            <span class="lang-fr hidden">Explorateur blockchain axé sur l'analyse forensique pour l'analyse détaillée des transactions.</span>
                         </p>
-                        <a href="https://cryptozombies.io" class="resource-link" target="_blank" rel="noopener noreferrer">
-                            <span class="lang-en">Launch Course</span>
-                            <span class="lang-fr hidden">Lancer le cours</span>
+                        <a href="https://xrplorer.com" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Explore</span>
+                            <span class="lang-fr hidden">Explorer</span>
                         </a>
                     </div>
                 </div>
@@ -759,33 +854,90 @@
                 <div class="resource-item">
                     <div class="resource-content">
                         <h3 class="resource-title">
-                            <span class="lang-en">LearnWeb3</span>
-                            <span class="lang-fr hidden">LearnWeb3</span>
+                            <span class="lang-en">Rich-List.Info</span>
+                            <span class="lang-fr hidden">Rich-List.Info</span>
                         </h3>
                         <p class="resource-description">
-                            <span class="lang-en">Free multi-track curriculum covering wallets, DeFi, NFTs, and smart contract security.</span>
-                            <span class="lang-fr hidden">Programme gratuit multi-parcours couvrant portefeuilles, DeFi, NFT et sécurité des contrats intelligents.</span>
+                            <span class="lang-en">View XRP distribution statistics and wallet rankings across the entire XRPL network.</span>
+                            <span class="lang-fr hidden">Consultez les statistiques de distribution XRP et les classements de portefeuilles sur l'ensemble du réseau XRPL.</span>
                         </p>
-                        <a href="https://learnweb3.io" class="resource-link" target="_blank" rel="noopener noreferrer">
-                            <span class="lang-en">View Curriculum</span>
-                            <span class="lang-fr hidden">Voir le curriculum</span>
+                        <a href="https://rich-list.info/" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">View Rankings</span>
+                            <span class="lang-fr hidden">Voir les classements</span>
+                        </a>
+            </div>
+        </div>
+            </div>
+        </details>
+
+
+        <!-- Blockchain Analytics & Market Data -->
+        <details class="resource-category">
+            <summary class="category-summary">
+            <h2 class="category-title">
+                    <i class="ri-bar-chart-2-line"></i>
+                    <span class="lang-en">Market Data</span>
+                    <span class="lang-fr hidden">Données de marché</span>
+            </h2>
+            </summary>
+            <div class="category-content">
+            <p class="category-description">
+                    <span class="lang-en">Market intelligence platforms offering multi-chain analytics, pricing, and research.</span>
+                    <span class="lang-fr hidden">Plateformes d'intelligence de marché offrant analyses multi-chaînes, tarification et recherche.</span>
+            </p>
+            <div class="resource-list">
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">CoinGecko</span>
+                            <span class="lang-fr hidden">CoinGecko</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Comprehensive market data, developer APIs, and on-chain metrics for 12K+ crypto assets.</span>
+                            <span class="lang-fr hidden">Données de marché complètes, API développeur et métriques on-chain pour plus de 12&nbsp;000 actifs crypto.</span>
+                        </p>
+                        <a href="https://www.coingecko.com" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Open Dashboard</span>
+                            <span class="lang-fr hidden">Ouvrir le tableau de bord</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">CoinMarketCap</span>
+                            <span class="lang-fr hidden">CoinMarketCap</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Price tracking, exchange rankings, and research reports with historical datasets.</span>
+                            <span class="lang-fr hidden">Suivi des prix, classements d'exchanges et rapports de recherche avec jeux de données historiques.</span>
+                        </p>
+                        <a href="https://coinmarketcap.com" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Browse Markets</span>
+                            <span class="lang-fr hidden">Parcourir les marchés</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Messari</span>
+                            <span class="lang-fr hidden">Messari</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Institutional-grade research, analyst notes, and curated dashboards for crypto assets.</span>
+                            <span class="lang-fr hidden">Recherche de niveau institutionnel, notes d'analystes et tableaux de bord sélectionnés pour les actifs crypto.</span>
+                        </p>
+                        <a href="https://messari.io" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Explore Research</span>
+                            <span class="lang-fr hidden">Explorer la recherche</span>
                         </a>
                     </div>
                 </div>
             </div>
         </details>
-
-
-        <div class="section-divider">
-            <h2 class="section-heading">
-                <span class="lang-en">Development & Technical</span>
-                <span class="lang-fr hidden">Développement et technique</span>
-            </h2>
-            <p class="section-subtitle">
-                <span class="lang-en">Tools, explorers, and technical resources for builders</span>
-                <span class="lang-fr hidden">Outils, explorateurs et ressources techniques pour les développeurs</span>
-            </p>
-        </div>
 
         <!-- Developer Tools -->
         <details class="resource-category">
@@ -794,6 +946,7 @@
                 <i class="ri-tools-line"></i>
                 <span class="lang-en">Developer Tools</span>
                 <span class="lang-fr hidden">Outils développeur</span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/XRP_Ledger_logo_%282025%29.png/960px-XRP_Ledger_logo_%282025%29.png" alt="XRP Ledger" class="xrpl-logo-inline" />
             </h2>
             </summary>
             <div class="category-content">
@@ -940,98 +1093,13 @@
             </div>
         </details>
 
-        <!-- XRPL Explorers & Analytics -->
-        <details class="resource-category">
-            <summary class="category-summary">
-                <h2 class="category-title">
-                    <i class="ri-search-line"></i>
-                    <span class="lang-en">XRPL Explorers & Analytics</span>
-                    <span class="lang-fr hidden">Explorateurs et analytiques XRPL</span>
-                </h2>
-            </summary>
-            <div class="category-content">
-                <p class="category-description">
-                    <span class="lang-en">Blockchain explorers and analytics tools for XRPL data.</span>
-                    <span class="lang-fr hidden">Explorateurs blockchain et outils d'analytique pour les données XRPL.</span>
-                </p>
-                <div class="resource-list">
-                <div class="resource-item">
-                    <div class="resource-content">
-                        <h3 class="resource-title">
-                            <span class="lang-en">XRPScan</span>
-                            <span class="lang-fr hidden">XRPScan</span>
-                        </h3>
-                        <p class="resource-description">
-                            <span class="lang-en">Comprehensive blockchain explorer with APIs for developers and detailed transaction tracking.</span>
-                            <span class="lang-fr hidden">Explorateur blockchain complet avec APIs pour développeurs et suivi détaillé des transactions.</span>
-                        </p>
-                        <a href="https://xrpscan.com" class="resource-link" target="_blank" rel="noopener noreferrer">
-                            <span class="lang-en">Explore</span>
-                            <span class="lang-fr hidden">Explorer</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="resource-item">
-                    <div class="resource-content">
-                        <h3 class="resource-title">
-                            <span class="lang-en">Bithomp</span>
-                            <span class="lang-fr hidden">Bithomp</span>
-                        </h3>
-                        <p class="resource-description">
-                            <span class="lang-en">User-friendly blockchain explorer with hardware wallet integration and advanced search.</span>
-                            <span class="lang-fr hidden">Explorateur blockchain convivial avec intégration de portefeuilles matériels et recherche avancée.</span>
-                        </p>
-                        <a href="https://bithomp.com" class="resource-link" target="_blank" rel="noopener noreferrer">
-                            <span class="lang-en">Explore</span>
-                            <span class="lang-fr hidden">Explorer</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="resource-item">
-                    <div class="resource-content">
-                        <h3 class="resource-title">
-                            <span class="lang-en">XRPlorer</span>
-                            <span class="lang-fr hidden">XRPlorer</span>
-                        </h3>
-                        <p class="resource-description">
-                            <span class="lang-en">Forensics-focused blockchain explorer for detailed transaction analysis and investigation.</span>
-                            <span class="lang-fr hidden">Explorateur blockchain axé sur l'analyse forensique pour l'analyse détaillée des transactions.</span>
-                        </p>
-                        <a href="https://xrplorer.com" class="resource-link" target="_blank" rel="noopener noreferrer">
-                            <span class="lang-en">Explore</span>
-                            <span class="lang-fr hidden">Explorer</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="resource-item">
-                    <div class="resource-content">
-                        <h3 class="resource-title">
-                            <span class="lang-en">Rich-List.Info</span>
-                            <span class="lang-fr hidden">Rich-List.Info</span>
-                        </h3>
-                        <p class="resource-description">
-                            <span class="lang-en">View XRP distribution statistics and wallet rankings across the entire XRPL network.</span>
-                            <span class="lang-fr hidden">Consultez les statistiques de distribution XRP et les classements de portefeuilles sur l'ensemble du réseau XRPL.</span>
-                        </p>
-                        <a href="https://rich-list.info/" class="resource-link" target="_blank" rel="noopener noreferrer">
-                            <span class="lang-en">View Rankings</span>
-                            <span class="lang-fr hidden">Voir les classements</span>
-                        </a>
-            </div>
-        </div>
-            </div>
-        </details>
-
         <!-- Smart Contracts & Advanced Features -->
         <details class="resource-category">
             <summary class="category-summary">
             <h2 class="category-title">
-                    <i class="ri-contract-line"></i>
-                    <span class="lang-en">Smart Contracts & Advanced Features</span>
-                    <span class="lang-fr hidden">Contrats intelligents et fonctionnalités avancées</span>
+                    <i class="ri-git-branch-line"></i>
+                    <span class="lang-en">Hooks & Sidechains</span>
+                    <span class="lang-fr hidden">Hooks et sidechains</span>
             </h2>
             </summary>
             <div class="category-content">
@@ -1073,75 +1141,7 @@
                         </a>
                     </div>
                 </div>
-                </div>
             </div>
-        </details>
-
-        <!-- Blockchain Analytics & Market Data -->
-        <details class="resource-category">
-            <summary class="category-summary">
-                <h2 class="category-title">
-                    <i class="ri-bar-chart-2-line"></i>
-                    <span class="lang-en">Blockchain Analytics & Market Data</span>
-                    <span class="lang-fr hidden">Analytique blockchain et données de marché</span>
-                </h2>
-            </summary>
-            <div class="category-content">
-                <p class="category-description">
-                    <span class="lang-en">Market intelligence platforms offering multi-chain analytics, pricing, and research.</span>
-                    <span class="lang-fr hidden">Plateformes d'intelligence de marché offrant analyses multi-chaînes, tarification et recherche.</span>
-                </p>
-                <div class="resource-list">
-                <div class="resource-item">
-                    <div class="resource-content">
-                        <h3 class="resource-title">
-                            <span class="lang-en">CoinGecko</span>
-                            <span class="lang-fr hidden">CoinGecko</span>
-                        </h3>
-                        <p class="resource-description">
-                            <span class="lang-en">Comprehensive market data, developer APIs, and on-chain metrics for 12K+ crypto assets.</span>
-                            <span class="lang-fr hidden">Données de marché complètes, API développeur et métriques on-chain pour plus de 12&nbsp;000 actifs crypto.</span>
-                        </p>
-                        <a href="https://www.coingecko.com" class="resource-link" target="_blank" rel="noopener noreferrer">
-                            <span class="lang-en">Open Dashboard</span>
-                            <span class="lang-fr hidden">Ouvrir le tableau de bord</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="resource-item">
-                    <div class="resource-content">
-                        <h3 class="resource-title">
-                            <span class="lang-en">CoinMarketCap</span>
-                            <span class="lang-fr hidden">CoinMarketCap</span>
-                        </h3>
-                        <p class="resource-description">
-                            <span class="lang-en">Price tracking, exchange rankings, and research reports with historical datasets.</span>
-                            <span class="lang-fr hidden">Suivi des prix, classements d'exchanges et rapports de recherche avec jeux de données historiques.</span>
-                        </p>
-                        <a href="https://coinmarketcap.com" class="resource-link" target="_blank" rel="noopener noreferrer">
-                            <span class="lang-en">Browse Markets</span>
-                            <span class="lang-fr hidden">Parcourir les marchés</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="resource-item">
-                    <div class="resource-content">
-                        <h3 class="resource-title">
-                            <span class="lang-en">Messari</span>
-                            <span class="lang-fr hidden">Messari</span>
-                        </h3>
-                        <p class="resource-description">
-                            <span class="lang-en">Institutional-grade research, analyst notes, and curated dashboards for crypto assets.</span>
-                            <span class="lang-fr hidden">Recherche de niveau institutionnel, notes d'analystes et tableaux de bord sélectionnés pour les actifs crypto.</span>
-                        </p>
-                        <a href="https://messari.io" class="resource-link" target="_blank" rel="noopener noreferrer">
-                            <span class="lang-en">Explore Research</span>
-                            <span class="lang-fr hidden">Explorer la recherche</span>
-                        </a>
-                    </div>
-                </div>
             </div>
         </details>
 
@@ -1158,7 +1158,7 @@
         </div>
 
         <!-- XRPL Enterprise Solutions -->
-        <details class="resource-category">
+        <details class="resource-category" open>
             <summary class="category-summary">
                 <h2 class="category-title">
                     <i class="ri-briefcase-line"></i>
@@ -1208,63 +1208,10 @@
             </div>
         </details>
 
-        <!-- Digital Identity & Verification -->
-        <details class="resource-category">
-            <summary class="category-summary">
-                <h2 class="category-title">
-                    <i class="ri-id-card-line"></i>
-                    <span class="lang-en">Digital Identity & Verification</span>
-                    <span class="lang-fr hidden">Identité numérique et vérification</span>
-                </h2>
-            </summary>
-            <div class="category-content">
-                <p class="category-description">
-                    <span class="lang-en">Build trust frameworks with decentralized identifiers and verifiable credentials.</span>
-                    <span class="lang-fr hidden">Construisez des cadres de confiance avec identifiants décentralisés et justificatifs vérifiables.</span>
-                </p>
-                <div class="resource-list">
-                <div class="resource-item">
-                    <div class="resource-content">
-                        <h3 class="resource-title">
-                            <span class="lang-en">SpruceID</span>
-                            <span class="lang-fr hidden">SpruceID</span>
-                        </h3>
-                        <p class="resource-description">
-                            <span class="lang-en">Open infrastructure for decentralized identity, wallets, and credential issuance.</span>
-                            <span class="lang-fr hidden">Infrastructure ouverte pour l'identité décentralisée, les portefeuilles et l'émission de justificatifs.</span>
-                        </p>
-                        <a href="https://spruceid.com/" class="resource-link" target="_blank" rel="noopener noreferrer">
-                            <span class="lang-en">Visit SpruceID</span>
-                            <span class="lang-fr hidden">Visiter SpruceID</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="resource-item">
-                    <div class="resource-content">
-                        <h3 class="resource-title">
-                            <span class="lang-en">SpruceID Knowledge Base</span>
-                            <span class="lang-fr hidden">Base de connaissances SpruceID</span>
-                        </h3>
-                        <p class="resource-description">
-                            <span class="lang-en">Guides covering verifiable credentials, mobile driver's licenses, and integration patterns.</span>
-                            <span class="lang-fr hidden">Guides couvrant justificatifs vérifiables, permis mobiles et modèles d'intégration.</span>
-                        </p>
-                        <a href="https://learn.spruceid.com/" class="resource-link" target="_blank" rel="noopener noreferrer">
-                            <span class="lang-en">Browse Docs</span>
-                            <span class="lang-fr hidden">Parcourir la doc</span>
-                        </a>
-            </div>
-                </div>
-                </div>
-            </div>
-        </details>
-
-
         <div class="section-divider">
             <h2 class="section-heading">
-                <span class="lang-en">Support & Growth</span>
-                <span class="lang-fr hidden">Soutien et croissance</span>
+                <span class="lang-en">The XRPL Ecosystem</span>
+                <span class="lang-fr hidden">L'écosystème XRPL</span>
             </h2>
             <p class="section-subtitle">
                 <span class="lang-en">Funding, community resources, and support networks</span>
@@ -1273,7 +1220,7 @@
         </div>
 
         <!-- XRPL Funding Opportunities -->
-        <details class="resource-category">
+        <details class="resource-category" open>
             <summary class="category-summary">
             <h2 class="category-title">
                 <i class="ri-funds-line"></i>
@@ -1324,7 +1271,7 @@
         </details>
 
         <!-- Community Resources -->
-        <details class="resource-category">
+        <details class="resource-category" open>
             <summary class="category-summary">
             <h2 class="category-title">
                     <i class="ri-community-line"></i>
@@ -1506,7 +1453,7 @@
         </div>
 
         <!-- Advocacy & Policy -->
-        <details class="resource-category">
+        <details class="resource-category" open>
             <summary class="category-summary">
             <h2 class="category-title">
                     <i class="ri-megaphone-line"></i>
@@ -1795,7 +1742,7 @@
         </details>
 
         <!-- Accelerators & Incubators -->
-        <details class="resource-category">
+        <details class="resource-category" open>
             <summary class="category-summary">
             <h2 class="category-title">
                     <i class="ri-seedling-line"></i>
@@ -1897,7 +1844,7 @@
         </details>
 
         <!-- Universities & Programs -->
-        <details class="resource-category">
+        <details class="resource-category" open>
             <summary class="category-summary">
             <h2 class="category-title">
                 <i class="ri-school-line"></i>

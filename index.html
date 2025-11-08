@@ -39,7 +39,7 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-snap-type: y mandatory;
+            scroll-snap-type: y proximity;
         }
 
         body {
@@ -96,7 +96,7 @@
             justify-content: center;
             align-items: center;
             scroll-snap-align: start;
-            scroll-snap-stop: always;
+            scroll-snap-stop: normal;
         }
 
         header::before {
@@ -311,7 +311,7 @@
             flex-direction: column;
             justify-content: flex-start;
             scroll-snap-align: start;
-            scroll-snap-stop: always;
+            scroll-snap-stop: normal;
             position: relative;
             scroll-margin-top: 60px;
         }
@@ -340,6 +340,206 @@
         section#contact {
             padding: 60px 24px;
             padding-top: 110px;
+        }
+
+        section#xrpl-explained {
+            background: linear-gradient(180deg, rgba(26, 26, 36, 0.3) 0%, rgba(10, 10, 15, 0.5) 100%);
+            border-top: 1px solid rgba(255, 23, 68, 0.1);
+            border-bottom: 1px solid rgba(255, 23, 68, 0.1);
+            padding: 80px 24px;
+            padding-top: 110px;
+        }
+
+        .xrpl-explained-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .xrpl-explained-content {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+
+        .xrpl-intro {
+            font-size: 20px;
+            line-height: 1.9;
+            color: var(--text-secondary);
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .xrpl-intro strong {
+            color: var(--primary-red);
+            font-weight: 700;
+        }
+
+        .xrpl-features {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 16px;
+        }
+
+        .xrpl-feature {
+            background: rgba(26, 26, 36, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 28px 20px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center;
+        }
+
+        .xrpl-feature:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 23, 68, 0.3);
+            box-shadow: var(--shadow-lg), 0 0 30px rgba(255, 23, 68, 0.15);
+            background: rgba(26, 26, 36, 0.7);
+        }
+
+        .xrpl-feature-icon {
+            font-size: 48px;
+            color: var(--primary-red);
+            margin-bottom: 16px;
+            filter: drop-shadow(0 4px 8px rgba(255, 23, 68, 0.3));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .xrpl-feature-icon i {
+            line-height: 1;
+        }
+
+        .xrpl-feature h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+            letter-spacing: -0.3px;
+        }
+
+        .xrpl-feature p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        .xrpl-crypto-context,
+        .xrpl-canada-connection,
+        .xrpl-mission {
+            background: rgba(10, 10, 15, 0.4);
+            padding: 36px 32px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .xrpl-crypto-context h3,
+        .xrpl-canada-connection h3,
+        .xrpl-mission h3 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+        }
+
+        .xrpl-crypto-context p,
+        .xrpl-canada-connection p,
+        .xrpl-mission p {
+            font-size: 18px;
+            line-height: 1.85;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .xrpl-crypto-context p:last-child,
+        .xrpl-canada-connection p:last-of-type,
+        .xrpl-mission p:last-child {
+            margin-bottom: 0;
+        }
+
+        .xrpl-crypto-context strong,
+        .xrpl-canada-connection strong,
+        .xrpl-mission strong {
+            color: var(--primary-red);
+            font-weight: 700;
+        }
+
+        .xrpl-canada-list {
+            list-style: none;
+            padding: 0;
+            margin: 24px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .xrpl-canada-list li {
+            font-size: 17px;
+            line-height: 1.75;
+            color: var(--text-secondary);
+            padding-left: 32px;
+            position: relative;
+        }
+
+        .xrpl-canada-list li::before {
+            content: '🍁';
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 20px;
+        }
+
+        .xrpl-cta {
+            text-align: center;
+            margin-top: 16px;
+        }
+
+        @media (max-width: 1024px) {
+            .xrpl-features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            section#xrpl-explained {
+                padding: 60px 20px;
+                padding-top: 100px;
+            }
+
+            .xrpl-intro {
+                font-size: 18px;
+            }
+
+            .xrpl-features {
+                grid-template-columns: 1fr;
+            }
+
+            .xrpl-crypto-context,
+            .xrpl-canada-connection,
+            .xrpl-mission {
+                padding: 28px 24px;
+            }
+
+            .xrpl-crypto-context h3,
+            .xrpl-canada-connection h3,
+            .xrpl-mission h3 {
+                font-size: 22px;
+            }
+
+            .xrpl-crypto-context p,
+            .xrpl-canada-connection p,
+            .xrpl-mission p {
+                font-size: 16px;
+            }
+
+            .xrpl-canada-list li {
+                font-size: 16px;
+            }
         }
 
         section > * {
@@ -1045,8 +1245,8 @@
 
         .resources-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
+            grid-template-columns: 1fr;
+            gap: 28px;
             margin-top: 32px;
         }
 
@@ -1063,18 +1263,39 @@
             flex-direction: column;
         }
 
+        .resource-item.featured {
+            background: linear-gradient(135deg, rgba(255, 23, 68, 0.12) 0%, rgba(245, 48, 108, 0.08) 100%);
+            border: 2px solid rgba(255, 23, 68, 0.3);
+            box-shadow: 0 8px 32px rgba(255, 23, 68, 0.15);
+        }
+
+        .resources-secondary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
         .resource-item:hover {
             background: rgba(26, 26, 36, 0.8);
-            transform: translateY(-8px);
+            transform: translateY(-4px);
             box-shadow: var(--shadow-lg);
-            border-color: rgba(255, 23, 68, 0.3);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .resource-item.featured:hover {
+            border-color: rgba(255, 23, 68, 0.5);
+            box-shadow: 0 12px 40px rgba(255, 23, 68, 0.2);
         }
 
         .resource-image {
             width: 100%;
-            height: 200px;
+            height: 160px;
             overflow: hidden;
             position: relative;
+        }
+
+        .resource-item.featured .resource-image {
+            height: 240px;
         }
 
         .resource-image::before {
@@ -1100,17 +1321,21 @@
         }
 
         .resource-content {
-            padding: 32px;
+            padding: 24px;
             flex: 1;
             display: flex;
             flex-direction: column;
-            border-left: 4px solid var(--primary-red);
+        }
+
+        .resource-item.featured .resource-content {
+            padding: 32px;
         }
 
         .resource-item h4 {
             font-size: 24px;
             font-weight: 700;
             margin-bottom: 14px;
+            color: var(--text-primary);
             color: var(--text-primary);
             letter-spacing: -0.3px;
             line-height: 1.3;
@@ -1355,7 +1580,11 @@
         footer {
             background: linear-gradient(180deg, var(--black-light) 0%, var(--black) 100%);
             border-top: 1px solid rgba(255, 23, 68, 0.2);
-            padding: 72px 20px;
+            padding: 120px 20px;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
             position: relative;
             min-height: auto;
@@ -1556,23 +1785,27 @@
 
     <nav>
         <a href="#about">
-            <span class="lang-en">About Us</span>
+            <span class="lang-en">About</span>
             <span class="lang-fr hidden">À propos</span>
+        </a>
+        <a href="#xrpl-explained">
+            <span class="lang-en">What is XRPL?</span>
+            <span class="lang-fr hidden">Qu'est-ce que XRPL?</span>
         </a>
         <a href="#activities">
             <span class="lang-en">What We Do</span>
             <span class="lang-fr hidden">Activités</span>
         </a>
         <a href="#events">
-            <span class="lang-en">Our Events</span>
+            <span class="lang-en">Events</span>
             <span class="lang-fr hidden">Événements</span>
         </a>
         <a href="resources.html">
-            <span class="lang-en">Our Resources</span>
+            <span class="lang-en">Resources</span>
             <span class="lang-fr hidden">Ressources</span>
         </a>
         <a href="#contact">
-            <span class="lang-en">Contact Us</span>
+            <span class="lang-en">Contact</span>
             <span class="lang-fr hidden">Contact</span>
         </a>
     </nav>
@@ -1677,6 +1910,172 @@
             </div>
         </section>
 
+        <section id="xrpl-explained">
+            <h2>
+                <span class="lang-en">What is the XRP Ledger?</span>
+                <span class="lang-fr hidden">Qu'est-ce que le XRP Ledger?</span>
+            </h2>
+            <div class="xrpl-explained-container">
+                <div class="xrpl-explained-content">
+                    <div class="xrpl-intro">
+                        <p class="lang-en">
+                            The <strong>XRP Ledger (XRPL)</strong> is a decentralized, public blockchain that has been operational since 2012. XRPL is one of the earliest public blockchain networks—battle-tested for over a decade with billions of dollars in value transferred.
+                        </p>
+                        <p class="lang-fr hidden">
+                            Le <strong>XRP Ledger (XRPL)</strong> est une blockchain publique décentralisée opérationnelle depuis 2012. XRPL est l'un des premiers réseaux blockchain publics—éprouvé depuis plus d'une décennie avec des milliards de dollars de valeur transférée.
+                        </p>
+                </div>
+
+                    <div class="xrpl-features">
+                        <div class="xrpl-feature">
+                            <div class="xrpl-feature-icon">
+                                <i class="ri-flashlight-line"></i>
+                            </div>
+                            <h3 class="lang-en">Fast & Scalable</h3>
+                            <h3 class="lang-fr hidden">Rapide & évolutif</h3>
+                            <p class="lang-en">
+                                3-5 second settlement with 1,500+ TPS capacity—built for real-world payments, not speculation.
+                            </p>
+                            <p class="lang-fr hidden">
+                                Règlement en 3 à 5 secondes avec une capacité de 1 500+ TPS—conçu pour les paiements réels, pas la spéculation.
+                            </p>
+                                </div>
+
+                        <div class="xrpl-feature">
+                            <div class="xrpl-feature-icon">
+                                <i class="ri-plant-line"></i>
+                                </div>
+                            <h3 class="lang-en">Sustainable</h3>
+                            <h3 class="lang-fr hidden">Durable</h3>
+                            <p class="lang-en">
+                                No mining required. Uses a fraction of Bitcoin's energy, making it one of the most carbon-efficient blockchains.
+                            </p>
+                            <p class="lang-fr hidden">
+                                Aucun minage requis. Utilise une fraction de l'énergie de Bitcoin, ce qui en fait l'une des blockchains les plus économes en carbone.
+                            </p>
+                            </div>
+
+                        <div class="xrpl-feature">
+                            <div class="xrpl-feature-icon">
+                                <i class="ri-money-dollar-circle-line"></i>
+                        </div>
+                            <h3 class="lang-en">Low Cost</h3>
+                            <h3 class="lang-fr hidden">Faible coût</h3>
+                            <p class="lang-en">
+                                Fees typically under $0.01—practical for micropayments and high-volume applications where Ethereum gas would be prohibitive.
+                            </p>
+                            <p class="lang-fr hidden">
+                                Frais généralement inférieurs à 0,01 $—pratique pour les micropaiements et applications à volume élevé où le gaz Ethereum serait prohibitif.
+                            </p>
+                            </div>
+
+                        <div class="xrpl-feature">
+                            <div class="xrpl-feature-icon">
+                                <i class="ri-global-line"></i>
+                            </div>
+                            <h3 class="lang-en">Built for Finance</h3>
+                            <h3 class="lang-fr hidden">Conçu pour la finance</h3>
+                            <p class="lang-en">
+                                Natively supports multi-currency transactions, DEX trading, escrows, and payment channels—not bolted-on afterthoughts.
+                            </p>
+                            <p class="lang-fr hidden">
+                                Prend en charge nativement les transactions multidevises, le trading DEX, les séquestres et les canaux de paiement—pas des ajouts après coup.
+                            </p>
+                            </div>
+                        </div>
+
+                    <div class="xrpl-crypto-context">
+                        <h3>
+                            <span class="lang-en">Understanding XRPL in the Crypto Landscape</span>
+                            <span class="lang-fr hidden">Comprendre XRPL dans le paysage crypto</span>
+                        </h3>
+                        <p class="lang-en">
+                            Bitcoin (2009) proved digital scarcity. Ethereum (2015) introduced smart contracts. Between these networks, the <strong>XRP Ledger (2012)</strong> launched as a purpose-built payments ledger—fast, efficient, and low-cost.
+                        </p>
+                        <p class="lang-fr hidden">
+                            Bitcoin (2009) a prouvé la rareté numérique. Ethereum (2015) a introduit les contrats intelligents. Entre ces réseaux, le <strong>XRP Ledger (2012)</strong> a été lancé comme un registre de paiements dédié—rapide, efficace et à faible coût.
+                        </p>
+                        <p class="lang-en">
+                            Ripple grew from that engineering effort, making XRPL usable for real financial institutions. The ledger remains <strong>open-source and decentralized</strong>, governed by independent validators worldwide, while Ripple builds partnerships, software, and liquidity solutions for institutional adoption.
+                        </p>
+                        <p class="lang-fr hidden">
+                            Ripple a grandi de cet effort d'ingénierie, rendant XRPL utilisable pour de vraies institutions financières. Le registre reste <strong>open source et décentralisé</strong>, gouverné par des validateurs indépendants dans le monde entier, tandis que Ripple construit des partenariats, des logiciels et des solutions de liquidité pour l'adoption institutionnelle.
+                        </p>
+                        <p class="lang-en">
+                            Today, XRPL processes billions annually—tokenized assets, DEX trading, NFTs, enterprise settlement. In a landscape often defined by speculation, XRPL is lasting infrastructure, with Ripple bridging decentralized tech and institutional adoption.
+                        </p>
+                        <p class="lang-fr hidden">
+                            Aujourd'hui, XRPL traite des milliards par an—actifs tokenisés, trading DEX, NFT, règlement d'entreprise. Dans un paysage souvent défini par la spéculation, XRPL est une infrastructure durable, avec Ripple qui fait le pont entre la technologie décentralisée et l'adoption institutionnelle.
+                        </p>
+                    </div>
+
+                    <div class="xrpl-canada-connection">
+                        <h3>
+                            <span class="lang-en">Why This Matters for Canada</span>
+                            <span class="lang-fr hidden">Pourquoi c'est important pour le Canada</span>
+                        </h3>
+                        <p class="lang-en">
+                            Canada is uniquely positioned to lead:
+                        </p>
+                        <p class="lang-fr hidden">
+                            Le Canada est particulièrement bien placé pour être un leader:
+                        </p>
+                        <ul class="xrpl-canada-list">
+                            <li class="lang-en">
+                                <strong>Progressive regulation</strong>—first G7 nation to approve Bitcoin ETFs with clear crypto taxation
+                            </li>
+                            <li class="lang-en">
+                                <strong>Thriving fintech</strong>—institutions exploring stablecoins, CBDCs, and blockchain settlement
+                            </li>
+                            <li class="lang-en">
+                                <strong>World-class universities</strong>—producing blockchain researchers and developers
+                            </li>
+                            <li class="lang-en">
+                                <strong>Global connections</strong>—cross-border payments are everyday reality for millions
+                            </li>
+                            <li class="lang-fr hidden">
+                                <strong>Réglementation progressive</strong>—première nation du G7 à approuver les ETF Bitcoin avec taxation claire
+                            </li>
+                            <li class="lang-fr hidden">
+                                <strong>Fintech florissant</strong>—institutions explorant stablecoins, CBDC et règlement blockchain
+                            </li>
+                            <li class="lang-fr hidden">
+                                <strong>Universités de classe mondiale</strong>—produisant chercheurs et développeurs blockchain
+                            </li>
+                            <li class="lang-fr hidden">
+                                <strong>Connexions mondiales</strong>—paiements transfrontaliers sont une réalité quotidienne pour des millions
+                            </li>
+                        </ul>
+                        <p class="lang-en">
+                            Yet XRPL adoption here remains fragmented—developers, institutions, and entrepreneurs working in silos.
+                        </p>
+                        <p class="lang-fr hidden">
+                            Pourtant, l'adoption de XRPL ici reste fragmentée—développeurs, institutions et entrepreneurs travaillant en silos.
+                        </p>
+                        <p class="lang-en">
+                            <strong>XRPL Canada exists to connect the dots.</strong> We're building the hub—resources, communities, connections, events—to realize the Internet of Value where money moves as freely as information.
+                        </p>
+                        <p class="lang-fr hidden">
+                            <strong>XRPL Canada existe pour connecter les points.</strong> Nous construisons le hub—ressources, communautés, connexions, événements—pour réaliser l'Internet de la valeur où l'argent se déplace aussi librement que l'information.
+                        </p>
+                        <p class="lang-en">
+                            Whether you're a student, a startup, or a developer—<strong>this is your starting point.</strong>
+                        </p>
+                        <p class="lang-fr hidden">
+                            Que vous soyez étudiant, startup ou développeur—<strong>c'est votre point de départ.</strong>
+                        </p>
+                    </div>
+
+                    <div class="xrpl-cta">
+                        <a href="resources.html" class="cta-button">
+                            <span class="lang-en">Explore XRPL Resources</span>
+                            <span class="lang-fr hidden">Explorer les ressources XRPL</span>
+                        </a>
+                            </div>
+                            </div>
+                        </div>
+        </section>
+
         <section id="events">
             <h2>
                 <span class="lang-en">Upcoming Events</span>
@@ -1692,9 +2091,9 @@
                         <button class="calendar-nav-btn" onclick="changeMonth(1)">
                             <i class="ri-arrow-right-s-line"></i>
                         </button>
-                    </div>
+                        </div>
                     <div class="calendar-grid" id="calendarGrid"></div>
-                </div>
+                    </div>
 
                 <div class="events-list" id="eventsList">
                     <div class="event-card">
@@ -1809,6 +2208,27 @@
                 <span class="lang-fr hidden">Ressources éducatives</span>
             </h2>
             <div class="resources-grid">
+                <!-- Featured: XRPL Resources -->
+                <div class="resource-item featured">
+                    <div class="resource-image">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop" alt="XRPL Resources">
+                    </div>
+                    <div class="resource-content">
+                        <h4>
+                            <span class="lang-en">XRPL Resources</span>
+                            <span class="lang-fr hidden">Ressources XRPL</span>
+                        </h4>
+                        <p class="lang-en">Comprehensive collection of XRPL tools, wallets, developers resources, Canadian ecosystem partners, and community guides.</p>
+                        <p class="lang-fr hidden">Collection complète d'outils XRPL, portefeuilles, ressources pour développeurs, partenaires de l'écosystème canadien et guides communautaires.</p>
+                        <a href="resources.html" class="resource-link">
+                            <span class="lang-en">Explore All Resources →</span>
+                            <span class="lang-fr hidden">Explorer toutes les ressources →</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Secondary Resources -->
+                <div class="resources-secondary">
                 <div class="resource-item">
                     <div class="resource-image">
                         <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop" alt="Getting Started">
@@ -1818,8 +2238,8 @@
                             <span class="lang-en">Getting Started</span>
                             <span class="lang-fr hidden">Premiers pas</span>
                         </h4>
-                        <p class="lang-en">New to XRPL? Start here with beginner-friendly guides and tutorials.</p>
-                        <p class="lang-fr hidden">Nouveau sur XRPL? Commencez ici avec des guides et tutoriels pour débutants.</p>
+                            <p class="lang-en">New to XRPL? Start with beginner-friendly guides.</p>
+                            <p class="lang-fr hidden">Nouveau sur XRPL? Commencez avec des guides pour débutants.</p>
                         <a href="https://xrpl.org/docs/introduction/what-is-the-xrp-ledger" class="resource-link" target="_blank">
                             <span class="lang-en">Learn More</span>
                             <span class="lang-fr hidden">En savoir plus</span>
@@ -1833,11 +2253,11 @@
                     </div>
                     <div class="resource-content">
                         <h4>
-                            <span class="lang-en">Developer Documentation</span>
+                                <span class="lang-en">Developer Docs</span>
                             <span class="lang-fr hidden">Documentation développeur</span>
                         </h4>
-                        <p class="lang-en">Complete technical documentation for building on the XRP Ledger.</p>
-                        <p class="lang-fr hidden">Documentation technique complète pour construire sur le XRP Ledger.</p>
+                            <p class="lang-en">Technical documentation for building on XRPL.</p>
+                            <p class="lang-fr hidden">Documentation technique pour construire sur XRPL.</p>
                         <a href="https://xrpl.org" class="resource-link" target="_blank">
                             <span class="lang-en">View Docs</span>
                             <span class="lang-fr hidden">Voir docs</span>
@@ -1851,34 +2271,17 @@
                     </div>
                     <div class="resource-content">
                         <h4>
-                            <span class="lang-en">Community Forum</span>
-                            <span class="lang-fr hidden">Forum communautaire</span>
+                                <span class="lang-en">Community</span>
+                                <span class="lang-fr hidden">Communauté</span>
                         </h4>
-                        <p class="lang-en">Join discussions, ask questions, and connect with other XRPL builders.</p>
-                        <p class="lang-fr hidden">Rejoignez les discussions, posez des questions et connectez-vous avec d'autres constructeurs XRPL.</p>
+                            <p class="lang-en">Connect with other XRPL builders and enthusiasts.</p>
+                            <p class="lang-fr hidden">Connectez-vous avec d'autres constructeurs XRPL.</p>
                         <a href="#contact" class="resource-link">
                             <span class="lang-en">Join Discord</span>
                             <span class="lang-fr hidden">Rejoindre Discord</span>
                         </a>
                     </div>
                 </div>
-
-                <div class="resource-item">
-                    <div class="resource-image">
-                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop" alt="XRPL Resources">
-                    </div>
-                    <div class="resource-content">
-                        <h4>
-                            <span class="lang-en">XRPL Resources</span>
-                            <span class="lang-fr hidden">Ressources XRPL</span>
-                        </h4>
-                        <p class="lang-en">Curated collection of tools, guides, and community resources for the XRPL ecosystem.</p>
-                        <p class="lang-fr hidden">Collection organisée d'outils, guides et ressources communautaires pour l'écosystème XRPL.</p>
-                        <a href="resources.html" class="resource-link">
-                            <span class="lang-en">Explore</span>
-                            <span class="lang-fr hidden">Explorer</span>
-                        </a>
-                    </div>
                 </div>
             </div>
         </section>

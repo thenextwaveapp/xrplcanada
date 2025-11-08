@@ -1,0 +1,144 @@
+🎯 XRPL FUNDING OPPORTUNITIES
+XRPL Grants & Programs
+https://xrplgrants.org/ - $10K-$200K grants for XRPL development, rolling applications
+https://www.tenity.com/programs/xrpl-accelerator-2025 - 12-week accelerator with up to $200K
+
+📚 XRPL LEARNING RESOURCES
+Official Documentation
+https://xrpl.org/ - Main XRPL website and ecosystem overview
+https://xrpl.org/docs - Complete technical documentation and API references
+https://learn.xrpl.org/ - Interactive tutorials for beginners
+https://docs.xrpl-commons.org - XRPL Commons training and guides
+https://xrpl.org/about/uses - Real-world use cases and applications
+
+🛠️ XRPL DEVELOPER TOOLS
+Client Libraries
+https://js.xrpl.org/ - JavaScript/TypeScript library (xrpl.js)
+https://xrpl-py.readthedocs.io/ - Python library for XRPL
+https://github.com/XRPLF/xrpl-go - Go library for XRPL
+https://github.com/XRPLF/xrpl4j - Java library for XRPL
+Code Repositories
+https://github.com/XRPLF - XRPL Foundation official repositories
+https://github.com/XRPLF/xrpl-dev-portal - Developer portal source code
+
+💼 XRPL WALLETS
+https://xaman.app/ - Xaman wallet (formerly XUMM), 5M+ users, self-custody
+https://crossmark.io/ - Browser extension wallet with cross-chain support
+https://xrpltools.pro - Token holder tracking, snapshots, and airdrop distribution
+
+🔍 XRPL EXPLORERS & ANALYTICS
+https://xrpscan.com - Comprehensive blockchain explorer with APIs
+https://bithomp.com - User-friendly explorer with hardware wallet integration
+https://xrplorer.com - Forensics-focused blockchain explorer
+
+🔗 XRPL SMART CONTRACTS & ADVANCED FEATURES
+https://xrplevm.org/ - XRPL EVM Sidechain for Ethereum-compatible smart contracts
+https://xahau.network/ - Hooks smart contracts network (WebAssembly-based)
+
+👥 XRPL COMMUNITY
+https://discord.com/invite/xrpl - Official XRPL Discord community
+https://xrpldevs.com - XRPL Developers Discord
+https://www.xrpl-commons.org - Community programs and educational initiatives
+
+🏢 XRPL ENTERPRISE SOLUTIONS
+https://ripple.com/ - Ripple main website
+https://ripple.com/solutions/cross-border-payments/ - RippleNet payment solutions for financial institutions
+
+Canadian Tax Resources
+https://koinly.io - Crypto tax software with Canadian CRA reporting
+https://www.cointracker.io - Tax reporting for Canadian crypto investors
+https://www.cpacanada.ca - CPA Canada crypto tax guidance
+https://www.canada.ca/en/revenue-agency - CRA (Canada Revenue Agency) official guidance
+
+🍁 CANADIAN CRYPTO ECOSYSTEM
+Advocacy & Policy Organizations
+https://standwithcrypto.org/ca - Stand With Crypto Canada (grassroots advocacy launched 2024)
+https://web3canada.ca - Canadian Web3 Council (non-profit trade association)
+https://www.mybtccanada.ca/  - Canadian Bitcoin Consortium (previously Canadian Blockchain Consortium)
+Government & Regulatory Bodies
+https://www.securities-administrators.ca - Canadian Securities Administrators (CSA)
+https://fintrac-canafe.canada.ca - FINTRAC (AML/CTF compliance requirements)
+https://www.bankofcanada.ca - Bank of Canada (CBDC research)
+https://ised-isde.canada.ca - Innovation, Science and Economic Development Canada
+Canadian Funding & Grants
+https://nrc.canada.ca/en/support-technology-innovation/about-nrc-irap - NRC IRAP (innovation grants for blockchain companies)
+https://www.bdc.ca - Business Development Bank of Canada (venture capital & loans)
+https://www.edc.ca - Export Development Canada
+Provincial funding:
+https://investontario.com - Invest Ontario
+https://innovatebc.ca - Innovate BC
+https://www.investquebec.com - Invest Quebec
+https://albertainnovates.ca - Alberta Innovates
+Canadian Accelerators & Incubators
+https://creativedestructionlab.com - Creative Destruction Lab (U of T, blockchain stream)
+https://marsdd.com - MaRS Discovery District (Toronto)
+https://www.communitech.ca - Communitech (Kitchener-Waterloo)
+https://www.torontomu.ca/dmz/ - DMZ at Toronto Metropolitan University
+https://www.highlinebeta.com - Highline Beta venture studio
+Canadian Crypto Exchanges (Regulated)
+https://www.wealthsimple.com/crypto - Wealthsimple Crypto (CSA registered, 100+ cryptocurrencies)
+https://bitbuy.ca - Bitbuy (first regulated marketplace in Canada)
+https://ndax.io - NDAX (Calgary-based, CSA registered)
+https://www.newton.co - Newton (Toronto-based, zero-fee structure)
+https://www.coinbase.com/en-ca - Coinbase Canada (registered April 2024)
+https://www.coinsquare.com - Coinsquare (Toronto-based, CSA registered)
+https://shakepay.com - Shakepay (Montreal-based, CSA registered)
+Canadian Universities with Blockchain Programs - Specific Links
+University of Toronto
+https://creativedestructionlab.com/streams/blockchain/ - Creative Destruction Lab (CDL) Blockchain Stream
+University of Waterloo
+https://uwaterloo.ca/blockchain-research/ - Blockchain Research Centre (home page)
+https://www.uwblockchain.ca/ - Waterloo Blockchain student club
+McGill University
+https://www.mcgill.ca/desautels/initiatives-institutes/aaai/defi-discussions - DeFi Discussions seminar series (Analytics, Advanced Digital Technologies and AI Initiative)
+http://blockchainmcgill.com/ - Blockchain at McGill student organization
+University of British Columbia (UBC)
+https://blockchain.ubc.ca/ - Blockchain@UBC research cluster (main page)
+York University
+https://continue.yorku.ca/programs/post-graduate-certificate-in-back-end-and-blockchain-development/ - Post-Graduate Certificate in Back-End and Blockchain Development
+https://lassonde.yorku.ca/theblockchainhub/ - The Blockchain Hub at Lassonde
+Concordia University
+https://www.concordia.ca/ginacody/research/security-research-centre/expertise/blockchain.html - Blockchain Technologies at Security Research Centre
+University of Calgary
+Executive/Professional Programs
+https://haskayne.ucalgary.ca/blockchain - Blockchain Executive Education Program (blended learning, non-technical for business leaders)
+Research & Academic Programs
+https://haskayne.ucalgary.ca/decentralized-finance-laboratory - DeFi Laboratory at Haskayne School of Business
+Student Organizations
+https://www.ucalgaryblockchainsociety.com/ - UCalgary Blockchain Society (UBS/UCBS)
+https://ca.linkedin.com/company/ucalgary-blockchain-society - UCalgary Blockchain Society LinkedIn (600+ members)
+Additional Resources
+https://creativedestructionlab.com/locations/rockies/ - Creative Destruction Lab - Rockies (includes University of Calgary as location partner)
+Canadian Legal Firms (Crypto Practice)
+https://www.osler.com - Osler (major crypto practice)
+https://www.bennettjones.com - Bennett Jones (digital assets legal team)
+https://www.stikeman.com - Stikeman Elliott (fintech lawyers)
+https://www.dlapiper.com/en-ca - DLA Piper Canada (blockchain practice)
+https://mcmillan.ca - McMillan LLP (digital assets expertise)
+Canadian Crypto Companies
+https://www.dapperlabs.com - Dapper Labs (CryptoKitties, NBA Top Shot, Flow blockchain)
+https://chainsafe.io - ChainSafe Systems (blockchain infrastructure)
+https://figment.io - Figment (staking infrastructure provider)
+https://www.wonderfi.com - WonderFi (digital asset platform)
+https://ledn.io - Ledn (crypto lending platform)
+https://aquanow.io - Aquanow (institutional digital asset platform)
+https://www.balance.ca/ - Balance (digital asset custodian)
+Canadian Events & Conferences
+https://futuristconference.com - Blockchain Futurist Conference (Toronto, annual)
+https://fintac.ca - FINTAC (Toronto fintech conference)
+https://collision.com - Collision Conference (Toronto tech conference)
+
+📊 BLOCKCHAIN ANALYTICS & DATA
+https://www.coingecko.com - Crypto market data and APIs
+https://coinmarketcap.com - Price tracking and market analytics
+https://messari.io - Crypto research and institutional-grade data
+
+
+🆔 DIGITAL IDENTITY & VERIFICATION
+https://spruceid.com/ - Decentralized digital identity infrastructure (mobile driver's licenses, verifiable credentials)
+https://learn.spruceid.com/ - SpruceID knowledge base and documentation
+🚀 GENERAL BLOCKCHAIN LEARNING
+https://www.easya.io/ - web3 education and hackathons
+https://ethereum.org - Ethereum education (blockchain concepts apply broadly)
+https://cryptozombies.io - Learn Solidity and smart contract development
+https://learnweb3.io - Free comprehensive blockchain courses

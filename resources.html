@@ -1,0 +1,2717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XRPL Resources | XRPL Canada</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #FF1744;
+            --primary-red-dark: #C51162;
+            --primary-red-light: #FF5252;
+            --accent-blue: #00B8D4;
+            --black: #0A0A0F;
+            --black-light: #12121A;
+            --gray: #1A1A24;
+            --gray-light: #252532;
+            --gray-lighter: #2E2E3D;
+            --white: #FFFFFF;
+            --text-primary: #E8E8F0;
+            --text-secondary: #A0A0B8;
+            --text-tertiary: #6B6B85;
+            --gradient-primary: linear-gradient(135deg, #FF1744 0%, #C51162 50%, #880E4F 100%);
+            --gradient-accent: linear-gradient(135deg, #00B8D4 0%, #0097A7 100%);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.4);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--black);
+            background-image:
+                radial-gradient(at 20% 30%, rgba(255, 23, 68, 0.08) 0px, transparent 50%),
+                radial-gradient(at 80% 70%, rgba(0, 184, 212, 0.08) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .lang-toggle {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            z-index: 1000;
+            background: rgba(26, 26, 36, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 23, 68, 0.3);
+            border-radius: 12px;
+            padding: 10px 24px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-primary);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow-md);
+            letter-spacing: 0.3px;
+        }
+
+        .lang-toggle:hover {
+            background: rgba(255, 23, 68, 0.15);
+            border-color: var(--primary-red);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg), 0 0 20px rgba(255, 23, 68, 0.2);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        nav {
+            background: rgba(26, 26, 36, 0.7);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            padding: 22px 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        nav a {
+            color: var(--text-primary);
+            text-decoration: none;
+            margin: 0 30px;
+            font-weight: 500;
+            font-size: 16px;
+            letter-spacing: 0.3px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-block;
+            position: relative;
+            padding: 10px 0;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: 100%;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        nav a:hover {
+            color: var(--primary-red);
+        }
+
+        nav a:hover::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 64px 20px 80px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .page-title {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+
+        .page-description {
+            font-size: 20px;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .section-divider {
+            margin: 56px 0 32px;
+            padding: 0 0 24px;
+            border-bottom: 2px solid rgba(255, 23, 68, 0.15);
+            position: relative;
+        }
+
+        .section-divider::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 120px;
+            height: 2px;
+            background: var(--gradient-primary);
+        }
+
+        .section-heading {
+            font-size: 32px;
+            font-weight: 800;
+            margin: 0 0 12px;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.8px;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 16px;
+            color: var(--text-tertiary);
+            margin: 0;
+            letter-spacing: 0.3px;
+            line-height: 1.6;
+        }
+
+        .section-divider:first-of-type {
+            margin-top: 0;
+        }
+
+        details.resource-category {
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            background: rgba(26, 26, 36, 0.35);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        details.resource-category[open] {
+            background: rgba(26, 26, 36, 0.65);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(255, 255, 255, 0.14);
+        }
+
+        .category-summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            position: relative;
+        }
+
+        .category-summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .category-summary::after {
+            content: '\25BC';
+            font-size: 14px;
+            color: var(--text-secondary);
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .resource-category[open] .category-summary::after {
+            transform: rotate(180deg);
+            color: var(--primary-red);
+        }
+
+        .category-summary:focus-visible {
+            outline: 2px solid var(--primary-red);
+            outline-offset: 3px;
+        }
+
+        .category-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .category-title::after {
+            display: none;
+        }
+
+        .category-title i {
+            color: var(--primary-red);
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+
+        .xrpl-logo-inline {
+            height: 24px;
+            width: auto;
+            margin-left: 12px;
+            flex-shrink: 0;
+            filter: invert(1) brightness(1.1);
+        }
+
+        .category-content {
+            padding: 0 20px 24px;
+        }
+
+        .category-description {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin: 0 0 20px;
+            line-height: 1.6;
+        }
+
+        .resource-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px 28px;
+        }
+
+        .resource-item {
+            background: none;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            position: relative;
+        }
+
+        .resource-item::before {
+            content: '';
+            display: block;
+            width: 36px;
+            height: 2px;
+            background: var(--gradient-primary);
+            opacity: 0.8;
+            border-radius: 1px;
+            margin-bottom: 8px;
+        }
+
+        .resource-item:hover {
+            transform: none;
+        }
+
+        .resource-icon {
+            display: none;
+        }
+
+        .resource-content {
+            flex: 1;
+        }
+
+        .resource-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0 0 6px;
+            letter-spacing: -0.2px;
+            line-height: 1.3;
+        }
+
+        .resource-description {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin: 0 0 8px;
+        }
+
+        .resource-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--primary-red);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .resource-link::after {
+            content: '↗';
+            font-size: 11px;
+            transition: transform 0.3s ease;
+        }
+
+        .resource-link:hover {
+            color: var(--primary-red-light);
+        }
+
+        .resource-link:hover::after {
+            transform: translateX(3px);
+        }
+
+        footer {
+            background: linear-gradient(180deg, var(--black-light) 0%, var(--black) 100%);
+            border-top: 1px solid rgba(255, 23, 68, 0.2);
+            padding: 72px 20px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary-red), transparent);
+            opacity: 0.5;
+        }
+
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 36px;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 24px;
+            letter-spacing: -0.6px;
+        }
+
+        .footer-text {
+            color: var(--text-tertiary);
+            font-size: 16px;
+            letter-spacing: 0.3px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 38px;
+            }
+
+            .category-title {
+                font-size: 28px;
+            }
+
+            .resource-list {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            nav a {
+                display: block;
+                margin: 12px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="lang-toggle" onclick="toggleLanguage()">
+        <span class="lang-en">Français</span>
+        <span class="lang-fr hidden">English</span>
+    </button>
+
+    <nav>
+        <a href="index.html">
+            <span class="lang-en">Home</span>
+            <span class="lang-fr hidden">Accueil</span>
+        </a>
+        <a href="index.html#about">
+            <span class="lang-en">About Us</span>
+            <span class="lang-fr hidden">À propos</span>
+        </a>
+        <a href="index.html#activities">
+            <span class="lang-en">What We Do</span>
+            <span class="lang-fr hidden">Activités</span>
+        </a>
+        <a href="index.html#events">
+            <span class="lang-en">Our Events</span>
+            <span class="lang-fr hidden">Événements</span>
+        </a>
+        <a href="resources.html">
+            <span class="lang-en">Our Resources</span>
+            <span class="lang-fr hidden">Ressources</span>
+        </a>
+        <a href="index.html#contact">
+            <span class="lang-en">Contact Us</span>
+            <span class="lang-fr hidden">Contact</span>
+        </a>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1 class="page-title">
+                <span class="lang-en">XRPL Resources</span>
+                <span class="lang-fr hidden">Ressources XRPL</span>
+            </h1>
+            <p class="page-description">
+                <span class="lang-en">
+                    A curated collection of tools, documentation, and resources to help you build, learn, and grow in the XRP Ledger ecosystem.
+                </span>
+                <span class="lang-fr hidden">
+                    Une collection organisée d'outils, de documentation et de ressources pour vous aider à construire, apprendre et grandir dans l'écosystème XRP Ledger.
+                </span>
+            </p>
+        </div>
+
+
+        <div class="section-divider">
+            <h2 class="section-heading">
+                <span class="lang-en">Foundation</span>
+                <span class="lang-fr hidden">Fondation</span>
+            </h2>
+            <p class="section-subtitle">
+                <span class="lang-en">Start here with official documentation, wallets, and learning resources</span>
+                <span class="lang-fr hidden">Commencez ici avec la documentation officielle, les portefeuilles et les ressources d'apprentissage</span>
+            </p>
+        </div>
+
+        <!-- Official Documentation -->
+        <details class="resource-category">
+            <summary class="category-summary">
+            <h2 class="category-title">
+                <i class="ri-book-open-line"></i>
+                <span class="lang-en">Official Documentation</span>
+                <span class="lang-fr hidden">Documentation officielle</span>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/XRP_Ledger_logo_%282025%29.png/960px-XRP_Ledger_logo_%282025%29.png" alt="XRP Ledger" class="xrpl-logo-inline" />
+            </h2>
+            </summary>
+            <div class="category-content">
+            <p class="category-description">
+                    <span class="lang-en">Essential reading from the XRP Ledger Foundation and trusted ecosystem partners.</span>
+                    <span class="lang-fr hidden">Lectures essentielles de la XRP Ledger Foundation et des partenaires de confiance de l'écosystème.</span>
+            </p>
+            <div class="resource-list">
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">XRPL Overview</span>
+                            <span class="lang-fr hidden">Vue d'ensemble de XRPL</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Main XRPL site with governance updates, ecosystem summaries, and onboarding resources.</span>
+                            <span class="lang-fr hidden">Site principal XRPL avec mises à jour de gouvernance, résumés de l'écosystème et ressources d'intégration.</span>
+                        </p>
+                        <a href="https://xrpl.org/" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Visit Site</span>
+                            <span class="lang-fr hidden">Visiter le site</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">What is the XRP Ledger?</span>
+                            <span class="lang-fr hidden">Qu'est-ce que le XRP Ledger&nbsp;?</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Start here to understand the fundamentals of XRPL architecture, consensus, and native features.</span>
+                            <span class="lang-fr hidden">Commencez ici pour comprendre les fondamentaux de l'architecture XRPL, du consensus et des fonctionnalités natives.</span>
+                        </p>
+                        <a href="https://xrpl.org/docs/introduction/what-is-the-xrp-ledger" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Read Guide</span>
+                            <span class="lang-fr hidden">Lire le guide</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">XRPL Developer Documentation</span>
+                            <span class="lang-fr hidden">Documentation développeur XRPL</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Complete API references, tutorials, ledger concepts, and production implementation guidance.</span>
+                            <span class="lang-fr hidden">Références API complètes, tutoriels, concepts du ledger et conseils d'implémentation en production.</span>
+                        </p>
+                        <a href="https://xrpl.org/docs" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Open Docs</span>
+                            <span class="lang-fr hidden">Ouvrir la doc</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">XRPL Learning Portal</span>
+                            <span class="lang-fr hidden">Portail d'apprentissage XRPL</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Interactive pathways, quizzes, and hands-on exercises for builders at every level.</span>
+                            <span class="lang-fr hidden">Parcours interactifs, questionnaires et exercices pratiques pour les bâtisseurs de tous niveaux.</span>
+                        </p>
+                        <a href="https://learn.xrpl.org/" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Start Learning</span>
+                            <span class="lang-fr hidden">Commencer</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">XRPL Commons Knowledge Base</span>
+                            <span class="lang-fr hidden">Base de connaissances XRPL Commons</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Volunteer-led training guides, curricula, and community programs tailored for XRPL.</span>
+                            <span class="lang-fr hidden">Guides de formation, programmes et cursus animés par des bénévoles et adaptés à XRPL.</span>
+                        </p>
+                        <a href="https://docs.xrpl-commons.org" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Browse Library</span>
+                            <span class="lang-fr hidden">Explorer la bibliothèque</span>
+                        </a>
+            </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">XRPL Use Cases</span>
+                            <span class="lang-fr hidden">Cas d'usage XRPL</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Real-world adoption stories spanning payments, tokenization, sustainability, and financial inclusion.</span>
+                            <span class="lang-fr hidden">Histoires d'adoption réelles couvrant paiements, tokenisation, durabilité et inclusion financière.</span>
+                        </p>
+                        <a href="https://xrpl.org/about/uses" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Explore Use Cases</span>
+                            <span class="lang-fr hidden">Explorer les cas d'usage</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </details>
+
+        <!-- XRPL Wallets -->
+        <details class="resource-category">
+            <summary class="category-summary">
+                <h2 class="category-title">
+                    <i class="ri-wallet-line"></i>
+                    <span class="lang-en">XRPL Wallets</span>
+                    <span class="lang-fr hidden">Portefeuilles XRPL</span>
+                </h2>
+            </summary>
+            <div class="category-content">
+                <p class="category-description">
+                    <span class="lang-en">Secure wallets for managing your XRP and XRPL assets.</span>
+                    <span class="lang-fr hidden">Portefeuilles sécurisés pour gérer vos XRP et actifs XRPL.</span>
+                </p>
+                <div class="resource-list">
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Xaman Wallet</span>
+                            <span class="lang-fr hidden">Portefeuille Xaman</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Self-custody mobile wallet (formerly XUMM) with 5M+ users. Sign transactions and manage your XRPL assets securely.</span>
+                            <span class="lang-fr hidden">Portefeuille mobile auto-géré (anciennement XUMM) avec 5M+ utilisateurs. Signez des transactions et gérez vos actifs XRPL en toute sécurité.</span>
+                        </p>
+                        <a href="https://xaman.app/" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Get Wallet</span>
+                            <span class="lang-fr hidden">Obtenir</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Crossmark Wallet</span>
+                            <span class="lang-fr hidden">Portefeuille Crossmark</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Browser extension wallet with cross-chain support for seamless dApp interactions.</span>
+                            <span class="lang-fr hidden">Extension de navigateur avec support multi-chaînes pour des interactions dApp fluides.</span>
+                        </p>
+                        <a href="https://crossmark.io/" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Get Extension</span>
+                            <span class="lang-fr hidden">Obtenir</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">XRPL Tools</span>
+                            <span class="lang-fr hidden">XRPL Tools</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Token holder tracking, snapshots, and airdrop distribution tools for XRPL projects.</span>
+                            <span class="lang-fr hidden">Suivi des détenteurs de tokens, snapshots et outils de distribution d'airdrops pour projets XRPL.</span>
+                        </p>
+                        <a href="https://xrpltools.pro" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Visit Tools</span>
+                            <span class="lang-fr hidden">Visiter</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- General Blockchain Learning -->
+        <details class="resource-category">
+            <summary class="category-summary">
+                <h2 class="category-title">
+                    <i class="ri-graduation-cap-line"></i>
+                    <span class="lang-en">General Blockchain Learning</span>
+                    <span class="lang-fr hidden">Apprentissage général blockchain</span>
+                </h2>
+            </summary>
+            <div class="category-content">
+                <p class="category-description">
+                    <span class="lang-en">Broader education platforms to complement your XRPL knowledge.</span>
+                    <span class="lang-fr hidden">Plateformes éducatives générales pour compléter vos connaissances XRPL.</span>
+                </p>
+                <div class="resource-list">
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Easya</span>
+                            <span class="lang-fr hidden">Easya</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Web3 education platform delivering hackathons, bootcamps, and credentialed coursework.</span>
+                            <span class="lang-fr hidden">Plateforme d'éducation web3 proposant hackathons, bootcamps et cours certifiants.</span>
+                        </p>
+                        <a href="https://www.easya.io/" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Explore Programs</span>
+                            <span class="lang-fr hidden">Explorer les programmes</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Ethereum.org Learn</span>
+                            <span class="lang-fr hidden">Ethereum.org – Apprendre</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Fundamentals of blockchain, smart contracts, and security best practices for builders.</span>
+                            <span class="lang-fr hidden">Fondamentaux de la blockchain, des contrats intelligents et des meilleures pratiques de sécurité pour les bâtisseurs.</span>
+                        </p>
+                        <a href="https://ethereum.org/en/learn/" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Start Learning</span>
+                            <span class="lang-fr hidden">Commencer</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">CryptoZombies</span>
+                            <span class="lang-fr hidden">CryptoZombies</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Gamified Solidity tutorials that teach smart contract basics through hands-on projects.</span>
+                            <span class="lang-fr hidden">Tutoriels Solidity ludiques qui enseignent les bases des contrats intelligents via des projets pratiques.</span>
+                        </p>
+                        <a href="https://cryptozombies.io" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Launch Course</span>
+                            <span class="lang-fr hidden">Lancer le cours</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">LearnWeb3</span>
+                            <span class="lang-fr hidden">LearnWeb3</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Free multi-track curriculum covering wallets, DeFi, NFTs, and smart contract security.</span>
+                            <span class="lang-fr hidden">Programme gratuit multi-parcours couvrant portefeuilles, DeFi, NFT et sécurité des contrats intelligents.</span>
+                        </p>
+                        <a href="https://learnweb3.io" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">View Curriculum</span>
+                            <span class="lang-fr hidden">Voir le curriculum</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+
+        <div class="section-divider">
+            <h2 class="section-heading">
+                <span class="lang-en">Development & Technical</span>
+                <span class="lang-fr hidden">Développement et technique</span>
+            </h2>
+            <p class="section-subtitle">
+                <span class="lang-en">Tools, explorers, and technical resources for builders</span>
+                <span class="lang-fr hidden">Outils, explorateurs et ressources techniques pour les développeurs</span>
+            </p>
+        </div>
+
+        <!-- Developer Tools -->
+        <details class="resource-category">
+            <summary class="category-summary">
+            <h2 class="category-title">
+                <i class="ri-tools-line"></i>
+                <span class="lang-en">Developer Tools</span>
+                <span class="lang-fr hidden">Outils développeur</span>
+            </h2>
+            </summary>
+            <div class="category-content">
+            <p class="category-description">
+                    <span class="lang-en">Libraries, SDKs, and utilities to accelerate your XRPL development workflow.</span>
+                    <span class="lang-fr hidden">Bibliothèques, SDK et utilitaires pour accélérer votre flux de travail de développement XRPL.</span>
+            </p>
+            <div class="resource-list">
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">xrpl.js – JavaScript SDK</span>
+                            <span class="lang-fr hidden">xrpl.js – SDK JavaScript</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Official TypeScript/JavaScript client with WebSocket connectivity, transaction helpers, and TypeDoc coverage.</span>
+                            <span class="lang-fr hidden">Client officiel TypeScript/JavaScript avec connectivité WebSocket, assistants de transaction et documentation TypeDoc.</span>
+                        </p>
+                        <a href="https://js.xrpl.org" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Open Docs</span>
+                            <span class="lang-fr hidden">Ouvrir la doc</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">xrpl-py – Python SDK</span>
+                            <span class="lang-fr hidden">xrpl-py – SDK Python</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Async-friendly Python toolkit for XRPL with wallet utilities, transaction signing, and network client helpers.</span>
+                            <span class="lang-fr hidden">Boîte à outils Python compatible async pour XRPL avec utilitaires de portefeuille, signature de transactions et assistants client réseau.</span>
+                        </p>
+                        <a href="https://xrpl-py.readthedocs.io" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Open Docs</span>
+                            <span class="lang-fr hidden">Ouvrir la doc</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">xrpl-go – Go SDK</span>
+                            <span class="lang-fr hidden">xrpl-go – SDK Go</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Idiomatic Go client maintained by XRPLF with ledger models, serialization tools, and rippled integration.</span>
+                            <span class="lang-fr hidden">Client Go idiomatique maintenu par XRPLF avec modèles du ledger, outils de sérialisation et intégration à rippled.</span>
+                        </p>
+                        <a href="https://github.com/XRPLF/xrpl-go" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">View Repository</span>
+                            <span class="lang-fr hidden">Voir le dépôt</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">xrpl4j – Java SDK</span>
+                            <span class="lang-fr hidden">xrpl4j – SDK Java</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Enterprise-grade Java toolkit for XRPL integrations with Spring support and strongly typed data models.</span>
+                            <span class="lang-fr hidden">Boîte à outils Java de niveau entreprise pour les intégrations XRPL avec support Spring et modèles de données fortement typés.</span>
+                        </p>
+                        <a href="https://github.com/XRPLF/xrpl4j" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">View Repository</span>
+                            <span class="lang-fr hidden">Voir le dépôt</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">XRPL Dev Portal Repository</span>
+                            <span class="lang-fr hidden">Dépôt du portail XRPL Dev</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Source powering the XRPL Dev Portal with documentation build scripts, examples, and site configuration.</span>
+                            <span class="lang-fr hidden">Source du portail XRPL Dev comprenant scripts de génération, exemples et configuration du site.</span>
+                        </p>
+                        <a href="https://github.com/XRPLF/xrpl-dev-portal" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">View Repository</span>
+                            <span class="lang-fr hidden">Voir le dépôt</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">XRPL Foundation GitHub</span>
+                            <span class="lang-fr hidden">GitHub de la XRPL Foundation</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Central hub for XRPLF open-source projects, governance updates, and reference implementations.</span>
+                            <span class="lang-fr hidden">Centre des projets open source XRPLF, mises à jour de gouvernance et implémentations de référence.</span>
+                        </p>
+                        <a href="https://github.com/XRPLF" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Explore GitHub</span>
+                            <span class="lang-fr hidden">Explorer GitHub</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">XRPL Explorer</span>
+                            <span class="lang-fr hidden">Explorateur XRPL</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Inspect accounts, ledgers, and transactions with advanced filtering and websocket monitoring.</span>
+                            <span class="lang-fr hidden">Inspectez comptes, registres et transactions avec filtrage avancé et surveillance WebSocket.</span>
+                        </p>
+                        <a href="https://livenet.xrpl.org" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Launch Explorer</span>
+                            <span class="lang-fr hidden">Ouvrir l'explorateur</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">XRPL Testnet Faucet</span>
+                            <span class="lang-fr hidden">Faucet XRPL Testnet</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Request test XRP for Devnet, Testnet, and Hooks environments to prototype safely.</span>
+                            <span class="lang-fr hidden">Demandez du XRP de test pour Devnet, Testnet et les environnements Hooks afin de prototyper en toute sécurité.</span>
+                        </p>
+                        <a href="https://xrpl.org/xrp-testnet-faucet.html" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Get Test XRP</span>
+                            <span class="lang-fr hidden">Obtenir du XRP de test</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- XRPL Explorers & Analytics -->
+        <details class="resource-category">
+            <summary class="category-summary">
+                <h2 class="category-title">
+                    <i class="ri-search-line"></i>
+                    <span class="lang-en">XRPL Explorers & Analytics</span>
+                    <span class="lang-fr hidden">Explorateurs et analytiques XRPL</span>
+                </h2>
+            </summary>
+            <div class="category-content">
+                <p class="category-description">
+                    <span class="lang-en">Blockchain explorers and analytics tools for XRPL data.</span>
+                    <span class="lang-fr hidden">Explorateurs blockchain et outils d'analytique pour les données XRPL.</span>
+                </p>
+                <div class="resource-list">
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">XRPScan</span>
+                            <span class="lang-fr hidden">XRPScan</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Comprehensive blockchain explorer with APIs for developers and detailed transaction tracking.</span>
+                            <span class="lang-fr hidden">Explorateur blockchain complet avec APIs pour développeurs et suivi détaillé des transactions.</span>
+                        </p>
+                        <a href="https://xrpscan.com" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Explore</span>
+                            <span class="lang-fr hidden">Explorer</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Bithomp</span>
+                            <span class="lang-fr hidden">Bithomp</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">User-friendly blockchain explorer with hardware wallet integration and advanced search.</span>
+                            <span class="lang-fr hidden">Explorateur blockchain convivial avec intégration de portefeuilles matériels et recherche avancée.</span>
+                        </p>
+                        <a href="https://bithomp.com" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Explore</span>
+                            <span class="lang-fr hidden">Explorer</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">XRPlorer</span>
+                            <span class="lang-fr hidden">XRPlorer</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Forensics-focused blockchain explorer for detailed transaction analysis and investigation.</span>
+                            <span class="lang-fr hidden">Explorateur blockchain axé sur l'analyse forensique pour l'analyse détaillée des transactions.</span>
+                        </p>
+                        <a href="https://xrplorer.com" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Explore</span>
+                            <span class="lang-fr hidden">Explorer</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Rich-List.Info</span>
+                            <span class="lang-fr hidden">Rich-List.Info</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">View XRP distribution statistics and wallet rankings across the entire XRPL network.</span>
+                            <span class="lang-fr hidden">Consultez les statistiques de distribution XRP et les classements de portefeuilles sur l'ensemble du réseau XRPL.</span>
+                        </p>
+                        <a href="https://rich-list.info/" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">View Rankings</span>
+                            <span class="lang-fr hidden">Voir les classements</span>
+                        </a>
+            </div>
+        </div>
+            </div>
+        </details>
+
+        <!-- Smart Contracts & Advanced Features -->
+        <details class="resource-category">
+            <summary class="category-summary">
+            <h2 class="category-title">
+                    <i class="ri-contract-line"></i>
+                    <span class="lang-en">Smart Contracts & Advanced Features</span>
+                    <span class="lang-fr hidden">Contrats intelligents et fonctionnalités avancées</span>
+            </h2>
+            </summary>
+            <div class="category-content">
+            <p class="category-description">
+                    <span class="lang-en">Advanced smart contract platforms and features on XRPL.</span>
+                    <span class="lang-fr hidden">Plateformes de contrats intelligents avancés et fonctionnalités sur XRPL.</span>
+            </p>
+            <div class="resource-list">
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">XRPL EVM Sidechain</span>
+                            <span class="lang-fr hidden">Sidechain EVM XRPL</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Ethereum-compatible smart contracts on XRPL with EVM sidechain support.</span>
+                            <span class="lang-fr hidden">Contrats intelligents compatibles Ethereum sur XRPL avec support sidechain EVM.</span>
+                        </p>
+                        <a href="https://xrplevm.org/" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Learn More</span>
+                            <span class="lang-fr hidden">En savoir plus</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Xahau Network</span>
+                            <span class="lang-fr hidden">Réseau Xahau</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Hooks smart contracts network with WebAssembly-based programmability for XRPL.</span>
+                            <span class="lang-fr hidden">Réseau de contrats intelligents Hooks avec programmabilité basée sur WebAssembly pour XRPL.</span>
+                        </p>
+                        <a href="https://xahau.network/" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Explore</span>
+                            <span class="lang-fr hidden">Explorer</span>
+                        </a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Blockchain Analytics & Market Data -->
+        <details class="resource-category">
+            <summary class="category-summary">
+                <h2 class="category-title">
+                    <i class="ri-bar-chart-2-line"></i>
+                    <span class="lang-en">Blockchain Analytics & Market Data</span>
+                    <span class="lang-fr hidden">Analytique blockchain et données de marché</span>
+                </h2>
+            </summary>
+            <div class="category-content">
+                <p class="category-description">
+                    <span class="lang-en">Market intelligence platforms offering multi-chain analytics, pricing, and research.</span>
+                    <span class="lang-fr hidden">Plateformes d'intelligence de marché offrant analyses multi-chaînes, tarification et recherche.</span>
+                </p>
+                <div class="resource-list">
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">CoinGecko</span>
+                            <span class="lang-fr hidden">CoinGecko</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Comprehensive market data, developer APIs, and on-chain metrics for 12K+ crypto assets.</span>
+                            <span class="lang-fr hidden">Données de marché complètes, API développeur et métriques on-chain pour plus de 12&nbsp;000 actifs crypto.</span>
+                        </p>
+                        <a href="https://www.coingecko.com" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Open Dashboard</span>
+                            <span class="lang-fr hidden">Ouvrir le tableau de bord</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">CoinMarketCap</span>
+                            <span class="lang-fr hidden">CoinMarketCap</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Price tracking, exchange rankings, and research reports with historical datasets.</span>
+                            <span class="lang-fr hidden">Suivi des prix, classements d'exchanges et rapports de recherche avec jeux de données historiques.</span>
+                        </p>
+                        <a href="https://coinmarketcap.com" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Browse Markets</span>
+                            <span class="lang-fr hidden">Parcourir les marchés</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Messari</span>
+                            <span class="lang-fr hidden">Messari</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Institutional-grade research, analyst notes, and curated dashboards for crypto assets.</span>
+                            <span class="lang-fr hidden">Recherche de niveau institutionnel, notes d'analystes et tableaux de bord sélectionnés pour les actifs crypto.</span>
+                        </p>
+                        <a href="https://messari.io" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Explore Research</span>
+                            <span class="lang-fr hidden">Explorer la recherche</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+
+        <div class="section-divider">
+            <h2 class="section-heading">
+                <span class="lang-en">Enterprise & Use Cases</span>
+                <span class="lang-fr hidden">Entreprise et cas d'usage</span>
+            </h2>
+            <p class="section-subtitle">
+                <span class="lang-en">Advanced solutions for business applications</span>
+                <span class="lang-fr hidden">Solutions avancées pour les applications professionnelles</span>
+            </p>
+        </div>
+
+        <!-- XRPL Enterprise Solutions -->
+        <details class="resource-category">
+            <summary class="category-summary">
+                <h2 class="category-title">
+                    <i class="ri-briefcase-line"></i>
+                    <span class="lang-en">XRPL Enterprise Solutions</span>
+                    <span class="lang-fr hidden">Solutions d'entreprise XRPL</span>
+                </h2>
+            </summary>
+            <div class="category-content">
+                <p class="category-description">
+                    <span class="lang-en">Enterprise-grade offerings powered by Ripple and the XRP Ledger network.</span>
+                    <span class="lang-fr hidden">Offres de niveau entreprise propulsées par Ripple et le réseau XRP Ledger.</span>
+                </p>
+                <div class="resource-list">
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Ripple</span>
+                            <span class="lang-fr hidden">Ripple</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Corporate site covering network partnerships, product roadmap, sustainability initiatives, and customer stories.</span>
+                            <span class="lang-fr hidden">Site corporatif présentant partenariats réseau, feuille de route produits, initiatives de durabilité et témoignages clients.</span>
+                        </p>
+                        <a href="https://ripple.com/" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Visit Ripple</span>
+                            <span class="lang-fr hidden">Visiter Ripple</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">RippleNet Cross-Border Payments</span>
+                            <span class="lang-fr hidden">Paiements transfrontaliers RippleNet</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Solution overview for financial institutions leveraging XRP for faster, lower-cost global settlements.</span>
+                            <span class="lang-fr hidden">Vue d'ensemble des solutions pour les institutions financières utilisant XRP afin d'accélérer les règlements mondiaux à moindre coût.</span>
+                        </p>
+                        <a href="https://ripple.com/solutions/cross-border-payments/" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Learn More</span>
+                            <span class="lang-fr hidden">En savoir plus</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Digital Identity & Verification -->
+        <details class="resource-category">
+            <summary class="category-summary">
+                <h2 class="category-title">
+                    <i class="ri-id-card-line"></i>
+                    <span class="lang-en">Digital Identity & Verification</span>
+                    <span class="lang-fr hidden">Identité numérique et vérification</span>
+                </h2>
+            </summary>
+            <div class="category-content">
+                <p class="category-description">
+                    <span class="lang-en">Build trust frameworks with decentralized identifiers and verifiable credentials.</span>
+                    <span class="lang-fr hidden">Construisez des cadres de confiance avec identifiants décentralisés et justificatifs vérifiables.</span>
+                </p>
+                <div class="resource-list">
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">SpruceID</span>
+                            <span class="lang-fr hidden">SpruceID</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Open infrastructure for decentralized identity, wallets, and credential issuance.</span>
+                            <span class="lang-fr hidden">Infrastructure ouverte pour l'identité décentralisée, les portefeuilles et l'émission de justificatifs.</span>
+                        </p>
+                        <a href="https://spruceid.com/" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Visit SpruceID</span>
+                            <span class="lang-fr hidden">Visiter SpruceID</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">SpruceID Knowledge Base</span>
+                            <span class="lang-fr hidden">Base de connaissances SpruceID</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Guides covering verifiable credentials, mobile driver's licenses, and integration patterns.</span>
+                            <span class="lang-fr hidden">Guides couvrant justificatifs vérifiables, permis mobiles et modèles d'intégration.</span>
+                        </p>
+                        <a href="https://learn.spruceid.com/" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Browse Docs</span>
+                            <span class="lang-fr hidden">Parcourir la doc</span>
+                        </a>
+            </div>
+                </div>
+                </div>
+            </div>
+        </details>
+
+
+        <div class="section-divider">
+            <h2 class="section-heading">
+                <span class="lang-en">Support & Growth</span>
+                <span class="lang-fr hidden">Soutien et croissance</span>
+            </h2>
+            <p class="section-subtitle">
+                <span class="lang-en">Funding, community resources, and support networks</span>
+                <span class="lang-fr hidden">Financement, ressources communautaires et réseaux de soutien</span>
+            </p>
+        </div>
+
+        <!-- XRPL Funding Opportunities -->
+        <details class="resource-category">
+            <summary class="category-summary">
+            <h2 class="category-title">
+                <i class="ri-funds-line"></i>
+                <span class="lang-en">XRPL Funding Opportunities</span>
+                <span class="lang-fr hidden">Opportunités de financement XRPL</span>
+            </h2>
+            </summary>
+            <div class="category-content">
+            <p class="category-description">
+                <span class="lang-en">Grants and accelerator programs to fund your XRPL project.</span>
+                <span class="lang-fr hidden">Subventions et programmes d'accélération pour financer votre projet XRPL.</span>
+            </p>
+            <div class="resource-list">
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">XRPL Grants & Programs</span>
+                            <span class="lang-fr hidden">Subventions et programmes XRPL</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">$10K-$200K grants for XRPL development with rolling applications.</span>
+                            <span class="lang-fr hidden">Subventions de 10K$-200K$ pour le développement XRPL avec candidatures continues.</span>
+                        </p>
+                        <a href="https://xrplgrants.org/" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Apply Now</span>
+                            <span class="lang-fr hidden">Postuler</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">XRPL Accelerator 2025</span>
+                            <span class="lang-fr hidden">Accélérateur XRPL 2025</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">12-week accelerator program with up to $200K funding for XRPL startups.</span>
+                            <span class="lang-fr hidden">Programme d'accélération de 12 semaines avec jusqu'à 200K$ de financement pour startups XRPL.</span>
+                        </p>
+                        <a href="https://www.tenity.com/programs/xrpl-accelerator-2025" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Learn More</span>
+                            <span class="lang-fr hidden">En savoir plus</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Community Resources -->
+        <details class="resource-category">
+            <summary class="category-summary">
+            <h2 class="category-title">
+                    <i class="ri-community-line"></i>
+                    <span class="lang-en">Community Resources</span>
+                    <span class="lang-fr hidden">Ressources communautaires</span>
+            </h2>
+            </summary>
+            <div class="category-content">
+            <p class="category-description">
+                    <span class="lang-en">Connect with the builders, educators, and leaders shaping the XRPL ecosystem.</span>
+                    <span class="lang-fr hidden">Connectez-vous avec les bâtisseurs, éducateurs et leaders qui façonnent l'écosystème XRPL.</span>
+            </p>
+            <div class="resource-list">
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Official XRPL Discord</span>
+                            <span class="lang-fr hidden">Discord officiel XRPL</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Primary server hosted by XRPLF for support, implementation help, and working group updates.</span>
+                            <span class="lang-fr hidden">Serveur principal hébergé par XRPLF pour le support, l'aide à l'implémentation et les mises à jour des groupes de travail.</span>
+                        </p>
+                        <a href="https://discord.com/invite/xrpl" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Join Discord</span>
+                            <span class="lang-fr hidden">Rejoindre</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">XRPL Developers Community</span>
+                            <span class="lang-fr hidden">Communauté XRPL Developers</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Independent xrpldevs.com Discord for AMAs, code reviews, hackathons, and peer mentorship.</span>
+                            <span class="lang-fr hidden">Discord indépendant xrpldevs.com pour AMA, revues de code, hackathons et mentorat entre pairs.</span>
+                        </p>
+                        <a href="https://xrpldevs.com" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Join Community</span>
+                            <span class="lang-fr hidden">Rejoindre la communauté</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">XRPL Commons</span>
+                            <span class="lang-fr hidden">XRPL Commons</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Global non-profit offering mentorship cohorts, community events, and technical workshops for XRPL.</span>
+                            <span class="lang-fr hidden">Organisme mondial sans but lucratif offrant cohortes de mentorat, événements communautaires et ateliers techniques pour XRPL.</span>
+                        </p>
+                        <a href="https://www.xrpl-commons.org" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Visit Site</span>
+                            <span class="lang-fr hidden">Visiter le site</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">XRPL Foundation on X</span>
+                            <span class="lang-fr hidden">XRPL Foundation sur X</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Official announcements, policy statements, and roadmap updates from the XRPL Foundation.</span>
+                            <span class="lang-fr hidden">Annonces officielles, positions politiques et mises à jour de feuille de route de la XRPL Foundation.</span>
+                        </p>
+                        <a href="https://twitter.com/XRPLF" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Follow Updates</span>
+                            <span class="lang-fr hidden">Suivre les mises à jour</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">XRPL YouTube Channel</span>
+                            <span class="lang-fr hidden">Chaîne YouTube XRPL</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Weekly livestreams, AMAs, and conference recordings spotlighting XRPL builders worldwide.</span>
+                            <span class="lang-fr hidden">Diffusions hebdomadaires, AMA et enregistrements de conférences mettant en valeur les bâtisseurs XRPL partout dans le monde.</span>
+                        </p>
+                        <a href="https://www.youtube.com/@xrplf" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Subscribe</span>
+                            <span class="lang-fr hidden">S'abonner</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Additional Resources -->
+        <details class="resource-category">
+            <summary class="category-summary">
+                <h2 class="category-title">
+                    <i class="ri-links-line"></i>
+                    <span class="lang-en">Additional Resources</span>
+                    <span class="lang-fr hidden">Ressources supplémentaires</span>
+                </h2>
+            </summary>
+            <div class="category-content">
+                <p class="category-description">
+                    <span class="lang-en">Key knowledge bases and community support channels beyond the core docs.</span>
+                    <span class="lang-fr hidden">Bases de connaissances essentielles et canaux de support communautaire au-delà de la documentation principale.</span>
+                </p>
+                <div class="resource-list">
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">XRPL Blog</span>
+                            <span class="lang-fr hidden">Blog XRPL</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Articles, case studies, and deep dives authored by XRPL engineers, partners, and community leads.</span>
+                            <span class="lang-fr hidden">Articles, études de cas et analyses approfondies rédigés par des ingénieurs, partenaires et leaders communautaires XRPL.</span>
+                        </p>
+                        <a href="https://xrpl.org/blog" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Read Blog</span>
+                            <span class="lang-fr hidden">Lire le blog</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">XRPL Events Calendar</span>
+                            <span class="lang-fr hidden">Calendrier des événements XRPL</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Global calendar of XRPL meetups, workshops, hackathons, and foundation-hosted programming.</span>
+                            <span class="lang-fr hidden">Calendrier mondial des meetups, ateliers, hackathons et programmes organisés par la fondation XRPL.</span>
+                        </p>
+                        <a href="https://xrpl.org/events" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">View Calendar</span>
+                            <span class="lang-fr hidden">Voir le calendrier</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">XRPL Stack Exchange</span>
+                            <span class="lang-fr hidden">XRPL Stack Exchange</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Peer-reviewed Q&amp;A site for advanced troubleshooting, architecture questions, and integration advice.</span>
+                            <span class="lang-fr hidden">Site de questions-réponses validées par les pairs pour le dépannage avancé, les questions d'architecture et les conseils d'intégration.</span>
+                        </p>
+                        <a href="https://xrpl.stackexchange.com" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Ask a Question</span>
+                            <span class="lang-fr hidden">Poser une question</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+
+        <div class="section-divider">
+            <h2 class="section-heading">
+                <span class="lang-en">Canadian Ecosystem</span>
+                <span class="lang-fr hidden">Écosystème canadien</span>
+            </h2>
+            <p class="section-subtitle">
+                <span class="lang-en">Resources, organizations, and opportunities in Canada</span>
+                <span class="lang-fr hidden">Ressources, organisations et opportunités au Canada</span>
+            </p>
+        </div>
+
+        <!-- Advocacy & Policy -->
+        <details class="resource-category">
+            <summary class="category-summary">
+            <h2 class="category-title">
+                    <i class="ri-megaphone-line"></i>
+                    <span class="lang-en">Advocacy & Policy</span>
+                    <span class="lang-fr hidden">Plaidoyer et politiques</span>
+            </h2>
+            </summary>
+            <div class="category-content">
+            <p class="category-description">
+                    <span class="lang-en">Organizations advancing responsible digital asset policy across Canada.</span>
+                    <span class="lang-fr hidden">Organisations faisant progresser des politiques responsables sur les actifs numériques au Canada.</span>
+            </p>
+            <div class="resource-list">
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Stand With Crypto Canada</span>
+                            <span class="lang-fr hidden">Stand With Crypto Canada</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Grassroots advocacy coalition mobilizing citizens and lawmakers in support of crypto innovation.</span>
+                            <span class="lang-fr hidden">Coalition de plaidoyer citoyenne mobilisant citoyens et législateurs en faveur de l'innovation crypto.</span>
+                        </p>
+                        <a href="https://standwithcrypto.org/ca" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Get Involved</span>
+                            <span class="lang-fr hidden">S'impliquer</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Web3 Canada</span>
+                            <span class="lang-fr hidden">Web3 Canada</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Non-profit trade association representing Canada's blockchain and digital asset sector.</span>
+                            <span class="lang-fr hidden">Association professionnelle sans but lucratif représentant le secteur canadien de la blockchain et des actifs numériques.</span>
+                        </p>
+                        <a href="https://web3canada.ca" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Learn More</span>
+                            <span class="lang-fr hidden">En savoir plus</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Canadian Bitcoin Consortium</span>
+                            <span class="lang-fr hidden">Consortium Bitcoin canadien</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Industry-led consortium (formerly Canadian Blockchain Consortium) supporting national advocacy and standards.</span>
+                            <span class="lang-fr hidden">Consortium dirigé par l'industrie (anciennement Canadian Blockchain Consortium) soutenant plaidoyer et normes nationales.</span>
+                        </p>
+                        <a href="https://www.mybtccanada.ca/" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Visit Consortium</span>
+                            <span class="lang-fr hidden">Visiter le consortium</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Government & Regulators -->
+        <details class="resource-category">
+            <summary class="category-summary">
+                <h2 class="category-title">
+                    <i class="ri-government-line"></i>
+                    <span class="lang-en">Government & Regulators</span>
+                    <span class="lang-fr hidden">Gouvernement et régulateurs</span>
+                </h2>
+            </summary>
+            <div class="category-content">
+                <p class="category-description">
+                    <span class="lang-en">Official guidance on compliance, supervision, and innovation programs.</span>
+                    <span class="lang-fr hidden">Directives officielles sur la conformité, la supervision et les programmes d'innovation.</span>
+                </p>
+                <div class="resource-list">
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Canadian Securities Administrators (CSA)</span>
+                            <span class="lang-fr hidden">Autorités canadiennes en valeurs mobilières (ACVM)</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">National umbrella for provincial securities regulators with policy notices on crypto trading platforms.</span>
+                            <span class="lang-fr hidden">Organisme national regroupant les régulateurs provinciaux avec avis politiques sur les plateformes de crypto-actifs.</span>
+                        </p>
+                        <a href="https://www.securities-administrators.ca" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">View Guidance</span>
+                            <span class="lang-fr hidden">Voir les directives</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">FINTRAC / CANAFE</span>
+                            <span class="lang-fr hidden">FINTRAC / CANAFE</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Anti-money laundering and counter-terrorist financing requirements for virtual asset service providers.</span>
+                            <span class="lang-fr hidden">Exigences de lutte contre le blanchiment et le financement du terrorisme pour les fournisseurs de services d'actifs virtuels.</span>
+                        </p>
+                        <a href="https://fintrac-canafe.canada.ca" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Access Portal</span>
+                            <span class="lang-fr hidden">Accéder au portail</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Bank of Canada</span>
+                            <span class="lang-fr hidden">Banque du Canada</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">CBDC research, payment modernization, and policy papers on digital currencies in Canada.</span>
+                            <span class="lang-fr hidden">Recherche sur les MNBC, modernisation des paiements et documents de politique sur les monnaies numériques.</span>
+                        </p>
+                        <a href="https://www.bankofcanada.ca" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Read Research</span>
+                            <span class="lang-fr hidden">Lire la recherche</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Innovation, Science and Economic Development Canada</span>
+                            <span class="lang-fr hidden">Innovation, Sciences et Développement économique Canada</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Federal programs and resources supporting digital innovation, fintech, and intellectual property.</span>
+                            <span class="lang-fr hidden">Programmes fédéraux et ressources soutenant l'innovation numérique, la fintech et la propriété intellectuelle.</span>
+                        </p>
+                        <a href="https://ised-isde.canada.ca" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Explore Programs</span>
+                            <span class="lang-fr hidden">Explorer les programmes</span>
+                        </a>
+            </div>
+        </div>
+            </div>
+        </details>
+
+        <!-- Funding & Grants -->
+        <details class="resource-category">
+            <summary class="category-summary">
+            <h2 class="category-title">
+                    <i class="ri-funds-line"></i>
+                    <span class="lang-en">Funding & Grants</span>
+                    <span class="lang-fr hidden">Financement et subventions canadiennes</span>
+            </h2>
+            </summary>
+            <div class="category-content">
+            <p class="category-description">
+                    <span class="lang-en">Public and private capital programs that support Canadian Web3 ventures.</span>
+                    <span class="lang-fr hidden">Programmes de capitaux publics et privés soutenant les entreprises Web3 canadiennes.</span>
+            </p>
+            <div class="resource-list">
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">NRC IRAP</span>
+                            <span class="lang-fr hidden">PARI CNRC</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Innovation assistance program offering advisory services and non-dilutive funding for Canadian tech companies.</span>
+                            <span class="lang-fr hidden">Programme d'aide à l'innovation offrant services-conseils et financement non dilutif aux entreprises technologiques canadiennes.</span>
+                        </p>
+                        <a href="https://nrc.canada.ca/en/support-technology-innovation/about-nrc-irap" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Review Eligibility</span>
+                            <span class="lang-fr hidden">Vérifier l'admissibilité</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Business Development Bank of Canada</span>
+                            <span class="lang-fr hidden">Banque de développement du Canada</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Venture capital, growth financing, and advisory services tailored to Canadian innovators.</span>
+                            <span class="lang-fr hidden">Capital de risque, financement de croissance et services-conseils pour les innovateurs canadiens.</span>
+                        </p>
+                        <a href="https://www.bdc.ca" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Discover Solutions</span>
+                            <span class="lang-fr hidden">Découvrir les solutions</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Export Development Canada</span>
+                            <span class="lang-fr hidden">Exportation et développement Canada</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Trade financing, insurance, and advisory services enabling Canadian firms to expand globally.</span>
+                            <span class="lang-fr hidden">Financement du commerce, assurance et conseils permettant aux entreprises canadiennes de s'étendre à l'étranger.</span>
+                        </p>
+                        <a href="https://www.edc.ca" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Explore Services</span>
+                            <span class="lang-fr hidden">Explorer les services</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Invest Ontario</span>
+                            <span class="lang-fr hidden">Investir Ontario</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Ontario's investment attraction agency offering incentives and landing support for tech companies.</span>
+                            <span class="lang-fr hidden">Agence ontarienne d'attraction d'investissements offrant incitatifs et soutien d'implantation aux entreprises technologiques.</span>
+                        </p>
+                        <a href="https://investontario.com" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Partner With Ontario</span>
+                            <span class="lang-fr hidden">S'associer avec l'Ontario</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Innovate BC</span>
+                            <span class="lang-fr hidden">Innovate BC</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">British Columbia grants, internships, and innovation challenges supporting emerging tech ventures.</span>
+                            <span class="lang-fr hidden">Subventions, stages et défis d'innovation de la Colombie-Britannique pour soutenir les entreprises technologiques émergentes.</span>
+                        </p>
+                        <a href="https://innovatebc.ca" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">See Programs</span>
+                            <span class="lang-fr hidden">Voir les programmes</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Investissement Québec</span>
+                            <span class="lang-fr hidden">Investissement Québec</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Financing, guarantees, and export support for companies scaling in Québec.</span>
+                            <span class="lang-fr hidden">Financement, garanties et soutien à l'exportation pour les entreprises en croissance au Québec.</span>
+                        </p>
+                        <a href="https://www.investquebec.com" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Access Support</span>
+                            <span class="lang-fr hidden">Accéder au soutien</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Alberta Innovates</span>
+                            <span class="lang-fr hidden">Alberta Innovates</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Provincial grants, research partnerships, and commercialization support for Alberta startups.</span>
+                            <span class="lang-fr hidden">Subventions provinciales, partenariats de recherche et soutien à la commercialisation pour les jeunes pousses albertaine.</span>
+                        </p>
+                        <a href="https://albertainnovates.ca" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Explore Funding</span>
+                            <span class="lang-fr hidden">Explorer le financement</span>
+                        </a>
+            </div>
+        </div>
+            </div>
+        </details>
+
+        <!-- Accelerators & Incubators -->
+        <details class="resource-category">
+            <summary class="category-summary">
+            <h2 class="category-title">
+                    <i class="ri-seedling-line"></i>
+                    <span class="lang-en">Accelerators & Incubators</span>
+                    <span class="lang-fr hidden">Accélérateurs et incubateurs</span>
+            </h2>
+            </summary>
+            <div class="category-content">
+            <p class="category-description">
+                    <span class="lang-en">Programs providing mentorship, capital access, and market entry for Web3 founders.</span>
+                    <span class="lang-fr hidden">Programmes offrant mentorat, accès au capital et soutien au marché pour les fondateurs Web3.</span>
+            </p>
+            <div class="resource-list">
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Creative Destruction Lab</span>
+                            <span class="lang-fr hidden">Creative Destruction Lab</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">CDL Blockchain Stream supporting founders with expert-led sessions and investor introductions.</span>
+                            <span class="lang-fr hidden">Volet blockchain de CDL soutenant les fondateurs avec séances animées par des experts et mises en relation avec des investisseurs.</span>
+                        </p>
+                        <a href="https://creativedestructionlab.com" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Explore CDL</span>
+                            <span class="lang-fr hidden">Explorer CDL</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">MaRS Discovery District</span>
+                            <span class="lang-fr hidden">MaRS Discovery District</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Toronto-based innovation hub offering advisory programs and corporate partnerships.</span>
+                            <span class="lang-fr hidden">Centre d'innovation de Toronto offrant programmes de conseil et partenariats corporatifs.</span>
+                        </p>
+                        <a href="https://marsdd.com" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Visit MaRS</span>
+                            <span class="lang-fr hidden">Visiter MaRS</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Communitech</span>
+                            <span class="lang-fr hidden">Communitech</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Kitchener-Waterloo ecosystem delivering founder programs, corporate pilots, and talent support.</span>
+                            <span class="lang-fr hidden">Écosystème de Kitchener-Waterloo offrant programmes pour fondateurs, projets pilotes d'entreprise et soutien en talents.</span>
+                        </p>
+                        <a href="https://www.communitech.ca" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Join Communitech</span>
+                            <span class="lang-fr hidden">Joindre Communitech</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">DMZ at TMU</span>
+                            <span class="lang-fr hidden">DMZ à l'UTM</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Toronto Metropolitan University's accelerator with Web3 programming and international market access.</span>
+                            <span class="lang-fr hidden">Accélérateur de l'Université métropolitaine de Toronto avec programmation Web3 et accès aux marchés internationaux.</span>
+                        </p>
+                        <a href="https://www.torontomu.ca/dmz/" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Apply to DMZ</span>
+                            <span class="lang-fr hidden">Postuler au DMZ</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Highline Beta</span>
+                            <span class="lang-fr hidden">Highline Beta</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Venture studio and accelerator partnering with enterprises to co-build and scale startups.</span>
+                            <span class="lang-fr hidden">Studio de capital-risque et accélérateur s'associant avec des entreprises pour co-créer et développer des startups.</span>
+                        </p>
+                        <a href="https://www.highlinebeta.com" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Partner With Highline</span>
+                            <span class="lang-fr hidden">S'associer à Highline</span>
+                        </a>
+            </div>
+        </div>
+            </div>
+        </details>
+
+        <!-- Universities & Programs -->
+        <details class="resource-category">
+            <summary class="category-summary">
+            <h2 class="category-title">
+                <i class="ri-school-line"></i>
+                <span class="lang-en">Universities & Programs</span>
+                <span class="lang-fr hidden">Universités et programmes</span>
+            </h2>
+            </summary>
+            <div class="category-content">
+            <p class="category-description">
+                    <span class="lang-en">Academic research clusters, student clubs, and professional education in blockchain.</span>
+                    <span class="lang-fr hidden">Clusters de recherche, clubs étudiants et formations professionnelles en blockchain.</span>
+            </p>
+            <div class="resource-list">
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">CDL Blockchain Stream – University of Toronto</span>
+                            <span class="lang-fr hidden">Volet blockchain CDL – Université de Toronto</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Mentorship-driven program connecting early-stage blockchain ventures with experienced fellows.</span>
+                            <span class="lang-fr hidden">Programme basé sur le mentorat reliant jeunes entreprises blockchain et fellows expérimentés.</span>
+                        </p>
+                        <a href="https://creativedestructionlab.com/streams/blockchain/" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Apply to CDL</span>
+                            <span class="lang-fr hidden">Postuler à CDL</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Blockchain Research Institute – University of Waterloo</span>
+                            <span class="lang-fr hidden">Institut de recherche blockchain – Université de Waterloo</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Home to interdisciplinary blockchain research, publications, and faculty collaborations.</span>
+                            <span class="lang-fr hidden">Centre de recherche interdisciplinaire en blockchain, publications et collaborations professorales.</span>
+                        </p>
+                        <a href="https://uwaterloo.ca/blockchain-research/" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Explore Research</span>
+                            <span class="lang-fr hidden">Explorer la recherche</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Waterloo Blockchain Student Club</span>
+                            <span class="lang-fr hidden">Club étudiant blockchain de Waterloo</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Student-led club hosting hackathons, workshops, and XRPL developer meetups.</span>
+                            <span class="lang-fr hidden">Club étudiant organisant hackathons, ateliers et rencontres développeurs XRPL.</span>
+                        </p>
+                        <a href="https://www.uwblockchain.ca/" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Join the Club</span>
+                            <span class="lang-fr hidden">Rejoindre le club</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">DeFi Discussions – McGill University</span>
+                            <span class="lang-fr hidden">DeFi Discussions – Université McGill</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Seminar series from the Analytics, Advanced Digital Technologies and AI Initiative.</span>
+                            <span class="lang-fr hidden">Série de séminaires de l'Initiative analytique, technologies numériques avancées et IA.</span>
+                        </p>
+                        <a href="https://www.mcgill.ca/desautels/initiatives-institutes/aaai/defi-discussions" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">View Sessions</span>
+                            <span class="lang-fr hidden">Voir les sessions</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Blockchain at McGill</span>
+                            <span class="lang-fr hidden">Blockchain à McGill</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Student organization fostering research, hackathons, and policy engagement.</span>
+                            <span class="lang-fr hidden">Organisation étudiante favorisant recherche, hackathons et engagement politique.</span>
+                        </p>
+                        <a href="http://blockchainmcgill.com/" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Join Blockchain McGill</span>
+                            <span class="lang-fr hidden">Joindre Blockchain McGill</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Blockchain@UBC</span>
+                            <span class="lang-fr hidden">Blockchain@UBC</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">University of British Columbia research cluster focusing on sustainability, identity, and finance.</span>
+                            <span class="lang-fr hidden">Cluster de recherche de l'Université de la Colombie-Britannique axé sur durabilité, identité et finance.</span>
+                        </p>
+                        <a href="https://blockchain.ubc.ca/" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Explore Blockchain@UBC</span>
+                            <span class="lang-fr hidden">Explorer Blockchain@UBC</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">York University – Blockchain Development Certificate</span>
+                            <span class="lang-fr hidden">Université York – Certificat en développement blockchain</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Post-graduate program focused on backend services, blockchain design patterns, and cloud deployment.</span>
+                            <span class="lang-fr hidden">Programme post-diplôme axé sur les services backend, les modèles de conception blockchain et le déploiement cloud.</span>
+                        </p>
+                        <a href="https://continue.yorku.ca/programs/post-graduate-certificate-in-back-end-and-blockchain-development/" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">View Program</span>
+                            <span class="lang-fr hidden">Voir le programme</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">The Blockchain Hub – York University</span>
+                            <span class="lang-fr hidden">The Blockchain Hub – Université York</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Innovation hub delivering training, research, and startup support across Ontario's blockchain ecosystem.</span>
+                            <span class="lang-fr hidden">Pôle d'innovation offrant formation, recherche et soutien aux startups dans l'écosystème blockchain ontarien.</span>
+                        </p>
+                        <a href="https://lassonde.yorku.ca/theblockchainhub/" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Explore Hub</span>
+                            <span class="lang-fr hidden">Explorer le hub</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Concordia University – Blockchain Technologies</span>
+                            <span class="lang-fr hidden">Université Concordia – Technologies blockchain</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Gina Cody School research group covering security, distributed systems, and enterprise blockchain adoption.</span>
+                            <span class="lang-fr hidden">Groupe de recherche de l'École Gina Cody couvrant sécurité, systèmes distribués et adoption blockchain en entreprise.</span>
+                        </p>
+                        <a href="https://www.concordia.ca/ginacody/research/security-research-centre/expertise/blockchain.html" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Explore Concordia</span>
+                            <span class="lang-fr hidden">Explorer Concordia</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Haskayne Blockchain Executive Education</span>
+                            <span class="lang-fr hidden">Programme exécutif blockchain Haskayne</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Blended non-technical program at University of Calgary covering strategy, regulation, and enterprise integration.</span>
+                            <span class="lang-fr hidden">Programme hybride non technique à l'Université de Calgary couvrant stratégie, réglementation et intégration en entreprise.</span>
+                        </p>
+                        <a href="https://haskayne.ucalgary.ca/blockchain" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">View Details</span>
+                            <span class="lang-fr hidden">Voir les détails</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">DeFi Lab – University of Calgary</span>
+                            <span class="lang-fr hidden">Laboratoire DeFi – Université de Calgary</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Academic lab exploring decentralized finance, token economics, and digital asset regulation.</span>
+                            <span class="lang-fr hidden">Laboratoire académique explorant finance décentralisée, économie des tokens et réglementation des actifs numériques.</span>
+                        </p>
+                        <a href="https://haskayne.ucalgary.ca/decentralized-finance-laboratory" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Explore Lab</span>
+                            <span class="lang-fr hidden">Explorer le laboratoire</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">UCalgary Blockchain Society</span>
+                            <span class="lang-fr hidden">Société blockchain UCalgary</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Student-led organization hosting workshops, demo days, and industry collaborations in Calgary.</span>
+                            <span class="lang-fr hidden">Organisation étudiante animant ateliers, journées de démonstration et collaborations industrielles à Calgary.</span>
+                        </p>
+                        <a href="https://www.ucalgaryblockchainsociety.com/" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Join UCS</span>
+                            <span class="lang-fr hidden">Joindre UCS</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">UCalgary Blockchain Society – LinkedIn</span>
+                            <span class="lang-fr hidden">Société blockchain UCalgary – LinkedIn</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Follow the society's updates, speaker series, and community announcements.</span>
+                            <span class="lang-fr hidden">Suivez les mises à jour, conférences et annonces communautaires de la société.</span>
+                        </p>
+                        <a href="https://ca.linkedin.com/company/ucalgary-blockchain-society" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Follow on LinkedIn</span>
+                            <span class="lang-fr hidden">Suivre sur LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">CDL Rockies – University of Calgary</span>
+                            <span class="lang-fr hidden">CDL Rockies – Université de Calgary</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Creative Destruction Lab site focused on scaling ventures in Western Canada, including fintech and digital assets.</span>
+                            <span class="lang-fr hidden">Site de Creative Destruction Lab axé sur la croissance des entreprises de l'ouest canadien, incluant fintech et actifs numériques.</span>
+                        </p>
+                        <a href="https://creativedestructionlab.com/locations/rockies/" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Explore CDL Rockies</span>
+                            <span class="lang-fr hidden">Explorer CDL Rockies</span>
+                        </a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Legal & Professional Services -->
+        <details class="resource-category">
+            <summary class="category-summary">
+                <h2 class="category-title">
+                    <i class="ri-file-paper-line"></i>
+                    <span class="lang-en">Legal & Professional Services</span>
+                    <span class="lang-fr hidden">Services juridiques et professionnels</span>
+                </h2>
+            </summary>
+            <div class="category-content">
+                <p class="category-description">
+                    <span class="lang-en">Law firms and advisors with dedicated digital asset practices.</span>
+                    <span class="lang-fr hidden">Cabinets juridiques et conseillers spécialisés en actifs numériques.</span>
+                </p>
+                <div class="resource-list">
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Osler, Hoskin & Harcourt</span>
+                            <span class="lang-fr hidden">Osler, Hoskin & Harcourt</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Leading fintech practice advising on regulatory strategy, token launches, and capital markets.</span>
+                            <span class="lang-fr hidden">Pratique fintech de premier plan conseillant sur la stratégie réglementaire, les lancements de tokens et les marchés de capitaux.</span>
+                        </p>
+                        <a href="https://www.osler.com" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Visit Osler</span>
+                            <span class="lang-fr hidden">Visiter Osler</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Bennett Jones</span>
+                            <span class="lang-fr hidden">Bennett Jones</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Digital assets and Web3 team providing regulatory advice, transactions, and litigation support.</span>
+                            <span class="lang-fr hidden">Équipe actifs numériques et Web3 offrant conseils réglementaires, transactions et soutien en litige.</span>
+                        </p>
+                        <a href="https://www.bennettjones.com" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Visit Bennett Jones</span>
+                            <span class="lang-fr hidden">Visiter Bennett Jones</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Stikeman Elliott</span>
+                            <span class="lang-fr hidden">Stikeman Elliott</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">National fintech group advising on securities, M&A, and compliance for blockchain ventures.</span>
+                            <span class="lang-fr hidden">Groupe fintech national conseillant sur valeurs mobilières, fusions-acquisitions et conformité pour les entreprises blockchain.</span>
+                        </p>
+                        <a href="https://www.stikeman.com" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Visit Stikeman</span>
+                            <span class="lang-fr hidden">Visiter Stikeman</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">DLA Piper Canada</span>
+                            <span class="lang-fr hidden">DLA Piper Canada</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">International firm advising on blockchain commercialization, policy, and cross-border compliance.</span>
+                            <span class="lang-fr hidden">Cabinet international conseillant sur la commercialisation, les politiques et la conformité transfrontalière de la blockchain.</span>
+                        </p>
+                        <a href="https://www.dlapiper.com/en-ca" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Visit DLA Piper</span>
+                            <span class="lang-fr hidden">Visiter DLA Piper</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">McMillan LLP</span>
+                            <span class="lang-fr hidden">McMillan S.E.N.C.R.L.</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Digital assets group providing strategic counsel on fintech regulation and tokenized products.</span>
+                            <span class="lang-fr hidden">Groupe actifs numériques offrant un accompagnement stratégique sur la réglementation fintech et les produits tokenisés.</span>
+                        </p>
+                        <a href="https://mcmillan.ca" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Visit McMillan</span>
+                            <span class="lang-fr hidden">Visiter McMillan</span>
+                        </a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Crypto Exchanges -->
+        <details class="resource-category">
+            <summary class="category-summary">
+                <h2 class="category-title">
+                    <i class="ri-exchange-dollar-line"></i>
+                    <span class="lang-en">Crypto Exchanges</span>
+                    <span class="lang-fr hidden">Plateformes d'échange canadiennes</span>
+                </h2>
+            </summary>
+            <div class="category-content">
+                <p class="category-description">
+                    <span class="lang-en">Registered marketplaces compliant with CSA requirements and investor protections.</span>
+                    <span class="lang-fr hidden">Marchés enregistrés conformes aux exigences de l'ACVM et aux protections des investisseurs.</span>
+                </p>
+                <div class="resource-list">
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Wealthsimple Crypto</span>
+                            <span class="lang-fr hidden">Wealthsimple Crypto</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">CSA-registered platform offering 100+ assets with automated tax documents for Canadians.</span>
+                            <span class="lang-fr hidden">Plateforme enregistrée auprès de l'ACVM offrant plus de 100 actifs avec documents fiscaux automatisés.</span>
+                        </p>
+                        <a href="https://www.wealthsimple.com/crypto" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Open Account</span>
+                            <span class="lang-fr hidden">Ouvrir un compte</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Bitbuy</span>
+                            <span class="lang-fr hidden">Bitbuy</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">First regulated crypto marketplace in Canada with OTC desk and proof-of-reserves reporting.</span>
+                            <span class="lang-fr hidden">Premier marché crypto réglementé au Canada avec bureau OTC et rapports de preuves de réserves.</span>
+                        </p>
+                        <a href="https://bitbuy.ca" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Trade on Bitbuy</span>
+                            <span class="lang-fr hidden">Négocier sur Bitbuy</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">NDAX</span>
+                            <span class="lang-fr hidden">NDAX</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Calgary-based exchange providing institutional-grade security, staking, and fiat on-ramps.</span>
+                            <span class="lang-fr hidden">Plateforme de Calgary offrant sécurité de niveau institutionnel, staking et rampes fiat.</span>
+                        </p>
+                        <a href="https://ndax.io" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Trade on NDAX</span>
+                            <span class="lang-fr hidden">Négocier sur NDAX</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Newton</span>
+                            <span class="lang-fr hidden">Newton</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Zero-fee trading experience with instant verification and multiple funding methods.</span>
+                            <span class="lang-fr hidden">Expérience de négociation sans frais avec vérification instantanée et multiples méthodes de financement.</span>
+                        </p>
+                        <a href="https://www.newton.co" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Sign Up</span>
+                            <span class="lang-fr hidden">S'inscrire</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Coinbase Canada</span>
+                            <span class="lang-fr hidden">Coinbase Canada</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Registered April 2024 with advanced trading tools and access to Coinbase One membership.</span>
+                            <span class="lang-fr hidden">Enregistrée en avril 2024 avec outils de négociation avancés et accès à l'abonnement Coinbase One.</span>
+                        </p>
+                        <a href="https://www.coinbase.com/en-ca" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Explore Coinbase</span>
+                            <span class="lang-fr hidden">Explorer Coinbase</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Coinsquare</span>
+                            <span class="lang-fr hidden">Coinsquare</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Toronto-based exchange with dealer registration, staking, and institutional OTC services.</span>
+                            <span class="lang-fr hidden">Plateforme torontoise avec inscription de courtier, staking et services OTC institutionnels.</span>
+                        </p>
+                        <a href="https://www.coinsquare.com" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Trade on Coinsquare</span>
+                            <span class="lang-fr hidden">Négocier sur Coinsquare</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Shakepay</span>
+                            <span class="lang-fr hidden">Shakepay</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Montreal-based mobile platform with instant e-transfers and cash-back Bitcoin rewards.</span>
+                            <span class="lang-fr hidden">Plateforme mobile montréalaise avec virements interactifs instantanés et récompenses Bitcoin en argent.</span>
+                        </p>
+                        <a href="https://shakepay.com" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Download App</span>
+                            <span class="lang-fr hidden">Télécharger l'appli</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Crypto Companies -->
+        <details class="resource-category">
+            <summary class="category-summary">
+                <h2 class="category-title">
+                    <i class="ri-building-4-line"></i>
+                    <span class="lang-en">Crypto Companies</span>
+                    <span class="lang-fr hidden">Entreprises crypto</span>
+                </h2>
+            </summary>
+            <div class="category-content">
+                <p class="category-description">
+                    <span class="lang-en">Innovators building infrastructure, Web3 consumer products, and institutional services.</span>
+                    <span class="lang-fr hidden">Innovateurs développant infrastructures, produits Web3 grand public et services institutionnels.</span>
+                </p>
+                <div class="resource-list">
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Dapper Labs</span>
+                            <span class="lang-fr hidden">Dapper Labs</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Creators of Flow blockchain, NBA Top Shot, and consumer onboarding experiences for Web3.</span>
+                            <span class="lang-fr hidden">Créateurs de la blockchain Flow, NBA Top Shot et expériences d'intégration grand public pour le Web3.</span>
+                        </p>
+                        <a href="https://www.dapperlabs.com" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Visit Dapper Labs</span>
+                            <span class="lang-fr hidden">Visiter Dapper Labs</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">ChainSafe Systems</span>
+                            <span class="lang-fr hidden">ChainSafe Systems</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Open-source engineering firm building blockchain clients, gaming SDKs, and cross-chain tooling.</span>
+                            <span class="lang-fr hidden">Cabinet d'ingénierie open source développant clients blockchain, SDK de jeu et outils multichaînes.</span>
+                        </p>
+                        <a href="https://chainsafe.io" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Explore ChainSafe</span>
+                            <span class="lang-fr hidden">Explorer ChainSafe</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Figment</span>
+                            <span class="lang-fr hidden">Figment</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Institutional-grade staking, data feeds, and governance tooling for proof-of-stake protocols.</span>
+                            <span class="lang-fr hidden">Staking de niveau institutionnel, flux de données et outils de gouvernance pour protocoles proof-of-stake.</span>
+                        </p>
+                        <a href="https://figment.io" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Visit Figment</span>
+                            <span class="lang-fr hidden">Visiter Figment</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">WonderFi</span>
+                            <span class="lang-fr hidden">WonderFi</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Digital asset platform operating regulated exchanges and Web3 financial products.</span>
+                            <span class="lang-fr hidden">Plateforme d'actifs numériques exploitant des exchanges réglementés et des produits financiers Web3.</span>
+                        </p>
+                        <a href="https://www.wonderfi.com" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Discover WonderFi</span>
+                            <span class="lang-fr hidden">Découvrir WonderFi</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Ledn</span>
+                            <span class="lang-fr hidden">Ledn</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Digital asset lending platform offering interest accounts, loans, and Bitcoin-backed mortgages.</span>
+                            <span class="lang-fr hidden">Plateforme de prêt d'actifs numériques offrant comptes d'intérêts, prêts et hypothèques adossées au Bitcoin.</span>
+                        </p>
+                        <a href="https://ledn.io" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Visit Ledn</span>
+                            <span class="lang-fr hidden">Visiter Ledn</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Aquanow</span>
+                            <span class="lang-fr hidden">Aquanow</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Institutional liquidity and infrastructure provider supporting trading desks worldwide.</span>
+                            <span class="lang-fr hidden">Fournisseur de liquidité et d'infrastructure institutionnelle soutenant des bureaux de négociation mondiaux.</span>
+                        </p>
+                        <a href="https://aquanow.io" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Explore Aquanow</span>
+                            <span class="lang-fr hidden">Explorer Aquanow</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Balance</span>
+                            <span class="lang-fr hidden">Balance</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Digital asset custodian providing workflows, reporting, and secure storage for institutions.</span>
+                            <span class="lang-fr hidden">Dépositaire d'actifs numériques offrant flux de travail, rapports et stockage sécurisé pour institutions.</span>
+                        </p>
+                        <a href="https://www.balance.ca/" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Visit Balance</span>
+                            <span class="lang-fr hidden">Visiter Balance</span>
+                        </a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Tax Resources -->
+        <details class="resource-category">
+            <summary class="category-summary">
+                <h2 class="category-title">
+                    <i class="ri-calculator-line"></i>
+                    <span class="lang-en">Tax Resources</span>
+                    <span class="lang-fr hidden">Ressources fiscales</span>
+                </h2>
+            </summary>
+            <div class="category-content">
+                <p class="category-description">
+                    <span class="lang-en">Tools and guidance for accurate CRA cryptocurrency reporting.</span>
+                    <span class="lang-fr hidden">Outils et directives pour une déclaration de crypto-monnaies conforme à l'ARC.</span>
+                </p>
+                <div class="resource-list">
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Koinly Canada</span>
+                            <span class="lang-fr hidden">Koinly Canada</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Automated tax calculations with CRA-compliant forms and integration to Canadian exchanges.</span>
+                            <span class="lang-fr hidden">Calculs fiscaux automatisés avec formulaires conformes à l'ARC et intégration aux exchanges canadiens.</span>
+                        </p>
+                        <a href="https://koinly.io" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Generate Reports</span>
+                            <span class="lang-fr hidden">Générer des rapports</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">CoinTracker</span>
+                            <span class="lang-fr hidden">CoinTracker</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Portfolio tracking and tax reporting with support for Canadian income classifications.</span>
+                            <span class="lang-fr hidden">Suivi de portefeuille et rapports fiscaux avec prise en charge des classifications de revenus canadiennes.</span>
+                        </p>
+                        <a href="https://www.cointracker.io" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Sync Your Wallets</span>
+                            <span class="lang-fr hidden">Synchroniser vos portefeuilles</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">CPA Canada – Crypto Tax Guidance</span>
+                            <span class="lang-fr hidden">CPA Canada – Guide fiscal crypto</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Professional guidance for accountants advising clients on digital asset taxation.</span>
+                            <span class="lang-fr hidden">Conseils professionnels pour les comptables accompagnant les clients sur la fiscalité des actifs numériques.</span>
+                        </p>
+                        <a href="https://www.cpacanada.ca" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">View Guidance</span>
+                            <span class="lang-fr hidden">Voir les directives</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Canada Revenue Agency</span>
+                            <span class="lang-fr hidden">Agence du revenu du Canada</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Official CRA guidance on crypto taxation, GST/HST obligations, and record keeping.</span>
+                            <span class="lang-fr hidden">Directives officielles de l'ARC sur la fiscalité crypto, les obligations TPS/TVH et la tenue de registres.</span>
+                        </p>
+                        <a href="https://www.canada.ca/en/revenue-agency" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Read CRA Guidance</span>
+                            <span class="lang-fr hidden">Lire les directives de l'ARC</span>
+                        </a>
+            </div>
+        </div>
+            </div>
+        </details>
+
+        <!-- Events & Conferences -->
+        <details class="resource-category">
+            <summary class="category-summary">
+                <h2 class="category-title">
+                    <i class="ri-calendar-event-line"></i>
+                    <span class="lang-en">Events & Conferences</span>
+                    <span class="lang-fr hidden">Événements et conférences</span>
+                </h2>
+            </summary>
+            <div class="category-content">
+                <p class="category-description">
+                    <span class="lang-en">Annual gatherings to network with policymakers, founders, and enterprise leaders.</span>
+                    <span class="lang-fr hidden">Rassemblements annuels pour réseauter avec décideurs, fondateurs et dirigeants d'entreprise.</span>
+                </p>
+                <div class="resource-list">
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Blockchain Futurist Conference</span>
+                            <span class="lang-fr hidden">Conférence Blockchain Futurist</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Canada's largest annual crypto conference hosted in Toronto each August.</span>
+                            <span class="lang-fr hidden">Plus grande conférence crypto annuelle du Canada, organisée à Toronto chaque août.</span>
+                        </p>
+                        <a href="https://futuristconference.com" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">View Conference</span>
+                            <span class="lang-fr hidden">Voir la conférence</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">FINTAC</span>
+                            <span class="lang-fr hidden">FINTAC</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Toronto fintech conference convening regulators, banks, and crypto leaders.</span>
+                            <span class="lang-fr hidden">Conférence fintech de Toronto réunissant régulateurs, banques et leaders crypto.</span>
+                        </p>
+                        <a href="https://fintac.ca" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Explore FINTAC</span>
+                            <span class="lang-fr hidden">Explorer FINTAC</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Collision Conference</span>
+                            <span class="lang-fr hidden">Collision Conference</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">North America's fastest-growing tech event featuring Web3 tracks and XRPL ecosystem talks.</span>
+                            <span class="lang-fr hidden">Événement technologique à la croissance la plus rapide en Amérique du Nord avec parcours Web3 et discussions XRPL.</span>
+                        </p>
+                        <a href="https://collision.com" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Attend Collision</span>
+                            <span class="lang-fr hidden">Assister à Collision</span>
+                        </a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </details>
+
+
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">XRPL Canada</div>
+            <p class="footer-text">
+                © 2025 XRPL Canada.
+                <span class="lang-en">All rights reserved. Building the Internet of Value in Canada.</span>
+                <span class="lang-fr hidden">Tous droits réservés. Construire l'Internet de la valeur au Canada.</span>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'fr' : 'en';
+
+            document.querySelectorAll('.lang-en').forEach(el => {
+                el.classList.toggle('hidden', currentLang !== 'en');
+            });
+
+            document.querySelectorAll('.lang-fr').forEach(el => {
+                el.classList.toggle('hidden', currentLang !== 'fr');
+            });
+
+            document.documentElement.lang = currentLang;
+        }
+    </script>
+</body>
+</html>

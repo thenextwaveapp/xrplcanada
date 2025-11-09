@@ -1,0 +1,9 @@
+[[redirects]]
+  from = "/*"
+  to = "/:splat"
+  status = 200
+  force = false
+
+[build]
+  publish = "."
+

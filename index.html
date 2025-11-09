@@ -58,10 +58,6 @@
         }
 
         .lang-toggle {
-            position: fixed;
-            top: 24px;
-            right: 24px;
-            z-index: 1000;
             background: rgba(26, 26, 36, 0.8);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
@@ -256,13 +252,41 @@
             background: rgba(26, 26, 36, 0.7);
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
-            padding: 22px 20px;
-            text-align: center;
+            padding: 22px 40px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .nav-logo {
+            height: 40px;
+            width: auto;
+            position: absolute;
+            left: 40px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-logo:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 12px rgba(255, 23, 68, 0.4));
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+
+        nav .lang-toggle {
+            position: absolute;
+            right: 40px;
+            margin: 0;
         }
 
         nav a {
@@ -2283,11 +2307,6 @@
     </style>
 </head>
 <body>
-    <button class="lang-toggle" onclick="toggleLanguage()">
-        <span class="lang-en">Français</span>
-        <span class="lang-fr hidden">English</span>
-    </button>
-
     <header>
         <div class="xrp-logo-bg">
             <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/XRP_Ledger_logo.jpg" alt="XRP Ledger" />
@@ -2311,34 +2330,43 @@
     </header>
 
     <nav>
-        <a href="#about">
-            <span class="lang-en">About</span>
-            <span class="lang-fr hidden">À propos</span>
+        <a href="#hero">
+            <img src="public/xrplcanadawhite-nobg.png" alt="XRPL Canada" class="nav-logo">
         </a>
-        <a href="#xrpl-explained">
-            <span class="lang-en">What is XRPL?</span>
-            <span class="lang-fr hidden">Qu'est-ce que XRPL?</span>
-        </a>
-        <a href="#activities">
-            <span class="lang-en">What We Do</span>
-            <span class="lang-fr hidden">Activités</span>
-        </a>
-        <a href="#events">
-            <span class="lang-en">Events</span>
-            <span class="lang-fr hidden">Événements</span>
-        </a>
-        <a href="resources.html">
-            <span class="lang-en">Resources</span>
-            <span class="lang-fr hidden">Ressources</span>
-        </a>
-        <a href="blog.html">
-            <span class="lang-en">Blog</span>
-            <span class="lang-fr hidden">Blog</span>
-        </a>
-        <a href="#contact">
-            <span class="lang-en">Contact</span>
-            <span class="lang-fr hidden">Contact</span>
-        </a>
+        <div class="nav-links">
+            <a href="#about">
+                <span class="lang-en">About</span>
+                <span class="lang-fr hidden">À propos</span>
+            </a>
+            <a href="#xrpl-explained">
+                <span class="lang-en">What is XRPL?</span>
+                <span class="lang-fr hidden">Qu'est-ce que XRPL?</span>
+            </a>
+            <a href="#activities">
+                <span class="lang-en">What We Do</span>
+                <span class="lang-fr hidden">Activités</span>
+            </a>
+            <a href="#events">
+                <span class="lang-en">Events</span>
+                <span class="lang-fr hidden">Événements</span>
+            </a>
+            <a href="resources.html">
+                <span class="lang-en">Resources</span>
+                <span class="lang-fr hidden">Ressources</span>
+            </a>
+            <a href="blog.html">
+                <span class="lang-en">Blog</span>
+                <span class="lang-fr hidden">Blog</span>
+            </a>
+            <a href="#contact">
+                <span class="lang-en">Contact</span>
+                <span class="lang-fr hidden">Contact</span>
+            </a>
+        </div>
+        <button class="lang-toggle" onclick="toggleLanguage()">
+            <span class="lang-en">Français</span>
+            <span class="lang-fr hidden">English</span>
+        </button>
     </nav>
 
     <div class="container">

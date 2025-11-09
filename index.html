@@ -258,17 +258,16 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
             align-items: center;
-            justify-content: center;
-            position: relative;
+            gap: 20px;
         }
 
         .nav-logo {
             height: 40px;
             width: auto;
-            position: absolute;
-            left: 40px;
+            justify-self: start;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -281,11 +280,11 @@
             display: flex;
             align-items: center;
             gap: 0;
+            justify-self: center;
         }
 
         nav .lang-toggle {
-            position: absolute;
-            right: 40px;
+            justify-self: end;
             margin: 0;
         }
 
@@ -314,12 +313,20 @@
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
+        nav a:has(.nav-logo)::after {
+            display: none;
+        }
+
         nav a:hover {
             color: var(--primary-red);
         }
 
         nav a:hover::after {
             transform: translateX(-50%) scaleX(1);
+        }
+
+        nav a:has(.nav-logo):hover {
+            color: inherit;
         }
 
         .container {
@@ -2330,14 +2337,14 @@
     </header>
 
     <nav>
-        <a href="#hero">
+        <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
             <img src="public/xrplcanadawhite-nobg.png" alt="XRPL Canada" class="nav-logo">
         </a>
         <div class="nav-links">
-            <a href="#about">
+        <a href="#about">
                 <span class="lang-en">About</span>
-                <span class="lang-fr hidden">À propos</span>
-            </a>
+            <span class="lang-fr hidden">À propos</span>
+        </a>
             <a href="#xrpl-explained">
                 <span class="lang-en">What is XRPL?</span>
                 <span class="lang-fr hidden">Qu'est-ce que XRPL?</span>
@@ -2346,22 +2353,18 @@
                 <span class="lang-en">What We Do</span>
                 <span class="lang-fr hidden">Activités</span>
             </a>
-            <a href="#events">
-                <span class="lang-en">Events</span>
-                <span class="lang-fr hidden">Événements</span>
-            </a>
-            <a href="resources.html">
+        <a href="resources.html">
                 <span class="lang-en">Resources</span>
-                <span class="lang-fr hidden">Ressources</span>
-            </a>
-            <a href="blog.html">
+            <span class="lang-fr hidden">Ressources</span>
+        </a>
+        <a href="blog.html">
                 <span class="lang-en">Blog</span>
-                <span class="lang-fr hidden">Blog</span>
-            </a>
-            <a href="#contact">
+            <span class="lang-fr hidden">Blog</span>
+        </a>
+        <a href="#contact">
                 <span class="lang-en">Contact</span>
-                <span class="lang-fr hidden">Contact</span>
-            </a>
+            <span class="lang-fr hidden">Contact</span>
+        </a>
         </div>
         <button class="lang-toggle" onclick="toggleLanguage()">
             <span class="lang-en">Français</span>
@@ -2397,90 +2400,6 @@
             </div>
         </section>
 
-        <section id="activities">
-            <h2>
-                <span class="lang-en">What We Do</span>
-                <span class="lang-fr hidden">Nos activités</span>
-            </h2>
-            <div class="resources-grid">
-                <!-- Featured: XRPL Resources -->
-                <div class="resource-item featured">
-                    <div class="resource-image">
-                        <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=800&auto=format&fit=crop" alt="XRPL Resources">
-                    </div>
-                    <div class="resource-content">
-                        <h4>
-                            <span class="lang-en">XRPL Canada Resources 🍁</span>
-                            <span class="lang-fr hidden">Ressources XRPL Canada 🍁</span>
-                        </h4>
-                        <p class="lang-en">Everything you need to build on XRPL in Canada—developer tools, wallets, grants, universities, exchanges, legal services, government contacts, and the full Canadian crypto ecosystem.</p>
-                        <p class="lang-fr hidden">Tout ce dont vous avez besoin pour construire sur XRPL au Canada—outils développeurs, portefeuilles, subventions, universités, plateformes d'échange, services juridiques, contacts gouvernementaux et l'écosystème crypto canadien complet.</p>
-                        <a href="resources.html" class="resource-link">
-                            <span class="lang-en">Explore All Resources</span>
-                            <span class="lang-fr hidden">Explorer toutes les ressources</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Secondary Resources -->
-                <div class="resources-secondary">
-                <div class="resource-item">
-                    <div class="resource-image">
-                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop" alt="XRPL Documentation">
-                    </div>
-                    <div class="resource-content">
-                        <h4>
-                            <span class="lang-en">XRPL Documentation</span>
-                            <span class="lang-fr hidden">Documentation XRPL</span>
-                        </h4>
-                            <p class="lang-en">Technical guides, tutorials, and API references for building on XRPL.</p>
-                            <p class="lang-fr hidden">Guides techniques, tutoriels et références API pour construire sur XRPL.</p>
-                        <a href="https://xrpl.org/docs" class="resource-link" target="_blank" rel="noopener noreferrer">
-                            <span class="lang-en">View Docs</span>
-                            <span class="lang-fr hidden">Voir la doc</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="resource-item">
-                    <div class="resource-image">
-                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800&auto=format&fit=crop" alt="Events">
-                    </div>
-                    <div class="resource-content">
-                        <h4>
-                                <span class="lang-en">Events</span>
-                            <span class="lang-fr hidden">Événements</span>
-                        </h4>
-                            <p class="lang-en">Meetups, conferences, and networking for the Canadian XRPL community.</p>
-                            <p class="lang-fr hidden">Rencontres, conférences et réseautage pour la communauté XRPL canadienne.</p>
-                        <a href="#events" class="resource-link">
-                            <span class="lang-en">View Events</span>
-                            <span class="lang-fr hidden">Voir les événements</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="resource-item">
-                    <div class="resource-image">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop" alt="Community">
-                    </div>
-                    <div class="resource-content">
-                        <h4>
-                                <span class="lang-en">Community</span>
-                                <span class="lang-fr hidden">Communauté</span>
-                        </h4>
-                            <p class="lang-en">Connect with XRPL builders, developers, and enthusiasts.</p>
-                            <p class="lang-fr hidden">Connectez-vous avec des bâtisseurs, développeurs et passionnés XRPL.</p>
-                        <a href="https://discord.com" class="resource-link" target="_blank" rel="noopener noreferrer">
-                            <span class="lang-en">Join Discord</span>
-                            <span class="lang-fr hidden">Rejoindre Discord</span>
-                        </a>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </section>
-
         <section id="xrpl-explained">
             <h2>
                 <span class="lang-en">What is the XRP Ledger?</span>
@@ -2495,7 +2414,7 @@
                     <p class="lang-fr hidden">
                             Le <strong>XRP Ledger (XRPL)</strong> est une blockchain publique décentralisée opérationnelle depuis 2012. XRPL est l'un des premiers réseaux blockchain publics—éprouvé depuis plus d'une décennie avec des milliards de dollars de valeur transférée.
                     </p>
-                </div>
+                    </div>
 
                     <div class="xrpl-features">
                         <div class="xrpl-feature">
@@ -2546,14 +2465,14 @@
                     </div>
                             <h3 class="lang-en">Built for Finance</h3>
                             <h3 class="lang-fr hidden">Conçu pour la finance</h3>
-                            <p class="lang-en">
+                    <p class="lang-en">
                                 Natively supports multi-currency transactions, DEX trading, escrows, and payment channels.
-                            </p>
-                            <p class="lang-fr hidden">
+                    </p>
+                    <p class="lang-fr hidden">
                                 Prend en charge nativement les transactions multidevises, le trading DEX, les séquestres et les canaux de paiement.
-                            </p>
-                            </div>
+                    </p>
                 </div>
+            </div>
 
                     <div class="xrpl-crypto-context">
                         <h3>
@@ -2567,13 +2486,13 @@
                                 <div class="timeline-content">
                                     <div class="timeline-icon timeline-logo">
                                         <img src="public/bitcoin.png" alt="Bitcoin" />
-                            </div>
+                    </div>
                                     <div class="timeline-text">
                                         <span class="lang-en"><strong>Bitcoin</strong> proved digital scarcity</span>
                                         <span class="lang-fr hidden"><strong>Bitcoin</strong> a prouvé la rareté numérique</span>
-                                </div>
-                                </div>
+                </div>
                             </div>
+                                </div>
 
                             <div class="timeline-connector"></div>
                             
@@ -2582,13 +2501,13 @@
                                 <div class="timeline-content">
                                     <div class="timeline-icon timeline-logo">
                                         <img src="public/xrp.png" alt="XRP Ledger" />
-                        </div>
+                                </div>
                                     <div class="timeline-text">
                                         <span class="lang-en"><strong>XRP Ledger</strong> built for payments</span>
                                         <span class="lang-fr hidden"><strong>XRP Ledger</strong> conçu pour les paiements</span>
                             </div>
                         </div>
-                    </div>
+                            </div>
 
                             <div class="timeline-connector"></div>
                             
@@ -2601,10 +2520,10 @@
                                     <div class="timeline-text">
                                         <span class="lang-en"><strong>Ethereum</strong> introduced smart contracts</span>
                                         <span class="lang-fr hidden"><strong>Ethereum</strong> a introduit les contrats intelligents</span>
-                                </div>
-                                </div>
                             </div>
                         </div>
+                        </div>
+                    </div>
 
                         <p class="lang-en">
                             Ripple grew from that engineering effort, making XRPL usable for real financial institutions. The ledger remains <strong>open-source and decentralized</strong>, governed by independent validators worldwide, while Ripple builds partnerships, software, and liquidity solutions for institutional adoption.
@@ -2618,7 +2537,7 @@
                         <p class="lang-fr hidden">
                             Aujourd'hui, XRPL traite des milliards par an—actifs tokenisés, trading DEX, NFT, règlement d'entreprise. Dans un paysage souvent défini par la spéculation, XRPL est une infrastructure durable, avec Ripple qui fait le pont entre la technologie décentralisée et l'adoption institutionnelle.
                         </p>
-                    </div>
+                            </div>
 
                     <div class="xrpl-canada-connection">
                         <h3>
@@ -2672,8 +2591,8 @@
                         <div class="starting-point">
                             <span class="lang-en">Whether you're a student, a startup, or a developer—<strong>this is your starting point.</strong></span>
                             <span class="lang-fr hidden">Que vous soyez étudiant, startup ou développeur—<strong>c'est votre point de départ.</strong></span>
-                            </div>
-                            </div>
+                                </div>
+                                </div>
 
                     <div class="xrpl-cta">
                         <a href="resources.html" class="cta-button">
@@ -2682,65 +2601,91 @@
                             </a>
                             </div>
                         </div>
-                        </div>
+                            </div>
         </section>
 
-        <section id="blog-preview">
+        <section id="activities">
             <h2>
-                <span class="lang-en">Latest Updates</span>
-                <span class="lang-fr hidden">Dernières mises à jour</span>
+                <span class="lang-en">What We Do</span>
+                <span class="lang-fr hidden">Nos activités</span>
             </h2>
-            <p class="section-subtitle">
-                <span class="lang-en">Real-world XRPL adoption, ecosystem news, and stories from the field</span>
-                <span class="lang-fr hidden">Adoption XRPL réelle, nouvelles de l'écosystème et histoires du terrain</span>
-            </p>
-            <div class="blog-preview-grid">
-                <article class="blog-preview-card">
-                    <div class="blog-preview-meta">
-                        <span class="blog-preview-date">November 8, 2025</span>
-                        <span class="blog-preview-category">Weekly Roundup</span>
-                    </div>
-                    <h3 class="blog-preview-title">
-                        <span class="lang-en">This Week on the Ledger — November 8</span>
-                        <span class="lang-fr hidden">Cette semaine sur le Ledger — 8 novembre</span>
-                    </h3>
-                    <p class="blog-preview-excerpt">
-                        <span class="lang-en">Ripple raises $500M at $40B valuation, RLUSD powers Mastercard pilot, Swell 2025 brings Wall Street to the table, and XRP ETF speculation heats up.</span>
-                        <span class="lang-fr hidden">Ripple lève 500 M$ avec une valorisation de 40 milliards $, RLUSD alimente le pilote Mastercard, Swell 2025 amène Wall Street à la table.</span>
-                    </p>
-                    <a href="blog/this-week-on-the-ledger-nov-8-2025.html" class="blog-preview-link">
-                        <span class="lang-en">Read More</span>
-                        <span class="lang-fr hidden">Lire plus</span>
-                        <i class="ri-arrow-right-line"></i>
-                    </a>
-                </article>
-
-                <article class="blog-preview-card">
-                    <div class="blog-preview-meta">
-                        <span class="blog-preview-date">November 8, 2025</span>
-                        <span class="blog-preview-category">Case Study</span>
-                    </div>
-                    <h3 class="blog-preview-title">
-                        <span class="lang-en">Banks Using RippleNet: Institutional Adoption at Scale</span>
-                        <span class="lang-fr hidden">Banques utilisant RippleNet : adoption institutionnelle</span>
-                        </h3>
-                    <p class="blog-preview-excerpt">
-                        <span class="lang-en">From Santander to Standard Chartered, major financial institutions are using RippleNet and XRP to transform cross-border payments.</span>
-                        <span class="lang-fr hidden">De Santander à Standard Chartered, les grandes institutions financières utilisent RippleNet et XRP pour transformer les paiements transfrontaliers.</span>
-                    </p>
-                    <a href="blog/banks-using-ripplenet-case-study.html" class="blog-preview-link">
-                        <span class="lang-en">Read More</span>
-                        <span class="lang-fr hidden">Lire plus</span>
-                        <i class="ri-arrow-right-line"></i>
-                    </a>
-                </article>
+            <div class="resources-grid">
+                <!-- Featured: XRPL Resources -->
+                <div class="resource-item featured">
+                    <div class="resource-image">
+                        <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=800&auto=format&fit=crop" alt="XRPL Resources">
                             </div>
-            <div class="blog-preview-cta">
-                <a href="blog.html" class="cta-button-secondary">
-                    <span class="lang-en">View All Updates</span>
-                    <span class="lang-fr hidden">Voir toutes les mises à jour</span>
+                    <div class="resource-content">
+                        <h4>
+                            <span class="lang-en">XRPL Canada Resources 🍁</span>
+                            <span class="lang-fr hidden">Ressources XRPL Canada 🍁</span>
+                        </h4>
+                        <p class="lang-en">Everything you need to build on XRPL in Canada—developer tools, wallets, grants, universities, exchanges, legal services, government contacts, and the full Canadian crypto ecosystem.</p>
+                        <p class="lang-fr hidden">Tout ce dont vous avez besoin pour construire sur XRPL au Canada—outils développeurs, portefeuilles, subventions, universités, plateformes d'échange, services juridiques, contacts gouvernementaux et l'écosystème crypto canadien complet.</p>
+                        <a href="resources.html" class="resource-link">
+                            <span class="lang-en">Explore All Resources</span>
+                            <span class="lang-fr hidden">Explorer toutes les ressources</span>
+                        </a>
+                            </div>
+                        </div>
+
+                <!-- Secondary Resources -->
+                <div class="resources-secondary">
+                <div class="resource-item">
+                    <div class="resource-image">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop" alt="XRPL Documentation">
+                    </div>
+                    <div class="resource-content">
+                        <h4>
+                            <span class="lang-en">XRPL Documentation</span>
+                            <span class="lang-fr hidden">Documentation XRPL</span>
+                        </h4>
+                            <p class="lang-en">Technical guides, tutorials, and API references for building on XRPL.</p>
+                            <p class="lang-fr hidden">Guides techniques, tutoriels et références API pour construire sur XRPL.</p>
+                        <a href="https://xrpl.org/docs" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">View Docs</span>
+                            <span class="lang-fr hidden">Voir la doc</span>
                             </a>
                         </div>
+                    </div>
+
+                <div class="resource-item">
+                    <div class="resource-image">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800&auto=format&fit=crop" alt="Events">
+                            </div>
+                    <div class="resource-content">
+                        <h4>
+                                <span class="lang-en">Events</span>
+                            <span class="lang-fr hidden">Événements</span>
+                        </h4>
+                            <p class="lang-en">Meetups, conferences, and networking for the Canadian XRPL community.</p>
+                            <p class="lang-fr hidden">Rencontres, conférences et réseautage pour la communauté XRPL canadienne.</p>
+                        <a href="#events" class="resource-link">
+                            <span class="lang-en">View Events</span>
+                            <span class="lang-fr hidden">Voir les événements</span>
+                        </a>
+                                </div>
+                                </div>
+
+                <div class="resource-item">
+                    <div class="resource-image">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop" alt="Community">
+                            </div>
+                    <div class="resource-content">
+                        <h4>
+                                <span class="lang-en">Community</span>
+                                <span class="lang-fr hidden">Communauté</span>
+                        </h4>
+                            <p class="lang-en">Connect with XRPL builders, developers, and enthusiasts.</p>
+                            <p class="lang-fr hidden">Connectez-vous avec des bâtisseurs, développeurs et passionnés XRPL.</p>
+                        <a href="https://discord.com" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Join Discord</span>
+                            <span class="lang-fr hidden">Rejoindre Discord</span>
+                        </a>
+                        </div>
+                            </div>
+                            </div>
+                            </div>
         </section>
 
         <section id="events">
@@ -2821,6 +2766,64 @@
                     </div>
                 </div>
             </div>
+        </section>
+
+        <section id="blog-preview">
+            <h2>
+                <span class="lang-en">Latest Updates</span>
+                <span class="lang-fr hidden">Dernières mises à jour</span>
+            </h2>
+            <p class="section-subtitle">
+                <span class="lang-en">Real-world XRPL adoption, ecosystem news, and stories from the field</span>
+                <span class="lang-fr hidden">Adoption XRPL réelle, nouvelles de l'écosystème et histoires du terrain</span>
+            </p>
+            <div class="blog-preview-grid">
+                <article class="blog-preview-card">
+                    <div class="blog-preview-meta">
+                        <span class="blog-preview-date">November 8, 2025</span>
+                        <span class="blog-preview-category">Weekly Roundup</span>
+                        </div>
+                    <h3 class="blog-preview-title">
+                        <span class="lang-en">This Week on the Ledger — November 8</span>
+                        <span class="lang-fr hidden">Cette semaine sur le Ledger — 8 novembre</span>
+                    </h3>
+                    <p class="blog-preview-excerpt">
+                        <span class="lang-en">Ripple raises $500M at $40B valuation, RLUSD powers Mastercard pilot, Swell 2025 brings Wall Street to the table, and XRP ETF speculation heats up.</span>
+                        <span class="lang-fr hidden">Ripple lève 500 M$ avec une valorisation de 40 milliards $, RLUSD alimente le pilote Mastercard, Swell 2025 amène Wall Street à la table.</span>
+                    </p>
+                    <a href="blog/this-week-on-the-ledger-nov-8-2025.html" class="blog-preview-link">
+                        <span class="lang-en">Read More</span>
+                        <span class="lang-fr hidden">Lire plus</span>
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </article>
+
+                <article class="blog-preview-card">
+                    <div class="blog-preview-meta">
+                        <span class="blog-preview-date">November 8, 2025</span>
+                        <span class="blog-preview-category">Case Study</span>
+                            </div>
+                    <h3 class="blog-preview-title">
+                        <span class="lang-en">Banks Using RippleNet: Institutional Adoption at Scale</span>
+                        <span class="lang-fr hidden">Banques utilisant RippleNet : adoption institutionnelle</span>
+                        </h3>
+                    <p class="blog-preview-excerpt">
+                        <span class="lang-en">From Santander to Standard Chartered, major financial institutions are using RippleNet and XRP to transform cross-border payments.</span>
+                        <span class="lang-fr hidden">De Santander à Standard Chartered, les grandes institutions financières utilisent RippleNet et XRP pour transformer les paiements transfrontaliers.</span>
+                    </p>
+                    <a href="blog/banks-using-ripplenet-case-study.html" class="blog-preview-link">
+                        <span class="lang-en">Read More</span>
+                        <span class="lang-fr hidden">Lire plus</span>
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </article>
+                        </div>
+            <div class="blog-preview-cta">
+                <a href="blog.html" class="cta-button-secondary">
+                    <span class="lang-en">View All Updates</span>
+                    <span class="lang-fr hidden">Voir toutes les mises à jour</span>
+                            </a>
+                    </div>
         </section>
 
         <div class="newsletter-section">
@@ -2953,6 +2956,29 @@
     </footer>
 
     <script>
+        // Save scroll position before leaving the page
+        window.addEventListener('beforeunload', () => {
+            sessionStorage.setItem('indexScrollPosition', window.scrollY);
+        });
+
+        // Restore scroll position when returning to the page
+        const savedPosition = sessionStorage.getItem('indexScrollPosition');
+        if (savedPosition && document.referrer && !document.referrer.includes('#')) {
+            // Disable smooth scrolling temporarily
+            const html = document.documentElement;
+            const originalScrollBehavior = html.style.scrollBehavior;
+            html.style.scrollBehavior = 'auto';
+            
+            // Set scroll position immediately
+            history.scrollRestoration = 'manual';
+            window.scrollTo(0, parseInt(savedPosition));
+            
+            // Restore smooth scrolling after a moment
+            setTimeout(() => {
+                html.style.scrollBehavior = originalScrollBehavior;
+            }, 100);
+        }
+
         let currentLang = 'en';
 
         function toggleLanguage() {

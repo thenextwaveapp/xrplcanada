@@ -95,17 +95,16 @@
             top: 0;
             z-index: 999;
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
             align-items: center;
-            justify-content: center;
-            position: relative;
+            gap: 20px;
         }
 
         .nav-logo {
             height: 40px;
             width: auto;
-            position: absolute;
-            left: 40px;
+            justify-self: start;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -118,11 +117,11 @@
             display: flex;
             align-items: center;
             gap: 0;
+            justify-self: center;
         }
 
         nav .lang-toggle {
-            position: absolute;
-            right: 40px;
+            justify-self: end;
             margin: 0;
         }
 
@@ -151,12 +150,20 @@
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
+        nav a:has(.nav-logo)::after {
+            display: none;
+        }
+
         nav a:hover {
             color: var(--primary-red);
         }
 
         nav a:hover::after {
             transform: translateX(-50%) scaleX(1);
+        }
+
+        nav a:has(.nav-logo):hover {
+            color: inherit;
         }
 
         .container {
@@ -347,10 +354,6 @@
             <a href="index.html#activities">
                 <span class="lang-en">What We Do</span>
                 <span class="lang-fr hidden">Activités</span>
-            </a>
-            <a href="index.html#events">
-                <span class="lang-en">Events</span>
-                <span class="lang-fr hidden">Événements</span>
             </a>
             <a href="resources.html">
                 <span class="lang-en">Resources</span>

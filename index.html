@@ -285,6 +285,7 @@
 
         nav .lang-toggle {
             justify-self: end;
+            align-self: center;
             margin: 0;
         }
 
@@ -2961,9 +2962,11 @@
             sessionStorage.setItem('indexScrollPosition', window.scrollY);
         });
 
-        // Restore scroll position when returning to the page
+        // Restore scroll position when returning to the page via logo click
         const savedPosition = sessionStorage.getItem('indexScrollPosition');
-        if (savedPosition && document.referrer && !document.referrer.includes('#')) {
+        const shouldRestore = sessionStorage.getItem('restoreScroll');
+        
+        if (savedPosition && shouldRestore === 'true') {
             // Disable smooth scrolling temporarily
             const html = document.documentElement;
             const originalScrollBehavior = html.style.scrollBehavior;
@@ -2977,6 +2980,9 @@
             setTimeout(() => {
                 html.style.scrollBehavior = originalScrollBehavior;
             }, 100);
+            
+            // Clear the flag
+            sessionStorage.removeItem('restoreScroll');
         }
 
         let currentLang = 'en';

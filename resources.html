@@ -479,30 +479,26 @@
             <img src="public/xrplcanadawhite-nobg.png" alt="XRPL Canada" class="nav-logo">
         </a>
         <div class="nav-links">
-            <a href="index.html#about">
+        <a href="index.html#about">
                 <span class="lang-en">About</span>
-                <span class="lang-fr hidden">À propos</span>
-            </a>
+            <span class="lang-fr hidden">À propos</span>
+        </a>
             <a href="index.html#xrpl-explained">
                 <span class="lang-en">What is XRPL?</span>
                 <span class="lang-fr hidden">Qu'est-ce que XRPL?</span>
-            </a>
-            <a href="index.html#activities">
-                <span class="lang-en">What We Do</span>
-                <span class="lang-fr hidden">Activités</span>
-            </a>
-            <a href="resources.html">
+        </a>
+        <a href="resources.html">
                 <span class="lang-en">Resources</span>
-                <span class="lang-fr hidden">Ressources</span>
-            </a>
+            <span class="lang-fr hidden">Ressources</span>
+        </a>
             <a href="blog.html">
                 <span class="lang-en">Blog</span>
                 <span class="lang-fr hidden">Blog</span>
             </a>
-            <a href="index.html#contact">
+        <a href="index.html#contact">
                 <span class="lang-en">Contact</span>
-                <span class="lang-fr hidden">Contact</span>
-            </a>
+            <span class="lang-fr hidden">Contact</span>
+        </a>
         </div>
         <button class="lang-toggle" onclick="toggleLanguage()">
             <span class="lang-en">Français</span>
@@ -526,6 +522,82 @@
             </p>
         </div>
 
+        <!-- Search Bar -->
+        <div style="max-width: 900px; margin: 60px auto 32px; padding: 0;">
+            <input 
+                type="text" 
+                id="resource-search" 
+                placeholder="Search resources..."
+                style="width: 100%; padding: 16px 20px; font-size: 16px; background: rgba(26, 26, 36, 0.6); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; color: var(--text-primary); outline: none; transition: all 0.3s ease;"
+                onfocus="this.style.borderColor='rgba(255, 23, 68, 0.5)'; this.style.background='rgba(26, 26, 36, 0.8)';"
+                onblur="this.style.borderColor='rgba(255, 255, 255, 0.1)'; this.style.background='rgba(26, 26, 36, 0.6)';"
+                oninput="filterResources(this.value)"
+            />
+            <div id="search-results" style="margin-top: 12px; font-size: 14px; color: var(--text-secondary); display: none;"></div>
+        </div>
+
+        <!-- Getting Started -->
+        <div style="max-width: 900px; margin: 0 auto 60px; padding: 40px; background: rgba(26, 26, 36, 0.4); border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.1);">
+            <p style="font-size: 16px; line-height: 1.8; color: var(--text-secondary); margin-bottom: 28px;">
+                <span class="lang-en">
+                    This is everything you need to build, learn, or contribute to the XRP Ledger in Canada. If you're looking for a specific tool, protocol documentation, or inspiration from what others are building—it's here.
+                </span>
+                <span class="lang-fr hidden">
+                    Voici tout ce dont vous avez besoin pour construire, apprendre ou contribuer au XRP Ledger au Canada. Si vous cherchez un outil spécifique, de la documentation de protocole ou de l'inspiration de ce que d'autres construisent—c'est ici.
+                </span>
+            </p>
+
+            <div style="display: grid; gap: 14px;">
+                <div style="display: flex; gap: 12px;">
+                    <div style="color: var(--text-secondary); font-weight: 600; min-width: 24px;">→</div>
+                    <div>
+                        <strong style="color: var(--text-primary);">
+                            <span class="lang-en">New to XRP Ledger?</span>
+                            <span class="lang-fr hidden">Nouveau sur XRP Ledger?</span>
+                        </strong>
+                        <span style="color: var(--text-secondary);">
+                            <span class="lang-en"> Start with Foundation. Get a wallet, understand how it works, <a href="https://xrpl.org/about/xrp" target="_blank" rel="noopener noreferrer" style="color: var(--primary-red); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--primary-red);">start here</a>.</span>
+                            <span class="lang-fr hidden"> Commencez avec Fondation. Obtenez un portefeuille, comprenez comment ça marche, <a href="https://xrpl.org/docs/introduction/what-is-the-xrp-ledger" target="_blank" rel="noopener noreferrer" style="color: var(--primary-red); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--primary-red);">commencez ici</a>.</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 12px;">
+                    <div style="color: var(--text-secondary); font-weight: 600; min-width: 24px;">→</div>
+                    <div>
+                        <strong style="color: var(--text-primary);">
+                            <span class="lang-en">Building already?</span>
+                            <span class="lang-fr hidden">Vous construisez déjà?</span>
+                        </strong>
+                        <span style="color: var(--text-secondary);">
+                            <span class="lang-en"> Check Developer Tools for the SDKs, APIs, and libraries you need.</span>
+                            <span class="lang-fr hidden"> Consultez Outils de développement pour les SDK, API et bibliothèques dont vous avez besoin.</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 12px;">
+                    <div style="color: var(--text-secondary); font-weight: 600; min-width: 24px;">→</div>
+                    <div>
+                        <strong style="color: var(--text-primary);">
+                            <span class="lang-en">Looking for Canadian projects?</span>
+                            <span class="lang-fr hidden">Vous cherchez des projets canadiens?</span>
+                        </strong>
+                        <span style="color: var(--text-secondary);">
+                            <span class="lang-en"> Find Canadian XRPL Projects at the bottom of the page.</span>
+                            <span class="lang-fr hidden"> Trouvez Projets XRPL canadiens en bas de la page.</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 24px; padding: 12px 16px; background: rgba(255, 255, 255, 0.03); border-left: 3px solid rgba(255, 255, 255, 0.2); border-radius: 4px;">
+                <p style="font-size: 14px; line-height: 1.5; color: var(--text-secondary); margin: 0;">
+                    <span class="lang-en">Resources are organized by category—click any section to expand.</span>
+                    <span class="lang-fr hidden">Les ressources sont organisées par catégorie—cliquez sur n'importe quelle section pour développer.</span>
+                </p>
+            </div>
+        </div>
 
         <div class="section-divider">
             <h2 class="section-heading">
@@ -539,7 +611,7 @@
         </div>
 
         <!-- Official Documentation -->
-        <details class="resource-category" open>
+        <details class="resource-category">
             <summary class="category-summary">
             <h2 class="category-title">
                 <i class="ri-book-open-line"></i>
@@ -826,7 +898,7 @@
 
 
         <!-- XRPL Explorers & Analytics -->
-        <details class="resource-category" open>
+        <details class="resource-category">
             <summary class="category-summary">
                 <h2 class="category-title">
                     <i class="ri-search-line"></i>
@@ -1198,7 +1270,7 @@
         </div>
 
         <!-- XRPL Enterprise Solutions -->
-        <details class="resource-category" open>
+        <details class="resource-category">
             <summary class="category-summary">
                 <h2 class="category-title">
                     <i class="ri-briefcase-line"></i>
@@ -1260,7 +1332,7 @@
         </div>
 
         <!-- XRPL Funding Opportunities -->
-        <details class="resource-category" open>
+        <details class="resource-category">
             <summary class="category-summary">
             <h2 class="category-title">
                 <i class="ri-funds-line"></i>
@@ -1311,7 +1383,7 @@
         </details>
 
         <!-- Community Resources -->
-        <details class="resource-category" open>
+        <details class="resource-category">
             <summary class="category-summary">
             <h2 class="category-title">
                     <i class="ri-community-line"></i>
@@ -1483,7 +1555,7 @@
 
         <div class="section-divider">
             <h2 class="section-heading">
-                <span class="lang-en">Canadian Ecosystem</span>
+                <span class="lang-en">Canadian Blockchain Ecosystem</span>
                 <span class="lang-fr hidden">Écosystème canadien</span>
             </h2>
             <p class="section-subtitle">
@@ -1493,7 +1565,7 @@
         </div>
 
         <!-- Advocacy & Policy -->
-        <details class="resource-category" open>
+        <details class="resource-category">
             <summary class="category-summary">
             <h2 class="category-title">
                     <i class="ri-megaphone-line"></i>
@@ -1782,7 +1854,7 @@
         </details>
 
         <!-- Accelerators & Incubators -->
-        <details class="resource-category" open>
+        <details class="resource-category">
             <summary class="category-summary">
             <h2 class="category-title">
                     <i class="ri-seedling-line"></i>
@@ -1884,7 +1956,7 @@
         </details>
 
         <!-- Universities & Programs -->
-        <details class="resource-category" open>
+        <details class="resource-category">
             <summary class="category-summary">
             <h2 class="category-title">
                 <i class="ri-school-line"></i>
@@ -2669,6 +2741,46 @@
             </div>
         </details>
 
+        <!-- Canadian XRPL Projects -->
+        <details class="resource-category" open>
+            <summary class="category-summary">
+                <h2 class="category-title">
+                    🍁
+                    <span class="lang-en">Canadian XRPL Projects</span>
+                    <span class="lang-fr hidden">Projets XRPL canadiens</span>
+                </h2>
+            </summary>
+            <div class="category-content">
+                <p class="category-description">
+                    <span class="lang-en">Projects and platforms building on XRPL in Canada.</span>
+                    <span class="lang-fr hidden">Projets et plateformes construisant sur XRPL au Canada.</span>
+                </p>
+                <div class="resource-list">
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Next Wave</span>
+                            <span class="lang-fr hidden">Next Wave</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">A Canadian-developed social wallet for the XRP economy.</span>
+                            <span class="lang-fr hidden">Un portefeuille social canadien pour l'économie XRP.</span>
+                        </p>
+                        <a href="https://www.thenextwaveapp.ca" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Visit Project</span>
+                            <span class="lang-fr hidden">Visiter le projet</span>
+                        </a>
+                    </div>
+                </div>
+                </div>
+                
+                <p style="margin-top: 32px; padding: 24px; background: rgba(255, 23, 68, 0.05); border-left: 4px solid var(--primary-red); border-radius: 8px; color: var(--text-secondary); font-size: 16px; line-height: 1.6;">
+                    <span class="lang-en">Building on XRPL in Canada? <span onclick="navigator.clipboard.writeText('team@xrplcanada.org'); this.textContent='Copied!'; setTimeout(() => this.textContent='team@xrplcanada.org', 2000);" style="color: var(--primary-red); text-decoration: none; font-weight: 600; cursor: pointer; border-bottom: 1px dashed var(--primary-red);" title="Click to copy email">team@xrplcanada.org</span> and we'll feature your project here.</span>
+                    <span class="lang-fr hidden">Vous construisez sur XRPL au Canada? <span onclick="navigator.clipboard.writeText('team@xrplcanada.org'); this.textContent='Copié!'; setTimeout(() => this.textContent='team@xrplcanada.org', 2000);" style="color: var(--primary-red); text-decoration: none; font-weight: 600; cursor: pointer; border-bottom: 1px dashed var(--primary-red);" title="Cliquez pour copier l'e-mail">team@xrplcanada.org</span> et nous présenterons votre projet ici.</span>
+                </p>
+            </div>
+        </details>
+
 
     </div>
 
@@ -2698,6 +2810,40 @@
             });
 
             document.documentElement.lang = currentLang;
+        }
+
+        function filterResources(query) {
+            const searchTerm = query.toLowerCase().trim();
+            const categories = document.querySelectorAll('.resource-category');
+            const resultsDiv = document.getElementById('search-results');
+            
+            if (searchTerm === '') {
+                // Reset: close all categories
+                categories.forEach(category => {
+                    category.removeAttribute('open');
+                    category.style.display = '';
+                });
+                resultsDiv.style.display = 'none';
+                return;
+            }
+
+            let matchCount = 0;
+            categories.forEach(category => {
+                const categoryText = category.textContent.toLowerCase();
+                const hasMatch = categoryText.includes(searchTerm);
+                
+                if (hasMatch) {
+                    category.style.display = '';
+                    category.setAttribute('open', '');
+                    matchCount++;
+                } else {
+                    category.style.display = 'none';
+                }
+            });
+
+            // Show results count
+            resultsDiv.style.display = 'block';
+            resultsDiv.textContent = `Showing ${matchCount} ${matchCount === 1 ? 'section' : 'sections'} for "${query}"`;
         }
     </script>
 </body>

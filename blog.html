@@ -4,10 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog & Updates | XRPL Canada</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Real-world XRPL adoption stories, ecosystem news, and insights on building payment infrastructure. Educational content about the XRP Ledger in Canada.">
+    <meta name="keywords" content="XRPL blog, XRP adoption, Ripple case studies, blockchain payments, crypto education Canada">
+    <link rel="canonical" href="https://xrplcanada.org/blog.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xrplcanada.org/blog.html">
+    <meta property="og:title" content="Blog & Updates | XRPL Canada">
+    <meta property="og:description" content="Real-world XRPL adoption stories, ecosystem news, and insights on building payment infrastructure.">
+    <meta property="og:image" content="https://xrplcanada.org/public/xrpl-canada.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@XRPLCanada">
+    <meta name="twitter:title" content="Blog & Updates | XRPL Canada">
+    <meta name="twitter:description" content="Real-world XRPL adoption stories and ecosystem insights.">
+    <meta name="twitter:image" content="https://xrplcanada.org/public/xrpl-canada.png">
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="public/xrpl-canada.png">
+    <link rel="apple-touch-icon" href="public/xrpl-canada.png">
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" href="styles/nav.css" />
+    <link rel="stylesheet" href="styles/nav.css" />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
 
         * {
             margin: 0;
@@ -29,7 +55,7 @@
             --text-primary: #E8E8F0;
             --text-secondary: #A0A0B8;
             --text-tertiary: #6B6B85;
-            --gradient-primary: linear-gradient(135deg, #FF1744 0%, #C51162 50%, #880E4F 100%);
+            --gradient-primary: linear-gradient(135deg, #FF1744 0%, #C51162 100%);
             --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
             --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
             --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -41,7 +67,7 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background: var(--black);
             background-image:
                 radial-gradient(at 20% 30%, rgba(255, 23, 68, 0.08) 0px, transparent 50%),
@@ -50,8 +76,19 @@
             color: var(--text-primary);
             line-height: 1.7;
             overflow-x: hidden;
+            overflow-y: auto;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Use IBM Plex Sans for small text */
+        .blog-date,
+        .blog-category,
+        .blog-link,
+        .blog-excerpt,
+        .lang-toggle,
+        footer {
+            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         .lang-toggle {
@@ -59,140 +96,56 @@
             top: 24px;
             right: 24px;
             z-index: 1000;
-            background: rgba(26, 26, 36, 0.8);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 23, 68, 0.3);
-            border-radius: 12px;
-            padding: 10px 24px;
+            background: var(--gray-light);
+            border: 1px solid var(--gray-lighter);
+            border-radius: 6px;
+            padding: 8px 16px;
             cursor: pointer;
             font-size: 13px;
-            font-weight: 600;
-            color: var(--text-primary);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: var(--shadow-md);
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
             letter-spacing: 0.3px;
         }
 
         .lang-toggle:hover {
-            background: rgba(255, 23, 68, 0.15);
-            border-color: var(--primary-red);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg), 0 0 20px rgba(255, 23, 68, 0.2);
+            background: var(--gray-lighter);
+            color: var(--text-primary);
+            border-color: var(--text-tertiary);
         }
 
         .hidden {
             display: none;
         }
 
-        nav {
-            background: rgba(26, 26, 36, 0.7);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            padding: 22px 40px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 999;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .nav-logo {
-            height: 40px;
-            width: auto;
-            justify-self: start;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .nav-logo:hover {
-            transform: scale(1.05);
-            filter: drop-shadow(0 0 12px rgba(255, 23, 68, 0.4));
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 0;
-            justify-self: center;
-        }
-
-        nav .lang-toggle {
-            justify-self: end;
-            margin: 0;
-        }
-
-        nav a {
-            color: var(--text-primary);
-            text-decoration: none;
-            margin: 0 30px;
-            font-weight: 500;
-            font-size: 16px;
-            letter-spacing: 0.3px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            display: inline-block;
-            position: relative;
-            padding: 10px 0;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%) scaleX(0);
-            width: 100%;
-            height: 2px;
-            background: var(--gradient-primary);
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        nav a:has(.nav-logo)::after {
-            display: none;
-        }
-
-        nav a:hover {
-            color: var(--primary-red);
-        }
-
-        nav a:hover::after {
-            transform: translateX(-50%) scaleX(1);
-        }
-
-        nav a:has(.nav-logo):hover {
-            color: inherit;
-        }
-
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 80px 20px 120px;
+            padding: 64px 20px 80px;
         }
 
         .page-header {
             text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
         }
 
         .page-title {
-            font-size: 64px;
+            font-size: 52px;
             font-weight: 800;
-            margin-bottom: 24px;
+            margin-bottom: 16px;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            letter-spacing: -1.5px;
-            line-height: 1.1;
+            letter-spacing: -1px;
+            line-height: 1.2;
+            padding-bottom: 4px;
         }
 
         .page-description {
             font-size: 20px;
             color: var(--text-secondary);
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
             line-height: 1.8;
         }
@@ -338,37 +291,7 @@
     </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html" onclick="sessionStorage.setItem('restoreScroll', 'true');">
-            <img src="public/xrplcanadawhite-nobg.png" alt="XRPL Canada" class="nav-logo">
-        </a>
-        <div class="nav-links">
-            <a href="index.html#about">
-                <span class="lang-en">About</span>
-                <span class="lang-fr hidden">À propos</span>
-            </a>
-            <a href="index.html#xrpl-explained">
-                <span class="lang-en">What is XRPL?</span>
-                <span class="lang-fr hidden">Qu'est-ce que XRPL?</span>
-            </a>
-            <a href="resources.html">
-                <span class="lang-en">Resources</span>
-                <span class="lang-fr hidden">Ressources</span>
-            </a>
-            <a href="blog.html">
-                <span class="lang-en">Blog</span>
-                <span class="lang-fr hidden">Blog</span>
-            </a>
-            <a href="index.html#contact">
-                <span class="lang-en">Contact</span>
-                <span class="lang-fr hidden">Contact</span>
-            </a>
-        </div>
-        <button class="lang-toggle" onclick="toggleLanguage()">
-            <span class="lang-en">Français</span>
-            <span class="lang-fr hidden">English</span>
-        </button>
-    </nav>
+    <div id="site-nav"></div>
 
     <div class="container">
         <div class="page-header">
@@ -388,6 +311,62 @@
 
         <div class="blog-grid">
             <!-- Blog Post 1 -->
+            <article class="blog-card">
+                <div class="blog-meta">
+                    <span class="blog-date">
+                        <i class="ri-calendar-line"></i>
+                        December 21, 2025
+                    </span>
+                    <span class="blog-category">Education</span>
+                </div>
+                <h2 class="blog-title">
+                    <span class="lang-en">XRPL Metrics Framework: Measuring Real Infrastructure Adoption Beyond Price Speculation</span>
+                    <span class="lang-fr hidden">Cadre de métriques XRPL : Mesurer l'adoption réelle de l'infrastructure au-delà de la spéculation sur les prix</span>
+                </h2>
+                <p class="blog-excerpt">
+                    <span class="lang-en">
+                        The question most people ask: "Is XRP going up?" The better question for institutions, developers, and serious stakeholders: "Is XRPL becoming unavoidable infrastructure?" This framework provides the measurements to answer that question months before markets do.
+                    </span>
+                    <span class="lang-fr hidden">
+                        La question que la plupart des gens se posent : "Le XRP va-t-il augmenter ?" La meilleure question pour les institutions, les développeurs et les parties prenantes sérieuses : "Le XRPL devient-il une infrastructure incontournable ?"
+                    </span>
+                </p>
+                <a href="blog/xrpl-metrics-framework-infrastructure-adoption.html" class="blog-link">
+                    <span class="lang-en">Read Full Story</span>
+                    <span class="lang-fr hidden">Lire l'histoire complète</span>
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </article>
+
+            <!-- Blog Post 2 -->
+            <article class="blog-card">
+                <div class="blog-meta">
+                    <span class="blog-date">
+                        <i class="ri-calendar-line"></i>
+                        December 20, 2025
+                    </span>
+                    <span class="blog-category">Technical Update</span>
+                </div>
+                <h2 class="blog-title">
+                    <span class="lang-en">XRPL December 2025 Update: Critical Validator Upgrades and Protocol Evolution</span>
+                    <span class="lang-fr hidden">Mise à jour XRPL décembre 2025 : Mises à niveau critiques des validateurs et évolution du protocole</span>
+                </h2>
+                <p class="blog-excerpt">
+                    <span class="lang-en">
+                        December brings significant developments to the XRP Ledger ecosystem, marked by critical infrastructure updates and the groundwork for major DeFi capabilities. Essential information for node operators, developers, and institutional stakeholders.
+                    </span>
+                    <span class="lang-fr hidden">
+                        Décembre apporte des développements importants à l'écosystème XRP Ledger, marqués par des mises à jour d'infrastructure critiques et les bases de capacités DeFi majeures.
+                    </span>
+                </p>
+                <a href="blog/xrpl-december-2025-validator-upgrades.html" class="blog-link">
+                    <span class="lang-en">Read Full Story</span>
+                    <span class="lang-fr hidden">Lire l'histoire complète</span>
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </article>
+
+            <!-- Blog Post 3 -->
             <article class="blog-card">
                 <div class="blog-meta">
                     <span class="blog-date">
@@ -415,7 +394,7 @@
                 </a>
             </article>
 
-            <!-- Blog Post 2 -->
+            <!-- Blog Post 4 -->
             <article class="blog-card">
                 <div class="blog-meta">
                     <span class="blog-date">
@@ -443,7 +422,7 @@
                 </a>
             </article>
 
-            <!-- Blog Post 3 -->
+            <!-- Blog Post 5 -->
             <article class="blog-card">
                 <div class="blog-meta">
                     <span class="blog-date">
@@ -495,6 +474,7 @@
             frElements.forEach(el => el.classList.toggle('hidden'));
         }
     </script>
+    <script src="components/nav.js"></script>
 </body>
 </html>
 

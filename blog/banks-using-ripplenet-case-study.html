@@ -6,254 +6,11 @@
     <title>Banks Using RippleNet: Institutional Adoption at Scale | XRPL Canada Blog</title>
     <link rel="icon" type="image/png" href="../public/xrpl-canada.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" />
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-red: #FF1744;
-            --primary-red-dark: #C51162;
-            --primary-red-light: #FF5252;
-            --accent-blue: #00B8D4;
-            --black: #0A0A0F;
-            --black-light: #12121A;
-            --gray: #1A1A24;
-            --text-primary: #E8E8F0;
-            --text-secondary: #A0A0B8;
-            --text-tertiary: #6B6B85;
-            --gradient-primary: linear-gradient(135deg, #FF1744 0%, #C51162 50%, #880E4F 100%);
-            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
-            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--black);
-            background-image:
-                radial-gradient(at 20% 30%, rgba(255, 23, 68, 0.08) 0px, transparent 50%),
-                radial-gradient(at 80% 70%, rgba(0, 184, 212, 0.08) 0px, transparent 50%);
-            background-attachment: fixed;
-            color: var(--text-primary);
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        nav {
-            background: rgba(26, 26, 36, 0.7);
-            backdrop-filter: blur(20px);
-            padding: 22px 20px;
-            text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 999;
-        }
-
-        nav a {
-            color: var(--text-primary);
-            text-decoration: none;
-            margin: 0 30px;
-            font-weight: 500;
-            font-size: 16px;
-            transition: all 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--primary-red);
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 80px 20px 120px;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 14px;
-            margin-bottom: 40px;
-            transition: all 0.3s;
-        }
-
-        .back-link:hover {
-            color: var(--primary-red);
-            gap: 12px;
-        }
-
-        .back-link i {
-            font-size: 18px;
-        }
-
-        .article-header {
-            margin-bottom: 60px;
-            padding-bottom: 40px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .article-meta {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 24px;
-        }
-
-        .article-date {
-            font-size: 14px;
-            color: var(--text-tertiary);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .article-category {
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            color: var(--primary-red);
-            background: rgba(255, 23, 68, 0.1);
-            padding: 6px 16px;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 23, 68, 0.2);
-        }
-
-        .article-title {
-            font-size: 48px;
-            font-weight: 800;
-            line-height: 1.2;
-            letter-spacing: -1px;
-            margin-bottom: 20px;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .article-subtitle {
-            font-size: 20px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        .article-content {
-            font-size: 18px;
-            line-height: 1.9;
-            color: var(--text-primary);
-        }
-
-        .article-content h2 {
-            font-size: 32px;
-            font-weight: 700;
-            margin-top: 60px;
-            margin-bottom: 24px;
-            color: var(--text-primary);
-        }
-
-        .article-content h3 {
-            font-size: 24px;
-            font-weight: 600;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            color: var(--text-primary);
-        }
-
-        .article-content p {
-            margin-bottom: 28px;
-        }
-
-        .article-content ul {
-            margin: 24px 0;
-            padding-left: 24px;
-        }
-
-        .article-content li {
-            margin-bottom: 16px;
-            color: var(--text-secondary);
-        }
-
-        .article-content strong {
-            color: var(--primary-red);
-            font-weight: 600;
-        }
-
-        .article-content a {
-            color: var(--primary-red);
-            text-decoration: none;
-            border-bottom: 1px solid rgba(255, 23, 68, 0.3);
-            transition: all 0.3s;
-        }
-
-        .article-content a:hover {
-            border-bottom-color: var(--primary-red);
-        }
-
-        .stat-box {
-            background: rgba(26, 26, 36, 0.6);
-            border: 1px solid rgba(255, 23, 68, 0.2);
-            border-radius: 16px;
-            padding: 32px;
-            margin: 40px 0;
-        }
-
-        .stat-box h3 {
-            margin-top: 0;
-            font-size: 20px;
-            margin-bottom: 20px;
-            color: var(--primary-red);
-        }
-
-        .callout {
-            background: rgba(0, 184, 212, 0.1);
-            border-left: 4px solid var(--accent-blue);
-            border-radius: 8px;
-            padding: 24px 28px;
-            margin: 40px 0;
-        }
-
-        .callout p {
-            margin-bottom: 0;
-            color: var(--text-primary);
-        }
-
-        @media (max-width: 768px) {
-            .article-title {
-                font-size: 36px;
-            }
-
-            .article-content {
-                font-size: 17px;
-            }
-
-            .container {
-                padding: 60px 20px 80px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../styles/nav.css" />
+    <link rel="stylesheet" href="../styles/blog-global.css">
 </head>
 <body>
-    <nav>
-        <a href="../index.html">Home</a>
-        <a href="../index.html#about">About</a>
-        <a href="../resources.html">Resources</a>
-        <a href="../blog.html">Blog</a>
-        <a href="../index.html#contact">Contact</a>
-    </nav>
+    <div id="site-nav"></div>
 
     <div class="container">
         <a href="../blog.html" class="back-link">
@@ -421,7 +178,7 @@
                     <p>
                         Canada has unique advantages for XRPL adoption:
                     </p>
-                    <ul style="margin-top: 16px;">
+                    <ul>
                         <li><strong>CIBC's operational proof:</strong> A Canadian Big Five bank is already using ODL successfully</li>
                         <li><strong>Progressive regulation:</strong> First G7 nation to approve Bitcoin ETFs, clear crypto taxation</li>
                         <li><strong>Ripple presence:</strong> Rail (Toronto-based stablecoin infrastructure) was acquired by Ripple in 2025</li>
@@ -456,14 +213,15 @@
                     <li><a href="https://coinpaper.com/10652/banks-using-xrp-transforming-cross-border-payments" target="_blank" rel="noopener noreferrer">CoinPaper: Banks Using XRP for Cross-Border Payments</a></li>
                 </ul>
 
-                <div style="margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.08);">
-                    <p style="color: var(--text-secondary); font-size: 16px;">
-                        <strong>Want to explore XRPL for your business?</strong> Check out our <a href="../resources.html" style="color: var(--primary-red); text-decoration: none;">comprehensive resource directory</a> or <a href="../index.html#contact" style="color: var(--primary-red); text-decoration: none;">get in touch</a> to learn how Canadian institutions can integrate RippleNet.
+                <div class="callout">
+                    <p>
+                        <strong>Want to explore XRPL for your business?</strong> Check out our <a href="../resources.html">comprehensive resource directory</a> or <a href="../index.html#contact">get in touch</a> to learn how Canadian institutions can integrate RippleNet.
                     </p>
                 </div>
             </div>
         </article>
     </div>
+    <script src="../components/nav.js"></script>
 </body>
 </html>
 

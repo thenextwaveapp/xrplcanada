@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XRP & Ripple News | XRPL Canada</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Latest XRPL and Ripple news curated from trusted sources. Stay updated on XRP ecosystem developments, partnerships, and adoption.">
+    <meta name="keywords" content="XRP news, Ripple news, XRPL news, crypto news Canada, blockchain news">
+    <link rel="canonical" href="https://xrplcanada.org/news.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xrplcanada.org/news.html">
+    <meta property="og:title" content="XRP & Ripple News | XRPL Canada">
+    <meta property="og:description" content="Latest XRPL and Ripple news curated from trusted sources.">
+    <meta property="og:image" content="https://xrplcanada.org/public/xrpl-canada.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@XRPLCanada">
+    <meta name="twitter:title" content="XRP & Ripple News | XRPL Canada">
+    <meta name="twitter:description" content="Latest XRPL and Ripple news curated from trusted sources.">
+    <meta name="twitter:image" content="https://xrplcanada.org/public/xrpl-canada.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="public/xrpl-canada.png">
+    <link rel="apple-touch-icon" href="public/xrpl-canada.png">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" href="styles/nav.css" />
+    <link rel="stylesheet" href="styles/nav.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #FF1744;
+            --primary-red-dark: #C51162;
+            --primary-red-light: #FF5252;
+            --black: #0A0A0F;
+            --black-light: #12121A;
+            --gray: #1A1A24;
+            --gray-light: #252532;
+            --gray-lighter: #2E2E3D;
+            --text-primary: #E8E8F0;
+            --text-secondary: #A0A0B8;
+            --text-tertiary: #6B6B85;
+            --gradient-primary: linear-gradient(135deg, #FF1744 0%, #C51162 100%);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--black);
+            color: var(--text-primary);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        /* Use IBM Plex Sans for small text (15px and under) */
+        .news-item-source,
+        .news-item-time,
+        .news-item-link,
+        .news-item-excerpt,
+        .page-description,
+        footer {
+            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 64px 20px 80px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .page-title {
+            font-size: 52px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+            line-height: 1.2;
+            padding-bottom: 4px;
+        }
+
+        .page-description {
+            font-size: 20px;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .news-item {
+            background: rgba(26, 26, 36, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            display: block;
+        }
+
+        .news-item:hover {
+            transform: translateX(8px);
+            border-color: rgba(255, 23, 68, 0.3);
+            background: rgba(26, 26, 36, 0.8);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .news-item-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            gap: 16px;
+        }
+
+        .news-item-source {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-tertiary);
+        }
+
+        .news-item-time {
+            font-size: 12px;
+            color: var(--text-tertiary);
+        }
+
+        .news-item-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .news-item-excerpt {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .news-item-link {
+            font-size: 14px;
+            color: var(--primary-red);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .news-item-link i {
+            font-size: 16px;
+            transition: transform 0.3s;
+        }
+
+        .news-item:hover .news-item-link i {
+            transform: translateX(4px);
+        }
+
+        .loading {
+            text-align: center;
+            padding: 80px 20px;
+            color: var(--text-secondary);
+        }
+
+        .loading i {
+            font-size: 48px;
+            color: var(--primary-red);
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        footer {
+            background: rgba(10, 10, 15, 0.8);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--text-tertiary);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 38px;
+            }
+
+            .container {
+                padding: 40px 20px 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="site-nav"></div>
+
+    <div class="container">
+        <div class="page-header">
+            <h1 class="page-title">XRP & Ripple News</h1>
+            <p class="page-description">
+                Latest news and updates from across the XRPL ecosystem
+            </p>
+        </div>
+
+        <div class="news-list" id="newsList">
+            <div class="loading">
+                <i class="ri-loader-4-line"></i>
+                <p>Loading latest news...</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 XRPL Canada. Building the future of value transfer in Canada.</p>
+    </footer>
+
+    <script>
+        let newsItems = [];
+
+        // Fetch news from API
+        async function loadNews() {
+            try {
+                const response = await fetch('/api/news');
+                
+                if (!response.ok) {
+                    throw new Error('Failed to load news');
+                }
+                
+                const data = await response.json();
+                
+                // Blocked domains - filter on frontend
+                const BLOCKED_DOMAINS = [
+                    'biztoc.com',
+                    'pypi.org',
+                    'risbb.to',
+                    'post.risbb.to',
+                    'metalinjection.net',
+                    'metal-injection.net',
+                    'ozbargain.com.au'
+                ];
+                
+                function isBlockedDomain(url) {
+                    try {
+                        const urlObj = new URL(url);
+                        const hostname = urlObj.hostname.replace('www.', '');
+                        return BLOCKED_DOMAINS.some(domain => hostname.includes(domain));
+                    } catch (error) {
+                        return false;
+                    }
+                }
+                
+                newsItems = data
+                    .filter(item => !isBlockedDomain(item.url))
+                    .map(item => ({
+                        ...item,
+                        timestamp: new Date(item.timestamp)
+                    }));
+                
+                renderNews();
+            } catch (error) {
+                console.error('Error loading news:', error);
+                displayError();
+            }
+        }
+
+        // Render all news items
+        function renderNews() {
+            const newsList = document.getElementById('newsList');
+            
+            if (newsItems.length === 0) {
+                newsList.innerHTML = `
+                    <div class="loading">
+                        <i class="ri-information-line"></i>
+                        <p>No news available yet.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            newsList.innerHTML = newsItems.map(item => `
+                <a href="${item.url}" class="news-item" target="_blank" rel="noopener noreferrer">
+                    <div class="news-item-header">
+                        <span class="news-item-source">${item.source}</span>
+                        <span class="news-item-time">${getTimeAgo(item.timestamp)}</span>
+                    </div>
+                    <h3 class="news-item-title">${item.title}</h3>
+                    <p class="news-item-excerpt">${item.excerpt}</p>
+                    <span class="news-item-link">
+                        Read Full Article
+                        <i class="ri-arrow-right-line"></i>
+                    </span>
+                </a>
+            `).join('');
+        }
+
+        // Get time ago string
+        function getTimeAgo(timestamp) {
+            const now = new Date();
+            const diffMs = now - timestamp;
+            const diffMins = Math.floor(diffMs / 60000);
+            const diffHours = Math.floor(diffMs / 3600000);
+            const diffDays = Math.floor(diffMs / 86400000);
+            
+            if (diffMins < 1) return 'Just now';
+            if (diffMins < 60) return `${diffMins}m ago`;
+            if (diffHours < 24) return `${diffHours}h ago`;
+            if (diffDays < 7) return `${diffDays}d ago`;
+            
+            return timestamp.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        }
+
+        // Display error
+        function displayError() {
+            const newsList = document.getElementById('newsList');
+            newsList.innerHTML = `
+                <div class="loading">
+                    <i class="ri-information-line"></i>
+                    <p>Unable to load news. Please try again later.</p>
+                </div>
+            `;
+        }
+
+        // Load news on page load
+        loadNews();
+
+        // Language toggle functionality
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'fr' : 'en';
+            
+            document.querySelectorAll('.lang-en').forEach(el => {
+                el.classList.toggle('hidden', currentLang !== 'en');
+            });
+            
+            document.querySelectorAll('.lang-fr').forEach(el => {
+                el.classList.toggle('hidden', currentLang !== 'fr');
+            });
+
+            localStorage.setItem('preferredLanguage', currentLang);
+        }
+
+        // Restore language preference
+        const savedLang = localStorage.getItem('preferredLanguage');
+        if (savedLang && savedLang !== currentLang) {
+            toggleLanguage();
+        }
+    </script>
+    <script src="components/nav.js"></script>
+</body>
+</html>
+

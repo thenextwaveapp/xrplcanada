@@ -3,11 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XRPL Canada | Expanding the XRP Ledger Ecosystem</title>
+    <title>XRPL Canada Home | XRPLCanada.org</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Canada's hub for the XRP Ledger ecosystem. Comprehensive resources for XRPL builders including developer tools, funding, universities, exchanges, and community support.">
+    <meta name="keywords" content="XRPL Canada, XRP Ledger, Ripple, blockchain Canada, crypto Canada, XRPL developers, Canadian blockchain, Web3 Canada">
+    <meta name="author" content="XRPL Canada">
+    <link rel="canonical" href="https://xrplcanada.org/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xrplcanada.org/">
+    <meta property="og:title" content="XRPL Canada Home | XRPLCanada.org">
+    <meta property="og:description" content="Canada's hub for the XRP Ledger ecosystem. Comprehensive resources for XRPL builders including developer tools, funding, universities, exchanges, and community support.">
+    <meta property="og:image" content="https://xrplcanada.org/public/xrpl-canada.png">
+    <meta property="og:site_name" content="XRPL Canada">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@XRPLCanada">
+    <meta name="twitter:creator" content="@XRPLCanada">
+    <meta name="twitter:title" content="XRPL Canada Home | XRPLCanada.org">
+    <meta name="twitter:description" content="Canada's hub for the XRP Ledger ecosystem. Resources, news, and community for XRPL builders.">
+    <meta name="twitter:image" content="https://xrplcanada.org/public/xrpl-canada.png">
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="public/xrpl-canada.png">
+    <link rel="apple-touch-icon" href="public/xrpl-canada.png">
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" href="styles/nav.css" />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
         
         * {
             margin: 0;
@@ -44,7 +72,7 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background: var(--black);
             background-image: 
                 radial-gradient(at 20% 30%, rgba(255, 23, 68, 0.08) 0px, transparent 50%),
@@ -57,27 +85,77 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
+        /* Use IBM Plex Sans for small text (15px and under) for better readability */
+        * {
+            font-size: 16px; /* Default to prevent issues */
+        }
+        
+        [style*="font-size: 15px"],
+        [style*="font-size: 14px"],
+        [style*="font-size: 13px"],
+        [style*="font-size: 12px"],
+        [style*="font-size: 11px"],
+        [style*="font-size: 10px"],
+        .small-text,
+        small {
+            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+        }
+
+        /* Apply IBM Plex Sans to all elements with font-size 15px or smaller */
+        body * {
+            font-size: inherit;
+        }
+        
+        body :where(
+            .news-timestamp,
+            .news-source,
+            .news-meta,
+            .event-time,
+            .event-meta-item,
+            .blog-date,
+            .blog-category,
+            .blog-link,
+            .resource-link,
+            .newsletter-benefit,
+            .social-label,
+            .footer-text,
+            .calendar-day-header,
+            .calendar-day,
+            .est-badge,
+            .lang-toggle,
+            .news-item-source,
+            .news-item-time,
+            .news-item-link,
+            .news-link,
+            .xrpl-feature p,
+            .timeline-text,
+            .stat-text,
+            .canada-card-content p
+        ) {
+            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
         .lang-toggle {
-            background: rgba(26, 26, 36, 0.8);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 23, 68, 0.3);
-            border-radius: 12px;
-            padding: 10px 24px;
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            z-index: 1000;
+            background: var(--gray-light);
+            border: 1px solid var(--gray-lighter);
+            border-radius: 6px;
+            padding: 8px 16px;
             cursor: pointer;
             font-size: 13px;
-            font-weight: 600;
-            color: var(--text-primary);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: var(--shadow-md);
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
             letter-spacing: 0.3px;
         }
 
         .lang-toggle:hover {
-            background: rgba(255, 23, 68, 0.15);
-            border-color: var(--primary-red);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg), 0 0 20px rgba(255, 23, 68, 0.2);
+            background: var(--gray-lighter);
+            color: var(--text-primary);
+            border-color: var(--text-tertiary);
         }
 
         header {
@@ -246,88 +324,6 @@
 
         .cta-button:active {
             transform: translateY(-2px) scale(1);
-        }
-
-        nav {
-            background: rgba(26, 26, 36, 0.7);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            padding: 22px 40px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .nav-logo {
-            height: 40px;
-            width: auto;
-            justify-self: start;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .nav-logo:hover {
-            transform: scale(1.05);
-            filter: drop-shadow(0 0 12px rgba(255, 23, 68, 0.4));
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 0;
-            justify-self: center;
-        }
-
-        nav .lang-toggle {
-            justify-self: end;
-            align-self: center;
-            margin: 0;
-        }
-
-        nav a {
-            color: var(--text-primary);
-            text-decoration: none;
-            margin: 0 30px;
-            font-weight: 500;
-            font-size: 16px;
-            letter-spacing: 0.3px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            display: inline-block;
-            position: relative;
-            padding: 10px 0;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%) scaleX(0);
-            width: 100%;
-            height: 2px;
-            background: var(--gradient-primary);
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        nav a:has(.nav-logo)::after {
-            display: none;
-        }
-
-        nav a:hover {
-            color: var(--primary-red);
-        }
-
-        nav a:hover::after {
-            transform: translateX(-50%) scaleX(1);
-        }
-
-        nav a:has(.nav-logo):hover {
-            color: inherit;
         }
 
         .container {
@@ -1468,6 +1464,7 @@
         }
 
         .newsletter-section {
+            display: none;
             background: linear-gradient(135deg, rgba(255, 23, 68, 0.1) 0%, rgba(197, 17, 98, 0.05) 100%);
             border-radius: 24px;
             padding: 80px 48px;
@@ -1678,7 +1675,6 @@
         }
 
         .resource-item:hover {
-            background: rgba(26, 26, 36, 0.8);
             transform: translateY(-4px);
             box-shadow: var(--shadow-lg);
             border-color: rgba(255, 255, 255, 0.1);
@@ -1880,7 +1876,6 @@
         }
 
         .submit-button:hover {
-            transform: translateY(-4px) scale(1.02);
             box-shadow: var(--shadow-xl), var(--shadow-glow);
         }
 
@@ -2031,13 +2026,6 @@
         }
 
         @media (max-width: 768px) {
-            .lang-toggle {
-                top: 16px;
-                right: 16px;
-                padding: 8px 20px;
-                font-size: 12px;
-            }
-
             header {
                 padding: 100px 20px;
                 align-items: center;
@@ -2070,16 +2058,6 @@
                 font-size: 38px;
                 margin-bottom: 24px;
                 padding-bottom: 28px;
-            }
-
-            nav {
-                padding: 16px;
-            }
-
-            nav a {
-                display: block;
-                margin: 12px 0;
-                padding: 12px 0;
             }
 
             .container {
@@ -2164,11 +2142,11 @@
 
         .section-subtitle {
             text-align: center;
-            font-size: 18px;
-            color: var(--text-tertiary);
+            font-size: 20px;
+            color: var(--text-secondary);
             margin: -16px auto 48px;
-            max-width: 700px;
-            line-height: 1.6;
+            max-width: 800px;
+            line-height: 1.8;
         }
 
         .blog-preview-grid {
@@ -2303,13 +2281,172 @@
         .cta-button-secondary:hover {
             background: var(--gradient-primary);
             border-color: var(--primary-red);
-            transform: translateY(-4px) scale(1.02);
             box-shadow: var(--shadow-xl), 0 0 30px rgba(255, 23, 68, 0.3);
         }
 
         @media (max-width: 768px) {
             .blog-preview-grid {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        /* News Aggregator Styles */
+        #news-aggregator {
+            background: linear-gradient(180deg, rgba(10, 10, 15, 0.4) 0%, rgba(26, 26, 36, 0.3) 100%);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 28px;
+            margin-bottom: 40px;
+        }
+
+        .news-loading {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 80px 20px;
+            color: var(--text-secondary);
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .news-loading i {
+            font-size: 48px;
+            color: var(--primary-red);
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .news-card {
+            background: rgba(26, 26, 36, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 20px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 23, 68, 0.3);
+            background: rgba(26, 26, 36, 0.8);
+            box-shadow: var(--shadow-lg), 0 0 20px rgba(255, 23, 68, 0.1);
+        }
+
+        .news-card.manual-entry {
+            border-color: rgba(255, 23, 68, 0.2);
+        }
+
+        .news-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 12px;
+            color: var(--text-tertiary);
+        }
+
+        .news-source {
+            font-weight: 600;
+        }
+
+        .news-timestamp {
+            font-weight: 500;
+        }
+
+        .news-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            line-height: 1.4;
+            letter-spacing: -0.3px;
+        }
+
+        .news-excerpt {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 14px;
+            flex-grow: 1;
+        }
+
+        .news-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-red);
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            letter-spacing: 0.3px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .news-link i {
+            font-size: 16px;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .news-link:hover {
+            color: var(--primary-red-light);
+            gap: 12px;
+        }
+
+        .news-link:hover i {
+            transform: translateX(4px);
+        }
+
+        .news-explore-more {
+            text-align: center;
+            margin-top: 24px;
+        }
+
+        .explore-more-btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background: rgba(26, 26, 36, 0.8);
+            border: 2px solid rgba(255, 23, 68, 0.3);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            letter-spacing: 0.4px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow-md);
+        }
+
+        .explore-more-btn i {
+            margin-left: 8px;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .explore-more-btn:hover {
+            background: var(--gradient-primary);
+            border-color: var(--primary-red);
+            box-shadow: var(--shadow-xl), 0 0 30px rgba(255, 23, 68, 0.3);
+        }
+
+        .explore-more-btn:hover i {
+            transform: translateX(4px);
+        }
+
+        @media (max-width: 768px) {
+            .news-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
         }
     </style>
@@ -2337,37 +2474,7 @@
         </p>
     </header>
 
-    <nav>
-        <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
-            <img src="public/xrplcanadawhite-nobg.png" alt="XRPL Canada" class="nav-logo">
-        </a>
-        <div class="nav-links">
-        <a href="#about">
-                <span class="lang-en">About</span>
-            <span class="lang-fr hidden">À propos</span>
-        </a>
-            <a href="#xrpl-explained">
-                <span class="lang-en">What is XRPL?</span>
-                <span class="lang-fr hidden">Qu'est-ce que XRPL?</span>
-            </a>
-        <a href="resources.html">
-                <span class="lang-en">Resources</span>
-            <span class="lang-fr hidden">Ressources</span>
-        </a>
-        <a href="blog.html">
-                <span class="lang-en">Blog</span>
-            <span class="lang-fr hidden">Blog</span>
-        </a>
-        <a href="#contact">
-                <span class="lang-en">Contact</span>
-            <span class="lang-fr hidden">Contact</span>
-        </a>
-        </div>
-        <button class="lang-toggle" onclick="toggleLanguage()">
-            <span class="lang-en">Français</span>
-            <span class="lang-fr hidden">English</span>
-        </button>
-    </nav>
+    <div id="site-nav"></div>
 
     <div class="container">
         <section id="about">
@@ -2473,8 +2580,8 @@
 
                     <div class="xrpl-crypto-context">
                         <h3>
-                            <span class="lang-en">XRP and the Ledger</span>
-                            <span class="lang-fr hidden">XRP et le Ledger</span>
+                            <span class="lang-en">The Timeline</span>
+                            <span class="lang-fr hidden">La chronologie</span>
                         </h3>
                         
                         <div class="timeline-container">
@@ -2523,36 +2630,30 @@
                     </div>
 
                         <p class="lang-en">
-                            XRP is the digital asset native to the XRP Ledger. Created by early Bitcoin engineers, XRP was built to be more sustainable without the high energy consumption of mining and designed specifically for payments. There is a finite supply of 100 billion XRP. All of it already exists, and no more can be created. XRP can be sent directly without a central intermediary, making it an efficient bridge currency for moving value across borders.
+                            XRP is the digital asset native to the XRP Ledger, created in 2012 to be more sustainable than Bitcoin and built specifically for payments. There is a finite amount of XRP—all 100 billion are already in existence, no more can be created. XRP can be sent directly without needing a central intermediary, making it a bridge currency for moving different currencies quickly and efficiently. <a href="https://xrpl.org/about/history" target="_blank" rel="noopener noreferrer" style="color: var(--primary-red); text-decoration: underline;">Learn more about XRPL's history</a>.
                         </p>
                         <p class="lang-fr hidden">
-                            XRP est l'actif numérique natif du XRP Ledger. Créé par des ingénieurs Bitcoin de la première heure, XRP a été conçu pour être plus durable sans la consommation énergétique élevée du minage et spécifiquement pour les paiements. Il existe une offre finie de 100 milliards de XRP. Tout cela existe déjà et aucun autre ne peut être créé. XRP peut être envoyé directement sans intermédiaire central, ce qui en fait une monnaie-pont efficace pour déplacer de la valeur à travers les frontières.
+                            XRP est l'actif numérique natif du XRP Ledger, créé en 2012 pour être plus durable que Bitcoin et conçu spécifiquement pour les paiements. Il existe une quantité finie de XRP—les 100 milliards existent déjà, aucun autre ne peut être créé. XRP peut être envoyé directement sans avoir besoin d'un intermédiaire central, ce qui en fait une monnaie-pont pour déplacer différentes devises rapidement et efficacement. <a href="https://xrpl.org/about/history" target="_blank" rel="noopener noreferrer" style="color: var(--primary-red); text-decoration: underline;">En savoir plus sur l'histoire de XRPL</a>.
                         </p>
 
                         <p class="lang-en">
-                            The XRPL founders created Ripple in 2012 to commercialize the technology and drive enterprise adoption. The ledger itself remains <strong>open-source and decentralized</strong>, governed by independent validators worldwide. Ripple builds enterprise solutions that enable financial institutions to leverage XRPL for payments, custody, and liquidity.
-                        </p>
-                        <p class="lang-en">
-                            Traditional international payments take 3-5 days to settle, cost an average of $42 per transaction, and have a 5% error rate. The vision behind the XRP Ledger is for value to move as quickly as information: instantly, reliably, and at near-zero cost.
+                            The XRPL founders founded OpenCoin in 2012, now known as Ripple, to commercialize the technology. The ledger remains <strong>open-source and decentralized</strong>, governed by independent validators worldwide. Ripple received XRP from the founders, the majority of which has been locked in escrows controlled by the ledger itself to ensure predictable supply. Ripple builds partnerships and liquidity solutions to help financial institutions use XRP for cross-border payments, addressing a global problem: traditional international payments take 3-5 days to settle, cost an average of $42 per transaction, and have a 5% error rate. The vision is for value to move as quickly as information—instantly, reliably, and at near-zero cost.
                         </p>
                         <p class="lang-fr hidden">
-                            Les fondateurs de XRPL ont créé Ripple en 2012 pour commercialiser la technologie et stimuler l'adoption par les entreprises. Le registre lui-même reste <strong>open source et décentralisé</strong>, gouverné par des validateurs indépendants dans le monde entier. Ripple construit des solutions d'entreprise qui permettent aux institutions financières de tirer parti de XRPL pour les paiements, la garde et la liquidité.
-                        </p>
-                        <p class="lang-fr hidden">
-                            Les paiements internationaux traditionnels prennent 3 à 5 jours pour se régler, coûtent en moyenne 42 $ par transaction et ont un taux d'erreur de 5 %. La vision derrière le XRP Ledger est que la valeur se déplace aussi rapidement que l'information : instantanément, de manière fiable et à un coût quasi nul.
+                            Les fondateurs de XRPL ont fondé OpenCoin en 2012, maintenant connu sous le nom de Ripple, pour commercialiser la technologie. Le registre reste <strong>open source et décentralisé</strong>, gouverné par des validateurs indépendants dans le monde entier. Ripple a reçu du XRP des fondateurs, dont la majorité a été verrouillée dans des séquestres contrôlés par le registre lui-même pour assurer une offre prévisible. Ripple construit des partenariats et des solutions de liquidité pour aider les institutions financières à utiliser XRP pour les paiements transfrontaliers, s'attaquant à un problème mondial : les paiements internationaux traditionnels prennent 3 à 5 jours pour se régler, coûtent en moyenne 42 $ par transaction et ont un taux d'erreur de 5 %. La vision est que la valeur se déplace aussi rapidement que l'information—instantanément, de manière fiable et à un coût quasi nul.
                         </p>
                             </div>
 
                     <div class="xrpl-canada-connection">
                         <h3>
-                            <span class="lang-en">Why Canada?</span>
-                            <span class="lang-fr hidden">Pourquoi le Canada?</span>
+                            <span class="lang-en">Why This Matters for Canada</span>
+                            <span class="lang-fr hidden">Pourquoi c'est important pour le Canada</span>
                         </h3>
                         <p class="lang-en">
-                            Canada is uniquely positioned to lead in blockchain innovation:
+                            Canada is uniquely positioned to lead:
                         </p>
                         <p class="lang-fr hidden">
-                            Le Canada est particulièrement bien placé pour diriger l'innovation blockchain:
+                            Le Canada est particulièrement bien placé pour être un leader:
                         </p>
                         <ul class="xrpl-canada-list">
                             <li class="lang-en">
@@ -2615,23 +2716,23 @@
             </h2>
             <div class="resources-grid">
                 <!-- Featured: XRPL Resources -->
-                <div class="resource-item featured">
+                <a href="resources.html" class="resource-item featured" style="text-decoration: none; color: inherit; display: block;">
                     <div class="resource-image">
-                        <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=800&auto=format&fit=crop" alt="XRPL Resources">
+                        <img src="https://images.pexels.com/photos/15964351/pexels-photo-15964351.jpeg" alt="XRPL Resources">
                             </div>
                     <div class="resource-content">
                         <h4>
-                            <span class="lang-en">XRPL Canada Resources 🍁</span>
-                            <span class="lang-fr hidden">Ressources XRPL Canada 🍁</span>
+                            <span class="lang-en">XRPL Canada Resources</span>
+                            <span class="lang-fr hidden">Ressources XRPL Canada</span>
                         </h4>
-                        <p class="lang-en">Everything you need to build on XRPL in Canada—developer tools, wallets, grants, universities, exchanges, legal services, government contacts, and the full Canadian crypto ecosystem.</p>
-                        <p class="lang-fr hidden">Tout ce dont vous avez besoin pour construire sur XRPL au Canada—outils développeurs, portefeuilles, subventions, universités, plateformes d'échange, services juridiques, contacts gouvernementaux et l'écosystème crypto canadien complet.</p>
-                        <a href="resources.html" class="resource-link">
+                        <p class="lang-en">Everything you need to build on XRPL in Canada—developer tools, wallets, grants, universities, exchanges, regulatory resources, and the full Canadian crypto ecosystem.</p>
+                        <p class="lang-fr hidden">Tout ce dont vous avez besoin pour construire sur XRPL au Canada—outils développeurs, portefeuilles, subventions, universités, plateformes d'échange, ressources réglementaires et l'écosystème crypto canadien complet.</p>
+                        <span class="resource-link">
                             <span class="lang-en">Explore All Resources</span>
                             <span class="lang-fr hidden">Explorer toutes les ressources</span>
-                        </a>
+                        </span>
                             </div>
-                        </div>
+                        </a>
 
                 <!-- Secondary Resources -->
                 <div class="resources-secondary">
@@ -2682,9 +2783,9 @@
                         </h4>
                             <p class="lang-en">Connect with XRPL builders, developers, and enthusiasts.</p>
                             <p class="lang-fr hidden">Connectez-vous avec des bâtisseurs, développeurs et passionnés XRPL.</p>
-                        <a href="https://discord.com" class="resource-link" target="_blank" rel="noopener noreferrer">
-                            <span class="lang-en">Join Discord</span>
-                            <span class="lang-fr hidden">Rejoindre Discord</span>
+                        <a href="https://twitter.com/XRPLCanada" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Follow on X</span>
+                            <span class="lang-fr hidden">Suivez sur X</span>
                         </a>
                         </div>
                             </div>
@@ -2749,26 +2850,46 @@
                                 <span class="lang-en">In-person</span>
                                 <span class="lang-fr hidden">En personne</span>
                             </div>
-                            <div class="event-meta-item">
-                                <i class="ri-music-line"></i>
-                                <span class="lang-en">Fashion & Music</span>
-                                <span class="lang-fr hidden">Mode et musique</span>
-                            </div>
                         </div>
                         <div class="event-actions">
-                            <a href="#contact" class="event-btn event-btn-primary">
-                                <i class="ri-calendar-check-line"></i>
-                                <span class="lang-en">Register</span>
-                                <span class="lang-fr hidden">S'inscrire</span>
-                            </a>
-                            <a href="#" class="event-btn event-btn-secondary">
-                                <i class="ri-share-line"></i>
-                                <span class="lang-en">Share</span>
-                                <span class="lang-fr hidden">Partager</span>
-                            </a>
+                            <div style="padding: 12px 24px; color: #888; font-size: 16px; text-align: center; width: 100%;">
+                                <i class="ri-calendar-close-line" style="margin-right: 8px;"></i>
+                                <span class="lang-en">Event Ended</span>
+                                <span class="lang-fr hidden">Événement terminé</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="news-aggregator">
+            <h2>
+                <span class="lang-en">XRP & Ripple News</span>
+                <span class="lang-fr hidden">Actualités XRP & Ripple</span>
+            </h2>
+            <p class="section-subtitle">
+                <span class="lang-en">Latest updates from across the XRPL ecosystem</span>
+                <span class="lang-fr hidden">Dernières nouvelles de l'écosystème XRPL</span>
+            </p>
+
+            <!-- News Grid -->
+            <div class="news-grid" id="newsGrid">
+                <!-- News items will be populated here -->
+                <div class="news-loading">
+                    <i class="ri-loader-4-line"></i>
+                    <span class="lang-en">Loading latest news...</span>
+                    <span class="lang-fr hidden">Chargement des dernières nouvelles...</span>
+                </div>
+            </div>
+
+            <!-- Explore More Button -->
+            <div class="news-explore-more">
+                <a href="news.html" class="explore-more-btn">
+                    <span class="lang-en">Explore More News</span>
+                    <span class="lang-fr hidden">Explorer plus d'actualités</span>
+                    <i class="ri-arrow-right-line"></i>
+                </a>
             </div>
         </section>
 
@@ -2784,6 +2905,26 @@
             <div class="blog-preview-grid">
                 <article class="blog-preview-card">
                     <div class="blog-preview-meta">
+                        <span class="blog-preview-date">December 20, 2025</span>
+                        <span class="blog-preview-category">Technical Update</span>
+                        </div>
+                    <h3 class="blog-preview-title">
+                        <span class="lang-en">XRPL December 2025 Update: Critical Validator Upgrades</span>
+                        <span class="lang-fr hidden">Mise à jour XRPL décembre 2025 : Mises à niveau critiques</span>
+                    </h3>
+                    <p class="blog-preview-excerpt">
+                        <span class="lang-en">December brings significant developments to the XRP Ledger ecosystem, marked by critical infrastructure updates and the groundwork for major DeFi capabilities.</span>
+                        <span class="lang-fr hidden">Décembre apporte des développements importants à l'écosystème XRP Ledger, marqués par des mises à jour d'infrastructure critiques et les bases de capacités DeFi majeures.</span>
+                    </p>
+                    <a href="blog/xrpl-december-2025-validator-upgrades.html" class="blog-preview-link">
+                        <span class="lang-en">Read More</span>
+                        <span class="lang-fr hidden">Lire plus</span>
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </article>
+
+                <article class="blog-preview-card">
+                    <div class="blog-preview-meta">
                         <span class="blog-preview-date">November 9, 2025</span>
                         <span class="blog-preview-category">Education</span>
                         </div>
@@ -2796,26 +2937,6 @@
                         <span class="lang-fr hidden">Du comptant et des chèques aux transactions numériques instantanées, comprendre comment les systèmes de paiement ont évolué révèle pourquoi les rails basés sur la blockchain comme XRPL sont la prochaine étape.</span>
                     </p>
                     <a href="blog/payment-systems-evolution-canada.html" class="blog-preview-link">
-                        <span class="lang-en">Read More</span>
-                        <span class="lang-fr hidden">Lire plus</span>
-                        <i class="ri-arrow-right-line"></i>
-                    </a>
-                </article>
-
-                <article class="blog-preview-card">
-                    <div class="blog-preview-meta">
-                        <span class="blog-preview-date">November 8, 2025</span>
-                        <span class="blog-preview-category">Weekly Roundup</span>
-                        </div>
-                    <h3 class="blog-preview-title">
-                        <span class="lang-en">This Week on the Ledger — November 8</span>
-                        <span class="lang-fr hidden">Cette semaine sur le Ledger — 8 novembre</span>
-                    </h3>
-                    <p class="blog-preview-excerpt">
-                        <span class="lang-en">Ripple raises $500M at $40B valuation, RLUSD powers Mastercard pilot, Swell 2025 brings Wall Street to the table, and XRP ETF speculation heats up.</span>
-                        <span class="lang-fr hidden">Ripple lève 500 M$ avec une valorisation de 40 milliards $, RLUSD alimente le pilote Mastercard, Swell 2025 amène Wall Street à la table.</span>
-                    </p>
-                    <a href="blog/this-week-on-the-ledger-nov-8-2025.html" class="blog-preview-link">
                         <span class="lang-en">Read More</span>
                         <span class="lang-fr hidden">Lire plus</span>
                         <i class="ri-arrow-right-line"></i>
@@ -2878,7 +2999,7 @@
 
         <section id="contact">
             <h2>
-                <span class="lang-en">Get In Touch</span>
+                <span class="lang-en">Contact Us</span>
                 <span class="lang-fr hidden">Contactez-nous</span>
             </h2>
             <div class="contact-section">
@@ -2893,17 +3014,11 @@
                     </p>
 
                     <div class="social-links">
-                        <a href="#" class="social-link" title="Discord">
-                            <div class="social-icon">
-                                <i class="ri-discord-fill"></i>
-                            </div>
-                            <div class="social-label">Discord</div>
-                        </a>
-                        <a href="https://twitter.com/XRPLCanada" class="social-link" title="Twitter" target="_blank" rel="noopener noreferrer">
+                        <a href="https://twitter.com/XRPLCanada" class="social-link" title="X" target="_blank" rel="noopener noreferrer">
                             <div class="social-icon">
                                 <i class="ri-twitter-x-line"></i>
                             </div>
-                            <div class="social-label">Twitter</div>
+                            <div class="social-label">X</div>
                         </a>
                     </div>
 
@@ -2913,7 +3028,7 @@
                         <span onclick="navigator.clipboard.writeText('team@xrplcanada.org'); this.textContent='Copied!'; setTimeout(() => this.textContent='team@xrplcanada.org', 2000);" style="color: var(--primary-red); font-weight: 600; cursor: pointer; border-bottom: 1px dashed var(--primary-red); transition: all 0.3s ease;" title="Click to copy email">team@xrplcanada.org</span>
                     </div>
 
-                    <form class="contact-form" onsubmit="handleSubmit(event)">
+                    <form class="contact-form" action="https://formspree.io/f/mrezqwlj" method="POST">
                         <div class="form-group">
                             <label>
                                 <span class="lang-en">Name</span>
@@ -3024,14 +3139,6 @@
             e.target.reset();
         }
 
-        function handleSubmit(e) {
-            e.preventDefault();
-            alert(currentLang === 'en' 
-                ? 'Thank you for your message! We\'ll get back to you soon.' 
-                : 'Merci pour votre message! Nous vous répondrons bientôt.');
-            e.target.reset();
-        }
-
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -3131,6 +3238,162 @@
 
         // Initialize calendar
         renderCalendar();
+
+        // ============================================
+        // NEWS AGGREGATOR FUNCTIONALITY
+        // ============================================
+
+        let newsItems = [];
+        let displayedNewsCount = 6; // LIMIT TO 6 ON HOMEPAGE
+
+        // Initialize news aggregator
+        async function initNewsAggregator() {
+            try {
+                // Fetch REAL news from backend API
+                const response = await fetch('/api/news');
+                
+                if (!response.ok) {
+                    throw new Error('Failed to load news');
+                }
+                
+                const data = await response.json();
+                
+                // Blocked domains - filter on frontend
+                const BLOCKED_DOMAINS = [
+                    'biztoc.com',
+                    'pypi.org',
+                    'risbb.to',
+                    'post.risbb.to',
+                    'metalinjection.net',
+                    'metal-injection.net',
+                    'ozbargain.com.au'
+                ];
+                
+                function isBlockedDomain(url) {
+                    try {
+                        const urlObj = new URL(url);
+                        const hostname = urlObj.hostname.replace('www.', '');
+                        return BLOCKED_DOMAINS.some(domain => hostname.includes(domain));
+                    } catch (error) {
+                        return false;
+                    }
+                }
+                
+                // Convert timestamp strings to Date objects and filter blocked domains
+                newsItems = data
+                    .filter(item => !isBlockedDomain(item.url))
+                    .map(item => ({
+                        ...item,
+                        timestamp: new Date(item.timestamp)
+                    }));
+                
+                // Already sorted by backend, but ensure newest first
+                newsItems.sort((a, b) => b.timestamp - a.timestamp);
+                
+                console.log(`✅ Loaded ${newsItems.length} real news articles`);
+                
+                // Render news
+                renderNews();
+            } catch (error) {
+                console.error('Error loading news:', error);
+                displayNewsError();
+            }
+        }
+
+        // Render news items (HOMEPAGE: Only show 6)
+        function renderNews() {
+            const newsGrid = document.getElementById('newsGrid');
+            
+            if (newsItems.length === 0) {
+                newsGrid.innerHTML = `
+                    <div class="news-loading">
+                        <i class="ri-information-line"></i>
+                        <span class="lang-en">No news available yet.</span>
+                        <span class="lang-fr hidden">Aucune nouvelle disponible pour le moment.</span>
+                    </div>
+                `;
+                return;
+            }
+            
+            // ALWAYS show exactly 6 items on homepage
+            const itemsToDisplay = newsItems.slice(0, 6);
+            
+            // Render news cards
+            newsGrid.innerHTML = itemsToDisplay.map(item => createNewsCard(item)).join('');
+            
+            // Update language visibility
+            updateLanguageVisibility();
+        }
+
+        // Create news card HTML
+        function createNewsCard(item) {
+            const timeAgo = getTimeAgo(item.timestamp);
+            
+            return `
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-source">${item.source}</span>
+                        <span class="news-timestamp">${timeAgo}</span>
+                    </div>
+                    
+                    <h3 class="news-title">${item.title}</h3>
+                    <p class="news-excerpt">${item.excerpt}</p>
+                    
+                    <a href="${item.url}" class="news-link" target="_blank" rel="noopener noreferrer">
+                        <span class="lang-en">Read More</span>
+                        <span class="lang-fr hidden">Lire plus</span>
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </article>
+            `;
+        }
+
+        // Get time ago string
+        function getTimeAgo(timestamp) {
+            const now = new Date();
+            const diffMs = now - timestamp;
+            const diffMins = Math.floor(diffMs / 60000);
+            const diffHours = Math.floor(diffMs / 3600000);
+            const diffDays = Math.floor(diffMs / 86400000);
+            
+            if (diffMins < 1) return 'Just now';
+            if (diffMins < 60) return `${diffMins}m ago`;
+            if (diffHours < 24) return `${diffHours}h ago`;
+            if (diffDays < 7) return `${diffDays}d ago`;
+            
+            return timestamp.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        }
+
+        // Display news error
+        function displayNewsError() {
+            const newsGrid = document.getElementById('newsGrid');
+            newsGrid.innerHTML = `
+                <div class="news-loading">
+                    <i class="ri-information-line"></i>
+                    <span class="lang-en">News is currently being updated. Check back soon!</span>
+                    <span class="lang-fr hidden">Les actualités sont en cours de mise à jour. Revenez bientôt!</span>
+                </div>
+            `;
+        }
+
+        // Update language visibility for news
+        function updateLanguageVisibility() {
+            const enElements = document.querySelectorAll('.lang-en');
+            const frElements = document.querySelectorAll('.lang-fr');
+            
+            enElements.forEach(el => el.classList.toggle('hidden', currentLang !== 'en'));
+            frElements.forEach(el => el.classList.toggle('hidden', currentLang !== 'fr'));
+        }
+
+        // Initialize news aggregator on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            initNewsAggregator();
+        });
+
+        // ============================================
+        // END NEWS AGGREGATOR
+        // ============================================
     </script>
+    <script src="components/nav.js"></script>
 </body>
 </html>

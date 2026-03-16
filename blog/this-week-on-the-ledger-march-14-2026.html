@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This Week on the Ledger — March 14, 2026 | XRPL Canada Blog</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Protocol infrastructure updates, privacy architecture with Confidential MPTs, on-chain asset growth reaching $2.3B, and the week's key developments across the XRP Ledger ecosystem.">
+    <meta name="keywords" content="XRPL weekly, rippled 3.1.2, Batch amendment, XLS-66 lending, Confidential MPTs, XLS-372, tokenized assets, AUDD stablecoin, Goldman Sachs XRP, XRPL Canada">
+    <link rel="canonical" href="https://xrplcanada.org/blog/this-week-on-the-ledger-march-14-2026.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://xrplcanada.org/blog/this-week-on-the-ledger-march-14-2026.html">
+    <meta property="og:title" content="This Week on the Ledger — March 14, 2026">
+    <meta property="og:description" content="Protocol infrastructure updates, privacy architecture with Confidential MPTs, on-chain asset growth reaching $2.3B, and the week's key developments across the XRP Ledger ecosystem.">
+    <meta property="og:image" content="https://xrplcanada.org/public/this-week-march-14.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@XRPLCanada">
+    <meta name="twitter:title" content="This Week on the Ledger — March 14, 2026">
+    <meta name="twitter:description" content="Protocol infrastructure updates, privacy architecture with Confidential MPTs, on-chain asset growth reaching $2.3B, and the week's key developments across the XRP Ledger ecosystem.">
+    <meta name="twitter:image" content="https://xrplcanada.org/public/this-week-march-14.png">
+    <link rel="icon" type="image/png" href="../public/xrpl-canada-icon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" href="../styles/nav.css" />
+    <link rel="stylesheet" href="../styles/blog-global.css">
+</head>
+<body>
+    <div id="site-nav"></div>
+
+    <article class="article-container">
+        <a href="../blog.html" class="back-link">
+            <i class="ri-arrow-left-line"></i>
+            Back to All Updates
+        </a>
+        <header class="article-header">
+            <div class="article-meta">
+                <span class="category-tag">Weekly Roundup</span>
+                <div class="meta-item">
+                    <i class="ri-calendar-line"></i>
+                    <span>March 14, 2026</span>
+                </div>
+                <div class="meta-item">
+                    <i class="ri-time-line"></i>
+                    <span>7 min read</span>
+                </div>
+            </div>
+            <h1>This Week on the Ledger — March 14, 2026</h1>
+        </header>
+
+        <img src="../public/this-week-march-14.png" alt="This Week on the Ledger — March 14, 2026" style="width: 100%; border-radius: 12px; margin-bottom: 40px;">
+
+        <div class="article-content">
+            <p>The weeks that matter most to the XRP Ledger's long-term trajectory rarely announce themselves. This was one of them. Across protocol infrastructure, privacy architecture, and on-chain asset growth, the ledger moved in several directions simultaneously — none of it spectacular in isolation, all of it consequential in aggregate.</p>
+
+            <h2>Protocol Infrastructure: Stability, Security, and the Long Road to Lending</h2>
+
+            <p>Three meaningful protocol developments landed this week, each at a different stage of the amendment lifecycle.</p>
+
+            <ul>
+                <li><strong>rippled 3.1.2</strong> was released as the second security-focused patch in three weeks, addressing a server instability issue that had caused nodes to crash under specific conditions alongside several additional vulnerability fixes. The release includes a rotation of the GPG key used to sign rippled packages — operators installing via apt or yum repositories are required to import the new key to maintain compatibility with future upgrades. Validators and node operators are being urged to upgrade promptly. The network is carrying more institutional weight than it was a year ago, and the infrastructure is being maintained accordingly.</li>
+
+                <li><strong>The Batch amendment (XLS-56)</strong> has been permanently blocked following the discovery of a critical signature-validation flaw identified by researcher Pranamya Keshkamat and Cantina AI's autonomous audit tool Apex. A corrected replacement, BatchV1_1, has been implemented and is currently under review with no mainnet activation date set. The episode was a demonstration of the amendment review process functioning as intended — a flaw caught in the voting phase, before mainnet, with a patch published and a replacement already in development.</li>
+
+                <li><strong>The Lending Protocol (XLS-66)</strong> continues its slow passage through validator consensus, sitting at approximately 17% favorable votes against the 80% threshold required for activation. When it passes, it will allow tokenized assets already sitting on the ledger to be used as collateral in lending and borrowing arrangements — a meaningful step toward a functional DeFi layer on XRPL. The pace of validator adoption reflects the deliberate nature of XRPL governance rather than opposition to the amendment itself. These things move on the network's schedule, not the market's.</li>
+            </ul>
+
+            <h2>Privacy Architecture: What Confidential MPTs Actually Mean</h2>
+
+            <p>Validator and ecosystem contributor Vet published a detailed technical breakdown this week on XLS-372, the amendment that would introduce Confidential Multi-Purpose Tokens to the XRP Ledger, and the timing is not coincidental — a U.S. Treasury report released earlier this month formally recognized the use of privacy and anonymization tools as a legal right of blockchain users, a meaningful shift in official framing after years of regulatory ambiguity. What XLS-372 proposes is the integration of zero-knowledge proof technology directly into the ledger's token infrastructure, meaning transaction amounts and counterparty details can be shielded from public view while remaining verifiable to authorized parties — regulators or compliance officers — upon formal request, a design that treats privacy not as a workaround but as a compliance-compatible feature built for the institutional environment the ledger is increasingly operating in. For any institution evaluating XRPL as settlement infrastructure, the absence of transaction confidentiality has been a legitimate barrier; XLS-372 addresses it directly, and the fact that it is being developed alongside rather than in tension with the regulatory framework gives it a different character than the privacy tools that have drawn scrutiny elsewhere in the industry.</p>
+
+            <h2>On-Chain Growth: The Numbers Behind the Ledger</h2>
+
+            <p>The XRP Ledger crossed 2.5 million transactions in a single 24-hour window this week, continuing a trajectory that has the network trending toward a 3 million daily average — a figure that sat around 1 million in mid-2025 — driven not by any single application category but by payment flows, AMM liquidity operations, stablecoin transfers, and tokenized asset activity accumulating across the ledger simultaneously. Total tokenized real-world asset value on XRPL has reached $2.3 billion, up from $991 million at the start of the year, with stablecoin transfer volume over the past 30 days reaching $1.19 billion across a market cap of $339 million and more than 35,000 holders. This week also marks a natural moment to note that Canada's own contribution to this story — Project Samara, the Bank of Canada's tokenized bond experiment with RBC, TD, and Export Development Canada — was published in full on March 5, documenting a $100 million CAD bond settled in wholesale central bank digital money on a distributed ledger; we covered it in full <a href="https://www.xrplcanada.org/blog/canada-first-tokenized-bond.html">here</a>, and its conclusions are worth reading carefully by anyone tracking where institutional DLT deployment in this country is actually headed.</p>
+
+            <h2>In Brief</h2>
+
+            <p><strong>Goldman Sachs</strong> has been confirmed as the largest known institutional holder of XRP ETF products, with a $154 million position, as cumulative inflows into U.S.-listed XRP ETFs reach $1.44 billion since launch.</p>
+
+            <p><strong>Ripple</strong> announced a $750 million share buyback, a move that has divided the community — critics note it uses proceeds from XRP escrow sales to benefit equity holders rather than token holders, while the implied valuation from the repurchase puts the company at approximately $50 billion, higher than the October 2025 funding round.</p>
+
+            <p><strong>Tokenized commodities</strong> on the XRP Ledger have grown from $111 million in January to $1.14 billion as of this week — a tenfold increase in ten weeks — sitting within the broader $2.3 billion RWA total and underscoring that the ledger's asset growth is not concentrated in any single product category.</p>
+
+            <p><strong>AUDD</strong>, the Australian dollar stablecoin operated by AUDC, became the first government-licensed stablecoin on the XRP Ledger this week after Australia's ASIC granted AUDC a full financial services license — a distinction that matters because AUDD settles directly on-chain, making it the first regulated stablecoin on XRPL to generate genuine ledger activity rather than routing through Ripple's enterprise software layer.</p>
+
+            <div class="info-box" style="margin-top: 48px; background: rgba(255, 23, 68, 0.05); border-left: 4px solid var(--primary-red);">
+                <p style="margin-bottom: 12px;"><strong>XRPL Canada</strong> is a non-profit community organization dedicated to growing the XRP Ledger ecosystem across Canada. Have a story we should cover? Reach us at <a href="mailto:team@xrplcanada.org" style="color: var(--primary-red-light); text-decoration: none; font-weight: 600;">team@xrplcanada.org</a> or follow <a href="https://twitter.com/XRPLCanada" target="_blank" rel="noopener noreferrer" style="color: var(--primary-red-light); text-decoration: none; font-weight: 600;">@XRPLCanada</a> on X.</p>
+                <p style="margin-bottom: 0;"><strong>XRPL Canada is a community partner for XRP Tokyo 2026</strong> — April 7 at Happo-en, Tokyo, hosted by XRPL Japan inside the TEAMZ Web3/AI Summit. Details on participation to follow.</p>
+            </div>
+        </div>
+
+        <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=69478aeeb5f2d28644168c47&product=image-share-buttons' async='async'></script>
+    </article>
+
+    <div id="site-footer"></div>
+
+    <script src="../components/nav.js"></script>
+    <script src="../styles/nav-mobile.js"></script>
+    <script src="../components/footer.js"></script>
+    <script src="../styles/theme-toggle.js"></script>
+</body>
+</html>

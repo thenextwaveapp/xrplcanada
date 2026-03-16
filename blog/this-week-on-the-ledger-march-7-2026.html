@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This Week on the Ledger — March 7, 2026 | XRPL Canada Blog</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Ripple Prime enters NSCC directory, CLARITY Act stalls on stablecoin yield dispute, Batch amendment vulnerability patched, and a developer proposes an XRPL options sidechain. Infrastructure developments that accumulate after the spotlight moves on.">
+    <meta name="keywords" content="Ripple Prime NSCC, Hidden Road DTCC, CLARITY Act stablecoin, XRPL Batch vulnerability, XRPL options sidechain, Denis Angell, XRPL Canada, Weekly Roundup March 2026">
+    <link rel="canonical" href="https://xrplcanada.org/blog/this-week-on-the-ledger-march-7-2026.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://xrplcanada.org/blog/this-week-on-the-ledger-march-7-2026.html">
+    <meta property="og:title" content="This Week on the Ledger — March 7, 2026">
+    <meta property="og:description" content="Ripple Prime enters NSCC directory, CLARITY Act stalls on stablecoin yield dispute, Batch amendment vulnerability patched, and a developer proposes an XRPL options sidechain.">
+    <meta property="og:image" content="https://xrplcanada.org/public/this-week-march-7.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@XRPLCanada">
+    <meta name="twitter:title" content="This Week on the Ledger — March 7, 2026">
+    <meta name="twitter:description" content="Ripple Prime enters NSCC directory, CLARITY Act stalls on stablecoin yield dispute, Batch amendment vulnerability patched, and a developer proposes an XRPL options sidechain.">
+    <meta name="twitter:image" content="https://xrplcanada.org/public/this-week-march-7.png">
+    <link rel="icon" type="image/png" href="../public/xrpl-canada-icon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" href="../styles/nav.css" />
+    <link rel="stylesheet" href="../styles/blog-global.css">
+</head>
+<body>
+    <div id="site-nav"></div>
+
+    <article class="article-container">
+        <a href="../blog.html" class="back-link">
+            <i class="ri-arrow-left-line"></i>
+            Back to All Updates
+        </a>
+        <header class="article-header">
+            <div class="article-meta">
+                <span class="category-tag">Weekly Roundup</span>
+                <div class="meta-item">
+                    <i class="ri-calendar-line"></i>
+                    <span>March 7, 2026</span>
+                </div>
+                <div class="meta-item">
+                    <i class="ri-time-line"></i>
+                    <span>18 min read</span>
+                </div>
+            </div>
+            <h1>This Week on the Ledger — March 7, 2026</h1>
+        </header>
+
+        <img src="../public/this-week-march-7.png" alt="This Week on the Ledger — March 7, 2026" style="width: 100%; border-radius: 12px; margin-bottom: 40px;">
+
+        <p><em>March 7, 2026 — Weekly Roundup</em></p>
+
+        <p>If last week was Sydney — 400 attendees, Ripple's full leadership on stage, and Australia's financial and blockchain sectors in the same room working through the actual mechanics of deployment — this week was the kind of week that rarely gets a headline, the infrastructure developments that accumulate in the days after the spotlight moves on.</p>
+
+        <h2>Ripple Prime Enters the NSCC Directory</h2>
+
+        <p>On March 2, the DTCC confirmed that Hidden Road Partners CIV US LLC — the legal entity operating as Ripple Prime following Ripple's $1.25 billion acquisition completed in October 2025 — had been added to the National Securities Clearing Corporation's Market Participant Identifiers directory, under clearing broker code 0443 and executing broker alpha "HRFI." The listing covers OTC products only.</p>
+
+        <p>The NSCC, a subsidiary of the DTCC, provides centralized clearing, settlement, risk management, and central counterparty services for broker-to-broker trades in U.S. securities markets. MPID directory membership is an operational prerequisite for firms routing trade activity through NSCC's centralized clearing workflows. Prior to Ripple's acquisition, Hidden Road reported clearing approximately $3 trillion in annual volume across more than 300 institutional clients.</p>
+
+        <p>Ripple CTO Emeritus David Schwartz acknowledged the listing on X, describing it as "seems important" and noting that the DTCC notice still carried the pre-acquisition name because the onboarding had been in process before the acquisition was fully finalized, with some regulatory approvals still pending at the time. Ripple has stated its intention to migrate Ripple Prime's post-trade activity to XRPL settlement. The NSCC listing creates the regulatory and operational standing for that migration to proceed within the U.S. clearing framework. Whether and how quickly any portion of that volume migrates to on-ledger settlement depends on counterparty agreements and execution that has not yet been publicly detailed.</p>
+
+        <h2>The CLARITY Act: March 1 Deadline, Missed</h2>
+
+        <p>The White House's self-imposed March 1 deadline for resolving the stablecoin yield dispute passed without a public compromise, leaving the Digital Asset Market Clarity Act stalled in the Senate Banking Committee with no new markup date confirmed as of March 7.</p>
+
+        <p>The core dispute traces directly to the GENIUS Act, signed into law in July 2025, which bars stablecoin issuers from paying interest directly to holders but does not explicitly prevent third-party platforms from passing yield on to customers. Banks have characterized that structure as a loophole and arrived at White House negotiations demanding a blanket ban on all stablecoin yield and rewards. Coinbase, whose USDC rewards program operates through a revenue-sharing arrangement with Circle and generated approximately $355 million in stablecoin revenue in Q3 2025 alone, has been the most visible opponent of that position — arguing that third-party rewards are structurally distinct from issuers paying interest directly and that a blanket ban would rewrite the statute's intent. The OCC's 376-page proposed rulemaking released February 25, implementing the GENIUS Act, complicated that argument: the agency established a presumption that issuer payments to affiliates or related third parties that then pay yield to holders violate the prohibition, directly targeting the Circle-Coinbase revenue-sharing arrangement. The OCC's position does not constitute a final rule and is subject to a 60-day public comment period, but it shifted the negotiating ground heading into the March 1 deadline.</p>
+
+        <p>For XRPL specifically, the bill's trajectory matters on two fronts. RLUSD operates directly within the framework the GENIUS Act and CLARITY Act are defining, and the broader institutional adoption story depends on regulated entities having the legal clarity to operate on public ledgers at scale. Ripple CEO Brad Garlinghouse put passage odds at 80% in comments to reporters during the week. Prediction markets on Polymarket were pricing 2026 passage at approximately 72–73% as of March 7, down from 80% before the deadline passed without resolution.</p>
+
+        <h2>The Batch Amendment Vulnerability: Full Account</h2>
+
+        <p>A security event from the prior week remained active in developer discussions throughout March 1–7 and warrants a complete account.</p>
+
+        <p>On February 19, researcher Pranamya Keshkamat and Cantina AI's autonomous static analysis tool Apex identified a critical logic flaw in the signature-validation code of the Batch amendment (XLS-56) — a proposed XRPL upgrade that would allow multiple transactions to be bundled into a single atomic operation. The flaw was located in the signer-verification loop: when the validator encountered a signer whose account did not yet exist on the ledger and whose signing key matched that account, it exited the loop immediately, treating the batch as fully authorized and skipping validation of all remaining signers. An attacker could exploit this by placing a newly created account early in a batch's signer list, causing the validator to halt and accept the batch as authorized for transactions belonging to entirely separate accounts — without accessing those accounts' private keys.</p>
+
+        <p>The amendment had not been activated on mainnet and was still in its validator voting phase, with only 11 favorable votes from 34 validators at the time of disclosure. No user funds were ever at risk.</p>
+
+        <p>Ripple's engineering team validated the disclosure the same evening with an independent proof-of-concept. Validators on the Unique Node List were immediately advised to vote against the amendment. By February 23, rippled v3.1.1 was released, marking both the Batch and fixBatchInnerSigs amendments as unsupported and permanently blocking them from receiving votes or activating on the network. A corrected replacement, BatchV1_1, has been implemented and is under review. The XRPL Foundation has not set a release date. As a forward-looking measure, the Foundation committed to integrating AI-assisted code audit pipelines as a standard step in the amendment review process, alongside expanded static analysis designed to catch premature loop exits in signer-iteration logic. The patch also included a rotation of the GPG key used to sign rippled packages; node operators installing rippled via apt or yum repositories are required to import the new key to maintain compatibility with future upgrades.</p>
+
+        <h2>Developer Proposal: XRPL Options Sidechain</h2>
+
+        <p>On February 28, Denis Angell — a software engineer at XRPLLabs and contributor to Xahau — published a formal pitch document on a dedicated options-sidechain branch of his rippled fork, proposing a purpose-built derivatives sidechain for the XRP Ledger. The document was announced on X the same evening and drew 46,600 views, with responses from established community figures including Hodor and multiple active UNL validators expressing interest in participation.</p>
+
+        <p>The proposal covers three interlocking systems, each defined by a draft XLS specification. The first is a trustless XPop bridge using a lock-and-mint model: XRP is locked in a standard multisig vault on XRPL mainnet, an XPop cryptographic proof is generated from the validated ledger, and the user submits an import transaction to the sidechain which mints XRP 1:1. The model requires an 80%+ validator quorum for every import proof and no amendments to XRPL mainnet. The second system is a native options and margin engine supporting American-style calls and puts, cash settlement, both covered and naked positions, and leverage from 2x to 200x via isolated or cross-margin modes with on-chain liquidation, insurance vaults, and funding rates. The third is native WebAuthn/FIDO2 passkey authentication using P256 as a new key type, enabling transaction signing via Face ID, Touch ID, Windows Hello, or FIDO2 hardware keys — up to 10 registered credentials per account.</p>
+
+        <p>Three points of context are important. This is a pre-testnet proposal: no audit has been completed, no testnet has launched, and no validator set has been confirmed. Angell is actively soliciting established UNL validators to extend their infrastructure to the sidechain and seeking a security audit funded through the XRPL Grants program. The Hyperliquid comparison is Angell's own framing in the pitch document, not an independent characterization. And the proposal represents one developer's initiative within the broader XRPL ecosystem, not a Ripple or XRPL Foundation roadmap item. The specifications are published and open for community review at github.com/Transia-RnD/rippled/tree/options-sidechain/specs.</p>
+
+        <h2>🇨🇦 What This Means for Canada</h2>
+
+        <p>Ripple Prime's NSCC listing and the Batch vulnerability response both matter to any Canadian institution evaluating XRPL as infrastructure — one for what it opens up operationally, the other for what it demonstrates about how the ecosystem handles risk. The options sidechain is earlier-stage, but it reflects the same pattern: serious protocol-level developers building financial infrastructure on XRPL, not just applications on top of it. For Canadian builders and institutions watching where the ledger is going, the breadth of that activity is the signal.</p>
+
+        <div class="info-box" style="margin-top: 32px; background: rgba(255, 23, 68, 0.05); border-left: 4px solid var(--primary-red);">
+            <p><strong>XRPL Canada</strong> is a non-profit community organization dedicated to growing the XRP Ledger ecosystem across Canada. Have a story we should cover? Reach us at <a href="mailto:team@xrplcanada.org" style="color: var(--primary-red-light); text-decoration: none; font-weight: 600;">team@xrplcanada.org</a> or follow <a href="https://twitter.com/XRPLCanada" target="_blank" rel="noopener noreferrer" style="color: var(--primary-red-light); text-decoration: none; font-weight: 600;">@XRPLCanada</a> on X.</p>
+        </div>
+
+        <div class="info-box" style="margin-top: 20px; background: rgba(0, 184, 212, 0.08); border-left: 4px solid var(--accent-blue);">
+            <p><strong>XRPL Canada is a community partner for XRP Tokyo 2026</strong> — April 7 at Happo-en, Tokyo, hosted by XRPL Japan inside the TEAMZ Web3/AI Summit. Details on participation to follow. Learn more at <a href="https://www.teamz.co.jp/en/2026/xrp-tokyo-2026" target="_blank" rel="noopener noreferrer" style="color: var(--accent-blue); text-decoration: none; font-weight: 600;">teamz.co.jp/en/2026/xrp-tokyo-2026</a>.</p>
+        </div>
+
+        <div class="sources">
+            <h3>Sources</h3>
+            <ul>
+                <li>The Crypto Basic — "Ripple Top Executive Says 'Seems Important,' as Hidden Road Goes Live on DTCC's Clearing Corporation," March 3, 2026 — <a href="https://thecryptobasic.com/2026/03/03/ripple-top-executive-says-seems-important-as-hidden-road-goes-live-on-dtccs-clearing-corporation/" target="_blank" rel="noopener noreferrer">thecryptobasic.com</a></li>
+                <li>BeInCrypto via Yahoo Finance — "Hidden Road Officially Goes Live on NSCC: What Does It Mean for XRP?" March 3, 2026 — <a href="https://finance.yahoo.com/news/hidden-road-officially-goes-live-052823575.html" target="_blank" rel="noopener noreferrer">finance.yahoo.com</a></li>
+                <li>XRPL Foundation — Vulnerability Disclosure Report: XRPL Batch Amendment — <a href="https://xrpl.org/blog/2026/vulnerabilitydisclosurereport-bug-feb2026" target="_blank" rel="noopener noreferrer">xrpl.org</a></li>
+                <li>CoinDesk — "AI Tool Catches Critical XRP Ledger Bug That Could Have Drained Wallets," February 27, 2026 — <a href="https://www.coindesk.com/tech/2026/02/27/ai-tool-catches-critical-xrp-ledger-bug-that-could-have-drained-wallets" target="_blank" rel="noopener noreferrer">coindesk.com</a></li>
+                <li>Transia-RnD — XRPL Options Sidechain pitch document and specifications — <a href="https://github.com/Transia-RnD/rippled/tree/options-sidechain/specs" target="_blank" rel="noopener noreferrer">github.com</a></li>
+                <li>TEAMZ — XRP Tokyo 2026 event page — <a href="https://www.teamz.co.jp/en/2026/xrp-tokyo-2026" target="_blank" rel="noopener noreferrer">teamz.co.jp</a></li>
+                <li>CoinDesk — "Crypto World Faces Growing Pressure to Relent on Stablecoin Rewards to Win Bigger Prize," March 2, 2026 — <a href="https://www.coindesk.com/news-analysis/2026/03/02/crypto-world-faces-growing-pressure-to-relent-on-stablecoin-rewards-to-win-bigger-prize" target="_blank" rel="noopener noreferrer">coindesk.com</a></li>
+                <li>CoinDesk — "U.S. Regulator's GENIUS Pitch Puts Dark Cloud Over Crypto Sector's Stablecoin Model," February 26, 2026 — <a href="https://www.coindesk.com/policy/2026/02/26/u-s-regulator-s-genius-pitch-puts-dark-cloud-over-crypto-sector-s-stablecoin-model" target="_blank" rel="noopener noreferrer">coindesk.com</a></li>
+                <li>Manatt — "OCC Issues First Substantive Rulemaking Under the GENIUS Act," February 25, 2026 — <a href="https://www.manatt.com/insights/newsletters/client-alert/occ-issues-first-substantive-rulemaking-under-the-genius-act" target="_blank" rel="noopener noreferrer">manatt.com</a></li>
+                <li>Congressional Research Service via Congress.gov — "The Stablecoin Yield Debate," March 6, 2026 — <a href="https://www.congress.gov/crs-product/IF13174" target="_blank" rel="noopener noreferrer">congress.gov</a></li>
+            </ul>
+        </div>
+
+        <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=69478aeeb5f2d28644168c47&product=image-share-buttons' async='async'></script>
+    </article>
+
+    <div id="site-footer"></div>
+
+    <script src="../components/nav.js"></script>
+    <script src="../styles/nav-mobile.js"></script>
+    <script src="../components/footer.js"></script>
+    <script src="../styles/theme-toggle.js"></script>
+</body>
+</html>

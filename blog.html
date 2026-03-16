@@ -15,21 +15,20 @@
     <meta property="og:url" content="https://xrplcanada.org/blog.html">
     <meta property="og:title" content="Blog & Updates | XRPL Canada">
     <meta property="og:description" content="Real-world XRPL adoption stories, ecosystem news, and insights on building payment infrastructure.">
-    <meta property="og:image" content="https://xrplcanada.org/public/xrpl-canada.png">
+    <meta property="og:image" content="https://xrplcanada.org/public/xrpl-canada-social-share.png">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@XRPLCanada">
     <meta name="twitter:title" content="Blog & Updates | XRPL Canada">
     <meta name="twitter:description" content="Real-world XRPL adoption stories and ecosystem insights.">
-    <meta name="twitter:image" content="https://xrplcanada.org/public/xrpl-canada.png">
+    <meta name="twitter:image" content="https://xrplcanada.org/public/xrpl-canada-social-share.png">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="public/xrpl-canada.png">
-    <link rel="apple-touch-icon" href="public/xrpl-canada.png">
+    <link rel="icon" type="image/png" href="public/xrpl-canada-icon.png">
+    <link rel="apple-touch-icon" href="public/xrpl-canada-icon.png">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" />
-    <link rel="stylesheet" href="styles/nav.css" />
     <link rel="stylesheet" href="styles/nav.css" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
@@ -45,21 +44,23 @@
             --primary-red: #FF1744;
             --primary-red-dark: #C51162;
             --primary-red-light: #FF5252;
-            --accent-blue: #00B8D4;
-            --black: #0A0A0F;
-            --black-light: #12121A;
-            --gray: #1A1A24;
-            --gray-light: #252532;
-            --gray-lighter: #2E2E3D;
+            --accent-teal: #00FFF0;
+            --accent-teal-bright: #00E5D6;
+            --accent-teal-glow: rgba(0, 255, 240, 0.3);
+            --black: #000000;
+            --black-light: #0A0A0A;
+            --gray: #141414;
+            --gray-light: #1A1A1A;
+            --gray-lighter: #242424;
             --white: #FFFFFF;
-            --text-primary: #E8E8F0;
-            --text-secondary: #A0A0B8;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B0B0B0;
             --text-tertiary: #6B6B85;
-            --gradient-primary: linear-gradient(135deg, #FF1744 0%, #C51162 100%);
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
-            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
-            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
-            --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.4);
+            --gradient-teal: linear-gradient(135deg, #00FFF0 0%, #00B8D4 100%);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.5);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.6);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.7);
+            --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.8);
         }
 
         html {
@@ -69,10 +70,6 @@
         body {
             font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background: var(--black);
-            background-image:
-                radial-gradient(at 20% 30%, rgba(255, 23, 68, 0.08) 0px, transparent 50%),
-                radial-gradient(at 80% 70%, rgba(0, 184, 212, 0.08) 0px, transparent 50%);
-            background-attachment: fixed;
             color: var(--text-primary);
             line-height: 1.7;
             overflow-x: hidden;
@@ -85,9 +82,7 @@
         .blog-date,
         .blog-category,
         .blog-link,
-        .blog-excerpt,
-        .lang-toggle,
-        footer {
+        .blog-excerpt {
             font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
@@ -122,6 +117,8 @@
             max-width: 1280px;
             margin: 0 auto;
             padding: 64px 20px 80px;
+            position: relative;
+            z-index: 1;
         }
 
         .page-header {
@@ -133,10 +130,7 @@
             font-size: 52px;
             font-weight: 800;
             margin-bottom: 16px;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--white);
             letter-spacing: -1px;
             line-height: 1.2;
             padding-bottom: 4px;
@@ -144,7 +138,7 @@
 
         .page-description {
             font-size: 20px;
-            color: var(--text-secondary);
+            color: #808080;
             max-width: 800px;
             margin: 0 auto;
             line-height: 1.8;
@@ -158,15 +152,25 @@
         }
 
         .blog-card {
-            background: rgba(26, 26, 36, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
+            background: var(--black-light);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
             padding: 40px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
             position: relative;
             overflow: hidden;
+        }
+
+        .blog-card img {
+            transition: all 0.4s ease;
+            opacity: 0.92;
+        }
+
+        .blog-card:hover img {
+            opacity: 1;
+            filter: brightness(1.05);
         }
 
         .blog-card::before {
@@ -174,21 +178,22 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 5px;
-            height: 0;
-            background: var(--gradient-primary);
-            transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .blog-card:hover {
-            transform: translateY(-12px);
-            border-color: rgba(255, 23, 68, 0.3);
-            background: rgba(26, 26, 36, 0.9);
-            box-shadow: var(--shadow-xl), 0 0 40px rgba(255, 23, 68, 0.2);
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, 0.12);
+            background: rgba(15, 15, 15, 0.8);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
         }
 
         .blog-card:hover::before {
-            height: 100%;
+            opacity: 1;
         }
 
         .blog-meta {
@@ -234,7 +239,7 @@
 
         .blog-excerpt {
             font-size: 16px;
-            color: var(--text-secondary);
+            color: #909090;
             line-height: 1.8;
             margin-bottom: 28px;
             flex-grow: 1;
@@ -266,12 +271,48 @@
             transform: translateX(5px);
         }
 
-        footer {
-            background: rgba(10, 10, 15, 0.8);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 60px 20px 40px;
-            text-align: center;
-            color: var(--text-tertiary);
+        /* Category Filter */
+        .filter-btn {
+            background: var(--black-light);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            padding: 10px 20px;
+            border-radius: 24px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'IBM Plex Sans', sans-serif;
+            letter-spacing: 0.3px;
+        }
+
+        .filter-btn:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: var(--text-primary);
+        }
+
+        .filter-btn.active {
+            background: var(--primary-red);
+            border-color: var(--primary-red);
+            color: white;
+        }
+
+        .filter-btn .count {
+            opacity: 0.7;
+            font-size: 13px;
+        }
+
+        .filter-btn.active .count {
+            opacity: 0.9;
+        }
+
+        .blog-card {
+            transition: all 0.3s ease;
+        }
+
+        .blog-card.hidden {
+            display: none;
         }
 
         @media (max-width: 768px) {
@@ -286,6 +327,15 @@
 
             .container {
                 padding: 60px 20px 80px;
+            }
+
+            .category-filter {
+                margin-bottom: 32px !important;
+            }
+
+            .filter-btn {
+                font-size: 13px;
+                padding: 8px 16px;
             }
         }
     </style>
@@ -309,9 +359,246 @@
             </p>
         </div>
 
+        <!-- Category Filter -->
+        <div class="category-filter" style="max-width: 1280px; margin: 0 auto 48px; padding: 0 20px;">
+            <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+                <button class="filter-btn active" data-category="all">
+                    All <span class="count">(14)</span>
+                </button>
+                <button class="filter-btn" data-category="Weekly Roundup">
+                    Weekly Roundup <span class="count">(4)</span>
+                </button>
+                <button class="filter-btn" data-category="Technical">
+                    Technical <span class="count">(3)</span>
+                </button>
+                <button class="filter-btn" data-category="Ecosystem">
+                    Ecosystem <span class="count">(3)</span>
+                </button>
+                <button class="filter-btn" data-category="Education">
+                    Education <span class="count">(2)</span>
+                </button>
+                <button class="filter-btn" data-category="Year in Review">
+                    Year in Review <span class="count">(2)</span>
+                </button>
+            </div>
+        </div>
+
         <div class="blog-grid">
             <!-- Blog Post 1 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="Weekly Roundup">
+                <a href="blog/this-week-on-the-ledger-march-14-2026.html" style="display: flex; justify-content: center; margin: -40px 0 20px 0;">
+                    <img src="public/this-week-march-14.png" alt="This Week on the Ledger — March 14, 2026" style="width: calc(100% + 80px); height: 200px; object-fit: cover; object-position: center; border-radius: 20px 20px 0 0; cursor: pointer;">
+                </a>
+                <div class="blog-meta" style="margin-bottom: 14px;">
+                    <span class="blog-date">
+                        <i class="ri-calendar-line"></i>
+                        March 14, 2026
+                    </span>
+                    <span class="blog-category">Weekly Roundup</span>
+                </div>
+                <h2 class="blog-title" style="font-size: 24px; margin-bottom: 14px; line-height: 1.25;">
+                    <span class="lang-en">This Week on the Ledger — March 14, 2026</span>
+                    <span class="lang-fr hidden">Cette semaine sur le Ledger — 14 mars 2026</span>
+                </h2>
+                <p class="blog-excerpt" style="margin-bottom: 16px; font-size: 15px;">
+                    <span class="lang-en">
+                        Protocol infrastructure updates, privacy architecture with Confidential MPTs, on-chain asset growth reaching $2.3B, and the week's key developments across the XRP Ledger ecosystem.
+                    </span>
+                    <span class="lang-fr hidden">
+                        Mises à jour de l'infrastructure du protocole, architecture de confidentialité avec les MPT confidentiels, croissance des actifs en chaîne atteignant 2,3 milliards $, et les développements clés de l'écosystème XRP Ledger.
+                    </span>
+                </p>
+                <div class="sharethis-inline-share-buttons" data-url="https://xrplcanada.org/blog/this-week-on-the-ledger-march-14-2026.html" data-title="This Week on the Ledger — March 14, 2026" style="margin: 0 0 16px 0; display: flex; justify-content: space-between; align-items: center;">
+                </div>
+                <a href="blog/this-week-on-the-ledger-march-14-2026.html" class="blog-link">
+                    <span class="lang-en">Read Full Story</span>
+                    <span class="lang-fr hidden">Lire l'histoire complète</span>
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </article>
+
+            <!-- Blog Post 2 -->
+            <article class="blog-card" data-category="Technical">
+                <a href="blog/xrpl-options-sidechain-technical-deep-dive.html" style="display: flex; justify-content: center; margin: -40px 0 20px 0;">
+                    <img src="public/options-sidechain.jpg" alt="The XRPL Options Sidechain: Every Detail" style="width: calc(100% + 80px); height: 200px; object-fit: cover; object-position: center; border-radius: 20px 20px 0 0; cursor: pointer;">
+                </a>
+                <div class="blog-meta" style="margin-bottom: 14px;">
+                    <span class="blog-date">
+                        <i class="ri-calendar-line"></i>
+                        March 10, 2026
+                    </span>
+                    <span class="blog-category">Technical</span>
+                </div>
+                <h2 class="blog-title" style="font-size: 24px; margin-bottom: 14px; line-height: 1.25;">
+                    <span class="lang-en">The XRPL Options Sidechain: Every Detail</span>
+                    <span class="lang-fr hidden">La Sidechain d'Options XRPL : Tous les détails</span>
+                </h2>
+                <p class="blog-excerpt" style="margin-bottom: 20px; font-size: 15px;">
+                    <span class="lang-en">
+                        Denis Angell proposes a purpose-built derivatives chain with native options, margin trading up to 200x, WebAuthn authentication, and a trustless XPop bridge. Pre-testnet, seeking validators and audit.
+                    </span>
+                    <span class="lang-fr hidden">
+                        Denis Angell propose une chaîne de produits dérivés dédiée avec options natives, trading sur marge jusqu'à 200x, authentification WebAuthn, et un pont XPop sans confiance.
+                    </span>
+                </p>
+                <a href="blog/xrpl-options-sidechain-technical-deep-dive.html" class="blog-link">
+                    <span class="lang-en">Read Full Story</span>
+                    <span class="lang-fr hidden">Lire l'histoire complète</span>
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </article>
+
+            <!-- Blog Post 2 -->
+            <article class="blog-card" data-category="Weekly Roundup">
+                <a href="blog/this-week-on-the-ledger-march-7-2026.html" style="display: flex; justify-content: center; margin: -40px 0 20px 0;">
+                    <img src="public/this-week-march-7.png" alt="This Week on the Ledger — March 7, 2026" style="width: calc(100% + 80px); height: 200px; object-fit: cover; object-position: center; border-radius: 20px 20px 0 0; cursor: pointer;">
+                </a>
+                <div class="blog-meta" style="margin-bottom: 14px;">
+                    <span class="blog-date">
+                        <i class="ri-calendar-line"></i>
+                        March 7, 2026
+                    </span>
+                    <span class="blog-category">Weekly Roundup</span>
+                </div>
+                <h2 class="blog-title" style="font-size: 24px; margin-bottom: 14px; line-height: 1.25;">
+                    <span class="lang-en">This Week on the Ledger</span>
+                    <span class="lang-fr hidden">Cette semaine sur le Ledger</span>
+                </h2>
+                <p class="blog-excerpt" style="margin-bottom: 20px; font-size: 15px;">
+                    <span class="lang-en">
+                        Ripple Prime enters NSCC directory, CLARITY Act stalls on stablecoin yield dispute, Batch amendment vulnerability patched, and a developer proposes an XRPL options sidechain.
+                    </span>
+                    <span class="lang-fr hidden">
+                        Ripple Prime entre dans le répertoire NSCC, la loi CLARITY bloquée sur le différend sur les rendements des stablecoins, vulnérabilité du Batch corrigée, et un développeur propose une sidechain d'options XRPL.
+                    </span>
+                </p>
+                <a href="blog/this-week-on-the-ledger-march-7-2026.html" class="blog-link">
+                    <span class="lang-en">Read Full Story</span>
+                    <span class="lang-fr hidden">Lire l'histoire complète</span>
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </article>
+
+            <!-- Blog Post 3 -->
+            <article class="blog-card" data-category="Ecosystem">
+                <a href="blog/canada-first-tokenized-bond.html" style="display: flex; justify-content: center; margin: -40px 0 20px 0;">
+                    <img src="public/project-samara.jpeg" alt="Canada's First Tokenized Bond" style="width: calc(100% + 80px); height: 200px; object-fit: cover; object-position: center; border-radius: 20px 20px 0 0; cursor: pointer;">
+                </a>
+                <div class="blog-meta" style="margin-bottom: 14px;">
+                    <span class="blog-date">
+                        <i class="ri-calendar-line"></i>
+                        March 6, 2026
+                    </span>
+                    <span class="blog-category">Ecosystem</span>
+                </div>
+                <h2 class="blog-title" style="font-size: 24px; margin-bottom: 14px; line-height: 1.25;">
+                    <span class="lang-en">Canada's First Tokenized Bond</span>
+                    <span class="lang-fr hidden">Première obligation tokenisée du Canada</span>
+                </h2>
+                <p class="blog-excerpt" style="margin-bottom: 20px; font-size: 15px;">
+                    <span class="lang-en">
+                        On March 5, 2026, the Bank of Canada, RBC, TD, and Export Development Canada published the results of Project Samara. A real $100 million CAD bond settled on a distributed ledger.
+                    </span>
+                    <span class="lang-fr hidden">
+                        Le 5 mars 2026, la Banque du Canada, RBC, TD et Exportation et développement Canada ont publié les résultats du projet Samara. Une véritable obligation de 100 millions CAD réglée sur un registre distribué.
+                    </span>
+                </p>
+                <a href="blog/canada-first-tokenized-bond.html" class="blog-link">
+                    <span class="lang-en">Read Full Story</span>
+                    <span class="lang-fr hidden">Lire l'histoire complète</span>
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </article>
+
+            <!-- Blog Post 4 -->
+            <article class="blog-card" data-category="Weekly Roundup">
+                <a href="blog/this-week-on-the-ledger-feb-28-2026.html" style="display: flex; justify-content: center; margin: -40px 0 20px 0;">
+                    <img src="public/xrp-sydney-2026.png" alt="This Week on the Ledger — February 28, 2026" style="width: calc(100% + 80px); height: 200px; object-fit: cover; object-position: center; border-radius: 20px 20px 0 0; cursor: pointer;">
+                </a>
+                <div class="blog-meta" style="margin-bottom: 14px;">
+                    <span class="blog-date">
+                        <i class="ri-calendar-line"></i>
+                        February 28, 2026
+                    </span>
+                    <span class="blog-category">Weekly Roundup</span>
+                </div>
+                <h2 class="blog-title" style="font-size: 24px; margin-bottom: 14px; line-height: 1.25;">
+                    <span class="lang-en">This Week on the Ledger</span>
+                    <span class="lang-fr hidden">Cette semaine sur le Ledger</span>
+                </h2>
+                <p class="blog-excerpt" style="margin-bottom: 20px; font-size: 15px;">
+                    <span class="lang-en">
+                        XRP Australia 2026 brought together 400+ attendees at Crown Towers Sydney. Brad Garlinghouse addressed the 'flip the switch' narrative, Monica Long and David Schwartz took the stage.
+                    </span>
+                    <span class="lang-fr hidden">
+                        XRP Australie 2026 a réuni plus de 400 participants à Crown Towers Sydney. Brad Garlinghouse a abordé le récit du 'basculement', Monica Long et David Schwartz sont montés sur scène.
+                    </span>
+                </p>
+                <a href="blog/this-week-on-the-ledger-feb-28-2026.html" class="blog-link">
+                    <span class="lang-en">Read Full Story</span>
+                    <span class="lang-fr hidden">Lire l'histoire complète</span>
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </article>
+
+            <!-- Blog Post 5 -->
+            <article class="blog-card" data-category="Ecosystem">
+                <div class="blog-meta">
+                    <span class="blog-date">
+                        <i class="ri-calendar-line"></i>
+                        February 27, 2026
+                    </span>
+                    <span class="blog-category">Ecosystem</span>
+                </div>
+                <h2 class="blog-title">
+                    <span class="lang-en">Crypto's $2.5B Problem Has an Insurance-Shaped Solution — Meet Mintara Labs</span>
+                    <span class="lang-fr hidden">Le problème de 2,5 milliards $ de la crypto a une solution en forme d'assurance — Rencontrez Mintara Labs</span>
+                </h2>
+                <p class="blog-excerpt">
+                    <span class="lang-en">
+                        $2.5B lost to crypto hacks in 2025. 92% of protocols were audited. Mintara Labs is building regulated insurance infrastructure to close the protection gap keeping institutional capital on the sidelines — and they're building on XRPL.
+                    </span>
+                    <span class="lang-fr hidden">
+                        2,5 milliards $ perdus dans des piratages crypto en 2025. 92% des protocoles ont été audités. Mintara Labs construit une infrastructure d'assurance réglementée pour combler le vide de protection.
+                    </span>
+                </p>
+                <a href="blog/mintara-labs-crypto-insurance-solution.html" class="blog-link">
+                    <span class="lang-en">Read Full Story</span>
+                    <span class="lang-fr hidden">Lire l'histoire complète</span>
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </article>
+
+            <!-- Blog Post 3 -->
+            <article class="blog-card" data-category="Technical">
+                <div class="blog-meta">
+                    <span class="blog-date">
+                        <i class="ri-calendar-line"></i>
+                        February 18, 2026
+                    </span>
+                    <span class="blog-category">Technical</span>
+                </div>
+                <h2 class="blog-title">
+                    <span class="lang-en">XRPL February 2026 Update: Token Escrow and Permissioned DEX Activation</span>
+                    <span class="lang-fr hidden">Mise à jour XRPL - Février 2026 : Token Escrow et DEX avec Permissions</span>
+                </h2>
+                <p class="blog-excerpt">
+                    <span class="lang-en">
+                        Token Escrow (XLS-85) and the Permissioned DEX (XLS-81) activated this week on the XRP Ledger — two protocol-level primitives that unlock compliance-gated trading environments and programmable token locks for any token. The infrastructure regulated institutions have needed to settle on-chain is now native to the ledger.
+                    </span>
+                    <span class="lang-fr hidden">
+                        Token Escrow (XLS-85) et le DEX à accès restreint (XLS-81) ont été activés cette semaine sur le XRP Ledger — deux primitifs au niveau du protocole qui débloquent des environnements d'échange conformes et des verrous de jetons programmables.
+                    </span>
+                </p>
+                <a href="blog/xrpl-permissioned-dex-token-escrow-february-2026.html" class="blog-link">
+                    <span class="lang-en">Read Full Story</span>
+                    <span class="lang-fr hidden">Lire l'histoire complète</span>
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </article>
+
+            <!-- Blog Post 4 -->
+            <article class="blog-card" data-category="Year in Review">
                 <div class="blog-meta">
                     <span class="blog-date">
                         <i class="ri-calendar-line"></i>
@@ -338,8 +625,8 @@
                 </a>
             </article>
 
-            <!-- Blog Post 2 -->
-            <article class="blog-card">
+            <!-- Blog Post 5 -->
+            <article class="blog-card" data-category="Year in Review">
                 <div class="blog-meta">
                     <span class="blog-date">
                         <i class="ri-calendar-line"></i>
@@ -366,8 +653,8 @@
                 </a>
             </article>
 
-            <!-- Blog Post 3 -->
-            <article class="blog-card">
+            <!-- Blog Post 6 -->
+            <article class="blog-card" data-category="Education">
                 <div class="blog-meta">
                     <span class="blog-date">
                         <i class="ri-calendar-line"></i>
@@ -394,14 +681,14 @@
                 </a>
             </article>
 
-            <!-- Blog Post 4 -->
-            <article class="blog-card">
+            <!-- Blog Post 7 -->
+            <article class="blog-card" data-category="Technical">
                 <div class="blog-meta">
                     <span class="blog-date">
                         <i class="ri-calendar-line"></i>
                         December 20, 2025
                     </span>
-                    <span class="blog-category">Technical Update</span>
+                    <span class="blog-category">Technical</span>
                 </div>
                 <h2 class="blog-title">
                     <span class="lang-en">XRPL December 2025 Update: Critical Validator Upgrades and Protocol Evolution</span>
@@ -422,8 +709,8 @@
                 </a>
             </article>
 
-            <!-- Blog Post 5 -->
-            <article class="blog-card">
+            <!-- Blog Post 8 -->
+            <article class="blog-card" data-category="Education">
                 <div class="blog-meta">
                     <span class="blog-date">
                         <i class="ri-calendar-line"></i>
@@ -450,8 +737,8 @@
                 </a>
             </article>
 
-            <!-- Blog Post 6 -->
-            <article class="blog-card">
+            <!-- Blog Post 9 -->
+            <article class="blog-card" data-category="Weekly Roundup">
                 <div class="blog-meta">
                     <span class="blog-date">
                         <i class="ri-calendar-line"></i>
@@ -478,14 +765,14 @@
                 </a>
             </article>
 
-            <!-- Blog Post 7 -->
-            <article class="blog-card">
+            <!-- Blog Post 10 -->
+            <article class="blog-card" data-category="Ecosystem">
                 <div class="blog-meta">
                     <span class="blog-date">
                         <i class="ri-calendar-line"></i>
                         November 8, 2025
                     </span>
-                    <span class="blog-category">Case Study</span>
+                    <span class="blog-category">Ecosystem</span>
                 </div>
                 <h2 class="blog-title">
                     <span class="lang-en">Banks Using RippleNet: Institutional Adoption at Scale</span>
@@ -508,14 +795,9 @@
         </div>
     </div>
 
-    <footer>
-        <p>
-            <span class="lang-en">© 2025 XRPL Canada. Building the future of value transfer in Canada.</span>
-            <span class="lang-fr hidden">© 2025 XRPL Canada. Construire l'avenir du transfert de valeur au Canada.</span>
-        </p>
-    </footer>
+    <div id="site-footer"></div>
 
-    <script>
+<script>
         // Language toggle functionality
         function toggleLanguage() {
             const currentLang = document.documentElement.lang;
@@ -531,6 +813,38 @@
         }
     </script>
     <script src="components/nav.js"></script>
+    <script src="styles/nav-mobile.js"></script>
+    <script src="components/footer.js"></script>
+    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=69478aeeb5f2d28644168c47&product=inline-share-buttons' async='async'></script>
+
+    <!-- Category Filter Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const blogCards = document.querySelectorAll('.blog-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+
+                    // Update active state
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Filter cards
+                    blogCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+
+                        if (category === 'all' || cardCategory === category) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
 

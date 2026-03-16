@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XRPL February 2026 Update: Token Escrow and Permissioned DEX Activation | XRPL Canada Blog</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Token Escrow (XLS-85) and the Permissioned DEX (XLS-81) activated this week on the XRP Ledger — compliance-gated trading environments and programmable token locks, built natively into the protocol.">
+    <meta name="keywords" content="Permissioned DEX XRPL, Token Escrow XLS-85, XLS-81, institutional DeFi, blockchain compliance, XRP Ledger upgrades, XRPL Canada">
+    <link rel="canonical" href="https://xrplcanada.org/blog/xrpl-permissioned-dex-token-escrow-february-2026.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://xrplcanada.org/blog/xrpl-permissioned-dex-token-escrow-february-2026.html">
+    <meta property="og:title" content="XRPL February 2026 Update: Token Escrow and Permissioned DEX Activation">
+    <meta property="og:description" content="Token Escrow (XLS-85) and the Permissioned DEX (XLS-81) activated this week on the XRP Ledger — compliance-gated trading environments and programmable token locks, built natively into the protocol.">
+    <meta property="og:image" content="https://xrplcanada.org/public/xrpl-canada.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@XRPLCanada">
+    <meta name="twitter:title" content="XRPL February 2026 Update: Token Escrow and Permissioned DEX Activation">
+    <meta name="twitter:description" content="Token Escrow (XLS-85) and the Permissioned DEX (XLS-81) activated this week on the XRP Ledger — compliance-gated trading environments and programmable token locks, built natively into the protocol.">
+    <meta name="twitter:image" content="https://xrplcanada.org/public/xrpl-canada.png">
+    <link rel="icon" type="image/png" href="../public/xrpl-canada-icon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" href="../styles/nav.css" />
+    <link rel="stylesheet" href="../styles/blog-global.css">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 32px 0;
+            font-size: 15px;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        th {
+            background: rgba(255, 23, 68, 0.12);
+            color: var(--primary-red-light);
+            font-weight: 600;
+            padding: 14px 18px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            letter-spacing: 0.3px;
+            font-size: 13px;
+            text-transform: uppercase;
+        }
+        th:first-child {
+            text-align: left;
+        }
+        td {
+            padding: 14px 18px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+        td:first-child {
+            text-align: left;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        tr:nth-child(even) td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+    </style>
+</head>
+<body>
+    <div id="site-nav"></div>
+
+    <article class="article-container">
+        <a href="../blog.html" class="back-link">
+            <i class="ri-arrow-left-line"></i>
+            Back to All Updates
+        </a>
+        <header class="article-header">
+            <div class="article-meta">
+                <span class="category-tag">Technical Update</span>
+                <div class="meta-item">
+                    <i class="ri-calendar-line"></i>
+                    <span>February 18, 2026</span>
+                </div>
+                <div class="meta-item">
+                    <i class="ri-time-line"></i>
+                    <span>15 min read</span>
+                </div>
+            </div>
+            <h1>XRPL February 2026 Update: Token Escrow and Permissioned DEX Activation</h1>
+        </header>
+
+        <p><strong>XRPL Canada – February 18, 2026</strong></p>
+
+        <p>For years, one question followed Ripple's growing network of 300+ bank partnerships: if institutional adoption was so broad, why wasn't there massive on-chain volume on the XRP Ledger? The answer, as Ripple CTO David Schwartz explained, wasn't technical performance. Banks couldn't guarantee who was providing liquidity or whether counterparties met regulatory requirements when settling on-chain. That compliance barrier is now addressed — at the protocol level.</p>
+
+        <p>The XRP Ledger activated two protocol upgrades this week that have been years in the making. Token Escrow (XLS-85) went live on February 12. The Permissioned DEX (XLS-81) activated today, February 18.</p>
+
+        <p>These aren't UI improvements or partnership announcements. They are protocol-level primitives — new capabilities baked directly into the ledger that every application, institution, and developer building on XRPL can now use. XRPL Commons, who tested both amendments end-to-end on Devnet, described the pattern they unlock: <strong>lock → control access → automate release → bridge to open markets.</strong> All protocol-native. No custom contracts required.</p>
+
+        <h2>Token Escrow: Programmable Locks for Any Token</h2>
+
+        <p>Before this upgrade, native escrow on XRPL only worked with XRP. Token Escrow (XLS-85) extends that capability to all tokens — IOUs and Multi-Purpose Tokens (MPTs).</p>
+
+        <p>Any token can now be locked with conditions:</p>
+
+        <ul>
+            <li><strong>Time-based releases</strong> — funds unlock at a specified time</li>
+            <li><strong>Milestone triggers</strong> — releases tied to on-chain conditions</li>
+            <li><strong>Multi-party approval</strong> — multi-sig requirements before funds move</li>
+        </ul>
+
+        <p>The reserve cost is 0.2 XRP per escrowed asset. One important detail: clawback is not available during the lock period.</p>
+
+        <p>This is foundational infrastructure. Vesting schedules, conditional payments, collateral management, invoice settlement — these are all patterns that previously required off-chain coordination or custom contract logic. They're now native to the ledger.</p>
+
+        <h2>The Permissioned DEX: Controlled Markets Within the Open DEX</h2>
+
+        <p>The XRP Ledger has operated an open decentralized exchange since 2012. Anyone with an account can place offers, match trades, and settle value — with no regard for who is on the other side. That openness is a feature for crypto-native users. For regulated financial institutions bound by AML and KYC requirements, it has been a dealbreaker.</p>
+
+        <p>The Permissioned DEX solves this directly. It creates controlled trading environments within the broader XRPL DEX where only pre-approved, credentialed participants can place and match offers — a compliance-gated order book running on the same infrastructure as the open DEX, with the same speed, cost efficiency, and finality, but with identity controls baked in at the protocol level.</p>
+
+        <p>There can be multiple permissioned DEXes on XRPL simultaneously. Each one is tied to a Permissioned Domain — an allowlist that specifies which credentials grant access. Trades within a permissioned DEX can only execute against other trades in the same DEX. Each can support order books for any number of currency pairs.</p>
+
+        <h3>💡 Three Layers Working Together</h3>
+
+        <p>The Permissioned DEX doesn't exist in isolation. It builds on two foundational amendments deployed first:</p>
+
+        <ul>
+            <li><strong>Credentials (XLS-70)</strong> — tamper-evident, on-chain representations of verified attributes such as KYC status, accreditation, or jurisdiction. Issued by trusted entities and verifiable by third parties without involving the issuer. Critically, they prove attributes without exposing personal data.</li>
+            <li><strong>Permissioned Domains (XLS-80)</strong> — controlled environments that define who can participate, based on which credentials they hold. The domain operator sets the access rules.</li>
+            <li><strong>Permissioned DEX (XLS-81)</strong> — the trading layer that uses Permissioned Domains to restrict order book access to verified participants.</li>
+        </ul>
+
+        <p>Together, these three features form a compliance-by-design framework built directly into the protocol — no custom smart contracts, no private blockchains, no isolated infrastructure required.</p>
+
+        <h2>Understanding the Three Offer Types</h2>
+
+        <p>With the Permissioned DEX live, a trade offer on XRPL can now be one of three types:</p>
+
+        <p><strong>Open Offers</strong> work exactly as before — anyone can place them, anyone can match them. They interact with Automated Market Makers (AMMs) as usual. Nothing changes for participants in the existing open DEX.</p>
+
+        <p><strong>Permissioned Offers</strong> specify a Domain ID and can only be matched by other valid offers within that same domain. A permissioned offer cannot be filled by an open offer, and an open offer cannot be filled by a permissioned offer. The two pools are fully isolated from each other. Cross-currency payments can also specify a domain ID, restricting them to only consuming offers from the corresponding permissioned DEX. Trades in a permissioned DEX can use auto-bridging as long as all the necessary orders exist within the same permissioned DEX.</p>
+
+        <p><strong>Hybrid Offers</strong> are the bridge. A hybrid offer specifies a Domain ID but can match offers from both the permissioned DEX and the open DEX. When placed, it preferentially matches within the permissioned domain first — useful for market makers who want to arbitrage price differences across both environments while maintaining their compliance credentials.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Offer Type</th>
+                    <th>Open</th>
+                    <th>Hybrid</th>
+                    <th>Permissioned</th>
+                    <th>AMM</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Open</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                    <td>❌</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>Hybrid</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                    <td>✅ (same domain)</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>Permissioned</td>
+                    <td>❌</td>
+                    <td>❌</td>
+                    <td>✅ (same domain)</td>
+                    <td>❌</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>A Note on AMMs</h3>
+
+        <p>Permissioned offers and permissioned payments cannot interact with Automated Market Makers. AMM access cannot be restricted by a permissioned domain, and permissioned trades cannot consume AMM liquidity. Hybrid offers can use a mix of one permissioned DEX and the open DEX — including AMMs on the open side — but a single transaction cannot use multiple different permissioned DEXes. AMM support within permissioned DEXes is noted in the specification as a potential future addition.</p>
+
+        <h3>Invalid Permissioned Offers</h3>
+
+        <p>Beyond the ways offers can become unfunded in the open DEX, permissioned offers have additional invalidity conditions. An offer becomes invalid if the credential that granted domain access expires or is deleted, if the domain updates its accepted credentials and the account no longer qualifies, or if the domain itself is deleted. Invalid offers are treated like unfunded offers — automatically removed when a transaction touches the relevant order book. It is also possible for an offer to become temporarily invalid and then valid again: if a credential expires and is later renewed, offers that hadn't already been removed automatically become valid again.</p>
+
+        <h2>How Token Escrow and Permissioned DEX Work Together</h2>
+
+        <p>The real unlock is what happens when you combine both primitives. XRPL Commons laid out a concrete example from their Devnet testing:</p>
+
+        <p>A payments provider locks stablecoin liquidity in escrow for instant settlement guarantees. Issues credentials to verified business customers. Creates a permissioned trading pool for regional partners with compliance requirements. Liquidity unlocks automatically based on transaction volume thresholds. Switches to hybrid offers so partners can access regional liquidity privately — or tap the open DEX for cross-border FX conversion.</p>
+
+        <p>One ledger. Automated execution. No off-chain coordination.</p>
+
+        <h3>🏦 What This Enables in Practice</h3>
+
+        <p>Ripple and XRPL Commons have both outlined concrete applications this infrastructure is designed to support:</p>
+
+        <ul>
+            <li><strong>Stablecoin/Fiat FX Swaps</strong> — a fintech converts USD to RLUSD, sends it abroad, and converts to local currency within a credentialed, compliant corridor</li>
+            <li><strong>Cross-border B2B payments</strong> — businesses settling trade invoices or treasury transfers between entities and jurisdictions, with verified counterparties in isolated pools</li>
+            <li><strong>Contractor and payroll payouts</strong> — payment service providers converting stablecoins to local currencies for cross-border disbursements</li>
+            <li><strong>Corporate Treasury</strong> — managing multi-currency positions across fiat, crypto, and stablecoins within jurisdiction-specific trading zones</li>
+            <li><strong>Token launches</strong> — vesting schedules and phased distribution, with whitelist trading in a permissioned environment before public markets open</li>
+            <li><strong>DeFi protocols</strong> — automated collateral management and private lending pools that tap open market liquidity when needed</li>
+        </ul>
+
+        <p>The pattern across all of these: lock assets with conditions, control who can trade them, automate the release, then bridge to open markets when ready.</p>
+
+        <h2>The Compliance Stack Is Now Complete</h2>
+
+        <p>It's worth understanding the Permissioned DEX in the context of what the XRP Ledger already supported. XRPL has long had compliance-focused features: Deposit Authorization, Authorized Trustlines, Clawback, Freezing, Multisign, and Payment Paths. Each addressed a specific compliance need at the account or asset level.</p>
+
+        <p>But the open DEX remained off-limits for regulated institutions because counterparty identity couldn't be guaranteed at the trading layer. Permissioned Domains addressed that at the identity layer. The Permissioned DEX closes the loop at the trading layer. The open DEX continues operating unchanged — this is additive infrastructure that extends what XRPL can do without disrupting what already works.</p>
+
+        <h2>🇨🇦 What This Means for Canada</h2>
+
+        <p>Canada is a trading nation. Cross-border commerce with the US, Europe, and Asia is not peripheral to the Canadian economy — it's central to it. And yet international payments remain slow, expensive, and opaque. SWIFT transfers still take 3-5 business days. Fees run $25-$50 per transaction plus hidden FX markups. For Canadian businesses exporting goods, freelancers working with international clients, and immigrants sending remittances home, that hasn't changed in decades.</p>
+
+        <p>What changed today is the infrastructure that makes a better alternative viable for regulated institutions. Canadian banks, fintechs, and payment service providers operate under strict compliance obligations. KYC, AML, counterparty verification — these aren't optional. Until now, settling on a public DEX meant accepting that you had no idea who was on the other side of the trade. That's not a risk any regulated Canadian institution could take.</p>
+
+        <p>The Permissioned DEX removes that barrier. Compliance-gated order books, credential-verified counterparties, jurisdiction-specific trading zones — all of it is now native to the ledger. No private blockchain required. No custom infrastructure build. The same rails that settle in 3-5 seconds at sub-cent cost are now accessible to institutions that couldn't touch them before.</p>
+
+        <p>Canada has a progressive regulatory environment — the first G7 nation to approve Bitcoin ETFs, with clear crypto taxation frameworks already in place. The infrastructure is ahead of most jurisdictions. The question now is whether Canadian institutions move to meet it.</p>
+
+        <div class="sources">
+            <h3>Sources & Further Reading</h3>
+            <ul>
+                <li><a href="https://x.com/xrpl_commons/status/2023396445466832903" target="_blank" rel="noopener noreferrer">XRPL Commons on X: Lock, Control, Release, Trade — New Primitives on XRPL</a></li>
+                <li><a href="https://tests.xrpl-commons.org/permissionedDEXes" target="_blank" rel="noopener noreferrer">XRPL Commons Devnet Testing: Permissioned DEXes</a></li>
+                <li><a href="https://github.com/XRPLF/XRPL-Standards/discussions/229" target="_blank" rel="noopener noreferrer">XRPL Standards GitHub: XLS-81d Permissioned DEXes</a></li>
+                <li><a href="https://ripple.com/insights/unlocking-institutional-access-to-defi-on-the-xrp-ledger/" target="_blank" rel="noopener noreferrer">Ripple Insights: Introducing Permissioned DEX on the XRP Ledger</a></li>
+                <li><a href="https://xrpl.org/docs/concepts/tokens/decentralized-exchange/permissioned-dexes" target="_blank" rel="noopener noreferrer">XRPL Documentation: Permissioned DEXes</a></li>
+                <li><a href="https://www.newsbtc.com/news/xrp/xrp-ledger-clears-the-threshold-for-institutional-settlement/" target="_blank" rel="noopener noreferrer">NewsBTC: XRP Ledger Clears The Threshold For Institutional Settlement</a></li>
+            </ul>
+        </div>
+
+        <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=69478aeeb5f2d28644168c47&product=image-share-buttons' async='async'></script>
+    </article>
+
+    <div id="site-footer"></div>
+
+    <script src="../components/nav.js"></script>
+    <script src="../styles/nav-mobile.js"></script>
+    <script src="../components/footer.js"></script>
+    <script src="../styles/theme-toggle.js"></script>
+</body>
+</html>

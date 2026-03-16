@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The XRPL Options Sidechain: Every Detail | XRPL Canada Blog</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="A comprehensive technical deep dive into Denis Angell's XRPL Options Sidechain proposal — native on-chain options, margin trading up to 200x, WebAuthn authentication, and a trustless XPop bridge. Pre-testnet, seeking validators and audit.">
+    <meta name="keywords" content="XRPL Options Sidechain, Denis Angell, XPop bridge, on-chain options trading, XRPL derivatives, WebAuthn XRPL, Transia R&D, XRPL margin trading, XRPL Canada">
+    <link rel="canonical" href="https://xrplcanada.org/blog/xrpl-options-sidechain-technical-deep-dive.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://xrplcanada.org/blog/xrpl-options-sidechain-technical-deep-dive.html">
+    <meta property="og:title" content="The XRPL Options Sidechain: Every Detail">
+    <meta property="og:description" content="A comprehensive technical deep dive into Denis Angell's XRPL Options Sidechain proposal — native on-chain options, margin trading up to 200x, WebAuthn authentication, and a trustless XPop bridge.">
+    <meta property="og:image" content="https://xrplcanada.org/public/xrpl-canada.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@XRPLCanada">
+    <meta name="twitter:title" content="The XRPL Options Sidechain: Every Detail">
+    <meta name="twitter:description" content="A comprehensive technical deep dive into Denis Angell's XRPL Options Sidechain proposal — native on-chain options, margin trading up to 200x, WebAuthn authentication, and a trustless XPop bridge.">
+    <meta name="twitter:image" content="https://xrplcanada.org/public/xrpl-canada.png">
+    <link rel="icon" type="image/png" href="../public/xrpl-canada-icon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" href="../styles/nav.css" />
+    <link rel="stylesheet" href="../styles/blog-global.css">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 32px 0;
+            font-size: 15px;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        th {
+            background: rgba(255, 23, 68, 0.12);
+            color: var(--primary-red-light);
+            font-weight: 600;
+            padding: 14px 18px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            letter-spacing: 0.3px;
+            font-size: 13px;
+            text-transform: uppercase;
+        }
+        th:first-child {
+            text-align: left;
+        }
+        td {
+            padding: 14px 18px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+        td:first-child {
+            text-align: left;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        tr:nth-child(even) td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        code {
+            background: rgba(255, 23, 68, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div id="site-nav"></div>
+
+    <article class="article-container">
+        <a href="../blog.html" class="back-link">
+            <i class="ri-arrow-left-line"></i>
+            Back to All Updates
+        </a>
+        <header class="article-header">
+            <div class="article-meta">
+                <span class="category-tag">Technical Deep Dive</span>
+                <div class="meta-item">
+                    <i class="ri-calendar-line"></i>
+                    <span>March 10, 2026</span>
+                </div>
+                <div class="meta-item">
+                    <i class="ri-time-line"></i>
+                    <span>22 min read</span>
+                </div>
+            </div>
+            <h1>The XRPL Options Sidechain: Every Detail</h1>
+        </header>
+
+        <img src="../public/options-sidechain.jpg" alt="XRPL Options Sidechain - Call and Put Options" style="width: 100%; border-radius: 12px; margin-bottom: 40px;">
+
+        <p><strong>XRPL Canada – March 10, 2026</strong></p>
+
+        <h2>Who Built This</h2>
+
+        <p>Denis Angell is a software engineer at XRPL-Labs and the founder of Transia R&D, an independent research and development organization operating within the XRPL ecosystem. He publishes through the XRPLF Standards repository under the handle <strong>dangell7</strong>.</p>
+
+        <p>His protocol-level track record:</p>
+
+        <ul>
+            <li>Co-launched <strong>Xahau</strong> — the live smart contract sidechain for the XRPL ecosystem</li>
+            <li>Wrote <strong>Token Escrow (XLS-85)</strong>, which activated on XRPL mainnet in 2025 with 88%+ validator support and extended escrow functionality to trustline-based tokens and Multi-Purpose Tokens for the first time</li>
+            <li>Wrote the <strong>Batch amendment (XLS-56)</strong></li>
+            <li>Built <strong>AlphaNet</strong> — a live XRPL developer network running CRYSTALS-Dilithium quantum-resistant signatures, the NIST-standardized post-quantum algorithm, alongside native Layer-1 smart contracts</li>
+            <li>Co-authored the formal quantum-resistant signatures XLS proposal with a researcher from Trinity College Dublin</li>
+            <li>Built <strong>Driip</strong>, a live XRPL DEX trading application</li>
+            <li>Working on <strong>XRPL Firewall</strong>, a customizable account security system</li>
+        </ul>
+
+        <p>The XRPL Options Sidechain is not an application built on top of the XRP Ledger. It is a proposal to extend the rippled C++ codebase — the same software that has run the XRP Ledger since 2012 — into a purpose-built derivatives chain. The person proposing this has shipped two live mainnet amendments in a single release and launched a live sidechain.</p>
+
+        <h2>Why This Exists: The Gap</h2>
+
+        <p>The XRP Ledger has been operational since 2012. It has processed billions of transactions, maintained 99.999% uptime, settles in 3–5 seconds, handles over 1,500 transactions per second, and charges fees that are fractions of a cent. It has a native decentralized exchange built into the protocol — not a smart contract sitting on top of it, but an order book baked into the ledger itself. It has been battle-tested for nearly fifteen years.</p>
+
+        <p>What it has never had is a derivatives layer.</p>
+
+        <p>The global crypto derivatives market is measured in trillions of dollars of daily volume. On-chain, it is dominated by a small number of chains and, for options specifically, by Deribit — a centralized exchange. On-chain options are technically difficult to build correctly, and almost no one has done it at the protocol level. Lyra and Hegic exist on Ethereum but are application-layer, AMM-based, and lack native order books. Hyperliquid built a purpose-built L1 for perpetual futures with a native order book and captured billions in daily volume and a $9 billion token valuation without venture capital funding.</p>
+
+        <p>Hyperliquid did not build on Ethereum. It did not deploy a smart contract. It built a chain specifically designed for the performance characteristics derivatives trading requires. The XRPL Options Sidechain applies the same logic to options.</p>
+
+        <p>XRPL has the performance characteristics — speed, finality, fees, validator network, native order book — that a derivatives chain needs. It has never had the financial instruments. This proposal adds them, not by modifying XRPL mainnet, but by building a dedicated sidechain that inherits XRPL's validator trust model and connects to it via a cryptographic bridge.</p>
+
+        <h2>How XRPL Actually Works: The Foundation</h2>
+
+        <p>To understand why this proposal is structured the way it is, it is necessary to understand how the XRP Ledger functions at the protocol level.</p>
+
+        <p>XRPL is not an EVM chain. There is no general-purpose virtual machine. There are no smart contracts in the Ethereum sense — arbitrary code that executes on-chain. Instead, the XRP Ledger is a purpose-built financial protocol. Every operation on the ledger — creating an offer, establishing a trust line, opening an escrow, minting an NFT — is a defined transaction type implemented directly in the rippled C++ codebase. To add a new capability to XRPL, you do not deploy a contract. You write a new transaction type and ledger object type, implement the validation logic in C++, and submit it as a proposed amendment. That amendment then requires 80% of Unique Node List validators to vote in favor over a two-week period before it activates on mainnet.</p>
+
+        <p>This design makes XRPL extremely fast and predictable — every transaction type is native, not interpreted — but it makes it harder to add new financial primitives. The amendment process is deliberate. It is a governance mechanism, not a bottleneck.</p>
+
+        <p>XRPL's existing financial primitives include a native decentralized exchange with an on-chain order book, trust lines for issued currencies, escrows with time and cryptographic conditions, payment channels for high-frequency off-chain payments, an automated market maker added in 2024, and multi-purpose tokens (MPTokens) for tokenized assets. Project Samara — Canada's first tokenized bond, a $100 million CAD bond settled on a distributed ledger — was completed March 5, 2026, involving the Bank of Canada, RBC, TD, and Export Development Canada. The infrastructure that made that possible is the same infrastructure the Options Sidechain builds on.</p>
+
+        <p>The validator network that secures all of this is a federated model. The Unique Node List is a set of trusted validators that each node operator configures. Consensus is reached when 80% of those validators agree. Ripple publishes a recommended UNL, but the model is not dependent on Ripple — node operators can configure their own. This matters for the Options Sidechain because the same validators that secure XRPL mainnet are the ones being asked to extend their infrastructure to the sidechain and serve as the trust layer for the bridge.</p>
+
+        <h2>The Three Systems</h2>
+
+        <p>The XRPL Options Sidechain is composed of three interlocking systems, each defined by a draft XLS specification. None of these require amendments to XRPL mainnet.</p>
+
+        <h3>System 1: The XPop Bridge (Import/Export)</h3>
+
+        <p>The bridge is how XRP moves between XRPL mainnet and the sidechain. It uses XPop — a cryptographic proof mechanism that verifies a transaction was validated and included in a specific XRPL mainnet ledger.</p>
+
+        <p>The bridge operates as follows:</p>
+
+        <p>A user sends XRP to a vault on XRPL mainnet. That vault is a standard multisig account — no mainnet amendments required. When the transaction is validated and closed into a ledger, an XPop proof is generated from that ledger. The XPop is a cryptographic blob that proves the transaction occurred, signed by the validator set. The user then submits an Import transaction to the sidechain, including the XPop blob. The sidechain validates the proof — requiring 80% or more of the validator quorum to have signed it — and mints XRP 1:1 on the sidechain. The total supply on the sidechain never exceeds the balance locked in the mainnet vault.</p>
+
+        <p>The full six-step sequence:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Step</th>
+                    <th>Action</th>
+                    <th>Chain</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>User sends XRP to vault (multisig)</td>
+                    <td>XRPL Mainnet</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>XPop proof generated from ledger</td>
+                    <td>Mainnet Ledger</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>User submits Import with XPop blob</td>
+                    <td>Sidechain</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Sidechain mints XRP 1:1</td>
+                    <td>Sidechain</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>User submits Export to burn XRP</td>
+                    <td>Sidechain</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Witnesses release XRP from vault</td>
+                    <td>XRPL Mainnet</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>Key properties of the bridge: 1:1 lock-and-mint model with total sidechain supply never exceeding the vault balance. No XRPL mainnet amendments required. 80%+ validator quorum required for every import proof. Full replay protection at both account and validator list level. New accounts are bootstrapped automatically on first import — a user does not need to pre-create an account on the sidechain.</p>
+
+        <p>The witness model is structurally identical to how Hyperliquid's ETH bridge works, where two-thirds of staking power must approve withdrawals. Here, the signers are the same validators who already secure XRPL mainnet. Their validator keys become signers in the bridge trust model.</p>
+
+        <h3>System 2: Native Options and Margin Engine</h3>
+
+        <p>This is the core financial infrastructure. American-style option contracts, implemented natively at the protocol level. Not AMM-based. Not synthetic. Real matched counterparty positions settled at the protocol level via a Central Limit Order Book native to the sidechain.</p>
+
+        <p><strong>Option types:</strong> Calls and Puts, American-style. American-style means exercise can occur at any time before expiration — not only at expiration as with European-style options. The specification notes that European-style options can be added later via a flag on the listing object.</p>
+
+        <p><strong>Settlement:</strong> Cash settlement on exercise.</p>
+
+        <p><strong>Position types:</strong></p>
+
+        <ul>
+            <li><strong>Covered options:</strong> Collateral locked at contract creation. The seller's underlying asset is held in the OptionOffer ledger object.</li>
+            <li><strong>Naked options:</strong> Uncollateralized sell-side positions. Unlimited risk and reward. This is the same structure professional options desks operate on in traditional finance.</li>
+        </ul>
+
+        <p><strong>Leverage:</strong> 2x to 200x via a margin system.</p>
+
+        <p><strong>Margin modes:</strong></p>
+
+        <ul>
+            <li><strong>Isolated margin:</strong> Risk contained per position.</li>
+            <li><strong>Cross-margin:</strong> Shared collateral pool across positions.</li>
+        </ul>
+
+        <p><strong>Liquidation:</strong> Open to any account on the sidechain, incentivized with a liquidation bonus. The liquidation condition is: Position Equity must be greater than or equal to Maintenance Margin (Health = Position Equity ≥ Maintenance Margin).</p>
+
+        <p><strong>Insurance vaults:</strong> LP-backed insurance vaults per market, designed to absorb losses when liquidations are insufficient to cover position deficits.</p>
+
+        <p><strong>Funding rates:</strong> Periodic long/short rebalancing mechanism to prevent sustained imbalances between long and short open interest.</p>
+
+        <p>The margin mathematics are identical to what institutional perpetual exchanges use:</p>
+
+        <div class="highlight-box">
+            <p><code>Initial Margin = Notional Value / Leverage</code></p>
+            <p><code>Liquidation Price (Long) = Entry × (1 − 1/Leverage + Maintenance Rate)</code></p>
+            <p><code>Unrealized PnL (Long) = (Mark − Entry) × Size</code></p>
+            <p><code>Health = Position Equity ≥ Maintenance Margin</code></p>
+        </div>
+
+        <p>The ledger objects that implement this system:</p>
+
+        <ul>
+            <li><strong>ltOPTION_PAIR (0x0083):</strong> Represents an option listing for a specific asset/strike asset pair — for example, GME/USD. Created via OptionPairCreate. Each option listing is a pseudo account, identical in structure to how XRPL's AMM is implemented. The master key is disabled and the regular key is set to account zero, making it impossible for the account to originate transactions. The OptionPairID is the AccountID of this pseudo account.</li>
+            <li><strong>ltOPTION (0x0084):</strong> Represents a specific option contract with a defined strike price and expiration. Fields include StrikePrice (Amount), Expiration (UInt32, UNIX timestamp), and OptionType (UInt8: 0 for Call, 1 for Put).</li>
+            <li><strong>ltOPTION_OFFER (0x0085):</strong> Represents an offer to buy or sell an option contract. Fields include Owner, OptionID, Premium, Quantity (must be divisible by 100), OpenInterest (unsealed amount), Amount (locked collateral for sellers), BookDirectory, BookNode, and SealedOptions — an array of matched counterparty positions.</li>
+        </ul>
+
+        <p>The transaction types:</p>
+
+        <ul>
+            <li><strong>OptionPairCreate (ttOPTION_PAIR_CREATE, code 64):</strong> Creates a new pseudo account for an option listing with a specified asset/asset2 pair. Fails if an identical pair already exists.</li>
+            <li><strong>OptionCreate (ttOPTION_CREATE, code 64):</strong> Creates a new option offer for an existing option contract identified by OptionID. Quantity must be divisible by 100. Flags: tfMarket (market order), tfSell (sell offer; default is buy). For sellers, collateral is locked immediately. For matched offers, premiums are transferred between counterparties and SealedOptions arrays are updated.</li>
+            <li><strong>OptionSettle (ttOPTION_SETTLE, code 65):</strong> Settles an option contract. Exactly one flag must be set: tfExpire (expire the option and return any locked collateral to the seller), tfClose (close the position, potentially replacing sealed option relationships with new counterparties), or tfExercise (exercise the option). For a Call exercise: the holder pays the strike price to the writer, the writer transfers the underlying asset to the holder. For a Put exercise: the holder transfers the underlying asset to the writer, the writer pays the strike price to the holder.</li>
+        </ul>
+
+        <p>The serialized fields added to the protocol:</p>
+
+        <p><code>sfStrikePrice</code> (Amount, code 32), <code>sfExpiration</code> (UInt32), <code>sfOptionPairID</code> (Hash256, code 35), <code>sfOptionID</code> (Hash256, code 36), <code>sfOptionOfferID</code> (Hash256, code 37), <code>sfQuantity</code> (UInt32, code 53), <code>sfOpenInterest</code> (UInt32, code 52), <code>sfPremium</code> (Amount, code 33), <code>sfSealedOption</code> (Object, code 34), <code>sfSealedOptions</code> (Array, code 29).</p>
+
+        <p>The order book is implemented natively, indexing OptionOffer objects by OptionID and sorting by Premium via OptionQuality — the same pattern XRPL uses for its existing currency offer order book. When an OptionCreate is processed, the ledger attempts to match the new offer with existing offers. Matched offers update the SealedOptions arrays of both counterparties.</p>
+
+        <p><strong>New RPC method:</strong> <code>option_book_offers</code> — queries the current state of the option order book for a specific option. Supports pagination via limit and marker parameters. Returns ledger_hash, ledger_index, option details, and an array of offers sorted by quality (premium).</p>
+
+        <p>Comparison to the existing landscape:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Deribit</th>
+                    <th>Hyperliquid</th>
+                    <th>Lyra / Hegic</th>
+                    <th>XRPL Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>On-chain</td>
+                    <td>✗</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>Options (not just perps)</td>
+                    <td>✓</td>
+                    <td>✗</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>Native order book</td>
+                    <td>✗</td>
+                    <td>✓</td>
+                    <td>✗</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>Leverage / margin</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                    <td>Limited</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>Naked options</td>
+                    <td>✓</td>
+                    <td>N/A</td>
+                    <td>✗</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>Passkey / WebAuthn</td>
+                    <td>✗</td>
+                    <td>✗</td>
+                    <td>✗</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>Trustless bridge</td>
+                    <td>✗</td>
+                    <td>✓</td>
+                    <td>Varies</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>XRPL ecosystem</td>
+                    <td>✗</td>
+                    <td>✗</td>
+                    <td>✗</td>
+                    <td>✓</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>System 3: WebAuthn/FIDO2 Passkey Authentication</h3>
+
+        <p>The sidechain introduces P256 (secp256r1) as a native key type — a new addition to the rippled key type system, which currently uses secp256k1 and Ed25519. P256 is the elliptic curve underpinning the WebAuthn/FIDO2 standard, which is the authentication protocol used by major banks, Google, and Apple for passwordless login.</p>
+
+        <p>What this means in practice: users sign sidechain transactions with Face ID on iPhone or Mac, Touch ID, Windows Hello, YubiKey, or any other FIDO2 hardware security key. No seed phrase. No private key management. Signing is handled by the device's secure enclave or hardware key, which never exposes the underlying key material.</p>
+
+        <p>Accounts on the sidechain can register up to 10 passkey credentials. This enables hardware key backup and enterprise multi-device setups — a trader can register a YubiKey as a backup to their Face ID, for example.</p>
+
+        <p>The security audit scope for this system covers P256 implementation correctness, WebAuthn flow validation, passkey list tampering, and key derivation security.</p>
+
+        <p>A question was raised in the XLS-62d discussion thread about whether DID/Credential infrastructure — introduced to XRPL after this proposal was initially written — could be used to gate options access to accredited participants at the protocol level. Denis confirmed that this is now architecturally possible and could be implemented.</p>
+
+        <h2>Current Status</h2>
+
+        <p>This proposal is pre-testnet. No audit has been completed. No testnet has launched. No validator set has been confirmed. The specifications are published and open for community review. Denis is actively seeking established XRPL UNL validators to extend their infrastructure to the sidechain and is seeking a security audit funded through the XRPL Grants program.</p>
+
+        <p>When Denis published the GitHub link on X with the message "Something big," the post drew 46,600 views. Responses came from Hodor and multiple active UNL validators expressing interest in participation.</p>
+
+        <p>Three parallel community review tracks are open:</p>
+
+        <p><strong>Track 1 — XLS Specification Review:</strong> Design-level issues, ambiguities, edge cases. Key open questions include whether the XPop validation steps in the Import flow are complete and correctly ordered, whether the 80% quorum threshold adequately protects against validator set manipulation, whether the sealed option matching semantics are correct for all exercise, close, and expiry combinations, and whether the cross-margin liquidation condition is sufficient to prevent cascading insolvency.</p>
+
+        <p><strong>Track 2 — C++ Code Review:</strong> Protocol-level implementation in the options-sidechain branch of the rippled repository. Focus areas include correctness of XPop Merkle proof verification and ledger hash computation, margin math implementation for integer overflow and rounding errors in fixed-point arithmetic, invariant check coverage in MarginInvariant.h, object lifecycle management for ExportRecord, MarginPosition, and SealedOptions, error handling paths in the Import preflight/preclaim/doApply split, and memory safety against malformed XPop blobs.</p>
+
+        <p><strong>Track 3 — Economic and Game Theory Review:</strong> Financial attack vectors the code review cannot catch. Key questions include whether the insurance vault can be drained through coordinated liquidation timing, whether funding rates are sufficient to prevent structural long/short imbalances, whether a large naked option seller can create systemic risk if liquidated simultaneously with volatile price movement, whether the 1:1 lock-and-mint model creates reflexivity risks if XRP price moves sharply during bridge transit, whether the liquidation bonus is sized correctly, and whether the option book can be manipulated via wash trading to influence mark price for liquidation purposes.</p>
+
+        <p>The audit will be scoped across three systems with the following risk classifications: the XPop Import/Export bridge (Critical — replay attacks, validator collusion, quorum manipulation, vault security, XPop proof forgery, cross-chain double-spend), the Options and Margin Engine (Critical — liquidation math correctness, margin invariant enforcement, oracle manipulation, insurance vault solvency, naked option settlement edge cases), and Passkey/P256 authentication (High — P256 implementation correctness, WebAuthn flow validation, passkey list tampering, key derivation security).</p>
+
+        <p>The audit requires a rare combination of skills: deep C++ and consensus protocol expertise, understanding of XRPL's ledger object model and transaction processing pipeline, financial derivatives knowledge, cryptographic review capability for P256/WebAuthn/Merkle proof verification, and cross-chain bridge security specific to XPop proof validation and multisig vault trust models. It is not a Solidity smart contract audit.</p>
+
+        <h2>Why a Sidechain and Not a Mainnet Amendment</h2>
+
+        <p>The amendment process exists for good reason. Activating a new capability on XRPL mainnet requires 80% of UNL validators to vote in favor over a two-week period. For financial infrastructure as complex as a full options and margin engine, the prudent path is to build, test, and prove the system on a sidechain first. The sidechain inherits XRPL's validator trust model without requiring mainnet to absorb the risk of unproven protocol-level financial logic.</p>
+
+        <p>This is the same path Xahau took. Xahau is a sidechain — not a mainnet amendment — that introduced Hooks (smart contract functionality) to the XRPL ecosystem. It runs the same rippled codebase extended with additional capabilities, secured by the same validator community. Denis was part of the team that built and launched it.</p>
+
+        <h2>What This Means</h2>
+
+        <p>XRPL has operated as payments infrastructure for nearly fifteen years. It is fast, reliable, and cheap. It has institutional relationships through Ripple, a growing tokenized asset ecosystem through MPTokens, and regulatory credibility in Canada and other jurisdictions.</p>
+
+        <p>What it has not had is derivatives infrastructure. The institutions that use XRPL for cross-border settlement, the tokenized asset holders, the XRP liquidity pool — none of them have had access to on-chain options, hedging instruments, or leveraged exposure, natively within the XRPL ecosystem.</p>
+
+        <p>If this proposal reaches testnet, completes its audit, and builds a functioning validator set, it would be the first native on-chain options market on one of the oldest and most liquid blockchains in crypto. The validators who participate at genesis are founding stakeholders, in the same position as Hyperliquid's original sixteen validators.</p>
+
+        <p>The specifications are open. The code is on GitHub. Community review is active now.</p>
+
+        <div class="info-box" style="margin-top: 32px; background: rgba(255, 23, 68, 0.05); border-left: 4px solid var(--primary-red);">
+            <p><strong>Full specifications:</strong> <a href="https://github.com/Transia-RnD/rippled/tree/options-sidechain/specs" target="_blank" rel="noopener noreferrer" style="color: var(--primary-red-light); text-decoration: none; font-weight: 600;">github.com/Transia-RnD/rippled/tree/options-sidechain/specs</a></p>
+            <p style="margin-top: 12px;"><strong>Contact:</strong> dangell@transia.co | <a href="https://twitter.com/dangell7" target="_blank" rel="noopener noreferrer" style="color: var(--primary-red-light); text-decoration: none; font-weight: 600;">@dangell7</a> on X</p>
+        </div>
+
+        <div class="info-box" style="margin-top: 20px; background: rgba(255, 23, 68, 0.05); border-left: 4px solid var(--primary-red);">
+            <p><strong>XRPL Canada</strong> is a non-profit community organization dedicated to growing the XRP Ledger ecosystem across Canada. <strong>XRPL Canada is a community partner for XRP Tokyo 2026</strong> — April 7 at Happo-en, Tokyo. Follow <a href="https://twitter.com/XRPLCanada" target="_blank" rel="noopener noreferrer" style="color: var(--primary-red-light); text-decoration: none; font-weight: 600;">@XRPLCanada</a> on X.</p>
+        </div>
+
+        <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=69478aeeb5f2d28644168c47&product=image-share-buttons' async='async'></script>
+    </article>
+
+    <div id="site-footer"></div>
+
+    <script src="../components/nav.js"></script>
+    <script src="../styles/nav-mobile.js"></script>
+    <script src="../components/footer.js"></script>
+    <script src="../styles/theme-toggle.js"></script>
+</body>
+</html>

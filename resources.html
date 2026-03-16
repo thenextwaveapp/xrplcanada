@@ -15,20 +15,21 @@
     <meta property="og:url" content="https://xrplcanada.org/resources.html">
     <meta property="og:title" content="XRPL Canada Resources | Developer Tools, Funding & More">
     <meta property="og:description" content="Everything you need to build on XRPL in Canada—developer tools, grants, universities, exchanges, legal services, and government contacts.">
-    <meta property="og:image" content="https://xrplcanada.org/public/xrpl-canada.png">
+    <meta property="og:image" content="https://xrplcanada.org/public/xrpl-canada-social-share.png">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@XRPLCanada">
     <meta name="twitter:title" content="XRPL Canada Resources | Developer Tools, Funding & More">
     <meta name="twitter:description" content="Everything you need to build on XRPL in Canada.">
-    <meta name="twitter:image" content="https://xrplcanada.org/public/xrpl-canada.png">
+    <meta name="twitter:image" content="https://xrplcanada.org/public/xrpl-canada-social-share.png">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="public/xrpl-canada.png">
-    <link rel="apple-touch-icon" href="public/xrpl-canada.png">
+    <link rel="icon" type="image/png" href="public/xrpl-canada-icon.png">
+    <link rel="apple-touch-icon" href="public/xrpl-canada-icon.png">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" href="styles/nav.css" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
@@ -77,10 +78,8 @@
 
         /* Use IBM Plex Sans for small text */
         .resource-link,
-        .lang-toggle,
         .section-subtitle,
-        .resource-item p,
-        footer {
+        .resource-item p {
             font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
@@ -109,85 +108,6 @@
 
         .hidden {
             display: none;
-        }
-
-        nav {
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            padding: 22px 40px;
-            border-bottom: 1px solid var(--gray-lighter);
-            position: sticky;
-            top: 0;
-            z-index: 999;
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .nav-logo {
-            height: 40px;
-            width: auto;
-            justify-self: start;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .nav-logo:hover {
-            opacity: 0.8;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 0;
-            justify-self: center;
-        }
-
-        nav .lang-toggle {
-            justify-self: end;
-            margin: 0;
-        }
-
-        nav a {
-            color: var(--text-primary);
-            text-decoration: none;
-            margin: 0 30px;
-            font-weight: 500;
-            font-size: 14px;
-            letter-spacing: 0.2px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            display: inline-block;
-            position: relative;
-            padding: 10px 0;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%) scaleX(0);
-            width: 100%;
-            height: 2px;
-            background: var(--gradient-primary);
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        nav a:has(.nav-logo)::after {
-            display: none;
-        }
-
-        nav a:hover {
-            color: var(--primary-red);
-        }
-
-        nav a:hover::after {
-            transform: translateX(-50%) scaleX(1);
-        }
-
-        nav a:has(.nav-logo):hover {
-            color: inherit;
         }
 
         .container {
@@ -425,38 +345,6 @@
             transform: translateX(3px);
         }
 
-        footer {
-            background: var(--black);
-            border-top: 1px solid var(--gray-lighter);
-            padding: 48px 20px;
-            text-align: center;
-            margin-top: 64px;
-        }
-
-        footer::before {
-            display: none;
-        }
-
-        .footer-content {
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        .footer-logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 16px;
-            letter-spacing: -0.5px;
-        }
-
-        .footer-text {
-            color: var(--text-tertiary);
-            font-size: 16px;
-            letter-spacing: 0.3px;
-            line-height: 1.6;
-        }
-
         @media (max-width: 768px) {
             .page-title {
                 font-size: 38px;
@@ -479,41 +367,7 @@
     </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html" onclick="sessionStorage.setItem('restoreScroll', 'true');">
-            <img src="public/xrplcanadawhite-nobg.png" alt="XRPL Canada" class="nav-logo">
-        </a>
-        <div class="nav-links">
-        <a href="index.html#about">
-                <span class="lang-en">About</span>
-            <span class="lang-fr hidden">À propos</span>
-        </a>
-            <a href="index.html#xrpl-explained">
-                <span class="lang-en">What is XRPL?</span>
-                <span class="lang-fr hidden">Qu'est-ce que XRPL?</span>
-        </a>
-        <a href="resources.html">
-                <span class="lang-en">Resources</span>
-            <span class="lang-fr hidden">Ressources</span>
-        </a>
-        <a href="news.html">
-                <span class="lang-en">News</span>
-            <span class="lang-fr hidden">Nouvelles</span>
-        </a>
-            <a href="blog.html">
-                <span class="lang-en">Blog</span>
-                <span class="lang-fr hidden">Blog</span>
-        </a>
-        <a href="index.html#contact">
-                <span class="lang-en">Contact</span>
-            <span class="lang-fr hidden">Contact</span>
-        </a>
-        </div>
-        <button class="lang-toggle" onclick="toggleLanguage()">
-            <span class="lang-en">FR</span>
-            <span class="lang-fr hidden">EN</span>
-        </button>
-    </nav>
+    <div id="site-nav"></div>
 
     <div class="container">
         <div class="page-header">
@@ -593,8 +447,8 @@
                             <span class="lang-fr hidden">Vous cherchez des projets canadiens?</span>
                         </strong>
                         <span style="color: var(--text-secondary);">
-                            <span class="lang-en"> Find Canadian XRPL Projects at the bottom of the page.</span>
-                            <span class="lang-fr hidden"> Trouvez Projets XRPL canadiens en bas de la page.</span>
+                            <span class="lang-en"> Find Canadian XRPL Projects near the top of the page.</span>
+                            <span class="lang-fr hidden"> Trouvez Projets XRPL canadiens près du haut de la page.</span>
                         </span>
                     </div>
                 </div>
@@ -737,6 +591,49 @@
                     </div>
                 </div>
 
+            </div>
+        </details>
+
+        <!-- Canadian XRPL Projects -->
+        <details class="resource-category" open>
+            <summary class="category-summary">
+                <h2 class="category-title">
+                    🍁
+                    <span class="lang-en">Canadian XRPL Projects</span>
+                    <span class="lang-fr hidden">Projets XRPL canadiens</span>
+                </h2>
+            </summary>
+            <div class="category-content">
+                <p class="category-description">
+                    <span class="lang-en">Projects and platforms building on XRPL in Canada.</span>
+                    <span class="lang-fr hidden">Projets et plateformes construisant sur XRPL au Canada.</span>
+                </p>
+                <div class="resource-list">
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">Next Wave</span>
+                            <span class="lang-fr hidden">Next Wave</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">A Canadian-developed social wallet for the XRP economy.</span>
+                            <span class="lang-fr hidden">Un portefeuille social canadien pour l'économie XRP.</span>
+                        </p>
+                        <a href="https://www.thenextwaveapp.ca" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-en">Visit Project</span>
+                            <span class="lang-fr hidden">Visiter le projet</span>
+                        </a>
+                    </div>
+                </div>
+                </div>
+
+                <p style="margin-top: 32px; color: var(--text-secondary); font-size: 15px; line-height: 1.6; display: flex; align-items: flex-start; gap: 12px;">
+                    <span style="font-size: 20px; flex-shrink: 0; margin-top: 2px;">🏗️</span>
+                    <span>
+                        <span class="lang-en">Building on XRPL in Canada? <span onclick="navigator.clipboard.writeText('team@xrplcanada.org'); this.textContent='Copied!'; setTimeout(() => this.textContent='team@xrplcanada.org', 2000);" style="color: #8b9dc3; text-decoration: none; font-weight: 500; cursor: pointer; border-bottom: 1px solid rgba(139, 157, 195, 0.3);" title="Click to copy email">team@xrplcanada.org</span> and we'll feature your project here.</span>
+                        <span class="lang-fr hidden">Vous construisez sur XRPL au Canada? <span onclick="navigator.clipboard.writeText('team@xrplcanada.org'); this.textContent='Copié!'; setTimeout(() => this.textContent='team@xrplcanada.org', 2000);" style="color: #8b9dc3; text-decoration: none; font-weight: 500; cursor: pointer; border-bottom: 1px solid rgba(139, 157, 195, 0.3);" title="Cliquez pour copier l'e-mail">team@xrplcanada.org</span> et nous présenterons votre projet ici.</span>
+                    </span>
+                </p>
             </div>
         </details>
 
@@ -1488,6 +1385,23 @@
                             <span class="lang-en">Subscribe</span>
                             <span class="lang-fr hidden">S'abonner</span>
                         </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-content">
+                        <h3 class="resource-title">
+                            <span class="lang-en">XRPL Canada Newsletter</span>
+                            <span class="lang-fr hidden">Infolettre XRPL Canada</span>
+                        </h3>
+                        <p class="resource-description">
+                            <span class="lang-en">Weekly insights on XRPL development, Canadian blockchain policy, and ecosystem updates.</span>
+                            <span class="lang-fr hidden">Perspectives hebdomadaires sur le développement XRPL, la politique blockchain canadienne et les mises à jour de l'écosystème.</span>
+                        </p>
+                        <button onclick="openNewsletterModal()" class="resource-link" style="border: none; cursor: pointer; background: transparent; padding: 0; font: inherit; text-align: left;">
+                            <span class="lang-en">Join Newsletter</span>
+                            <span class="lang-fr hidden">Rejoindre</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -2852,64 +2766,11 @@
             </div>
         </details>
 
-        <!-- Canadian XRPL Projects -->
-        <details class="resource-category" open>
-            <summary class="category-summary">
-                <h2 class="category-title">
-                    🍁
-                    <span class="lang-en">Canadian XRPL Projects</span>
-                    <span class="lang-fr hidden">Projets XRPL canadiens</span>
-                </h2>
-            </summary>
-            <div class="category-content">
-                <p class="category-description">
-                    <span class="lang-en">Projects and platforms building on XRPL in Canada.</span>
-                    <span class="lang-fr hidden">Projets et plateformes construisant sur XRPL au Canada.</span>
-                </p>
-                <div class="resource-list">
-                <div class="resource-item">
-                    <div class="resource-content">
-                        <h3 class="resource-title">
-                            <span class="lang-en">Next Wave</span>
-                            <span class="lang-fr hidden">Next Wave</span>
-                        </h3>
-                        <p class="resource-description">
-                            <span class="lang-en">A Canadian-developed social wallet for the XRP economy.</span>
-                            <span class="lang-fr hidden">Un portefeuille social canadien pour l'économie XRP.</span>
-                        </p>
-                        <a href="https://www.thenextwaveapp.ca" class="resource-link" target="_blank" rel="noopener noreferrer">
-                            <span class="lang-en">Visit Project</span>
-                            <span class="lang-fr hidden">Visiter le projet</span>
-                        </a>
-                    </div>
-                </div>
-                </div>
-                
-                <p style="margin-top: 32px; color: var(--text-secondary); font-size: 15px; line-height: 1.6; display: flex; align-items: flex-start; gap: 12px;">
-                    <span style="font-size: 20px; flex-shrink: 0; margin-top: 2px;">🏗️</span>
-                    <span>
-                        <span class="lang-en">Building on XRPL in Canada? <span onclick="navigator.clipboard.writeText('team@xrplcanada.org'); this.textContent='Copied!'; setTimeout(() => this.textContent='team@xrplcanada.org', 2000);" style="color: #8b9dc3; text-decoration: none; font-weight: 500; cursor: pointer; border-bottom: 1px solid rgba(139, 157, 195, 0.3);" title="Click to copy email">team@xrplcanada.org</span> and we'll feature your project here.</span>
-                        <span class="lang-fr hidden">Vous construisez sur XRPL au Canada? <span onclick="navigator.clipboard.writeText('team@xrplcanada.org'); this.textContent='Copié!'; setTimeout(() => this.textContent='team@xrplcanada.org', 2000);" style="color: #8b9dc3; text-decoration: none; font-weight: 500; cursor: pointer; border-bottom: 1px solid rgba(139, 157, 195, 0.3);" title="Cliquez pour copier l'e-mail">team@xrplcanada.org</span> et nous présenterons votre projet ici.</span>
-                    </span>
-                </p>
-            </div>
-        </details>
-
-
     </div>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">XRPL Canada</div>
-            <p class="footer-text">
-                © 2025 XRPL Canada.
-                <span class="lang-en">All rights reserved. Building the Internet of Value in Canada.</span>
-                <span class="lang-fr hidden">Tous droits réservés. Construire l'Internet de la valeur au Canada.</span>
-            </p>
-        </div>
-    </footer>
+    <div id="site-footer"></div>
 
-    <script>
+<script>
         let currentLang = 'en';
 
         function toggleLanguage() {
@@ -2960,5 +2821,8 @@
             resultsDiv.textContent = `Showing ${matchCount} ${matchCount === 1 ? 'section' : 'sections'} for "${query}"`;
         }
     </script>
+    <script src="components/nav.js"></script>
+    <script src="styles/nav-mobile.js"></script>
+    <script src="components/footer.js"></script>
 </body>
 </html>

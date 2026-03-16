@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About XRPL Canada | Our Mission & Vision</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Learn about XRPL Canada - a non-profit community organization dedicated to expanding the XRP Ledger ecosystem across Canada.">
+    <meta name="keywords" content="About XRPL Canada, XRP Ledger Canada, blockchain Canada, XRPL mission, Canadian crypto community">
+    <meta name="author" content="XRPL Canada">
+    <link rel="canonical" href="https://xrplcanada.org/about">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xrplcanada.org/about">
+    <meta property="og:title" content="About XRPL Canada | Our Mission & Vision">
+    <meta property="og:description" content="Canada's hub for the XRP Ledger ecosystem. Learn about our mission to connect developers, institutions, and entrepreneurs building the Internet of Value.">
+    <meta property="og:image" content="https://xrplcanada.org/public/xrpl-canada-social-share.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@XRPLCanada">
+    <meta name="twitter:title" content="About XRPL Canada | Our Mission & Vision">
+    <meta name="twitter:description" content="Canada's hub for the XRP Ledger ecosystem.">
+    <meta name="twitter:image" content="https://xrplcanada.org/public/xrpl-canada-social-share.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="public/xrpl-canada-icon.png">
+    <link rel="apple-touch-icon" href="public/xrpl-canada-icon.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" href="styles/nav.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #FF1744;
+            --primary-red-dark: #C51162;
+            --primary-red-light: #FF5252;
+            --accent-blue: #00B8D4;
+            --black: #0A0A0F;
+            --black-light: #12121A;
+            --gray: #1A1A24;
+            --gray-light: #252532;
+            --gray-lighter: #2E2E3D;
+            --white: #FFFFFF;
+            --text-primary: #E8E8F0;
+            --text-secondary: #A0A0B8;
+            --text-tertiary: #6B6B85;
+            --gradient-primary: linear-gradient(135deg, #FF1744 0%, #C51162 50%, #880E4F 100%);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.4);
+            --shadow-glow: 0 0 40px rgba(255, 23, 68, 0.3);
+        }
+
+        html { scroll-behavior: smooth; }
+        section[id] { scroll-margin-top: 45px; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--black-light);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .hidden { display: none; }
+
+        /* Hero */
+        .hero {
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 24px 80px;
+            background: var(--black);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 400px;
+            background: radial-gradient(ellipse at center, rgba(255, 23, 68, 0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-title {
+            font-size: 56px;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero-title .gradient {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-sub {
+            font-size: 20px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            line-height: 1.8;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 24px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-label {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--primary-red);
+            margin-bottom: 12px;
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        /* About Grid */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .about-content p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            line-height: 1.85;
+            margin-bottom: 20px;
+        }
+
+        .about-content strong {
+            color: var(--primary-red);
+            font-weight: 600;
+        }
+
+        /* Feature Cards */
+        .features-section {
+            background: var(--black);
+            padding: 80px 24px;
+        }
+
+        .features-section > * {
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 48px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(255, 23, 68, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            color: var(--primary-red);
+            margin-bottom: 16px;
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+
+        /* Timeline */
+        .timeline-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 48px;
+        }
+
+        .timeline-card {
+            flex: 1;
+            max-width: 260px;
+            background: rgba(26, 26, 36, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 28px 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-card:hover {
+            border-color: rgba(255, 23, 68, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .timeline-card.active {
+            border-color: rgba(255, 23, 68, 0.3);
+            background: rgba(255, 23, 68, 0.05);
+        }
+
+        .timeline-year {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-tertiary);
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+
+        .timeline-logo {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 16px;
+        }
+
+        .timeline-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: invert(1) brightness(1.1);
+        }
+
+        .timeline-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+
+        .timeline-text strong {
+            color: var(--text-primary);
+        }
+
+        /* Info Block */
+        .info-block {
+            background: rgba(26, 26, 36, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 40px;
+            margin-top: 40px;
+        }
+
+        .info-block p {
+            font-size: 17px;
+            color: var(--text-secondary);
+            line-height: 1.85;
+            margin-bottom: 16px;
+        }
+
+        .info-block p:last-child { margin-bottom: 0; }
+
+        .info-block strong { color: var(--primary-red); }
+
+        .info-block a {
+            color: var(--primary-red);
+            text-decoration: underline;
+        }
+
+        /* Canada List */
+        .canada-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin: 24px 0;
+        }
+
+        .canada-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .canada-list li::before {
+            content: '🍁';
+            flex-shrink: 0;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            font-weight: 600;
+            font-size: 15px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg), var(--shadow-glow);
+        }
+
+        /* Contact */
+        .contact-section {
+            text-align: center;
+        }
+
+        .contact-card {
+            max-width: 600px;
+            margin: 48px auto 0;
+            background: rgba(26, 26, 36, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 48px;
+        }
+
+        .contact-intro {
+            font-size: 17px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            line-height: 1.8;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: rgba(26, 26, 36, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            border-color: rgba(255, 23, 68, 0.3);
+            background: rgba(255, 23, 68, 0.05);
+        }
+
+        .social-link i { font-size: 18px; }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin: 24px 0;
+            color: var(--text-tertiary);
+            font-size: 13px;
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .email-display {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .email-display a {
+            color: var(--primary-red);
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 16px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(10, 10, 15, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-size: 15px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary-red);
+        }
+
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            padding: 16px 32px;
+            background: var(--gradient-primary);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg), var(--shadow-glow);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .about-grid { gap: 40px; }
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 100px 20px 60px; min-height: 60vh; }
+            .hero-title { font-size: 40px; }
+            section { padding: 60px 20px; }
+            .about-grid { grid-template-columns: 1fr; }
+            .about-image img { height: 300px; }
+            .features-grid { grid-template-columns: 1fr; }
+            .timeline-grid { flex-direction: column; align-items: center; }
+            .canada-list { grid-template-columns: 1fr; }
+            .social-links { flex-wrap: wrap; }
+            .contact-card { padding: 32px 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div id="site-nav"></div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1 class="hero-title">
+            <span class="gradient">XRPL Canada</span> 🍁
+        </h1>
+        <p class="hero-sub lang-en">
+            Canada's home for the XRP Ledger ecosystem. Developers, entrepreneurs, and institutions building the Internet of Value.
+        </p>
+        <p class="hero-sub lang-fr hidden">
+            Le foyer canadien de l'écosystème XRP Ledger. Développeurs, entrepreneurs et institutions.
+        </p>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <div class="section-header">
+            <h2 class="section-title lang-en">Our Mission</h2>
+            <h2 class="section-title lang-fr hidden">Notre mission</h2>
+        </div>
+        
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop" alt="XRPL Canada Community">
+            </div>
+            <div class="about-content">
+                <p class="lang-en">
+                    <strong>XRPL Canada</strong> is a non-profit community organization dedicated to promoting and expanding the XRP Ledger ecosystem across Canada. We support developers, entrepreneurs, and businesses in building innovative solutions on the XRP Ledger.
+                </p>
+                <p class="lang-fr hidden">
+                    <strong>XRPL Canada</strong> est une organisation communautaire à but non lucratif dédiée à l'expansion de l'écosystème XRP Ledger à travers le Canada.
+                </p>
+                <p class="lang-en">
+                    Our mission is to serve as the <strong>central hub for XRP Ledger innovation in Canada</strong>, providing education, resources, and community support to help build the future of value transfer and blockchain technology.
+                </p>
+                <p class="lang-fr hidden">
+                    Notre mission est de servir de <strong>centre principal pour l'innovation XRP Ledger au Canada</strong>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features-section">
+        <div class="section-header">
+            <h2 class="section-title lang-en">What is the XRP Ledger?</h2>
+            <h2 class="section-title lang-fr hidden">Qu'est-ce que le XRP Ledger?</h2>
+        </div>
+
+        <p style="text-align: center; font-size: 18px; color: var(--text-secondary); max-width: 800px; margin: 0 auto;" class="lang-en">
+            The <strong style="color: var(--primary-red);">XRP Ledger (XRPL)</strong> is a decentralized, public blockchain operational since 2012—battle-tested for over a decade with billions transferred.
+        </p>
+        <p style="text-align: center; font-size: 18px; color: var(--text-secondary); max-width: 800px; margin: 0 auto;" class="lang-fr hidden">
+            Le <strong style="color: var(--primary-red);">XRP Ledger (XRPL)</strong> est une blockchain publique décentralisée opérationnelle depuis 2012.
+        </p>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="ri-flashlight-line"></i></div>
+                <h3 class="lang-en">Fast & Scalable</h3>
+                <h3 class="lang-fr hidden">Rapide</h3>
+                <p class="lang-en">3-5 second settlement with 1,500+ TPS capacity</p>
+                <p class="lang-fr hidden">Règlement en 3-5 secondes</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="ri-plant-line"></i></div>
+                <h3 class="lang-en">Sustainable</h3>
+                <h3 class="lang-fr hidden">Durable</h3>
+                <p class="lang-en">No mining. A fraction of Bitcoin's energy</p>
+                <p class="lang-fr hidden">Pas de minage requis</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="ri-money-dollar-circle-line"></i></div>
+                <h3 class="lang-en">Low Cost</h3>
+                <h3 class="lang-fr hidden">Faible coût</h3>
+                <p class="lang-en">Fees under $0.01—practical for micropayments</p>
+                <p class="lang-fr hidden">Frais inférieurs à 0,01 $</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="ri-global-line"></i></div>
+                <h3 class="lang-en">Built for Finance</h3>
+                <h3 class="lang-fr hidden">Conçu pour la finance</h3>
+                <p class="lang-en">Native DEX, escrows, payment channels</p>
+                <p class="lang-fr hidden">DEX natif, séquestres</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Canada -->
+    <section>
+        <div class="section-header">
+            <h2 class="section-title">Why This Matters for Canada</h2>
+        </div>
+
+        <div class="info-block">
+            <p>Canada is uniquely positioned to lead:</p>
+
+            <ul class="canada-list">
+                <li>Strong regulatory environment and financial institutions open to blockchain</li>
+                <li>World-class universities researching decentralized technologies</li>
+                <li>Growing developer community with international connections</li>
+                <li>Toronto as an emerging fintech hub</li>
+            </ul>
+
+            <p>
+                Whether you're a student, a startup, or a developer—<strong>this is your starting point.</strong>
+            </p>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="resources.html" class="cta-button">
+                Explore Resources
+                <i class="ri-arrow-right-line"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact-section">
+        <div class="section-header">
+            <h2 class="section-title lang-en">Get in Touch</h2>
+            <h2 class="section-title lang-fr hidden">Nous contacter</h2>
+        </div>
+
+        <div class="contact-card">
+            <p class="contact-intro lang-en">
+                Whether you're a developer, entrepreneur, or curious about XRPL—we'd love to hear from you.
+            </p>
+            <p class="contact-intro lang-fr hidden">
+                Que vous soyez développeur, entrepreneur ou curieux—nous aimerions avoir de vos nouvelles.
+            </p>
+
+            <div class="social-links">
+                <a href="https://twitter.com/XRPLCanada" class="social-link" target="_blank" rel="noopener noreferrer">
+                    <i class="ri-twitter-x-line"></i> X
+                </a>
+            </div>
+
+            <div class="divider">or email us</div>
+
+            <div class="email-display">
+                <a onclick="navigator.clipboard.writeText('team@xrplcanada.org'); this.textContent='Copied!'; setTimeout(() => this.textContent='team@xrplcanada.org', 2000);">team@xrplcanada.org</a>
+            </div>
+
+            <form class="contact-form" action="https://formspree.io/f/mrezqwlj" method="POST">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Message" required></textarea>
+                <button type="submit" class="submit-button">
+                    <span class="lang-en">Send Message</span>
+                    <span class="lang-fr hidden">Envoyer</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+
+    <script src="components/nav.js"></script>
+    <script src="styles/nav-mobile.js"></script>
+    <script src="components/footer.js"></script>
+    <script>
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'fr' : 'en';
+            document.querySelectorAll('.lang-en').forEach(el => {
+                el.classList.toggle('hidden', currentLang !== 'en');
+            });
+            document.querySelectorAll('.lang-fr').forEach(el => {
+                el.classList.toggle('hidden', currentLang !== 'fr');
+            });
+            document.documentElement.lang = currentLang;
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

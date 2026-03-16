@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canada's First Tokenized Bond — A Full Breakdown | XRPL Canada Blog</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="On March 5, 2026, the Bank of Canada, RBC, TD, and Export Development Canada published the results of Project Samara. A real $100 million CAD bond, issued by Export Development Canada, settled in wholesale central bank digital money, traded on secondary markets, with coupon payments processed — all on a distributed ledger.">
+    <meta name="keywords" content="Project Samara, Bank of Canada, tokenized bonds, RBC, TD, Export Development Canada, W-CAD, wholesale CBDC, distributed ledger, XRPL Canada, Canadian blockchain">
+    <link rel="canonical" href="https://xrplcanada.org/blog/canada-first-tokenized-bond.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://xrplcanada.org/blog/canada-first-tokenized-bond.html">
+    <meta property="og:title" content="Canada's First Tokenized Bond — A Full Breakdown">
+    <meta property="og:description" content="A full breakdown of Project Samara: Canada's first tokenized bond. Bank of Canada, RBC, TD, and EDC published a 44-page research paper documenting a real $100 million CAD bond settled on a distributed ledger.">
+    <meta property="og:image" content="https://xrplcanada.org/public/project-samara.jpeg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@XRPLCanada">
+    <meta name="twitter:title" content="Canada's First Tokenized Bond — A Full Breakdown">
+    <meta name="twitter:description" content="A full breakdown of Project Samara: Canada's first tokenized bond. Bank of Canada, RBC, TD, and EDC published a 44-page research paper documenting a real $100 million CAD bond settled on a distributed ledger.">
+    <meta name="twitter:image" content="https://xrplcanada.org/public/project-samara.jpeg">
+    <link rel="icon" type="image/png" href="../public/xrpl-canada-icon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" href="../styles/nav.css" />
+    <link rel="stylesheet" href="../styles/blog-global.css">
+</head>
+<body>
+    <div id="site-nav"></div>
+
+    <article class="article-container">
+        <a href="../blog.html" class="back-link">
+            <i class="ri-arrow-left-line"></i>
+            Back to All Updates
+        </a>
+        <header class="article-header">
+            <div class="article-meta">
+                <span class="category-tag">Ecosystem Spotlight</span>
+                <div class="meta-item">
+                    <i class="ri-calendar-line"></i>
+                    <span>March 6, 2026</span>
+                </div>
+                <div class="meta-item">
+                    <i class="ri-time-line"></i>
+                    <span>18 min read</span>
+                </div>
+            </div>
+            <h1>Canada's First Tokenized Bond</h1>
+            <p class="article-subtitle">A Full Breakdown of the Research Paper.</p>
+        </header>
+
+        <img src="../public/project-samara.jpeg" alt="Project Samara - Canada's First Tokenized Bond" style="width: 100%; border-radius: 12px; margin-bottom: 40px;">
+
+        <p>On March 5, 2026, the Bank of Canada, RBC, TD, and Export Development Canada published the results of Project Samara. A real $100 million CAD bond, issued by Export Development Canada, settled in wholesale central bank digital money, traded on secondary markets, with coupon payments processed — all on a distributed ledger.</p>
+
+        <p>The consortium published a 44-page research paper documenting the full experiment. Not a proof of concept. Not a simulation. A real bond, and a detailed account of what it took to run it.</p>
+
+        <p>Here's what the research paper says.</p>
+
+        <h2>The Participants</h2>
+
+        <ul>
+            <li><strong>Bank of Canada</strong> — operated the cash ledger, issued W-CAD, provided regulatory framework under the Payment Clearing and Settlement Act</li>
+            <li><strong>RBC Capital Markets</strong> — Joint Lead Manager and bond ledger platform operator</li>
+            <li><strong>RBC Investor Services</strong> — off-platform recordkeeper and custody backup</li>
+            <li><strong>TD Securities</strong> — Joint Lead Manager</li>
+            <li><strong>Export Development Canada</strong> — bond issuer</li>
+            <li><strong>IBM Canada</strong> — technology provider, cloud and node administrator, cryptographic key custodian</li>
+        </ul>
+
+        <p>The Bank of Canada's involvement built directly on Project Jasper, launched in 2016 as the first central bank DLT experiment with the private sector. Samara was the production-level test Jasper was building toward.</p>
+
+        <h2>What They Built and What It Cost</h2>
+
+        <p>The Samara Platform consists of two separate blockchain networks — a bond ledger and a cash ledger — built on Hyperledger Fabric and connected via an Interledger Protocol using Hashed Time Lock Contracts. Deployed across IBM Cloud and Microsoft Azure. RBC operated the bond ledger. The Bank of Canada operated the cash ledger. IBM Canada managed cryptographic keys via Azure Key Vault and IBM Cloud secret management.</p>
+
+        <p>The bond: short-term, under 3 months, CAD $100 million, fixed-rate coupon, issued by EDC to a closed investor group. Settlement currency: <strong>W-CAD</strong> — tokenized wholesale Canadian dollars created by the Bank of Canada specifically for this experiment. Accessible only to authorized participants on the platform. Not a general-purpose digital currency.</p>
+
+        <p>The bond ledger used an account-based model. The cash ledger used the Fabric Token SDK with a UTXO model, with zero-knowledge proofs handling transaction privacy while still giving the Bank of Canada what it needed for AML and sanctions compliance.</p>
+
+        <p>The platform supported the full bond lifecycle on-chain: term sheet creation, book-building, allocation, atomic delivery-versus-payment settlement, secondary market trading via request-for-quote, coupon payments, and bond maturity. The pricing call stayed on a recorded phone line. Final legal documentation was reviewed offline and uploaded to a document repository.</p>
+
+        <p>Node deployment cost: approximately CAD $65,000 upfront per participant, plus CAD $15,000 per month in cloud expenses. Participants could alternatively access via a shared stack through their JLM's node at no infrastructure cost, but with reduced control and privacy.</p>
+
+        <p>W-CAD wallets were funded manually. Participants sent fiat through the Lynx RTGS system to the Bank of Canada's High Availability Banking System, which then manually credited an equivalent W-CAD amount to the participant's wallet. The research paper notes this would be automated in a production system.</p>
+
+        <p>New governance structures had to be built from scratch: platform operator roles, exception-handling procedures, coordination mechanisms across independently governed entities. RBC's bond ledger operator role sat in a separate business unit from its JLM role. RBC Investor Services maintained a backup bond register off-platform in case the platform malfunctioned.</p>
+
+        <h2>Settlement: T+0 vs T+5</h2>
+
+        <p>Traditional Canadian bond issuance settles in 3 to 5 business days, sometimes up to T+10, across a chain of intermediaries — registrar, fiscal agent, paying agent, transfer agent, clearing house, CSD, custodians, dealers, legal counsel — all on different systems.</p>
+
+        <p>Samara settled same-day. <strong>T+0.</strong></p>
+
+        <p>The mechanism: atomic DvP across two ledgers using HTLC. Two stages. Stage 1: bond moves from EDC to the JLM. Stage 2: bond moves from JLM to each allocated investor. Both legs settle simultaneously or neither does.</p>
+
+        <p>The tradeoff: Samara used DvP Model 1 — real-time gross settlement, no netting. Every participant had to pre-fund their W-CAD wallet before trading. Liquidity costs went up. The research paper flags this directly and notes netting was explored in earlier Jasper phases but not implemented here.</p>
+
+        <p>Secondary market ran the same way. Investors initiated RFQs on-chain, market makers responded, smart contracts executed and settled atomically. Bond holdings updated in real time. No post-trade operations.</p>
+
+        <h2>The Regulatory Work</h2>
+
+        <p>RBC required exemptive relief from recognition as a marketplace in Ontario and Quebec, and from recognition as a clearing agency in Quebec. The OSC's Office of Economic Growth and Innovation and the AMF granted a two-year exemption order.</p>
+
+        <p>CIRO approved participation through its new InnovateSafe regulatory sandbox under a pilot called the "InnovateSafe Tokenized Bond Offering Pilot." To satisfy CIRO's asset protection rules — which normally require securities to be held at a recognized CSD — the consortium submitted legal agreements, service provider engagements, and detailed technical documentation demonstrating the platform qualified as an "acceptable internal storage location."</p>
+
+        <p>The bond required a hybrid legal framework: a customized Deed Governing the Issuance of Canadian Digital Notes, a Pricing Supplement, and an Offering Memorandum. Canadian corporate law requires a securities register at a designated location and does not contemplate a distributed ledger. The solution: RBC's node copy was legally designated as the official register.</p>
+
+        <p>All trades were reported through Bloomberg TOMS so CIRO could run normal trade surveillance.</p>
+
+        <p>The research paper states directly: broader DLT adoption in capital markets would require legal and regulatory reform, not just technical change.</p>
+
+        <h2>What the Research Paper Concluded</h2>
+
+        <p>The efficiency gains were confirmed. T+0 settlement. Single shared ledger eliminating bilateral reconciliation across all back offices. Real-time position and cash visibility. Automated term sheet creation, trade booking, and settlement instruction generation. Coupon payment workflows compressed from a 4–5 day lead time to one business day.</p>
+
+        <p>The costs were also confirmed. CAD $65,000 to deploy a node, $15,000 per month to run it. New governance structures built from scratch. Pre-funding requirements increasing liquidity costs. New operational risks around cryptographic key management, auditability, and fallback mechanisms.</p>
+
+        <p>The paper's conclusion, written jointly by the Bank of Canada, RBC, TD, and EDC:</p>
+
+        <div class="highlight-box">
+            <p>"DLT seems to offer some promise of net efficiency gains compared with traditional technology, but that benefit is unlikely to be as significant as some argue or believe. There are observable benefits in some areas, but there are costs or increased risks in others that may offset those gains."</p>
+        </div>
+
+        <p>On the path forward: "Hybrid models combining decentralized technology and centralized oversight emerging as the most practical near-term path."</p>
+
+        <h2>Tokenized Fixed Income on XRPL</h2>
+
+        <p>The Samara paper is specifically about bond issuance — primary market, secondary trading, coupon payments, full lifecycle management. That's a specific thing. Before asking whether Canada might run something like Samara on XRPL, the baseline question is what's actually live on the ledger today.</p>
+
+        <ul>
+            <li><strong>OpenEden</strong> — TBILL Vault Tokenized U.S. Treasury bills launched on XRPL in August 2024. Backed by short-dated T-bills and reverse repurchase agreements. KYC and AML gated. Ripple invested $10 million at launch. As of February 2026, OpenEden holds approximately $61.7 million on XRPL — 63% of OpenEden's total TBILL supply across all chains, ahead of Ethereum and Solana.</li>
+            <li><strong>Ondo Finance</strong> — OUSG Short-term U.S. government bond fund launched on XRPL in June 2025 in partnership with Ripple. Initial supply $30 million, backed by BlackRock's BUIDL fund. Institutional investors mint and redeem using RLUSD. Grew to $160 million by February 2026 — a 293% increase since January 2026.</li>
+            <li><strong>Guggenheim Treasury Services</strong> — Digital Commercial Paper issued on XRPL in June 2025. Current live tokenized value: approximately $70 million.</li>
+            <li><strong>Archax / abrdn</strong> — USD Liquidity Fund. In November 2024, Archax — the first FCA-regulated digital asset exchange — tokenized part of abrdn's £3.8 billion US Dollar Liquidity Fund on XRPL. The first tokenized money market fund on the ledger. Ripple allocated $5 million at launch.</li>
+        </ul>
+
+        <p>U.S. Treasury products from Ondo, Guggenheim, and OpenEden now total $300 million on XRPL. The broader ledger hosts $2.3 billion in tokenized real-world assets as of early 2026, up from $991 million at the start of the year. Of that $2.3 billion, roughly $1.49 billion sits in represented assets — digital records for internal lifecycle management, not tokens circulating in a market. Transfer activity remains minimal. Issuance is growing.</p>
+
+        <h2>🇨🇦 What This Means for Canada</h2>
+
+        <p>Project Samara answers a question Canada's financial sector has been circling for years: can a tokenized bond work in a real legal and regulatory environment in this country? The answer is yes, and the research paper documents exactly what it required.</p>
+
+        <p>Three things the research paper says still need to close before this scales: legal frameworks that accommodate distributed ledgers without bespoke exemptions for every experiment, regulatory clarity that doesn't require building a new governance structure from scratch each time, and infrastructure costs that don't start at CAD $65,000 per node.</p>
+
+        <p>Those are Canada's problems to solve. The OSC's InnovateSafe sandbox exists for exactly this work. The Bank of Canada ran the experiment and published everything they learned. What comes next depends on whether Canadian institutions, regulators, and builders treat this research paper as a starting point.</p>
+
+        <div class="sources">
+            <h3>Sources</h3>
+            <ul>
+                <li>Bank of Canada Staff Analytical Paper 2026-8 — Project Samara Research Paper (Arora, Faruqui, Hendry, Shah, Usche / RBC / TD / EDC) — <a href="https://doi.org/10.34989/sap-2026-8" target="_blank" rel="noopener noreferrer">doi.org/10.34989/sap-2026-8</a></li>
+                <li>XRPL Canada — XRPL February 2026 Update: Token Escrow and Permissioned DEX Activation — <a href="https://xrplcanada.org/blog/xrpl-permissioned-dex-token-escrow-february-2026" target="_blank" rel="noopener noreferrer">xrplcanada.org</a></li>
+                <li>RWA.xyz — Tokenized Real-World Assets Data Dashboard — <a href="https://rwa.xyz" target="_blank" rel="noopener noreferrer">rwa.xyz</a> (data as of February 2026)</li>
+                <li>Ripple Press Release — OpenEden Brings Tokenized T-Bills to XRPL; Ripple Allocates $10M — <a href="https://ripple.com" target="_blank" rel="noopener noreferrer">ripple.com</a> (August 1, 2024)</li>
+                <li>Ondo Finance Blog — Ondo Finance Brings Tokenized Treasuries to the XRP Ledger with Seamless Mint & Redeem via Ripple's RLUSD Stablecoin — <a href="https://ondo.finance" target="_blank" rel="noopener noreferrer">ondo.finance</a> (June 11, 2025)</li>
+                <li>Ripple Press Release — Guggenheim Treasury Services Taps Zeconomy Platform to Issue Digital Commercial Paper on the XRP Ledger — <a href="https://ripple.com" target="_blank" rel="noopener noreferrer">ripple.com</a> (June 10, 2025)</li>
+                <li>Archax Press Release — Archax Provides Access to abrdn Money Market Fund on the XRP Ledger in Collaboration with Ripple — <a href="https://archax.com" target="_blank" rel="noopener noreferrer">archax.com</a> (November 25, 2024)</li>
+            </ul>
+        </div>
+
+        <div class="info-box" style="margin-top: 32px; background: rgba(255, 23, 68, 0.05); border-left: 4px solid var(--primary-red);">
+            <p><strong>XRPL Canada</strong> is a non-profit community organization dedicated to growing the XRP Ledger ecosystem across Canada. Have a story we should cover? Reach us at <a href="mailto:team@xrplcanada.org" style="color: var(--primary-red-light); text-decoration: none; font-weight: 600;">team@xrplcanada.org</a> or follow <a href="https://twitter.com/XRPLCanada" target="_blank" rel="noopener noreferrer" style="color: var(--primary-red-light); text-decoration: none; font-weight: 600;">@XRPLCanada</a> on X.</p>
+        </div>
+
+        <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=69478aeeb5f2d28644168c47&product=image-share-buttons' async='async'></script>
+    </article>
+
+    <div id="site-footer"></div>
+
+    <script src="../components/nav.js"></script>
+    <script src="../styles/nav-mobile.js"></script>
+    <script src="../components/footer.js"></script>
+    <script src="../styles/theme-toggle.js"></script>
+</body>
+</html>

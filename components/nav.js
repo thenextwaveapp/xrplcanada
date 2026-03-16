@@ -13,41 +13,69 @@ function renderNav() {
     const prefix = isBlogPost ? '../' : '';
     
     const navHTML = `
-        <nav>
-            <a href="${isHome ? '#' : (isBlogPost ? '../index.html' : 'index.html')}" ${isHome ? 'onclick="window.scrollTo({top: 0, behavior: \'smooth\'}); return false;"' : 'onclick="sessionStorage.setItem(\'restoreScroll\', \'true\');"'}>
-                <img src="${prefix}public/xrplcanadawhite-nobg.png" alt="XRPL Canada" class="nav-logo">
-            </a>
+        <nav class="site-navigation">
+            <div class="nav-container">
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <a href="${prefix}index.html" class="nav-brand">
+                    <img src="${prefix}public/xrpl-canada-icon.png" alt="XRPL Canada" class="nav-icon">
+                    <span>XRPL Canada</span>
+                </a>
+                <div class="nav-links">
+                    <a href="${prefix}blog.html">
+                        <span class="lang-en">Blog</span>
+                        <span class="lang-fr hidden">Blog</span>
+                    </a>
+                    <a href="${prefix}news.html">
+                        <span class="lang-en">News</span>
+                        <span class="lang-fr hidden">Nouvelles</span>
+                    </a>
+                    <a href="${prefix}about.html">
+                        <span class="lang-en">About</span>
+                        <span class="lang-fr hidden">À propos</span>
+                    </a>
+                    <a href="${prefix}resources.html">
+                        <span class="lang-en">Resources</span>
+                        <span class="lang-fr hidden">Ressources</span>
+                    </a>
+                </div>
+                <button class="lang-toggle" onclick="toggleLanguage()">
+                    <span class="lang-en">FR</span>
+                    <span class="lang-fr hidden">EN</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu-backdrop"></div>
+        <div class="mobile-menu">
+            <button class="mobile-menu-close">&times;</button>
             <div class="nav-links">
-                <a href="${isHome ? '#about' : (isBlogPost ? '../index.html#about' : 'index.html#about')}">
-                    <span class="lang-en">About</span>
-                    <span class="lang-fr hidden">À propos</span>
-                </a>
-                <a href="${isHome ? '#xrpl-explained' : (isBlogPost ? '../index.html#xrpl-explained' : 'index.html#xrpl-explained')}">
-                    <span class="lang-en">What is XRPL?</span>
-                    <span class="lang-fr hidden">Qu'est-ce que XRPL?</span>
-                </a>
-                <a href="${prefix}resources.html">
-                    <span class="lang-en">Resources</span>
-                    <span class="lang-fr hidden">Ressources</span>
-                </a>
-                <a href="${prefix}news.html">
-                    <span class="lang-en">News</span>
-                    <span class="lang-fr hidden">Nouvelles</span>
+                <a href="${prefix}index.html">
+                    <span class="lang-en">Home</span>
+                    <span class="lang-fr hidden">Accueil</span>
                 </a>
                 <a href="${prefix}blog.html">
                     <span class="lang-en">Blog</span>
                     <span class="lang-fr hidden">Blog</span>
                 </a>
-                <a href="${isHome ? '#contact' : (isBlogPost ? '../index.html#contact' : 'index.html#contact')}">
-                    <span class="lang-en">Contact</span>
-                    <span class="lang-fr hidden">Contact</span>
+                <a href="${prefix}news.html">
+                    <span class="lang-en">News</span>
+                    <span class="lang-fr hidden">Nouvelles</span>
+                </a>
+                <a href="${prefix}about.html">
+                    <span class="lang-en">About</span>
+                    <span class="lang-fr hidden">À propos</span>
+                </a>
+                <a href="${prefix}resources.html">
+                    <span class="lang-en">Resources</span>
+                    <span class="lang-fr hidden">Ressources</span>
                 </a>
             </div>
-            <button class="lang-toggle" onclick="toggleLanguage()">
-                <span class="lang-en">FR</span>
-                <span class="lang-fr hidden">EN</span>
-            </button>
-        </nav>
+        </div>
     `;
     
     // Replace the entire div with just the nav element

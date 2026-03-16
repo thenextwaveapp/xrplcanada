@@ -848,6 +848,18 @@
     <script src="components/footer.js"></script>
     <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=69478aeeb5f2d28644168c47&product=inline-share-buttons' async='async'></script>
 
+    <!-- ShareThis Initialization Script -->
+    <script>
+        window.addEventListener('load', function() {
+            // Force ShareThis to reinitialize and respect data-url attributes
+            if (window.__sharethis__) {
+                setTimeout(function() {
+                    window.__sharethis__.initialize();
+                }, 500);
+            }
+        });
+    </script>
+
     <!-- Category Filter Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {

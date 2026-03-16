@@ -2,6 +2,5 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "buildCommand": "echo 'No build needed'",
-  "outputDirectory": ".",
-  "installCommand": "echo 'No install needed'"
+  "outputDirectory": "."
 }

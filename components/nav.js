@@ -22,6 +22,7 @@ function renderNav() {
                 </button>
                 <a href="${prefix}index.html" class="nav-brand">
                     <img src="${prefix}public/xrpl-canada-icon.png" alt="XRPL Canada" class="nav-icon">
+                    <span class="nav-brand-text">XRPL Canada</span>
                 </a>
                 <div class="nav-links">
                     <a href="${prefix}blog.html">

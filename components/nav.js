@@ -22,7 +22,6 @@ function renderNav() {
                 </button>
                 <a href="${prefix}index.html" class="nav-brand">
                     <img src="${prefix}public/xrpl-canada-icon.png" alt="XRPL Canada" class="nav-icon">
-                    <span>XRPL Canada</span>
                 </a>
                 <div class="nav-links">
                     <a href="${prefix}blog.html">
@@ -88,6 +87,50 @@ document.addEventListener('DOMContentLoaded', function() {
     const navContainer = document.getElementById('site-nav');
     if (navContainer) {
         renderNav();
+        initAutoHideNav();
     }
 });
+
+// Auto-hide navigation on scroll (desktop only)
+function initAutoHideNav() {
+    let lastScrollTop = 0;
+    let scrollThreshold = 100;
+    let isScrolling;
+
+    // Only apply on desktop
+    if (window.innerWidth <= 768) return;
+
+    window.addEventListener('scroll', function() {
+        const nav = document.querySelector('nav.site-navigation');
+        if (!nav) return;
+
+        clearTimeout(isScrolling);
+
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Add scrolled class when past threshold
+        if (scrollTop > scrollThreshold) {
+            nav.classList.add('scrolled');
+
+            // Hide on scroll down, show on scroll up
+            if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
+                nav.classList.add('nav-hidden');
+            } else {
+                nav.classList.remove('nav-hidden');
+            }
+        } else {
+            nav.classList.remove('scrolled', 'nav-hidden');
+        }
+
+        lastScrollTop = scrollTop;
+    }, false);
+
+    // Re-check on resize
+    window.addEventListener('resize', function() {
+        const nav = document.querySelector('nav.site-navigation');
+        if (window.innerWidth <= 768 && nav) {
+            nav.classList.remove('nav-hidden', 'scrolled');
+        }
+    });
+}
 

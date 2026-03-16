@@ -21,7 +21,7 @@ nav.site-navigation {
     background: rgba(26, 26, 36, 0.7);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
-    padding: 22px 40px;
+    padding: 18px 40px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     position: -webkit-sticky !important;
     position: sticky !important;
@@ -29,6 +29,18 @@ nav.site-navigation {
     z-index: 1000;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+    transform: translateY(0);
+    transition: transform 0.3s ease, padding 0.3s ease;
+}
+
+/* Auto-hide nav on scroll */
+nav.site-navigation.nav-hidden {
+    transform: translateY(-100%);
+}
+
+/* Compact nav when scrolled */
+nav.site-navigation.scrolled {
+    padding: 14px 40px;
 }
 
 /* Light mode navigation */
@@ -79,15 +91,16 @@ nav.site-navigation * {
 }
 
 .nav-brand .nav-icon {
-    height: 32px;
-    width: 32px;
+    height: 48px;
+    width: 48px;
     border-radius: 50%;
+    transition: all 0.3s ease;
 }
 
-.nav-brand span {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--text-primary);
+/* Smaller logo when scrolled */
+nav.site-navigation.scrolled .nav-brand .nav-icon {
+    height: 40px;
+    width: 40px;
 }
 
 .nav-links {

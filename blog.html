@@ -343,27 +343,89 @@
                 padding: 8px 16px;
             }
         }
+
+        /* Blog Hero Section */
+        .blog-hero {
+            position: relative;
+            padding: 120px 20px 80px;
+            background: linear-gradient(135deg, rgba(255, 23, 68, 0.08) 0%, rgba(197, 17, 98, 0.05) 50%, transparent 100%);
+            border-bottom: 1px solid rgba(255, 23, 68, 0.1);
+            overflow: hidden;
+        }
+
+        .blog-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(255, 23, 68, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(197, 17, 98, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .blog-hero-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .blog-hero-brand {
+            font-size: 72px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FF1744 0%, #C51162 50%, #880E4F 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+            letter-spacing: -2px;
+            line-height: 1.1;
+        }
+
+        .blog-hero-tagline {
+            font-size: 24px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            max-width: 700px;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .blog-hero {
+                padding: 80px 20px 60px;
+            }
+
+            .blog-hero-brand {
+                font-size: 48px;
+                letter-spacing: -1px;
+            }
+
+            .blog-hero-tagline {
+                font-size: 18px;
+            }
+        }
     </style>
 </head>
 <body>
     <div id="site-nav"></div>
 
-    <div class="container">
-        <div class="page-header">
-            <h1 class="page-title">
-                <span class="lang-en">Blog & Updates</span>
-                <span class="lang-fr hidden">Blog et mises à jour</span>
+    <!-- Blog Hero Section -->
+    <section class="blog-hero">
+        <div class="blog-hero-content">
+            <h1 class="blog-hero-brand">
+                <span class="lang-en">XRPL Canada</span>
+                <span class="lang-fr hidden">XRPL Canada</span>
             </h1>
-            <p class="page-description">
-                <span class="lang-en">
-                    Real-world XRPL adoption stories, ecosystem news, and insights on building payment infrastructure that works.
-                </span>
-                <span class="lang-fr hidden">
-                    Histoires d'adoption XRPL réelles, nouvelles de l'écosystème et perspectives sur la construction d'infrastructure de paiement qui fonctionne.
-                </span>
+            <p class="blog-hero-tagline">
+                <span class="lang-en">Real-world XRPL adoption stories, ecosystem analysis, and infrastructure insights from Canada's blockchain frontier.</span>
+                <span class="lang-fr hidden">Histoires d'adoption XRPL réelles, analyses de l'écosystème et perspectives sur l'infrastructure de la frontière blockchain du Canada.</span>
             </p>
         </div>
+    </section>
 
+    <div class="container">
         <!-- Category Filter -->
         <div class="category-filter" style="max-width: 1280px; margin: 0 auto 48px; padding: 0 20px;">
             <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">

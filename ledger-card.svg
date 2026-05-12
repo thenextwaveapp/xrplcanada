@@ -1,0 +1,38 @@
+<svg width="1200" height="628" viewBox="0 0 1200 628" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark background -->
+  <rect width="1200" height="628" fill="#0A0A0F"/>
+
+  <defs>
+    <!-- Gradient overlays - bigger and softer -->
+    <radialGradient id="redGlow" cx="20%" cy="30%">
+      <stop offset="0%" style="stop-color:#FF1744;stop-opacity:0.18" />
+      <stop offset="60%" style="stop-color:#FF1744;stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="blueGlow" cx="80%" cy="70%">
+      <stop offset="0%" style="stop-color:#00B8D4;stop-opacity:0.18" />
+      <stop offset="60%" style="stop-color:#00B8D4;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Gradient backgrounds - larger and softer -->
+  <ellipse cx="240" cy="188" rx="600" ry="450" fill="url(#redGlow)" />
+  <ellipse cx="960" cy="440" rx="600" ry="450" fill="url(#blueGlow)" />
+
+  <!-- Subtle geometric background design -->
+  <g opacity="0.03" stroke="#E8E8F0" stroke-width="1" fill="none">
+    <!-- Grid pattern -->
+    <line x1="0" y1="157" x2="1200" y2="157" />
+    <line x1="0" y1="314" x2="1200" y2="314" />
+    <line x1="0" y1="471" x2="1200" y2="471" />
+    <line x1="300" y1="0" x2="300" y2="628" />
+    <line x1="600" y1="0" x2="600" y2="628" />
+    <line x1="900" y1="0" x2="900" y2="628" />
+  </g>
+
+  <!-- Geometric accent shapes -->
+  <g opacity="0.06" stroke="#FF1744" stroke-width="2" fill="none">
+    <circle cx="150" cy="120" r="80" />
+    <rect x="900" y="400" width="120" height="120" />
+    <polygon points="1050,100 1120,180 980,180" />
+  </g>
+</svg>

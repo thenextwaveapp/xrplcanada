@@ -21,9 +21,9 @@ XRPL Canada is a community partner for XRP Tokyo 2026 (April 7, Happo-en, Tokyo)
 
 The audience includes institutional decision-makers, regulators, Canadian fintech professionals, XRPL developers, and serious ecosystem participants. They do not need to be told what XRP is. They do not need hype. They need accurate, well-sourced analysis that respects their time and intelligence.
 
-The publication does not speculate on price. It does not cheerload. When something matters, it explains precisely why — it does not declare it important and move on. When something has limitations or costs, it says so. The Samara piece said directly that DLT efficiency gains "are unlikely to be as significant as some argue." That is the editorial standard.
+The publication does not speculate on price. It does not cheerload. When something matters, it explains precisely why — it does not declare it important and move on. When something has limitations or costs, it says so.
 
-The Canada angle is always present but always earned. It connects Canadian institutions, regulators, and infrastructure to XRPL developments. It is never forced.
+The Canada angle is always present but always earned. It connects Canadian institutions, regulators, and infrastructure to XRPL developments. It is never forced. When a genuine Canada angle does not exist for a given story, say so briefly in the draft and flag it for editorial review rather than inventing one. A thin or absent Canada angle is an honest editorial outcome, not a failure.
 
 ---
 
@@ -31,10 +31,12 @@ The Canada angle is always present but always earned. It connects Canadian insti
 
 These are non-negotiable on every piece:
 
+- **No guessing.** If no source explicitly confirms it, do not write it. Logical inferences, plausible connections, and pattern recognition are not analysis — they are guesses. Cut them entirely.
 - **No choppy sentences.** Full, clear language. Ideas are developed completely before moving on.
 - **No redundant sentences.** Every sentence must add something the previous one did not.
 - **No negative framing as a substitute for positive framing.** Never write "it's not this, it's that." State what it is directly.
 - **No inflation of significance.** Never declare something important without explaining the mechanism by which it matters.
+- **Plain language always.** Use plain, direct language in every sentence. The goal is clear transmission of information, not stylistic impression.
 - **Paragraphs build arguments. Bullets list discrete items.** Apply this judgment per section — not as a rule applied uniformly. If content is three distinct sequential items with clear labels, use bullets. If content is a single building argument, use paragraphs.
 - **Dates on every claim where one exists.** This is a timestamped weekly publication. Every event, release, filing, and announcement gets its date.
 - **Primary sources always.** Research papers, foundation disclosures, official releases, regulatory filings. Not aggregator summaries.
@@ -47,7 +49,7 @@ These are non-negotiable on every piece:
 - **Weekly Roundup** — This Week on the Ledger (title format: "This Week on the Ledger" without date)
 - **Technical** — protocol developments, amendments, specifications, deep technical analysis
 - **Ecosystem** — institutional adoption, partnerships, real-world deployments, case studies
-- **Education** — evergreen, institutional audience, metrics-based or foundational explainers
+- **Education** — evergreen explainers for an institutional audience. Triggered when a concept, mechanism, or metric is foundational enough to warrant standalone treatment — e.g., how a specific XRPL amendment works in practice, what on-chain liquidity metrics measure and how to read them, or how Canadian AML obligations interact with digital asset custody. The test: would a fintech professional or regulator encountering this topic for the first time leave with a working understanding they could act on? If yes, it belongs here.
 - **Year in Review** — annual retrospectives and ecosystem summaries
 
 ---
@@ -73,9 +75,6 @@ Search across five buckets every week:
 
 Fetch primary sources directly. Build a flat inventory, then triage: roundup items vs. standalone pieces. A story earns its own piece when there is a research paper, primary document, technical specification, or policy decision behind it.
 
-**Draft Order**
-Deep-dives and standalone pieces first. Roundup last — it references what already exists.
-
 ---
 
 ## This Week on the Ledger — Structure
@@ -88,22 +87,71 @@ The roundup has a consistent structure every week:
 2. **Three main sections** — each covering a distinct theme. Each has a descriptive header. Format per section is determined by content: bullets where there are discrete sequential items, paragraphs where there is a building argument.
 3. **In Brief** — 3–5 short items, each a bold-label entry with 2–4 sentences. Specific detail that earns each item's place — not just a headline restated.
 4. **Sources** — full list at the bottom.
-5. **Footer boilerplate** — XRPL Canada non-profit description + current event callout.
+5. **Footer boilerplate** — see canonical footer text in the Footer Boilerplate section below.
 
 ---
 
-## Per-Article Checklist
+## Output Mode
 
+Two modes are triggered by a single word at the start of any session:
+
+- **"draft"** — Plain text or markdown only. No HTML, no meta tags, no file structure, no blog.html card, no sitemap entry. Write the article content and sources section only.
+- **"publish"** — Full production output: HTML file, meta tags, blog.html card snippet, and sitemap entry.
+
+Default to draft mode if no trigger word is provided.
+
+---
+
+## Footer Boilerplate
+
+Use this exact text at the bottom of every article, in both draft and publish modes:
+
+> **XRPL Canada** is a non-profit community organization dedicated to growing the XRP Ledger ecosystem across Canada. Have a story we should cover? Reach us at team@xrplcanada.org or follow @XRPLCanada on X.
+>
+> **XRPL Canada is a community partner for XRP Tokyo 2026** — April 7 at Happo-en, Tokyo, hosted by XRPL Japan inside the TEAMZ Web3/AI Summit. Details on participation to follow.
+
+In publish mode, use the HTML info-box component (see Content Components section) to render this.
+
+---
+
+## Master Checklist
+
+Use this single checklist across all phases. Mark each item at the appropriate stage.
+
+**Draft**
 - [ ] Primary sources confirmed and linked
 - [ ] Dates on every claim where one exists
-- [ ] Canada angle present — earned, not forced
+- [ ] Canada angle present and earned — or flagged as absent for editorial review
 - [ ] No sentence that exists only to say what something is not
 - [ ] No redundant sentences
+- [ ] No guesses or inferences presented as facts
 - [ ] Format matches content — bullets where discrete, paragraphs where argumentative
 - [ ] Reading time estimated (200 words/min)
 - [ ] Sources section at the bottom
-- [ ] Footer boilerplate and current event callout
-- [ ] **If post has featured image:** Image added to both blog post OG tags AND blog.html card
+- [ ] Footer boilerplate appended
+
+**Pre-Publish (publish mode only)**
+- [ ] HTML file created with full meta tags and structure
+- [ ] Meta description: 150–160 characters, primary keyword, action-oriented
+- [ ] Keywords: 5–10 terms, include "XRPL Canada", mix broad + specific
+- [ ] OG image: absolute URL `https://xrplcanada.org/public/...`, 1200×630px recommended
+- [ ] Canonical URL set to full `https://xrplcanada.org/blog/your-slug.html`
+- [ ] If post has featured image: image added to both blog post OG tags AND blog.html card
+- [ ] blog.html card added to top of `.blog-grid`
+- [ ] Category filter count updated in blog.html (around line 340)
+- [ ] sitemap.xml updated
+- [ ] Nav and footer load locally
+- [ ] All links work, especially `../` relative paths
+- [ ] Images display
+- [ ] ShareThis buttons appear
+- [ ] Theme toggle works
+- [ ] Mobile responsive
+
+**Post-Publish**
+- [ ] Post to @XRPLCanada on X — excerpt, link, tag relevant accounts, #XRPL #XRP #Blockchain
+- [ ] Verify OG image renders on live social share
+- [ ] Confirm ShareThis buttons functional on live post
+- [ ] Monitor analytics and engagement
 
 ---
 
@@ -204,15 +252,6 @@ Filename: `blog/descriptive-slug.html` — kebab-case, include date for dated se
 
 ---
 
-## SEO Checklist
-
-- [ ] Meta description: 150–160 characters, primary keyword, action-oriented
-- [ ] Keywords: 5–10 terms, include "XRPL Canada", mix broad + specific
-- [ ] OG image: absolute URL `https://xrplcanada.org/public/...`, 1200×630px recommended
-- [ ] Canonical URL set to full `https://xrplcanada.org/blog/your-slug.html`
-
----
-
 ## Content Components
 
 Standard elements: `<p>` `<h2>` `<h3>` `<ul>/<li>` `<strong>` `<a href="">`
@@ -224,7 +263,7 @@ Standard elements: `<p>` `<h2>` `<h3>` `<ul>/<li>` `<strong>` `<a href="">`
     <p>Content...</p>
 </div>
 
-<!-- Info Box — blue accent -->
+<!-- Info Box — blue accent (also used for footer boilerplate) -->
 <div class="info-box">
     <h3>Title</h3>
     <p>Content...</p>
@@ -324,24 +363,6 @@ Update `blog.html` lastmod to today.
 
 ---
 
-## Pre-Publish Checks
-
-**Local testing:** `file:///Users/mayowarosanwo/xrplcanada/blog/your-slug.html`
-
-- [ ] Nav and footer load
-- [ ] All links work, especially `../` relative paths
-- [ ] Images display
-- [ ] ShareThis buttons appear
-- [ ] Theme toggle works
-- [ ] Mobile responsive
-
-**Social preview tools:**
-- Facebook Debugger: https://developers.facebook.com/tools/debug/
-- Twitter Card Validator: https://cards-dev.twitter.com/validator
-- Google Rich Results: https://search.google.com/test/rich-results
-
----
-
 ## Deploy
 
 ```bash
@@ -354,14 +375,12 @@ Auto-deploys in 1–5 minutes. Confirm live URL.
 
 **Publishing cadence:** Deep-dives and standalone pieces mid-week. Weekly roundup Saturday for Sunday readership.
 
----
+**Local testing:** `file:///Users/mayowarosanwo/xrplcanada/blog/your-slug.html`
 
-## Post-Publish
-
-- [ ] Post to @XRPLCanada on X — excerpt, link, tag relevant accounts, #XRPL #XRP #Blockchain
-- [ ] Verify OG image renders on live social share
-- [ ] Confirm ShareThis buttons functional on live post
-- [ ] Monitor analytics and engagement
+**Social preview tools:**
+- Facebook Debugger: https://developers.facebook.com/tools/debug/
+- Twitter Card Validator: https://cards-dev.twitter.com/validator
+- Google Rich Results: https://search.google.com/test/rich-results
 
 ---
 

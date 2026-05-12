@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doppler Finance: Building the Institutional Yield Layer on XRPL | XRPL Canada Blog</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="How Doppler Finance is building institutional-grade yield infrastructure on XRPL with segregated custody, proof-of-reserves, and partnerships with SBI Ripple Asia, Evernorth, and OpenEden.">
+    <meta name="keywords" content="Doppler Finance, XRPL yield, XRP staking, SBI Ripple Asia, Evernorth, OpenEden TBILL, institutional DeFi, Fireblocks custody, XRPL Canada, XRP finance">
+    <link rel="canonical" href="https://xrplcanada.org/blog/doppler-finance-institutional-yield-xrpl.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://xrplcanada.org/blog/doppler-finance-institutional-yield-xrpl.html">
+    <meta property="og:title" content="Doppler Finance: Building the Institutional Yield Layer on XRPL">
+    <meta property="og:description" content="How Doppler Finance is building institutional-grade yield infrastructure on XRPL with segregated custody, proof-of-reserves, and partnerships with SBI Ripple Asia, Evernorth, and OpenEden.">
+    <meta property="og:image" content="https://xrplcanada.org/public/xrpl-canada.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@XRPLCanada">
+    <meta name="twitter:title" content="Doppler Finance: Building the Institutional Yield Layer on XRPL">
+    <meta name="twitter:description" content="How Doppler Finance is building institutional-grade yield infrastructure on XRPL with segregated custody, proof-of-reserves, and partnerships with SBI Ripple Asia, Evernorth, and OpenEden.">
+    <meta name="twitter:image" content="https://xrplcanada.org/public/xrpl-canada.png">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/xrpl-canada-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/xrpl-canada-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/xrpl-canada-icon.png">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#FF1744">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" href="../styles/nav.css" />
+    <link rel="stylesheet" href="../styles/blog-global.css">
+</head>
+<body>
+    <div id="site-nav"></div>
+
+    <article class="article-container">
+        <a href="../blog.html" class="back-link">
+            <i class="ri-arrow-left-line"></i>
+            Back to All Updates
+        </a>
+
+        <header class="article-header">
+            <div class="article-meta">
+                <span class="category-tag">Ecosystem</span>
+                <div class="meta-item">
+                    <i class="ri-calendar-line"></i>
+                    <span>March 15, 2026</span>
+                </div>
+                <div class="meta-item">
+                    <i class="ri-time-line"></i>
+                    <span>8 min read</span>
+                </div>
+            </div>
+            <h1>Doppler Finance: Building the Institutional Yield Layer on XRPL</h1>
+        </header>
+
+        <p><strong>XRPL Canada – March 15, 2026</strong></p>
+
+        <p>The XRP Ledger has no native staking mechanism. XRP held in a wallet earns nothing. For a network processing millions of daily transactions with significant institutional interest, that gap has been a persistent structural limitation — one that Doppler Finance, launched February 14, 2025, is explicitly built to address.</p>
+
+        <p>The timing is not incidental. The XRPL's real-world asset infrastructure has expanded sharply: total distributed asset value on the ledger reached $303.8 million as of early February 2026, up from negligible figures eighteen months prior, according to RWA.xyz. Doppler's thesis is that institutional capital requires not just a yield mechanism but one built around segregated custody, on-chain reserve verification, and risk controls that compliance teams can audit. That is the product they have built.</p>
+
+        <h2>How It Works</h2>
+
+        <p>Doppler's model is CeDeFi — centralized execution wrapped in DeFi-style transparency. XRP is deposited into a Fireblocks-custodied wallet, transferred weekly to Ceffu (MirrorX) institutional custody, then delegated to Binance for delta-neutral spot-perpetual arbitrage. The strategy accumulates yield in XRP, not dollars. Yield distributions as of February 27, 2026 were approximately 3.2% APR on the XRP vault and 8% APR on the RLUSD vault.</p>
+
+        <p>Three features define the custody architecture. Fireblocks, Ceffu, and SBI Digital Markets hold assets in segregated accounts, not commingled pools. A public Proof-of-Reserves endpoint allows depositors to verify custody balances on-chain at any time. And the delta-neutral execution means yield generation does not depend on XRP's price direction.</p>
+
+        <p>The current operational constraint is worth stating directly: Binance is the sole exchange executing the yield strategy. Doppler has indicated additional venues are coming. None are live yet.</p>
+
+        <h2>Funding and TVL</h2>
+
+        <p>Doppler raised $2.5 million in pre-seed funding on February 27, 2025, from Crit Ventures, TRIVE Ventures, Born Ready Ventures, and Green Whale Ventures. A $3 million seed round followed on August 7, 2025, led by Reforge, with participation from DCG, Maven 11, HashKey Capital, Titan Fund, GSR, KeyRock, Tenity, Cluster Capital, Flowdesk, and Auros Global. Total confirmed raised: $5.5 million.</p>
+
+        <p>TVL trajectory per Messari and DefiLlama:</p>
+
+        <ul>
+            <li><strong>April 30, 2025:</strong> $14.7M</li>
+            <li><strong>July 22, 2025:</strong> $47.4M</li>
+            <li><strong>August 2025:</strong> $50M+, 5,000+ depositors, 122,000+ XRP in cumulative yield distributed</li>
+            <li><strong>October 2025:</strong> $100M+ (self-reported by Doppler)</li>
+            <li><strong>March 2026:</strong> $79.85M (DefiLlama)</li>
+        </ul>
+
+        <p>The decline from the October peak to current levels is the most important data point in the TVL record. Doppler has been signing its most significant institutional partnerships since October — SBI Ripple Asia, Evernorth, OpenEden — while depositor capital has contracted roughly 20%. That divergence between institutional partnership momentum and on-chain TVL is not explained by available public information and warrants monitoring.</p>
+
+        <h2>The Partnership Record</h2>
+
+        <p><strong>September 2, 2025 — VivoPower (NASDAQ: VVPR)</strong><br>
+        VivoPower announced an initial $30 million tranche deployment into Doppler, with a stated program ceiling of $200 million. The $200 million figure represents the total program scope, not committed capital. Kevin Chin, VivoPower's Executive Chairman and CEO, cited Korea specifically: "With an estimated 20% of circulating supply totaling $30 billion of XRP held in South Korea, it is strategically a very important market for our overall digital asset treasury and decentralized finance solutions strategy."</p>
+
+        <p><strong>October 2025 — Nature's Miracle (NASDAQ: NMHI)</strong><br>
+        Nature's Miracle announced a treasury deployment partnership with Doppler, with a Q1 2026 pilot start. Whether capital has been deployed as of this writing is unconfirmed.</p>
+
+        <p><strong>October 2025 — Bitget</strong><br>
+        Bitget integrated Doppler's yield product into Bitget Earn and Bitget Wallet, extending distribution to Bitget's existing user base without changing the underlying protocol mechanics.</p>
+
+        <p><strong>December 17, 2025 — SBI Ripple Asia</strong><br>
+        SBI Ripple Asia — the Ripple and SBI Holdings joint venture that has driven institutional XRP adoption across Japan and Southeast Asia — signed an MOU with Doppler. This was SBI Ripple Asia's first formal engagement with an XRPL-native yield protocol. SBI Digital Markets, regulated by the Monetary Authority of Singapore, was named institutional custodian with segregated account structures. The agreement is an MOU. Operational deployment timelines have not been disclosed.</p>
+
+        <p><strong>January 9, 2026 — Evernorth</strong><br>
+        Evernorth is a publicly-traded XRP treasury company backed by Ripple and SBI Holdings, formed through a SPAC merger with Armada Acquisition Corp II. Its CEO is Asheesh Birla, former SVP of Product at Ripple. Brad Garlinghouse, Stuart Alderoty, and David Schwartz serve as strategic advisers. Evernorth and Doppler announced a collaboration to deploy institutional XRP liquidity on-chain through Doppler's infrastructure. Birla described the goal as "setting a higher standard for how XRP is used, managed, and scaled across global markets." This is a stated collaboration, not a completed deployment.</p>
+
+        <p><strong>February 10, 2026 — OpenEden</strong><br>
+        OpenEden, issuer of TBILL (a tokenized US Treasury bill product rated AA+ by S&P) and USDO (a yield-bearing stablecoin regulated by the Bermuda Monetary Authority), announced a partnership to integrate both products into Doppler's XRPL-native yield infrastructure. OpenEden first brought tokenized T-bills to XRPL in August 2024. The integration makes short-duration government debt instruments accessible through a protocol with institutional custody controls — a product structure that institutional compliance teams can categorize within existing frameworks.</p>
+
+        <h2>The Founding Team</h2>
+
+        <p>Doppler was co-founded by Rox and Claud. Rox serves as Head of Institutions and is the named spokesperson across all partnership announcements. No legal names, professional backgrounds, or prior affiliations have been disclosed publicly for either founder. No long-form interviews or profiles exist in the public record.</p>
+
+        <h2>What This Means for Canadian Institutions</h2>
+
+        <p>Every major Doppler partnership to date has an Asia axis — VivoPower's Korea focus, SBI Ripple Asia, Evernorth's Japan-linked capital base. Canadian institutions are not yet in the picture. The product case for eventual engagement exists, but it is forward-looking.</p>
+
+        <p>The OpenEden integration is the most direct connection. Canadian institutional appetite for short-duration government debt is well established. A tokenized T-bill product rated AA+ by S&P, accessible through a protocol with Fireblocks and SBI Digital Markets custody, sits in a recognizable risk category for a Canadian treasury or asset management desk. The operational and regulatory path to deployment — FINTRAC registration requirements, OSC guidance on tokenized securities, internal compliance approval — remains the work to be done on the Canadian side.</p>
+
+        <p>Two things are worth watching. First, whether the current TVL contraction stabilizes or continues as the institutional partnership pipeline moves from MOU to operational deployment. Second, whether any of the announced institutional partners — particularly Evernorth, given its Ripple and SBI Holdings backing — direct Canadian-domiciled capital through the protocol. If that happens, it will likely be the first documented instance of Canadian institutional capital accessing XRPL-native yield infrastructure.</p>
+
+        <div class="sources">
+            <h3>Sources</h3>
+            <ul>
+                <li>DefiLlama — Doppler Finance protocol page, TVL data — <a href="https://defillama.com/protocol/doppler-finance" target="_blank" rel="noopener noreferrer">defillama.com</a></li>
+                <li>Messari — "Doppler Finance: XRPfi Takes Off," July 22, 2025 — <a href="https://messari.io" target="_blank" rel="noopener noreferrer">messari.io</a></li>
+                <li>RWA.xyz — XRPL RWA metrics, February 2026 — <a href="https://rwa.xyz" target="_blank" rel="noopener noreferrer">rwa.xyz</a></li>
+                <li>GlobeNewswire — "VivoPower Partners with Doppler Finance," September 2, 2025 — <a href="https://www.globenewswire.com" target="_blank" rel="noopener noreferrer">globenewswire.com</a></li>
+                <li>GlobeNewswire — "Doppler Finance and SBI Ripple Asia Sign MOU," December 17, 2025 — <a href="https://www.globenewswire.com" target="_blank" rel="noopener noreferrer">globenewswire.com</a></li>
+                <li>GlobeNewswire — "Doppler Finance and Evernorth Collaboration," January 9, 2026 — <a href="https://www.globenewswire.com" target="_blank" rel="noopener noreferrer">globenewswire.com</a></li>
+                <li>The Block — "Doppler Finance and OpenEden Announce Strategic Partnership," February 10, 2026 — <a href="https://www.theblock.co" target="_blank" rel="noopener noreferrer">theblock.co</a></li>
+                <li>Doppler Finance — "$2.5M Pre-Seed Announcement," February 27, 2025 — <a href="https://doppler.finance" target="_blank" rel="noopener noreferrer">doppler.finance</a></li>
+                <li>Doppler Finance — "$3M Seed Round Announcement," August 7, 2025 — <a href="https://doppler.finance" target="_blank" rel="noopener noreferrer">doppler.finance</a></li>
+                <li>OpenEden — "TBILL on XRPL Launch," August 2024 — <a href="https://openeden.com" target="_blank" rel="noopener noreferrer">openeden.com</a></li>
+            </ul>
+        </div>
+
+        <div class="info-box" style="margin-top: 48px; background: rgba(255, 23, 68, 0.05); border-left: 4px solid var(--primary-red);">
+            <p style="margin-bottom: 12px;"><strong>XRPL Canada</strong> is a non-profit community organization dedicated to growing the XRP Ledger ecosystem across Canada. Have a story we should cover? Reach us at <a href="mailto:team@xrplcanada.org" style="color: var(--primary-red-light); text-decoration: none; font-weight: 600;">team@xrplcanada.org</a> or follow <a href="https://twitter.com/XRPLCanada" target="_blank" rel="noopener noreferrer" style="color: var(--primary-red-light); text-decoration: none; font-weight: 600;">@XRPLCanada</a> on X.</p>
+            <p style="margin-bottom: 0;"><strong>XRPL Canada is a community partner for XRP Tokyo 2026</strong> — April 7 at Happo-en, Tokyo, hosted by XRPL Japan inside the TEAMZ Web3/AI Summit. Details on participation to follow.</p>
+        </div>
+
+        <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=69478aeeb5f2d28644168c47&product=image-share-buttons' async='async'></script>
+    </article>
+
+    <div id="site-footer"></div>
+
+    <script src="../components/lang.js"></script>
+    <script src="../components/nav.js"></script>
+    <script src="../styles/nav-mobile.js"></script>
+    <script src="../components/footer.js"></script>
+    <script src="../styles/theme-toggle.js"></script>
+</body>
+</html>

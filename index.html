@@ -2486,21 +2486,7 @@
 <body>
     <div id="site-nav"></div>
 
-    <!-- Countdown Banner (Homepage only) -->
-    <!-- TO UPDATE: Change event name, date (line in JS), and ticket URL below -->
-    <div class="countdown-banner" id="countdownBanner" data-event="xrp-tokyo-2026">
-        <div class="countdown-container">
-            <span class="countdown-label">XRP Tokyo 2026</span>
-            <div class="countdown-timer" id="countdownTimer">
-                <div class="countdown-unit"><span id="countDays">--</span><small>days</small></div>
-                <div class="countdown-unit"><span id="countHours">--</span><small>hrs</small></div>
-                <div class="countdown-unit"><span id="countMins">--</span><small>min</small></div>
-                <div class="countdown-unit"><span id="countSecs">--</span><small>sec</small></div>
-            </div>
-            <a href="https://xrp-tokyo.io" target="_blank" rel="noopener noreferrer" class="countdown-cta">Get Tickets →</a>
-            <button class="countdown-close" onclick="dismissBanner()" aria-label="Close banner">×</button>
-        </div>
-    </div>
+    <!-- Countdown Banner removed - XRP Tokyo 2026 event has passed (April 7, 2026) -->
 
     <div class="container">
         <!-- NEW 3-COLUMN PUBLICATION LAYOUT -->
@@ -2580,22 +2566,19 @@
 
                         <!-- Featured blog with large image -->
                         <article class="blog-preview-card" style="flex: 1; display: flex; flex-direction: column;">
-                            <a href="blog/xrp-tokyo-2026-what-to-expect.html">
-                                <img src="public/xrp-tokyo-2026.png" alt="XRP Tokyo 2026: What to Expect" style="width: 100%; height: 320px; object-fit: cover; object-position: center; border-radius: 12px; margin-bottom: 28px; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='scale(1.01)'; this.style.boxShadow='0 12px 40px rgba(0,0,0,0.3)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
-                            </a>
                             <div class="blog-preview-meta" style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
-                                <span class="blog-preview-date" style="font-size: 14px; color: var(--text-tertiary); font-weight: 500;">March 20, 2026</span>
-                                <span class="blog-preview-category" style="font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--primary-red); background: rgba(255, 23, 68, 0.1); padding: 4px 10px; border-radius: 4px;">Ecosystem Spotlight</span>
+                                <span class="blog-preview-date" style="font-size: 14px; color: var(--text-tertiary); font-weight: 500;">May 12, 2026</span>
+                                <span class="blog-preview-category" style="font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--primary-red); background: rgba(255, 23, 68, 0.1); padding: 4px 10px; border-radius: 4px;">Ecosystem</span>
                             </div>
                             <h3 class="blog-preview-title" style="font-size: 32px; font-weight: 700; color: var(--text-primary); margin-bottom: 20px; line-height: 1.2; letter-spacing: -0.5px;">
-                                <span class="lang-en">XRP Tokyo 2026: What to Expect</span>
-                                <span class="lang-fr hidden">XRP Tokyo 2026 : À quoi s'attendre</span>
+                                <span class="lang-en">CADD Goes Live: Canada's First Bank-Issued CAD Stablecoin Launches on Three Chains — None of Them XRPL</span>
+                                <span class="lang-fr hidden">CADD est lancé : Le premier stablecoin CAD émis par une banque canadienne sur trois chaînes — aucune d'entre elles n'est XRPL</span>
                             </h3>
                             <p class="blog-preview-excerpt" style="font-size: 18px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 32px; flex: 1;">
-                                <span class="lang-en">Asia's largest XRP conference comes to Tokyo on April 7. 3,000+ attendees, 20+ speakers, Ripple as title sponsor, and Japan's Finance Minister keynoting. Complete event guide.</span>
-                                <span class="lang-fr hidden">La plus grande conférence XRP d'Asie arrive à Tokyo le 7 avril. Plus de 3 000 participants, plus de 20 conférenciers, Ripple comme sponsor principal.</span>
+                                <span class="lang-en">Tetra Trust's CADD launches as Canada's first regulated bank-issued CAD stablecoin on Ethereum, Base, and Tempo — with XRPL notably absent from the chain list. What the absence signals for Canadian payments infrastructure.</span>
+                                <span class="lang-fr hidden">Le CADD de Tetra Trust est lancé en tant que premier stablecoin CAD émis par une banque réglementée au Canada sur Ethereum, Base et Tempo — l'absence notable de XRPL de la liste des chaînes.</span>
                             </p>
-                            <a href="blog/xrp-tokyo-2026-what-to-expect.html" class="resource-link" style="font-size: 15px; margin-top: auto; align-self: flex-end;">
+                            <a href="blog/tetra-trust-launches-cadd-canadas-first-regulated-cad-stable-may-2026.html" class="resource-link" style="font-size: 15px; margin-top: auto; align-self: flex-end;">
                                 <span class="lang-en">Read More</span>
                                 <span class="lang-fr hidden">Lire plus</span>
                             </a>
@@ -3363,18 +3346,19 @@
         // ============================================
 
         // ============================================
-        // COUNTDOWN TIMER
+        // COUNTDOWN TIMER - DISABLED (XRP Tokyo 2026 event passed on April 7, 2026)
         // ============================================
-        // TO UPDATE: Change this date for new events
+        // Uncomment and update for future events
+        /*
         const COUNTDOWN_TARGET = 'April 7, 2026 09:00:00 GMT+0900';
-        
+
         function startCountdown() {
             const targetDate = new Date(COUNTDOWN_TARGET).getTime();
-            
+
             function updateCountdown() {
                 const now = new Date().getTime();
                 const distance = targetDate - now;
-                
+
                 if (distance < 0) {
                     document.getElementById('countDays').textContent = '0';
                     document.getElementById('countHours').textContent = '0';
@@ -3382,25 +3366,25 @@
                     document.getElementById('countSecs').textContent = '0';
                     return;
                 }
-                
+
                 const days = Math.floor(distance / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 const secs = Math.floor((distance % (1000 * 60)) / 1000);
-                
+
                 document.getElementById('countDays').textContent = days;
                 document.getElementById('countHours').textContent = hours;
                 document.getElementById('countMins').textContent = mins;
                 document.getElementById('countSecs').textContent = secs;
             }
-            
+
             updateCountdown();
             setInterval(updateCountdown, 1000);
         }
-        
+
         // Banner dismiss functionality with 14-day reset
         const BANNER_RESET_DAYS = 14;
-        
+
         function dismissBanner() {
             const banner = document.getElementById('countdownBanner');
             const eventId = banner.dataset.event;
@@ -3411,23 +3395,23 @@
             localStorage.setItem('dismissedBanner', JSON.stringify(dismissData));
             banner.classList.remove('visible');
         }
-        
+
         function shouldShowBanner() {
             const banner = document.getElementById('countdownBanner');
             const eventId = banner.dataset.event;
             const stored = localStorage.getItem('dismissedBanner');
-            
+
             if (!stored) return true; // Never dismissed, show banner
-            
+
             try {
                 const dismissData = JSON.parse(stored);
                 const daysSinceDismiss = (Date.now() - dismissData.dismissedAt) / (1000 * 60 * 60 * 24);
-                
+
                 // Show banner if: different event OR 14+ days have passed
                 if (dismissData.eventId !== eventId || daysSinceDismiss >= BANNER_RESET_DAYS) {
                     return true;
                 }
-                
+
                 // Same event and within 14 days, keep hidden
                 return false;
             } catch (e) {
@@ -3435,13 +3419,14 @@
                 return true;
             }
         }
-        
+
         document.addEventListener('DOMContentLoaded', () => {
             if (shouldShowBanner()) {
                 document.getElementById('countdownBanner').classList.add('visible');
             }
             startCountdown();
         });
+        */
     </script>
 
     <script src="components/nav.js"></script>
